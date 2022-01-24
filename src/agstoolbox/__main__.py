@@ -44,8 +44,8 @@ def main():
 
     app = QtWidgets.QApplication(ap_args)
     w = QtWidgets.QWidget()
-    trayIcon = AtTrayIcon(main_icon(), w)
-    trayIcon.show()
+    tray_icon = AtTrayIcon(main_icon(), w)
+    tray_icon.show()
     exit(app.exec())
 
 
