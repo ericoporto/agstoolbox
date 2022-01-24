@@ -9,13 +9,13 @@
 
 from os import environ as environ
 from sys import exit, argv
-from time import time, sleep
 from PyQt6 import QtWidgets, QtCore, QtGui
+import argparse
+
 from agstoolbox import __title__, __version__, __copyright__, __license__
 from agstoolbox.at_trayindicator import AtTrayIcon
 from agstoolbox.at_icons import main_icon
 from agstoolbox.configs import double_click_interval
-import argparse
 
 
 def main():
