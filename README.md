@@ -17,6 +17,7 @@ Desired features:
 - allow removing a downloaded Editor from hard drive
 - launching link to online AGS manual, and forums
 - detect AGS editors installed through other means (but not manage them)
+- see how much storage each AGS Editor is using.
 
 ## how it works
 
