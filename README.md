@@ -14,3 +14,4 @@ Desired features:
 - allow setting a default AGS to use
 - allow removing a downloaded Editor from hard drive
 - launching online AGS manual
+- detect AGS editors installed through other means (but not manage them)
