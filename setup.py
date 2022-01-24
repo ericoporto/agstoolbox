@@ -22,7 +22,7 @@ setup(
         'License :: OSI Approved :: MIT License'
     ],
     keywords='AGS Toolbox',
-    install_requires=['pyqt6'],
+    install_requires=['pyqt6', 'requests'],
     packages=["agstoolbox"],
     package_dir={"": "src"},
     scripts=["agstoolbox"],
