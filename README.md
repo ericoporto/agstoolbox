@@ -3,7 +3,7 @@ Utility software to help manage, install, and uninstall different AGS Editor ver
 
 _inspired by [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/), but different_
 
-This software is Windows only - since the Editor is Windows only.
+This software is Windows only - since the Editor is Windows only. This will allow to develop a more tailor made software.
 
 ⚠**under construction**⚠
 
