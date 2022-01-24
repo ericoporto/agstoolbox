@@ -28,3 +28,7 @@ The icon has two options, open the toolbox, and quit. If toolbox is opened a sma
 - AGS Editors that are not managed by the toolbox are available to launch but marked not as such. 
 - The list is ordered by the most recent version to least. 
 - Pre-releases (alpha and beta versions) are marked as such in their icons.
+- If a newer release is available, an icon is placed to allow quick download of it.
+
+In the settings following options are available
+- you can filter release versions you are not interested (say 3.5.1.X)
