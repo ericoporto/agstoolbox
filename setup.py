@@ -15,7 +15,7 @@ setup(
     ],
     keywords='AGS Toolbox',
     install_requires=['pyqt6'],
-    packages = ["agstoolbox"],
-    package_dir = {"": "src"},
-    scripts = ["agstoolbox"]
+    packages=["agstoolbox"],
+    package_dir={"": "src"},
+    scripts=["agstoolbox"]
 )

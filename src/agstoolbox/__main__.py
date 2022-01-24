@@ -36,7 +36,7 @@ def main():
     parser.add_argument('mapfile', nargs='?', default='check_no_map', help='a single .map.json file')
     args = parser.parse_args()
 
-    if args.version == True:
+    if args.version:
         print(__title__ + "  v " + __version__)
         exit()
 
@@ -48,8 +48,10 @@ def main():
     trayIcon.show()
     exit(app.exec())
 
+
 def Run():
     main()
+
 
 if __name__ == "__main__":
     main()
