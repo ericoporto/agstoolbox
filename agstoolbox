@@ -3,7 +3,6 @@
 import os
 import sys
 
-
 if os.path.isdir(os.path.join(".", "src")) and os.path.isfile(
         os.path.join(".", "setup.py")):
     sys.path.append(os.path.realpath("src"))
@@ -13,6 +12,7 @@ from agstoolbox.__main__ import Run
 
 if __name__ == '__main__':
     Run()
+
 
 def main():
     Run()
