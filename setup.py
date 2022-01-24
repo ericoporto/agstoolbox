@@ -1,12 +1,19 @@
 from setuptools import setup
 from codecs import open
+import re
 from os import path
 
 
+with open('src/agstoolbox/__init__.py', 'r') as fd:
+    version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
+                        fd.read(), re.MULTILINE).group(1)
+
 setup(
     name='agstoolbox',
-    version='0.1.0',
+    version=version,
     description='A Toolbox for managing AGS Editor versions.',
+    url='https://github.com/ericoporto/agstoolbox',
+    download_url='https://github.com/ericoporto/agstoolbox/tarball/' + version,
     author='erico',
     author_email='eri0onpm@gmail.com',
     license='MIT',
@@ -18,5 +25,8 @@ setup(
     install_requires=['pyqt6'],
     packages=["agstoolbox"],
     package_dir={"": "src"},
-    scripts=["agstoolbox"]
+    scripts=["agstoolbox"],
+    package_data={
+        'agstoolbox': ['data/*.png']
+    },
 )
