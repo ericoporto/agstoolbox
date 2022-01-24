@@ -2,6 +2,7 @@ from setuptools import setup
 from codecs import open
 from os import path
 
+
 setup(
     name='agstoolbox',
     version='0.1.0',
