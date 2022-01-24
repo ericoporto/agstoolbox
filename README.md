@@ -13,5 +13,5 @@ Desired features:
 - check download integrity with some hashing
 - allow setting a default AGS to use
 - allow removing a downloaded Editor from hard drive
-- launching online AGS manual
+- launching link to online AGS manual, and forums
 - detect AGS editors installed through other means (but not manage them)
