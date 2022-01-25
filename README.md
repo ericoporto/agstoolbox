@@ -31,6 +31,7 @@ This should generate a `agstoolbox.exe` file under the `dist/` directory in the 
 - add folders as project libraries (may contain `game.agf` files)
 - allow listing game projects in libraries, with version used in `game.agf`
 - allow opening a game project directory in the file explorer
+- open the editor of the version if editor can open through command line and is available ([see](https://github.com/adventuregamestudio/ags/blob/970e023af4db037e2fe24488e583b9dd3ad935aa/Editor/AGS.Editor/GUI/GUIController.cs#L872))
 
 
 ## how it (will!) works
