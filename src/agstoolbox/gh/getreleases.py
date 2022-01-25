@@ -4,7 +4,8 @@ from agstoolbox.gh import release
 
 
 def get_releases() -> list[release.Release]:
-    response = requests.get("https://api.github.com/repos/adventuregamestudio/ags/releases?per_page=100")
+    response = requests.get(
+        "https://api.github.com/repos/adventuregamestudio/ags/releases?per_page=100")
     print(type(response))
     response_json = response.json()
     print(len(response_json))
