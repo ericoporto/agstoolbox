@@ -34,8 +34,9 @@ def main():
         prog=__title__,
         description=__title__ + ' is an application to help manage AGS Editor versions.',
         epilog=__copyright__ + ", " + __license__ + ".")
-    parser.add_argument('-v', '--version', action='store_true', default=False, help='get software version.')
-    parser.add_argument('mapfile', nargs='?', default='check_no_map', help='a single .map.json file')
+    parser.add_argument(
+        '-v', '--version', action='store_true', default=False, help='get software version.')
+
     args = parser.parse_args()
 
     if args.version:
