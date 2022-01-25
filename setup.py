@@ -1,7 +1,6 @@
-from setuptools import setup
 from codecs import open
+from setuptools import setup
 import re
-from os import path
 
 
 with open('src/agstoolbox/__init__.py', 'r') as fd:
