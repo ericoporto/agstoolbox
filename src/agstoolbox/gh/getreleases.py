@@ -5,7 +5,7 @@ from agstoolbox.gh import release
 
 def tag_to_family(tag: str) -> str:
     tks = tag.split(".")
-    if len(tks) < 1 or len(tks) > 4:
+    if len(tks) <= 1 or len(tks) > 5:
         return tag
 
     first_tk = 0
@@ -21,7 +21,7 @@ def tag_to_family(tag: str) -> str:
 
 def family_to_major(family: str) -> str:
     tks = family.split(".")
-    if len(tks) < 1 or len(tks) > 2:
+    if len(tks) <= 1 or len(tks) >= 3:
         return family
 
     return tks[0]
@@ -29,7 +29,7 @@ def family_to_major(family: str) -> str:
 
 def family_to_minor(family: str) -> str:
     tks = family.split(".")
-    if len(tks) < 1 or len(tks) > 2:
+    if len(tks) <= 1 or len(tks) >= 3:
         return family
 
     return tks[1]
