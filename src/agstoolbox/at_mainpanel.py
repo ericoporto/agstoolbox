@@ -22,7 +22,7 @@ class MainWindow(QMainWindow):
         # Setup OK button
         pybutton = QPushButton('OK', self)
         pybutton.clicked.connect(self.buttonClicked)
-        pybutton.resize(100,32)
+        pybutton.resize(100, 32)
         pybutton.move(110, 128)
 
     def buttonClicked(self):
