@@ -21,7 +21,7 @@ jobs:
     steps:
     - name: Install Qt dependency for running
       run: |
-         sudo apt-get update && sudo apt-get install libgl1-mesa-glx -y
+         sudo apt-get update && sudo apt-get install libgl1-mesa-glx libegl1-mesa libegl1 -y
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
