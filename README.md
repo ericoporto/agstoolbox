@@ -28,6 +28,8 @@ This should generate a `agstoolbox.exe` file under the `dist/` directory in the 
 - launching link to online AGS manual, and forums
 - detect AGS editors installed through other means (but not manage them)
 - see how much storage each AGS Editor is using.
+- add folders as project libraries (may contain `game.agf` files)
+- allow listing game projects in libraries, with version used in `game.agf`
 
 
 ## how it (will!) works
