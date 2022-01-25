@@ -19,7 +19,7 @@ This should generate a `agstoolbox.exe` file under the `dist/` directory in the 
 
 ## Development
 
-PyCharm is highly recommended for development, you can setup a venv and have it install dependencies and running the project as soon as you point to the root directory.
+[PyCharm Community](https://www.jetbrains.com/pycharm/) is highly recommended for development, you can setup a venv and have it install dependencies and running the project as soon as you point to the root directory.
 Be sure to set agstoolbox as the command to run in it.
 
 This project uses Python 3, I am currently developing with 3.9, but should run fine in 3.6 upwards. Use pip to install dependencies
