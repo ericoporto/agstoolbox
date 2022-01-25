@@ -17,6 +17,20 @@ Install pyinstaller (`pip install pyinstaller`) and then use it on a `cmd.exe` p
 	
 This should generate a `agstoolbox.exe` file under the `dist/` directory in the project root.
 
+## Development
+
+PyCharm is highly recommended for development, you can setup a venv and have it install dependencies and running the project as soon as you point to the root directory.
+Be sure to set agstoolbox as the command to run in it.
+
+This project uses Python 3, I am currently developing with 3.9, but should run fine in 3.6 upwards. Use pip to install dependencies
+
+    pip install -r requirements.txt
+
+For running, you can call the script on the rootfolder directly.
+
+    python agstoolbox
+
+
 ##  Desired features
 
 - Download any archive.zip of any AGS version from 3.5.0 forward
