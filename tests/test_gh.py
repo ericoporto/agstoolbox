@@ -11,7 +11,7 @@ if os.path.isdir(os.path.join(".", "src")) and os.path.isfile(
     sys.path.append(os.path.realpath("src"))
     sys.path.append(os.path.realpath("src/agstoolbox"))
 
-from agstoolbox.gh.getreleases import tag_to_family, family_to_major, family_to_minor, parse_releases
+from agstoolbox.gh.get_releases import tag_to_family, family_to_major, family_to_minor, parse_releases
 
 cur_dir = Path(__file__).resolve().parent
 
@@ -52,5 +52,6 @@ def test_parse_releases():
     assert releases[2].name == "v.3.6.0.13 - Alpha 14"
     assert releases[2].url == "https://api.github.com/repos/adventuregamestudio/ags/releases/56166627"
     assert releases[2].archive_name == "AGS-3.6.0.13-Alpha14.zip"
-    assert releases[2].archive_url == "https://github.com/adventuregamestudio/ags/releases/download/v.3.6.0.13/AGS-3.6.0.13-Alpha14.zip"
+    assert releases[2].archive_url == \
+           "https://github.com/adventuregamestudio/ags/releases/download/v.3.6.0.13/AGS-3.6.0.13-Alpha14.zip"
     assert releases[2].archive_size == 25219327
