@@ -3,6 +3,7 @@ from PyQt6.QtCore import QTimer
 from PyQt6.QtWidgets import QSystemTrayIcon
 
 from agstoolbox.at_mainpanel import MainWindow
+from agstoolbox.at_icons import main_icon
 from agstoolbox.configs import double_click_interval
 
 
@@ -51,3 +52,15 @@ class AtTrayIcon(QtWidgets.QSystemTrayIcon):
 
     def disambiguateTimerTimeout(self):
         self.single_clicked()
+
+
+def run_tray_indicator(ap_args):
+    global double_click_interval
+    app = QtWidgets.QApplication(ap_args)
+    app.setQuitOnLastWindowClosed(False)
+    double_click_interval = app.doubleClickInterval()
+
+    w = QtWidgets.QWidget()
+    tray_icon = AtTrayIcon(main_icon(), w)
+    tray_icon.show()
+    exit(app.exec())

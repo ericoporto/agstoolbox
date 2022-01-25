@@ -9,13 +9,10 @@
 
 from os import environ as environ
 from sys import exit, argv
-from PyQt6 import QtWidgets, QtCore, QtGui
 import argparse
 
 from agstoolbox import __title__, __version__, __copyright__, __license__
-from agstoolbox.at_trayindicator import AtTrayIcon
-from agstoolbox.at_icons import main_icon
-from agstoolbox.configs import double_click_interval
+from agstoolbox.at_trayindicator import run_tray_indicator
 
 
 def main():
@@ -27,8 +24,6 @@ def main():
     1. load agstoolbox when called without args
     2. seeing the current version by using `--version`, and not opening agstoolbox
     """
-
-    global double_click_interval
     environ["LIBOVERLAY_SCROLLBAR"] = "0"
     parser = argparse.ArgumentParser(
         prog=__title__,
@@ -45,14 +40,8 @@ def main():
 
     ap_args = []
 
-    app = QtWidgets.QApplication(ap_args)
-    app.setQuitOnLastWindowClosed(False)
-    double_click_interval = app.doubleClickInterval()
-
-    w = QtWidgets.QWidget()
-    tray_icon = AtTrayIcon(main_icon(), w)
-    tray_icon.show()
-    exit(app.exec())
+    # load gui in a separate import to keep command line commands working in non-graphical environments
+    run_tray_indicator(ap_args)
 
 
 def Run():

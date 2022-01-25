@@ -40,4 +40,4 @@ jobs:
         pytest
     - name: Verify it runs
       run: |
-        python agstoolbox
+        python agstoolbox --version
