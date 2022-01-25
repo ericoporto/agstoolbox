@@ -3,6 +3,11 @@ class Release:
     url = None
     id = None
     tag = None
+
+    version_family = None
+    version_major = None
+    version_minor = None
+
     prerelease = False
     name = None
     text_details = None

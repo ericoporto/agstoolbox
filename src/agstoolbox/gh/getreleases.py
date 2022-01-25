@@ -3,12 +3,39 @@ import requests
 from agstoolbox.gh import release
 
 
-def get_releases() -> list[release.Release]:
-    response = requests.get(
-        "https://api.github.com/repos/adventuregamestudio/ags/releases?per_page=100")
-    print(type(response))
-    response_json = response.json()
-    print(len(response_json))
+def tag_to_family(tag: str) -> str:
+    tks = tag.split(".")
+    if len(tks) < 1 or len(tks) > 4:
+        return tag
+
+    first_tk = 0
+    if tks[0] == "v":
+        first_tk = 1
+
+    major = tks[first_tk]
+    minor = tks[first_tk+1]
+
+    family = major + "." + minor
+    return family
+
+
+def family_to_major(family: str) -> str:
+    tks = family.split(".")
+    if len(tks) < 1 or len(tks) > 2:
+        return family
+
+    return tks[0]
+
+
+def family_to_minor(family: str) -> str:
+    tks = family.split(".")
+    if len(tks) < 1 or len(tks) > 2:
+        return family
+
+    return tks[1]
+
+
+def parse_releases(response_json) -> list[release.Release]:
     releases = [None] * len(response_json)
     count = 0
 
@@ -34,7 +61,14 @@ def get_releases() -> list[release.Release]:
         rls.name = rel['name']
         rls.id = rel['id']
         rls.url = rel['url']
-        rls.tag = rel['tag_name']
+
+        tag = rel['tag_name']
+        family = tag_to_family(tag)
+        rls.tag = tag
+        rls.version_family = family
+        rls.version_major = family_to_major(family)
+        rls.version_minor = family_to_minor(family)
+
         rls.prerelease = rel['prerelease']
         rls.published_at = rel['published_at']
         releases[count] = rls
@@ -42,3 +76,10 @@ def get_releases() -> list[release.Release]:
 
     releases = list(filter(None, releases))
     return releases
+
+
+def get_releases() -> list[release.Release]:
+    response = requests.get(
+        "https://api.github.com/repos/adventuregamestudio/ags/releases?per_page=100")
+    response_json = response.json()
+    return parse_releases(response_json)
