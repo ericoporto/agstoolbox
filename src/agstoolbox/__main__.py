@@ -12,6 +12,8 @@ from sys import exit, argv
 import argparse
 
 from agstoolbox import __title__, __version__, __copyright__, __license__
+
+# TODO: figure out how to avoid import when no graphical environment exists
 from agstoolbox.at_trayindicator import run_tray_indicator
 
 
@@ -39,8 +41,6 @@ def main():
         exit()
 
     ap_args = []
-
-    # load gui in a separate import to keep command line commands working in non-graphical environments
     run_tray_indicator(ap_args)
 
 

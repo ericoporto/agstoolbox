@@ -19,6 +19,9 @@ jobs:
         python-version: ["3.9", "3.10"]
 
     steps:
+    - name: Install Qt dependency for running
+      run: |
+        apt install libgl1-mesa-glx -y
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
