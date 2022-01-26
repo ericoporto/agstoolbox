@@ -1,3 +1,4 @@
+from sys import exit
 from PyQt6 import QtWidgets, QtCore, QtGui
 from PyQt6.QtCore import QTimer
 from PyQt6.QtWidgets import QSystemTrayIcon
