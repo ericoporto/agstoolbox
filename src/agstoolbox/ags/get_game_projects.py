@@ -15,6 +15,17 @@ def get_gp_candidates_in_dir(directory: str) -> list[str]:
     return files
 
 
+def text_file_starts_with_xml_Windows1252(filepath: str) -> bool:
+    platform = ''
+    try:
+        with open(filepath, mode='r', encoding='cp1252') as myfile:
+            platform = myfile.read(5)
+    except:
+        return False
+    finally:
+        return platform == '<?xml'
+
+
 def is_game_file(filepath: str) -> bool:
     if not os.path.exists(filepath):
         return False
@@ -26,15 +37,8 @@ def is_game_file(filepath: str) -> bool:
     if os.path.getsize(filepath) > 268435456:
         return False
 
-    platform = ''
-    try:
-        with open(filepath, 'r') as myfile:
-            platform = myfile.read(4)
-    except:
+    if not text_file_starts_with_xml_Windows1252(filepath):
         return False
-    finally:
-        if not platform == '<?xml':
-            return False
 
     tree = ET.parse(filepath)
     root = tree.getroot()
