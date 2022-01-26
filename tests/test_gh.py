@@ -11,7 +11,7 @@ if os.path.isdir(os.path.join(".", "src")) and os.path.isfile(
     sys.path.append(os.path.realpath("src"))
     sys.path.append(os.path.realpath("src/agstoolbox"))
 
-from agstoolbox.gh.get_releases import tag_to_family, family_to_major, family_to_minor, parse_releases
+from agstoolbox.gh.list_releases import tag_to_family, family_to_major, family_to_minor, parse_releases
 
 cur_dir = Path(__file__).resolve().parent
 

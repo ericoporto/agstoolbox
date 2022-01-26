@@ -78,7 +78,7 @@ def parse_releases(response_json) -> list[release.Release]:
     return releases
 
 
-def get_releases() -> list[release.Release]:
+def list_releases() -> list[release.Release]:
     response = requests.get(
         "https://api.github.com/repos/adventuregamestudio/ags/releases?per_page=100")
     response_json = response.json()

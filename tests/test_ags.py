@@ -20,6 +20,7 @@ file_path02 = Path(os.path.join(cur_dir, 'resources/fakedir2/fakedirA/Game.agf')
 file_path03 = Path(os.path.join(cur_dir, 'resources/fakedir3/fakedir3/CopyGame/Game.agf')).as_posix()
 file_path04 = Path(os.path.join(cur_dir, 'resources/otherfakedir/MinGame/Game.agf')).as_posix()
 
+
 def test_get_gp_candidates_in_dir():
     print(cur_dir.as_posix())
     candidates = get_gp_candidates_in_dir(cur_dir.as_posix())

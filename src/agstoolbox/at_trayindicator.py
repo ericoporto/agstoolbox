@@ -2,7 +2,7 @@ from PyQt6 import QtWidgets, QtCore, QtGui
 from PyQt6.QtCore import QTimer
 from PyQt6.QtWidgets import QSystemTrayIcon
 
-from agstoolbox.at_mainpanel import MainWindow
+from agstoolbox.panels.at_mainpanel import MainWindow
 from agstoolbox.at_icons import main_icon
 from agstoolbox.configs import double_click_interval
 

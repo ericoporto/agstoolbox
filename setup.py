@@ -24,7 +24,7 @@ setup(
     install_requires=['pyqt6', 'requests', 'defusedxml'],
     packages=["agstoolbox"],
     package_dir={"": "src"},
-    scripts=["agstoolbox"],
+    scripts=["agstoolbox", "atbx"],
     package_data={
         'agstoolbox': ['data/*.png']
     },
