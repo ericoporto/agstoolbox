@@ -5,7 +5,7 @@ from PyQt6.QtWidgets import QSystemTrayIcon
 
 from agstoolbox.panels.at_mainpanel import MainWindow
 from agstoolbox.at_icons import main_icon
-from agstoolbox.configs import double_click_interval
+from agstoolbox.global_constants import double_click_interval
 
 
 class AtTrayIcon(QtWidgets.QSystemTrayIcon):
