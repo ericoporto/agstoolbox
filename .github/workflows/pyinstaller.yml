@@ -17,9 +17,16 @@ jobs:
     - name: Package Application
       uses: ericoporto/pyinstaller-action-windows@main
       with:
+        spec: agstoolbox.spec
+        path: .
+
+    - name: Package Application
+      uses: ericoporto/pyinstaller-action-windows@main
+      with:
+        spec: atbx.spec
         path: .
 
     - uses: actions/upload-artifact@v2
       with:
-        name: agstoolbox.exe
+        name: agstoolbox
         path: ./dist/windows
