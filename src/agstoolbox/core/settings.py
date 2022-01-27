@@ -1,10 +1,8 @@
-import os.path
-
 from platformdirs import user_cache_dir, user_data_dir, user_log_dir, user_documents_dir
 import os
 from pathlib import Path
 
-from agstoolbox.utils.singleton import Singleton
+from agstoolbox.core.utils.singleton import Singleton
 from agstoolbox import __title__
 
 

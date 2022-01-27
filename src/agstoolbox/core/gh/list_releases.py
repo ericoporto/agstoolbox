@@ -1,7 +1,7 @@
 from __future__ import annotations  # for python 3.8
 import requests
 
-from agstoolbox.gh.release import Release
+from agstoolbox.core.gh.release import Release
 
 
 def tag_to_family(tag: str) -> str:

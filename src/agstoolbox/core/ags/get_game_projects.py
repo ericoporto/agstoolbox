@@ -1,10 +1,9 @@
 from __future__ import annotations  # for python 3.8
 import glob
 import os.path
-from os import PathLike
 import defusedxml.ElementTree as ET
 
-from agstoolbox.ags.game_project import GameProject
+from agstoolbox.core.ags.game_project import GameProject
 
 PROJECT_FILE_NAME = 'Game.agf'
 AGS_EDITOR_ROOT_TAG = 'AGSEditorDocument'

@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-import json
 import os
 import sys
 from pathlib import Path
@@ -11,8 +10,8 @@ if os.path.isdir(os.path.join(".", "src")) and os.path.isfile(
     sys.path.append(os.path.realpath("src"))
     sys.path.append(os.path.realpath("src/agstoolbox"))
 
-from agstoolbox.ags.get_game_projects import get_gp_candidates_in_dir, \
-    is_game_file, gameagf_file_to_game_project, text_file_starts_with_xml_Windows1252
+from agstoolbox.core.ags.get_game_projects import get_gp_candidates_in_dir, \
+    is_game_file, text_file_starts_with_xml_Windows1252
 
 cur_dir = Path(__file__).resolve().parent
 file_path01 = Path(os.path.join(cur_dir, 'resources/fakedir2/Game.agf')).as_posix()
