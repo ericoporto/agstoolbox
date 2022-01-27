@@ -3,7 +3,7 @@ import os.path
 from os import PathLike
 import defusedxml.ElementTree as ET
 
-from agstoolbox.ags import game_project
+from agstoolbox.ags.game_project import GameProject
 
 PROJECT_FILE_NAME = 'Game.agf'
 AGS_EDITOR_ROOT_TAG = 'AGSEditorDocument'
@@ -51,12 +51,25 @@ def is_game_file(filepath: str) -> bool:
     return True
 
 
-def gameagf_file_to_game_project(filepath: str) -> game_project:
-    gp = game_project.GameProject()
+def gameagf_file_to_game_project(filepath: str) -> GameProject:
+    gp = GameProject()
     tree = ET.parse(filepath)
     root = tree.getroot()
     gp.path = filepath
     gp.name = root.find('Game/Settings/GameName').text
-    gp.ags_editor_version = root['EditorVersion']
-    gp.ags_editor_version_index = root['VersionIndex']
+    gp.ags_editor_version = root.attrib['EditorVersion']
+    gp.ags_editor_version_index = root.attrib['VersionIndex']
     return gp
+
+
+def list_game_projects_in_dir(filepath: str) -> list[GameProject]:
+    candidates = get_gp_candidates_in_dir(filepath)
+    ags_projects = []
+
+    for candidate in candidates:
+        if not is_game_file(candidate):
+            continue
+
+        ags_projects.append(gameagf_file_to_game_project(candidate))
+
+    return ags_projects
