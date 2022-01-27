@@ -21,7 +21,7 @@ setup(
         'License :: OSI Approved :: MIT License'
     ],
     keywords='AGS Toolbox',
-    install_requires=['pyqt6', 'requests', 'defusedxml'],
+    install_requires=['pyqt6', 'requests', 'defusedxml', 'platformdirs'],
     packages=["agstoolbox"],
     package_dir={"": "src"},
     scripts=["agstoolbox", "atbx"],

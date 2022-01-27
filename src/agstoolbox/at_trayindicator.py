@@ -5,7 +5,7 @@ from PyQt6.QtWidgets import QSystemTrayIcon
 
 from agstoolbox.panels.at_mainpanel import MainWindow
 from agstoolbox.at_icons import main_icon
-from agstoolbox.global_constants import double_click_interval
+from agstoolbox.settings import ConstSettings
 from agstoolbox import __title__
 
 
@@ -45,9 +45,8 @@ class AtTrayIcon(QtWidgets.QSystemTrayIcon):
         self.open_toolbox()
 
     def onTrayIconActivated(self, reason):
-        global double_click_interval
         if reason == QSystemTrayIcon.ActivationReason.Trigger:
-            self.disambiguateTimer.start(double_click_interval)
+            self.disambiguateTimer.start(ConstSettings.double_click_interval)
         elif reason == QSystemTrayIcon.ActivationReason.DoubleClick:
             self.disambiguateTimer.stop()
             self.double_clicked()
@@ -57,16 +56,13 @@ class AtTrayIcon(QtWidgets.QSystemTrayIcon):
 
 
 def run_tray_indicator(ap_args):
-    global double_click_interval
     app = QtWidgets.QApplication(ap_args)
-
-    # we need to set application name to query QStandardPaths correctly later
     app.setApplicationName(__title__)
 
     # this prevents the tray to close if the main panel is closed,
     # we only exit when quit is explicitly clicked
     app.setQuitOnLastWindowClosed(False)
-    double_click_interval = app.doubleClickInterval()
+    ConstSettings.double_click_interval = app.doubleClickInterval()
 
     w = QtWidgets.QWidget()
     tray_icon = AtTrayIcon(main_icon(), w)
