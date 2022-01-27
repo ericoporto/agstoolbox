@@ -24,7 +24,7 @@ def at_cmd_run(args):
     pass
 
 
-def cmdline():
+def cmdline(show_help_when_empty: bool):
     parser = argparse.ArgumentParser(
         prog=__title__,
         description=__title__ + ' is an application to help manage AGS Editor versions.',
@@ -57,3 +57,8 @@ def cmdline():
 
     if any(vars(args).values()):
         exit()
+
+    if show_help_when_empty:
+        parser.print_usage()
+
+    return []

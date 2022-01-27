@@ -8,11 +8,11 @@ if os.path.isdir(os.path.join(".", "src")) and os.path.isfile(
     sys.path.append(os.path.realpath("src"))
     sys.path.append(os.path.realpath("src/agstoolbox"))
 
-from agstoolbox.__main__ import Run
+from agstoolbox.core.cmdline import cmdline
 
 if __name__ == '__main__':
-    Run()
+    cmdline(True)
 
 
 def main():
-    Run()
+    cmdline(True)

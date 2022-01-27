@@ -11,7 +11,7 @@ from os import environ as environ
 
 # TODO: figure out how to avoid import when no graphical environment exists
 from agstoolbox.at_trayindicator import run_tray_indicator
-
+from agstoolbox.core.cmdline import cmdline
 
 
 def main():
@@ -25,8 +25,7 @@ def main():
     """
     environ["LIBOVERLAY_SCROLLBAR"] = "0"
 
-
-    ap_args = []
+    ap_args = cmdline(False)
     run_tray_indicator(ap_args)
 
 
