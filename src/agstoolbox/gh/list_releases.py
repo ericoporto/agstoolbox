@@ -1,7 +1,7 @@
 from __future__ import annotations  # for python 3.8
 import requests
 
-from agstoolbox.gh import release
+from agstoolbox.gh.release import Release
 
 
 def tag_to_family(tag: str) -> str:
@@ -36,7 +36,7 @@ def family_to_minor(family: str) -> str:
     return tks[1]
 
 
-def parse_releases(response_json) -> list[release.Release]:
+def parse_releases(response_json) -> list[Release]:
     releases = [None] * len(response_json)
     count = 0
 
@@ -47,7 +47,7 @@ def parse_releases(response_json) -> list[release.Release]:
         archive_name = "AGS-" + version + ".zip"
         for asset in rel['assets']:
             if asset['name'] == archive_name:
-                rls = release.Release()
+                rls = Release()
                 rls.archive_id = asset['id']
                 rls.archive_name = asset['name']
                 rls.archive_url = asset['browser_download_url']
