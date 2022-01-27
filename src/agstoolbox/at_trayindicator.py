@@ -7,6 +7,7 @@ from agstoolbox.panels.at_mainpanel import MainWindow
 from agstoolbox.at_icons import main_icon
 from agstoolbox.core.settings import ConstSettings
 from agstoolbox import __title__
+from agstoolbox.core.utils.math import clamp
 
 
 class AtTrayIcon(QtWidgets.QSystemTrayIcon):
@@ -36,6 +37,25 @@ class AtTrayIcon(QtWidgets.QSystemTrayIcon):
         QtCore.QCoreApplication.exit()
 
     def open_toolbox(self):
+        tray_icon_rect = self.geometry()
+        window_pos = QtCore.QRect()
+        window_pos.setSize(QtCore.QSize(
+            ConstSettings.DEFAULT_MAIN_PANEL_WIDTH,
+            ConstSettings.DEFAULT_MAIN_PANEL_HEIGHT
+        ))
+
+        available_geometry = QtGui.QGuiApplication.primaryScreen().availableGeometry()
+
+        pos_x = clamp(tray_icon_rect.x(),
+                      available_geometry.x() + 4,
+                      available_geometry.x() + available_geometry.width() - window_pos.width() - 4)
+        pos_y = clamp(tray_icon_rect.y(),
+                      available_geometry.y() + 4,
+                      available_geometry.y() + available_geometry.height() - window_pos.height())
+
+        window_pos.setX(pos_x)
+        window_pos.setY(pos_y)
+        self.window.setGeometry(window_pos)
         self.window.show()
 
     def single_clicked(self):

@@ -16,6 +16,8 @@ class StaticSettings:
     data_dir = Path(user_data_dir(appname, appauthor)).as_posix()
     log_dir = Path(user_log_dir(appname, appauthor)).as_posix()
     user_docs = Path(user_documents_dir()).as_posix()
+    DEFAULT_MAIN_PANEL_WIDTH = 320
+    DEFAULT_MAIN_PANEL_HEIGHT = 512
 
 
 class ConstSettings(StaticSettings, metaclass=Singleton):

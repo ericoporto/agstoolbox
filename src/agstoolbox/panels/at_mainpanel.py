@@ -3,12 +3,15 @@ from PyQt6.QtWidgets import QMainWindow, QWidget, QLabel, QLineEdit
 from PyQt6.QtWidgets import QPushButton
 from PyQt6.QtCore import QSize
 
+from agstoolbox.core.settings import ConstSettings
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
 
-        self.setMinimumSize(QSize(320, 172))
+        self.setMinimumSize(QSize(ConstSettings.DEFAULT_MAIN_PANEL_WIDTH,
+                                  ConstSettings.DEFAULT_MAIN_PANEL_HEIGHT))
         self.setWindowTitle("Set Account")
 
         # Setup username field
