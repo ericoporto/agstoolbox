@@ -71,7 +71,8 @@ def main():
     parser_list.add_argument('-e', '--editors', action='store_true', default=False, help='list AGS Editors')
 
     args = parser.parse_args()
-    args.func(args)
+    if 'func' in args.__dict__:
+        args.func(args)
 
     if args.version:
         print(__title__ + "  v " + __version__)
