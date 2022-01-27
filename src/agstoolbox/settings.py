@@ -26,7 +26,7 @@ class ConstSettings(StaticSettings, metaclass=Singleton):
 
 class BaseSettings:
     agstoolbox_package_install = Path(os.path.join(ConstSettings.user_docs, 'AgsToolbox')).as_posix()
-    editor_base_install_dirs = Path(os.path.join(agstoolbox_package_install, 'Editors')).as_posix()
+    editor_base_install_dirs = Path(os.path.join(agstoolbox_package_install, 'Editor')).as_posix()
 
     tools_install_dir = None
 
