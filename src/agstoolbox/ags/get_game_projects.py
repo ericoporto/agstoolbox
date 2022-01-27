@@ -1,3 +1,4 @@
+from __future__ import annotations  # for python 3.8
 import glob
 import os.path
 from os import PathLike
