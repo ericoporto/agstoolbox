@@ -4,6 +4,7 @@ import os.path
 import defusedxml.ElementTree as ET
 
 from agstoolbox.core.ags.game_project import GameProject
+from agstoolbox.core.utils.file import get_dir
 
 PROJECT_FILE_NAME = 'Game.agf'
 AGS_EDITOR_ROOT_TAG = 'AGSEditorDocument'
@@ -56,6 +57,7 @@ def gameagf_file_to_game_project(filepath: str) -> GameProject:
     tree = ET.parse(filepath)
     root = tree.getroot()
     gp.path = filepath
+    gp.directory = get_dir(filepath)
     gp.name = root.find('Game/Settings/GameName').text
     gp.ags_editor_version = root.attrib['EditorVersion']
     gp.ags_editor_version_index = root.attrib['VersionIndex']

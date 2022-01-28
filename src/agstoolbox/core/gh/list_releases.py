@@ -4,6 +4,23 @@ import requests
 from agstoolbox.core.gh.release import Release
 
 
+def tag_to_version(tag: str) -> str:
+    tks = tag.split(".")
+    if len(tks) <= 2 or len(tks) > 5:
+        return tag
+
+    first_tk = 0
+    if (tks[0][0] == 'v' and len(tks[0]) <= 2) or tks[0] == "version":
+        first_tk = 1
+
+    major = tks[first_tk].strip()
+    minor = tks[first_tk+1].strip()
+    improv = tks[first_tk+2].strip()
+    patch = tks[first_tk+3].strip()
+
+    return major + "." + minor + "." + improv + "." + patch
+
+
 def tag_to_family(tag: str) -> str:
     tks = tag.split(".")
     if len(tks) <= 1 or len(tks) > 5:
@@ -66,6 +83,7 @@ def parse_releases(response_json) -> list[Release]:
         tag = rel['tag_name']
         family = tag_to_family(tag)
         rls.tag = tag
+        rls.version = tag_to_version(tag)
         rls.version_family = family
         rls.version_major = family_to_major(family)
         rls.version_minor = family_to_minor(family)

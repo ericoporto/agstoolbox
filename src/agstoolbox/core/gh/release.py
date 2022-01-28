@@ -1,12 +1,11 @@
-class Release:
+from agstoolbox.core.ags.ags_editor import AgsEditor
+
+
+class Release(AgsEditor):
     """a GitHub release object"""
     url = None
     id = None
     tag = None
-
-    version_family = None
-    version_major = None
-    version_minor = None
 
     prerelease = False
     name = None

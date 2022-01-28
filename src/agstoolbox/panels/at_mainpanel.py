@@ -127,12 +127,12 @@ class MainWindow(QMainWindow):
     def projects_update(self):
         self.treeProjects.clear()
         projs = self.proj_update_task.proj_list
-        items = []
+
         for p in projs:
             itm = TreeItemProject(ags_game_project=p)
-            items.append(itm)
+            self.treeProjects.addTopLevelItem(itm)
+            itm.updateInTree()
 
-        self.treeProjects.addTopLevelItems(items)
         self.projects_update_ended()
 
     def projects_update_ended(self):
