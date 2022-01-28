@@ -47,16 +47,23 @@ class AtTrayIcon(QtWidgets.QSystemTrayIcon):
         available_geometry = QtGui.QGuiApplication.primaryScreen().availableGeometry()
 
         pos_x = clamp(tray_icon_rect.x(),
-                      available_geometry.x() + 4,
-                      available_geometry.x() + available_geometry.width() - window_pos.width() - 4)
+                      available_geometry.x() + 48,
+                      available_geometry.width() - available_geometry.x() -
+                      window_pos.width() - 48)
         pos_y = clamp(tray_icon_rect.y(),
-                      available_geometry.y() + 4,
-                      available_geometry.y() + available_geometry.height() - window_pos.height())
+                      available_geometry.y() + 48,
+                      available_geometry.height() - available_geometry.y() -
+                      window_pos.height() - 48)
 
         window_pos.setX(pos_x)
         window_pos.setY(pos_y)
         self.window.setGeometry(window_pos)
+        self.window.setWindowState(
+            self.window.windowState() &
+            ~QtCore.Qt.WindowState.WindowMinimized | QtCore.Qt.WindowState.WindowActive)
+        self.window.raise_()
         self.window.show()
+        self.window.activateWindow()
 
     def single_clicked(self):
         self.open_toolbox()
