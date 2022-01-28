@@ -15,6 +15,7 @@ class AtTrayIcon(QtWidgets.QSystemTrayIcon):
     def __init__(self, icon, parent=None):
         QtWidgets.QSystemTrayIcon.__init__(self, icon, parent)
         self.window = MainWindow()
+        self.window.refresh_all()
         menu = QtWidgets.QMenu(parent)
 
         self.activated.connect(self.onTrayIconActivated)

@@ -4,34 +4,15 @@ from PyQt6.QtWidgets import QPushButton
 from PyQt6.QtCore import QSize
 
 from agstoolbox.core.settings import ConstSettings
-from agstoolbox.at_icons import icon_exit, \
-    icon_refresh, icon_settings
-
-from agstoolbox.core.ags.game_project import GameProject
-from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir
+from agstoolbox.at_icons import icon_exit, icon_refresh, icon_settings
 from agstoolbox.wdgts.at_tree_item_project import TreeItemProject
-
-
-class ProjUpdateThread(QtCore.QThread):
-    proj_update_started = QtCore.pyqtSignal()
-    proj_update_ended = QtCore.pyqtSignal()
-    proj_update_canceled = QtCore.pyqtSignal()
-    proj_list = None
-
-    def __init__(self):
-        QtCore.QThread.__init__(self)
-
-    def run(self) -> None:
-        self.proj_update_started.emit()
-        self.proj_list = list_game_projects_in_dir(ConstSettings.user_docs)
-        self.proj_update_ended.emit()
-
-    def stop(self):
-        self.proj_update_canceled.emit()
+from agstoolbox.at_tasks import do_update_projects, do_update_tools
+from agstoolbox.wdgts.at_tree_item_tool import TreeItemTool
 
 
 class MainWindow(QMainWindow):
     proj_update_task = None
+    tool_update_task = None
 
     def __init__(self):
         QMainWindow.__init__(self)
@@ -59,7 +40,8 @@ class MainWindow(QMainWindow):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.tabTools)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.treeTools = QtWidgets.QTreeView(self.tabTools)
+        self.treeTools = QtWidgets.QTreeWidget(self.tabTools)
+        self.treeTools.setHeaderHidden(True)
         self.treeTools.setSizeAdjustPolicy(
             QtWidgets.QAbstractScrollArea.SizeAdjustPolicy.AdjustIgnored)
         self.treeTools.setObjectName("treeTools")
@@ -128,26 +110,51 @@ class MainWindow(QMainWindow):
         self.actionQuit.setText(_translate("AgsToolbox", "Quit"))
         self.actionQuit.setToolTip(_translate("AgsToolbox", "Exit toolbox"))
 
-    def refresh_clicked(self):
+    def refresh_all(self):
         self.projects_schd_update()
+        self.tools_schd_update()
 
+    def refresh_clicked(self):
+        self.refresh_all()
+
+    # AGS Projects stuff
     def projects_schd_update(self):
         if self.proj_update_task is not None:
             return
 
-        self.proj_update_task = ProjUpdateThread()
-        self.proj_update_task.proj_update_ended.connect(self.projects_update)
-        self.proj_update_task.proj_update_canceled.connect(self.projects_update_ended)
-        self.proj_update_task.start()
+        self.proj_update_task = do_update_projects(self.projects_update, self.projects_update_ended)
 
     def projects_update(self):
         self.treeProjects.clear()
         projs = self.proj_update_task.proj_list
+        items = []
         for p in projs:
             itm = TreeItemProject(ags_game_project=p)
-            self.treeProjects.addTopLevelItem(itm)
+            items.append(itm)
 
+        self.treeProjects.addTopLevelItems(items)
         self.projects_update_ended()
 
     def projects_update_ended(self):
         self.proj_update_task = None
+
+    # Tool stuff
+    def tools_schd_update(self):
+        if self.tool_update_task is not None:
+            return
+
+        self.tool_update_task = do_update_tools(self.tools_update, self.tools_update_ended)
+
+    def tools_update(self):
+        self.treeTools.clear()
+        tools = self.tool_update_task.tools_list
+        items = []
+        for t in tools:
+            itm = TreeItemTool(t)
+            items.append(itm)
+
+        self.treeTools.addTopLevelItems(items)
+        self.tools_update_ended()
+
+    def tools_update_ended(self):
+        self.tool_update_task = None
