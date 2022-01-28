@@ -57,6 +57,7 @@ def gameagf_file_to_game_project(filepath: str) -> GameProject:
     tree = ET.parse(filepath)
     root = tree.getroot()
     gp.path = filepath
+    gp.last_modified = os.path.getmtime(filepath)
     gp.directory = get_dir(filepath)
     gp.name = root.find('Game/Settings/GameName').text
     gp.ags_editor_version = root.attrib['EditorVersion']
