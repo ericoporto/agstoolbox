@@ -6,3 +6,4 @@ class GameProject:
     path = None
     directory = None
     last_modified = None
+    ico_path = None

@@ -26,6 +26,7 @@ class ProjectWidget(QWidget):
 
         self.labelVersion = QLabel(self.project.ags_editor_version)
         self.labelVersion.setFont(smaller_font)
+        self.labelVersion.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
 
         self.labelDir = QLabel(self.project.directory)
         self.labelDir.setFont(smallest_font)
