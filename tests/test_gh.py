@@ -16,6 +16,7 @@ from agstoolbox.core.gh.list_releases import tag_to_version, \
 
 cur_dir = Path(__file__).resolve().parent
 
+
 def test_tag_to_version():
     assert tag_to_version("v.3.5.1.14") == "3.5.1.14"
     assert tag_to_version("v.3.  6.1.14") == "3.6.1.14"
@@ -23,6 +24,7 @@ def test_tag_to_version():
     assert tag_to_version("3.4.3.14") == "3.4.3.14"
     assert tag_to_version("version.3.3.1.14") == "3.3.1.14"
     assert tag_to_version("vivaldi.1") == "vivaldi.1"
+
 
 def test_tag_to_family():
     assert tag_to_family("v.3.5.1.14") == "3.5"
