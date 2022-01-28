@@ -1,3 +1,5 @@
+from operator import attrgetter
+
 from PyQt6.QtWidgets import QTreeWidget, QWidget
 
 from agstoolbox.at_tasks import do_update_projects
@@ -23,6 +25,8 @@ class ProjectsTree(QTreeWidget):
     def projects_update(self):
         self.clear()
         projs = self.proj_update_task.proj_list
+
+        projs.sort(key=attrgetter("last_modified"), reverse=True)
 
         for p in projs:
             itm = TreeItemProject(ags_game_project=p)

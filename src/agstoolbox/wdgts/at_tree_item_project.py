@@ -1,8 +1,9 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QTreeWidgetItem, QWidget, QLabel
+from PyQt6.QtWidgets import QTreeWidgetItem, QWidget, QLabel, QHBoxLayout, QVBoxLayout
 
 from agstoolbox.at_icons import main_icon
 from agstoolbox.core.ags.game_project import GameProject
+from agstoolbox.core.utils.time import s_ago
 
 
 class ProjectWidget(QWidget):
@@ -13,6 +14,7 @@ class ProjectWidget(QWidget):
         self.project = ags_game_project
 
         self.labelName = QLabel(self.project.name)
+        self.labelName.setWordWrap(True)
 
         smaller_font = QtGui.QFont(
             self.labelName.font().family(),
@@ -28,16 +30,26 @@ class ProjectWidget(QWidget):
         self.labelVersion.setFont(smaller_font)
         self.labelVersion.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
 
+        self.labelTime = QLabel(s_ago(self.project.last_modified))
+        self.labelTime.setFont(smaller_font)
+        self.labelTime.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
+
         self.labelDir = QLabel(self.project.directory)
         self.labelDir.setFont(smallest_font)
+        self.labelDir.setDisabled(True)
 
-        top_hbox = QtWidgets.QHBoxLayout()
-        bottom_hbox = QtWidgets.QHBoxLayout()
-        vbox = QtWidgets.QVBoxLayout()
+        top_hbox = QHBoxLayout()
+        bottom_hbox = QHBoxLayout()
+
+        right_vbox = QVBoxLayout()
+
+        vbox = QVBoxLayout()
         vbox.addLayout(top_hbox)
         vbox.addLayout(bottom_hbox)
         top_hbox.addWidget(self.labelName)
-        top_hbox.addWidget(self.labelVersion)
+        right_vbox.addWidget(self.labelTime)
+        right_vbox.addWidget(self.labelVersion)
+        top_hbox.addLayout(right_vbox)
         bottom_hbox.addWidget(self.labelDir)
         self.setLayout(vbox)
 
