@@ -14,15 +14,21 @@ class ProjectWidget(QWidget):
 
         self.labelName = QLabel(self.project.name)
 
+        smaller_font = QtGui.QFont(
+            self.labelName.font().family(),
+            self.labelName.font().pointSize()*0.90,
+        )
+
+        smallest_font = QtGui.QFont(
+            self.labelName.font().family(),
+            self.labelName.font().pointSize()*0.75,
+        )
+
         self.labelVersion = QLabel(self.project.ags_editor_version)
-        point_size = self.labelVersion.font().pointSize()
-        point_size = round(point_size*0.75)
-        self.labelVersion.font().setPointSize(point_size)
+        self.labelVersion.setFont(smaller_font)
 
         self.labelDir = QLabel(self.project.directory)
-        point_size = self.labelDir.font().pointSize()
-        point_size = round(point_size*0.75)
-        self.labelDir.font().setPointSize(point_size)
+        self.labelDir.setFont(smallest_font)
 
         top_hbox = QtWidgets.QHBoxLayout()
         bottom_hbox = QtWidgets.QHBoxLayout()
