@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(['atbx'],
-             pathex=[],
+             pathex=['src'],
              binaries=[],
              datas=[],
              hiddenimports=['agstoolbox'],
