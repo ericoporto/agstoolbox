@@ -1,4 +1,4 @@
-name: Package Application with Pyinstaller
+name: Pyinstaller Win Build
 
 on:
   push:
