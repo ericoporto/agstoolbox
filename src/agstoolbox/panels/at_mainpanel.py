@@ -1,13 +1,11 @@
 from PyQt6 import QtWidgets, QtCore, QtGui
-from PyQt6.QtWidgets import QMainWindow, QWidget, QLabel, QLineEdit
-from PyQt6.QtWidgets import QPushButton
+from PyQt6.QtWidgets import QMainWindow
 from PyQt6.QtCore import QSize
 
 from agstoolbox.core.settings import ConstSettings
 from agstoolbox.at_icons import icon_exit, icon_refresh, icon_settings
-from agstoolbox.wdgts.at_tree_item_project import TreeItemProject
-from agstoolbox.at_tasks import do_update_projects, do_update_tools
-from agstoolbox.wdgts.at_tree_item_tool import TreeItemTool
+from agstoolbox.wdgts.at_tree_projects_wdgt import ProjectsTree
+from agstoolbox.wdgts.at_tree_tools_wdgt import ToolsTree
 
 
 class MainWindow(QMainWindow):
@@ -40,11 +38,7 @@ class MainWindow(QMainWindow):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.tabTools)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.treeTools = QtWidgets.QTreeWidget(self.tabTools)
-        self.treeTools.setHeaderHidden(True)
-        self.treeTools.setSizeAdjustPolicy(
-            QtWidgets.QAbstractScrollArea.SizeAdjustPolicy.AdjustIgnored)
-        self.treeTools.setObjectName("treeTools")
+        self.treeTools = ToolsTree(self.tabTools)
         self.verticalLayout_2.addWidget(self.treeTools)
         self.tabWidget.addTab(self.tabTools, "")
 
@@ -54,9 +48,7 @@ class MainWindow(QMainWindow):
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.tabProjects)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.treeProjects = QtWidgets.QTreeWidget(self.tabProjects)
-        self.treeProjects.setHeaderHidden(True)
-        self.treeProjects.setObjectName("treeProjects")
+        self.treeProjects = ProjectsTree(self.tabProjects)
         self.verticalLayout_3.addWidget(self.treeProjects)
         self.tabWidget.addTab(self.tabProjects, "")
 
@@ -111,50 +103,8 @@ class MainWindow(QMainWindow):
         self.actionQuit.setToolTip(_translate("AgsToolbox", "Exit toolbox"))
 
     def refresh_all(self):
-        self.projects_schd_update()
-        self.tools_schd_update()
+        self.treeProjects.projects_schd_update()
+        self.treeTools.tools_schd_update()
 
     def refresh_clicked(self):
         self.refresh_all()
-
-    # AGS Projects stuff
-    def projects_schd_update(self):
-        if self.proj_update_task is not None:
-            return
-
-        self.proj_update_task = do_update_projects(self.projects_update, self.projects_update_ended)
-
-    def projects_update(self):
-        self.treeProjects.clear()
-        projs = self.proj_update_task.proj_list
-
-        for p in projs:
-            itm = TreeItemProject(ags_game_project=p)
-            self.treeProjects.addTopLevelItem(itm)
-            itm.updateInTree()
-
-        self.projects_update_ended()
-
-    def projects_update_ended(self):
-        self.proj_update_task = None
-
-    # Tool stuff
-    def tools_schd_update(self):
-        if self.tool_update_task is not None:
-            return
-
-        self.tool_update_task = do_update_tools(self.tools_update, self.tools_update_ended)
-
-    def tools_update(self):
-        self.treeTools.clear()
-        tools = self.tool_update_task.tools_list
-        items = []
-        for t in tools:
-            itm = TreeItemTool(t)
-            items.append(itm)
-
-        self.treeTools.addTopLevelItems(items)
-        self.tools_update_ended()
-
-    def tools_update_ended(self):
-        self.tool_update_task = None
