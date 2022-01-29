@@ -1,4 +1,4 @@
-name: Pyinstaller Win Build
+name: Windows .exe - Pyinstaller
 
 on:
   push:
