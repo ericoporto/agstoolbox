@@ -1,29 +1,47 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QTreeWidgetItem, QWidget, QLabel, QHBoxLayout, QVBoxLayout
+from PyQt6.QtGui import QTransform
 
-from agstoolbox.at_icons import main_icon
+from agstoolbox.at_icons import main_icon_as_pixmap
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.utils.time import s_ago
+
+
+class ProjectImage(QLabel):
+    def __init__(self, img_icon_path: str, parent: QWidget = None):
+        QLabel.__init__(self, parent)
+
+        pxmap = main_icon_as_pixmap()
+        if img_icon_path:
+            pxmap = QtGui.QPixmap(img_icon_path)
+
+        self.setPixmap(pxmap.scaled(
+            32, 32,
+            QtCore.Qt.AspectRatioMode.KeepAspectRatio,
+            QtCore.Qt.TransformationMode.SmoothTransformation))
+        self.setMaximumSize(32, 32)
+        self.setMinimumSize(32, 32)
 
 
 class ProjectWidget(QWidget):
     project = None
 
-    def __init__(self, ags_game_project: GameProject):
-        QWidget.__init__(self)
+    def __init__(self, ags_game_project: GameProject, parent: QWidget = None):
+        QWidget.__init__(self, parent)
         self.project = ags_game_project
 
+        self.icon_img = ProjectImage(ags_game_project.ico_path)
         self.labelName = QLabel(self.project.name)
         self.labelName.setWordWrap(True)
 
         smaller_font = QtGui.QFont(
             self.labelName.font().family(),
-            self.labelName.font().pointSize()*0.90,
+            self.labelName.font().pointSize() * 0.90,
         )
 
         smallest_font = QtGui.QFont(
             self.labelName.font().family(),
-            self.labelName.font().pointSize()*0.75,
+            self.labelName.font().pointSize() * 0.75,
         )
 
         self.labelVersion = QLabel(self.project.ags_editor_version)
@@ -51,7 +69,12 @@ class ProjectWidget(QWidget):
         right_vbox.addWidget(self.labelVersion)
         top_hbox.addLayout(right_vbox)
         bottom_hbox.addWidget(self.labelDir)
-        self.setLayout(vbox)
+
+        main_hbox = QHBoxLayout()
+        main_hbox.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeft)
+        main_hbox.addWidget(self.icon_img)
+        main_hbox.addLayout(vbox)
+        self.setLayout(main_hbox)
 
 
 class TreeItemProject(QTreeWidgetItem):
@@ -60,9 +83,6 @@ class TreeItemProject(QTreeWidgetItem):
     def __init__(self, ags_game_project: GameProject):
         QTreeWidgetItem.__init__(self)
         self.itm_wdgt = ProjectWidget(ags_game_project)
-
-        self.setText(0, '')
-        self.setIcon(0, main_icon())
 
     def updateInTree(self):
         self.treeWidget().setItemWidget(self, 0, self.itm_wdgt)

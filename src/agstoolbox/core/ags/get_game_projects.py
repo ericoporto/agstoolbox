@@ -58,7 +58,11 @@ def gameagf_file_to_game_project(filepath: str) -> GameProject:
     root = tree.getroot()
     gp.path = filepath
     gp.directory = get_dir(filepath)
-    gp.ico_path = get_file_if_exists(gp.directory, "USER.ICO")
+    ico_path = get_file_if_exists(gp.directory, "USER.ICO")
+    if not ico_path:
+        ico_path = get_file_if_exists(gp.directory, "template.ico")
+
+    gp.ico_path = ico_path
     gp.last_modified = os.path.getmtime(filepath)
 
     gp.name = root.find('Game/Settings/GameName').text

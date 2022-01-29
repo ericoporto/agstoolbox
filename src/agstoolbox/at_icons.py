@@ -7,6 +7,10 @@ def main_icon() -> QtGui.QIcon:
     return QtGui.QIcon(getdata.path('at_icon.png'))
 
 
+def main_icon_as_pixmap() -> QtGui.QPixmap:
+    return QtGui.QPixmap(getdata.path('at_icon.png'))
+
+
 def icon_refresh() -> QtGui.QIcon:
     return QtGui.QIcon(getdata.path('refresh_icon.png'))
 
