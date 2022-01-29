@@ -16,14 +16,20 @@ def is_valid_exe(filepath: str) -> bool:
     try:
         pe = pefile.PE(filepath)
         is_exe = pe.is_exe()
+    except pefile.PEFormatError:
+        return False
     finally:
         return is_exe
 
 
 def get_exe_information(filepath: str) -> ExeFileDescriptor:
     string_info = {}
+    pe = None
+    try:
+        pe = pefile.PE(filepath)
+    except pefile.PEFormatError:
+        return ExeFileDescriptor()
 
-    pe = pefile.PE(filepath)
     if not pe.is_exe():
         return ExeFileDescriptor()
 
