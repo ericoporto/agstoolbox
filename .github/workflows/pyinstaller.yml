@@ -1,4 +1,4 @@
-name: Win .exe - Pyinstaller
+name: Windows .exe - Pyinstaller
 
 on:
   push:
