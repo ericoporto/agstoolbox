@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+import glob
 import os
 from os.path import realpath
 from os.path import dirname
@@ -31,3 +34,13 @@ def get_file_if_exists(directory: str, file: str):
         return path_test_4
 
     return None
+
+
+def get_gp_candidates_in_dir(directory: str, filename: str) -> list[str]:
+    pathname = directory + "/**/" + filename
+    files = glob.glob(pathname, recursive=True)
+    return files
+
+
+def join_paths_as_posix(path_first: str, path_second: str) -> str:
+    return Path(os.path.join(path_first, path_second)).as_posix()

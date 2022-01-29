@@ -1,19 +1,11 @@
 from __future__ import annotations  # for python 3.8
-import glob
 import os.path
 import defusedxml.ElementTree as ET
 
-from agstoolbox.core.ags.game_project import GameProject
-from agstoolbox.core.utils.file import get_dir, get_file_if_exists
+from agstoolbox.core.ags.game_project import GameProject, PROJECT_FILE_NAME
+from agstoolbox.core.utils.file import get_dir, get_file_if_exists, get_gp_candidates_in_dir
 
-PROJECT_FILE_NAME = 'Game.agf'
 AGS_EDITOR_ROOT_TAG = 'AGSEditorDocument'
-
-
-def get_gp_candidates_in_dir(directory: str) -> list[str]:
-    pathname = directory + "/**/" + PROJECT_FILE_NAME
-    files = glob.glob(pathname, recursive=True)
-    return files
 
 
 def text_file_starts_with_xml_Windows1252(filepath: str) -> bool:
@@ -21,6 +13,7 @@ def text_file_starts_with_xml_Windows1252(filepath: str) -> bool:
     try:
         with open(filepath, mode='r', encoding='cp1252') as myfile:
             platform = myfile.read(5)
+    # TODO: deal with exceptions properly (PEP 8: E722 do not use bare 'except')
     except:
         return False
     finally:
@@ -34,7 +27,7 @@ def is_game_file(filepath: str) -> bool:
     if not filepath.endswith(PROJECT_FILE_NAME):
         return False
 
-    # it's too big, may crash parser later, better ignor for now
+    # it's too big, may crash parser later, better ignore for now
     if os.path.getsize(filepath) > 268435456:
         return False
 
@@ -72,7 +65,7 @@ def gameagf_file_to_game_project(filepath: str) -> GameProject:
 
 
 def list_game_projects_in_dir(filepath: str) -> list[GameProject]:
-    candidates = get_gp_candidates_in_dir(filepath)
+    candidates = get_gp_candidates_in_dir(filepath, PROJECT_FILE_NAME)
     ags_projects = []
 
     for candidate in candidates:

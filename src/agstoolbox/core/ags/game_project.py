@@ -1,3 +1,6 @@
+PROJECT_FILE_NAME= 'Game.agf'
+
+
 class GameProject:
     """an AGS Game Project"""
     name = None
@@ -7,3 +10,4 @@ class GameProject:
     directory = None
     last_modified = None
     ico_path = None
+
