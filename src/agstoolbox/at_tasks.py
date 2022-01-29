@@ -1,3 +1,4 @@
+from __future__ import annotations  # for python 3.8
 from PyQt6.QtCore import QThread, pyqtSignal
 
 from agstoolbox.core.settings import ConstSettings
@@ -24,11 +25,11 @@ class ProjUpdateThread(QThread):
 
 
 def do_update_projects(update_ended, update_canceled):
-        thread = ProjUpdateThread()
-        thread.update_ended.connect(update_ended)
-        thread.update_canceled.connect(update_canceled)
-        thread.start()
-        return thread
+    thread = ProjUpdateThread()
+    thread.update_ended.connect(update_ended)
+    thread.update_canceled.connect(update_canceled)
+    thread.start()
+    return thread
 
 
 class ToolsUpdateThread(QThread):

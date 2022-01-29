@@ -1,5 +1,10 @@
 import os
+import sys
 from pathlib import Path
+
+if os.path.isdir(os.path.join(".", "src")) and os.path.isfile(os.path.join(".", "setup.py")):
+    sys.path.append(os.path.realpath("src"))
+    sys.path.append(os.path.realpath("src/agstoolbox"))
 
 from agstoolbox.core.utils.file import get_gp_candidates_in_dir
 

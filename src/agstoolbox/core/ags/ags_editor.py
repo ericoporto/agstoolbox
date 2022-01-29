@@ -1,3 +1,6 @@
+EDITOR_FILE_NAME = 'AGSEditor.exe'
+
+
 class AgsEditor:
     version = None
     version_family = None

@@ -1,4 +1,4 @@
-PROJECT_FILE_NAME= 'Game.agf'
+PROJECT_FILE_NAME = 'Game.agf'
 
 
 class GameProject:
@@ -10,4 +10,3 @@ class GameProject:
     directory = None
     last_modified = None
     ico_path = None
-

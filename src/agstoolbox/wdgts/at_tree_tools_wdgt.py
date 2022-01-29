@@ -1,3 +1,4 @@
+from __future__ import annotations  # for python 3.8
 from PyQt6.QtWidgets import QTreeWidget, QWidget, QAbstractScrollArea, QFrame
 
 from agstoolbox.at_tasks import do_update_tools

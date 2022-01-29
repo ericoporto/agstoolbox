@@ -1,3 +1,4 @@
+from __future__ import annotations  # for python 3.8
 from operator import attrgetter
 
 from PyQt6.QtWidgets import QTreeWidget, QWidget, QFrame

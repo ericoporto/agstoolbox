@@ -1,6 +1,6 @@
 from __future__ import annotations  # for python 3.8
 import os.path
-import defusedxml.ElementTree as ET
+import defusedxml.ElementTree as ETree
 
 from agstoolbox.core.ags.game_project import GameProject, PROJECT_FILE_NAME
 from agstoolbox.core.utils.file import get_dir, get_file_if_exists, get_gp_candidates_in_dir
@@ -11,10 +11,11 @@ AGS_EDITOR_ROOT_TAG = 'AGSEditorDocument'
 def text_file_starts_with_xml_Windows1252(filepath: str) -> bool:
     platform = ''
     try:
-        with open(filepath, mode='r', encoding='cp1252') as myfile:
-            platform = myfile.read(5)
-    # TODO: deal with exceptions properly (PEP 8: E722 do not use bare 'except')
-    except:
+        with open(filepath, mode='r', encoding='cp1252') as file:
+            platform = file.read(5)
+    except FileNotFoundError:
+        return False
+    except OSError:
         return False
     finally:
         return platform == '<?xml'
@@ -34,7 +35,7 @@ def is_game_file(filepath: str) -> bool:
     if not text_file_starts_with_xml_Windows1252(filepath):
         return False
 
-    tree = ET.parse(filepath)
+    tree = ETree.parse(filepath)
     root = tree.getroot()
     if not root.tag == AGS_EDITOR_ROOT_TAG:
         return False
@@ -47,7 +48,7 @@ def is_game_file(filepath: str) -> bool:
 
 def gameagf_file_to_game_project(filepath: str) -> GameProject:
     gp = GameProject()
-    tree = ET.parse(filepath)
+    tree = ETree.parse(filepath)
     root = tree.getroot()
     gp.path = filepath
     gp.directory = get_dir(filepath)
