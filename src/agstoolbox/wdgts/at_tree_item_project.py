@@ -1,5 +1,5 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QTreeWidgetItem, QWidget, QLabel, QHBoxLayout, QVBoxLayout
+from PyQt6.QtWidgets import QTreeWidgetItem, QWidget, QLabel, QHBoxLayout, QVBoxLayout, QGridLayout
 from PyQt6.QtGui import QTransform
 
 from agstoolbox.at_icons import main_icon_as_pixmap
@@ -62,6 +62,7 @@ class ProjectWidget(QWidget):
         right_vbox = QVBoxLayout()
 
         vbox = QVBoxLayout()
+
         vbox.addLayout(top_hbox)
         vbox.addLayout(bottom_hbox)
         top_hbox.addWidget(self.labelName)
@@ -70,11 +71,11 @@ class ProjectWidget(QWidget):
         top_hbox.addLayout(right_vbox)
         bottom_hbox.addWidget(self.labelDir)
 
-        main_hbox = QHBoxLayout()
-        main_hbox.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeft)
-        main_hbox.addWidget(self.icon_img)
-        main_hbox.addLayout(vbox)
-        self.setLayout(main_hbox)
+        main_qgrid = QGridLayout()
+        main_qgrid.addWidget(self.icon_img)
+        main_qgrid.addLayout(vbox, 0, 1)
+
+        self.setLayout(main_qgrid)
 
 
 class TreeItemProject(QTreeWidgetItem):
