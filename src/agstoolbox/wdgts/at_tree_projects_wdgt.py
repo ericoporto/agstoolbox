@@ -1,6 +1,6 @@
 from operator import attrgetter
 
-from PyQt6.QtWidgets import QTreeWidget, QWidget
+from PyQt6.QtWidgets import QTreeWidget, QWidget, QFrame
 
 from agstoolbox.at_tasks import do_update_projects
 from agstoolbox.wdgts.at_tree_item_project import TreeItemProject
@@ -14,6 +14,7 @@ class ProjectsTree(QTreeWidget):
 
         self.setHeaderHidden(True)
         self.setObjectName("treeProjects")
+        self.setFrameStyle(QFrame.Shape.NoFrame)
 
     # AGS Projects stuff
     def projects_schd_update(self):

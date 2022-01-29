@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QTreeWidget, QWidget, QAbstractScrollArea
+from PyQt6.QtWidgets import QTreeWidget, QWidget, QAbstractScrollArea, QFrame
 
 from agstoolbox.at_tasks import do_update_tools
 from agstoolbox.wdgts.at_tree_item_tool import TreeItemTool
@@ -13,6 +13,7 @@ class ToolsTree(QTreeWidget):
         self.setHeaderHidden(True)
         self.setSizeAdjustPolicy(QAbstractScrollArea.SizeAdjustPolicy.AdjustIgnored)
         self.setObjectName("treeTools")
+        self.setFrameStyle(QFrame.Shape.NoFrame)
 
     # Tool stuff
     def tools_schd_update(self):
