@@ -1,487 +1,6466 @@
 AGS_EDITOR_VALIDATED_DATA_ZIP = {
     "AGS-3.5.0.22.zip": {
-        "md5": "f8fc9f5a34dd27c8802704011395e69a",
+        "md5": "d825f336666da9d8a0a4e050ea1c2577",
         "size": 18337984
     },
     "AGS-3.5.0.23-P1.zip": {
-        "md5": "75d103c295f480f7eec090c13a581b03",
+        "md5": "6cb8a81bcde8af336ac69aad1176dade",
         "size": 18439705
     },
     "AGS-3.5.0.24-P2.zip": {
-        "md5": "1bd374f6928ced68c6f576b912cd8bde",
+        "md5": "4f98656e47fefe66fcab50fabab58294",
         "size": 18442101
     },
     "AGS-3.5.0.25-P3.zip": {
-        "md5": "5a4a6210ef86c6d276ae852421d290b1",
+        "md5": "5f60adeecd84bc190a1813fff74ddf36",
         "size": 20348651
     },
     "AGS-3.5.0.26-P4.zip": {
-        "md5": "b5236b79b4e4fe7dd673e4787ab7c95b",
+        "md5": "a872019c7c98119b7e9994e6a5614495",
         "size": 20348781
     },
     "AGS-3.5.0.27-P5.zip": {
-        "md5": "aa77fc06a264c2bb048fbc05bc7aab00",
+        "md5": "e9dacb5f484c1e29b015c37d38cb8515",
         "size": 20351352
     },
     "AGS-3.5.0.28-P6.zip": {
-        "md5": "d13934c161c17ff0bf40a24909fa3e67",
+        "md5": "e7bcf68d14429869153ac065eaee2a99",
         "size": 20375923
     },
     "AGS-3.5.0.29-P7.zip": {
-        "md5": "4337096f262e73a792a95b7d3ff0848e",
+        "md5": "0d733ee375fd4e9ad40935d191e3f56e",
         "size": 20376671
     },
     "AGS-3.5.0.30-P8.zip": {
-        "md5": "90aefd468d58726b3404148dd8d385d6",
+        "md5": "c467ee9b842883e016985b9458acfa6f",
         "size": 20386436
     },
     "AGS-3.5.0.31-P9.zip": {
-        "md5": "13324b9ddd3cd9fef977ae7a0b97937c",
+        "md5": "31cf978288c7d105e8b391e46c82558e",
         "size": 20227211
     },
     "AGS-3.5.0.32-P10.zip": {
-        "md5": "53b5d507d6099c6b6f2156cde783fcf6",
+        "md5": "ce9fb82d43ed3e93281bb1663d8afd5c",
         "size": 20226343
     },
     "AGS-3.5.1.0-Beta1.zip": {
-        "md5": "9ff5bb0a7b1adeb427c68a7b5025ee5a",
+        "md5": "60ac364262486db7b8034f8ba104613a",
         "size": 20116870
     },
     "AGS-3.5.1.1-Beta2.zip": {
-        "md5": "105195d7d4c93bc3184ab4e3dc96279c",
+        "md5": "237acd33a3c66c8be2daca77099b6e54",
         "size": 20114112
     },
     "AGS-3.5.1.10-P3.zip": {
-        "md5": "277f8877c0986d668b0358c5bf4989e6",
+        "md5": "2877195bce306dd0b2f1e312c2b8aa07",
         "size": 20431607
     },
     "AGS-3.5.1.11-P4.zip": {
-        "md5": "808905a447609abcc482510d83eab349",
+        "md5": "d57386adf426cde7ff12bf371b379b91",
         "size": 20433190
     },
     "AGS-3.5.1.12-P5.zip": {
-        "md5": "182526e645a37fd6af13d6b11bb7285b",
+        "md5": "91c7767a7151d66a4e5be75079b736e1",
         "size": 20433193
     },
     "AGS-3.5.1.13-P6.zip": {
-        "md5": "1cae38f0a665aecf28fda77dd3cee258",
+        "md5": "3588816ba79f0840a11bc612ff3eb2f9",
         "size": 20457005
     },
     "AGS-3.5.1.14-P7.zip": {
-        "md5": "5fd7c1cc67756f66087058b01dcd17d6",
+        "md5": "3d6d027643ba6e4d03205a2a9d13f317",
         "size": 20458684
     },
     "AGS-3.5.1.2-Beta3.zip": {
-        "md5": "01d9848884cdad80ac2c3e53babb3d33",
+        "md5": "137b59436445b8f372d4829e139fe0a2",
         "size": 20117804
     },
     "AGS-3.5.1.3-Beta4.zip": {
-        "md5": "6fc8e767786508b3c38c85c1193a86cb",
+        "md5": "a3882be08ca29d8466a7d1808c5ce860",
         "size": 20123918
     },
     "AGS-3.5.1.4-Beta5.zip": {
-        "md5": "c857e4aad4e372f7e8ccd9bfde03839f",
+        "md5": "d54bb3d89f0abd464657ad1f7cd320c1",
         "size": 20130067
     },
     "AGS-3.5.1.5-Beta6.zip": {
-        "md5": "8df1fed279f3397c5d4f5ab1769b1beb",
+        "md5": "899b73c70bedab3b26af0ce9b4e43157",
         "size": 20131708
     },
     "AGS-3.5.1.6-Beta7.zip": {
-        "md5": "e07ab086389536821ac6963b33b97568",
+        "md5": "af5906bbedbee8598cacd6edf48bf242",
         "size": 20132333
     },
     "AGS-3.5.1.7.zip": {
-        "md5": "586db10a46de0f00cf302005cab516bd",
+        "md5": "36ba8422eca36f4d48debf6dc660afcf",
         "size": 20225545
     },
     "AGS-3.5.1.8.zip": {
-        "md5": "544005224c94cb1455f1b8f6c6dfd3fe",
+        "md5": "1be51eb95f6f79560d2fc5bfdd2a17be",
         "size": 20225813
     },
     "AGS-3.5.1.9.zip": {
-        "md5": "9693e6aed067ae08e5e066383455e9b1",
+        "md5": "285b7edaf4ba22104690545a7a646ece",
         "size": 20430401
     },
     "AGS-3.6.0.0-Alpha1.zip": {
-        "md5": "f06f3895b673e85a2410362aa46389ed",
+        "md5": "3ced4fdeedf0a8bea46159ba3445f1d0",
         "size": 24133046
     },
     "AGS-3.6.0.1-Alpha2.zip": {
-        "md5": "0d059e41fad41cfad6765ae212e2f72e",
+        "md5": "317e47ff64003fae83c16694c5f972b4",
         "size": 24138299
     },
     "AGS-3.6.0.10-Alpha11.zip": {
-        "md5": "1dfbf73db2357b5ab8e22eb840635928",
+        "md5": "da082dddf0d2a4f0c07781a3b84224c5",
         "size": 25132115
     },
     "AGS-3.6.0.11-Alpha12.zip": {
-        "md5": "c72e1ca6df828c6cd636db37a8ac14e7",
+        "md5": "80ca118d6dce9055c8f22b47fe5fed8d",
         "size": 25141985
     },
     "AGS-3.6.0.12-Alpha13.zip": {
-        "md5": "0fbe26c6eca3f4b7973d483bcae7cd05",
+        "md5": "3cd95f83c967c0f48058433af49d88ab",
         "size": 25187400
     },
     "AGS-3.6.0.13-Alpha14.zip": {
-        "md5": "1952ee7146e1be3264d5bb2ecc516c44",
+        "md5": "1a1f2eecbc21fe905d1f5cac19a9a4b3",
         "size": 25219327
     },
     "AGS-3.6.0.14-Alpha15.zip": {
-        "md5": "797991525f0157c5fb76a1e7abadd8e4",
+        "md5": "94d050b8d2ff1499c5b310745721c461",
         "size": 25230468
     },
     "AGS-3.6.0.15-Alpha16.zip": {
-        "md5": "52ed975cd35619de04333fc5d3db69af",
+        "md5": "75a55b0c73422e7612c613c938019937",
         "size": 25238597
     },
     "AGS-3.6.0.2-Alpha3.zip": {
-        "md5": "2650c618234879b5bbf6b26b92352dba",
+        "md5": "cd8fd659f1d262089f95f35fa32562ae",
         "size": 24143723
     },
     "AGS-3.6.0.3-Alpha4.zip": {
-        "md5": "f30a5e0daf44c4a2ce265c1e9ac1d16f",
+        "md5": "b6a6f757646aa1396c63ca491024e1b2",
         "size": 24149332
     },
     "AGS-3.6.0.4-Alpha5.zip": {
-        "md5": "c2308e62b95bfc1a6e5ea24ab5a62411",
+        "md5": "be08128c0e5cf16fca3b647a00b4f1d2",
         "size": 24442130
     },
     "AGS-3.6.0.5-Alpha6.zip": {
-        "md5": "cce96c466a0397838111dcaac9e09746",
+        "md5": "10b9e21f738c549ece4a55f278130a9f",
         "size": 24459824
     },
     "AGS-3.6.0.6-Alpha7.zip": {
-        "md5": "91586d60d8919915d67ccce473626a73",
+        "md5": "b69b0ce9e82fd4c48d7b134039786d3d",
         "size": 24933491
     },
     "AGS-3.6.0.7-Alpha8.zip": {
-        "md5": "4f55d3fe30435f06a7129395c0383ff4",
+        "md5": "293c13bb8c56a061b88057c68fe1bcb6",
         "size": 25078092
     },
     "AGS-3.6.0.8-Alpha9.zip": {
-        "md5": "c9a7720228c189ae11043051dee0ca30",
+        "md5": "d71dd0cf23d4f0b713a708cf39993c71",
         "size": 25091804
     },
     "AGS-3.6.0.9-Alpha10.zip": {
-        "md5": "1da6a9791fcd95a87f380606f2590d48",
+        "md5": "3ce939ede4540020fcd6c93547a185a9",
         "size": 25102435
     }
 }
 
 
 AGS_EDITOR_VALIDATED_DATA_CONTENTS = {
-    "": {
-        ".": {
-            "md5": "ca99002c154e4ae9890234908b9dbe1b",
-            "size": 1683
-        }
-    },
-    "5": {
-        ".": {
-            "md5": "997b93c94d1b2c2e039bd872e4afe1ff",
-            "size": 424448
-        },
+    "0": {},
+    "3.5.0.22": {
         "AGS Forums.url": {
-            "md5": "c58fa56dec25407ac45ca3d98c4b5fc8",
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
             "size": 69
         },
         "AGS Website.url": {
-            "md5": "871a636455cdd39ddd7f60480e01cbc5",
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
             "size": 62
         },
         "AllegroFont.txt": {
-            "md5": "d334b03ddf8971ab31db6f9a5ddfaa50",
+            "md5": "bddce5c724c46bb3de8427a10262c576",
             "size": 3285
         },
         "AllegroMP3.txt": {
-            "md5": "d6f01650f8661d1d963cd0d85c9ae3c5",
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
             "size": 2820
         },
         "BASS.agt": {
-            "md5": "1ebcc36ed69f95ade9f681e73ac6b9dd",
-            "size": 1045343
+            "md5": "3370647f9fff614c865eb0d681b81c73",
+            "size": 1031273
         },
         "DUMB.txt": {
-            "md5": "0a25f0c45201dbb20f37368efe9e519e",
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
             "size": 4104
         },
         "Empty Game.agt": {
-            "md5": "f25021d08c3d4b371de50136c29f1dfd",
-            "size": 73182
+            "md5": "ed12d5f290d1e4b379775cad9195ddc2",
+            "size": 73193
         },
         "FTL.txt": {
-            "md5": "5c013b34577aed1fe2b9c35edd2e9ff0",
+            "md5": "02891d3fb5adadff2546b4279649112b",
             "size": 6912
         },
         "GNU GPL v2.1.txt": {
-            "md5": "30e9be3c81d90be51e6447b5eedef77f",
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
             "size": 26930
         },
         "Magick.NET.txt": {
-            "md5": "140274312ca1c15299fcd4d90a7910e4",
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
             "size": 605
         },
         "Newtonsoft JSON.NET.txt": {
-            "md5": "9ec82d06d91f563cc4c058863e6464a9",
+            "md5": "3f101950ad2416f83a125e648c60d664",
             "size": 1098
         },
         "Scintilla.txt": {
-            "md5": "31250e93835515cd18057101123a109c",
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
             "size": 888
         },
         "Sierra-style.agt": {
-            "md5": "cf4ff6cdad326ddc705be483b0e81038",
-            "size": 1030524
+            "md5": "f4c61de33fd9636b17d79b512e17d6d5",
+            "size": 1030729
         },
         "Tumbleweed.agt": {
-            "md5": "4440b3d1aeb4821a278b2f913dbb8b9e",
-            "size": 3450546
+            "md5": "dc8b15dc130ca2c3654d8ec9ded3e826",
+            "size": 3293070
         },
         "Verb Coin.agt": {
-            "md5": "93a4ff204d00c31fcfd08cfa9df54b7b",
-            "size": 1145398
+            "md5": "31bac90a950d5c75eeeeae421996d4c0",
+            "size": 1131977
         },
         "Weifen Luo DockPanel Suite.txt": {
-            "md5": "8a34047cb35e7f43b47be36a9e28b445",
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
             "size": 1120
         },
         "Xiph.txt": {
-            "md5": "a48b701e07c80d4511afee3675e6afed",
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
             "size": 1516
         },
         "irrKlang.txt": {
-            "md5": "0da61418d43223cfd0e2b6a8dd1e8139",
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
             "size": 3468
         },
-        "lib32\\alleg-alsadigi.so": {
-            "md5": "4996a59da3bc6c8ad223ab7e2318ff6f",
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
             "size": 22900
         },
-        "lib32\\alleg-alsamidi.so": {
-            "md5": "9323fd0e7b35c3c6ebd7c2ea20949955",
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
             "size": 8852
         },
-        "lib32\\alleg-sdl2digi.so": {
-            "md5": "c8936ddb3524f10ed308ddcca7e565ae",
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
             "size": 11160
         },
-        "lib32\\libaldmb.so.1": {
-            "md5": "3d1840d56de4dea2cdfa6fe6dd1d6443",
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
             "size": 13716
         },
-        "lib32\\liballeg.so.4.4": {
-            "md5": "68e645a6dfb2e9c4cc2563ef9049740c",
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
             "size": 1110984
         },
-        "lib32\\libdumb.so.1": {
-            "md5": "af41e951dd17349fab8a539e0b31cf5c",
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
             "size": 217460
         },
-        "lib32\\libogg.so.0": {
-            "md5": "639532ff66b1d32a4943058c6c9dcde2",
-            "size": 57268
+        "lib32/libogg.so.0": {
+            "md5": "64ecfb5f93b8798e4c89ec13511329e5",
+            "size": 29920
         },
-        "lib32\\libtheora.so.0": {
-            "md5": "fc8406b4d7e2770dde083de7f407d3e3",
-            "size": 108644
+        "lib32/libtheora.so.0": {
+            "md5": "5d2eb741ef3a192e2c1f925806768a40",
+            "size": 341508
         },
-        "lib32\\libvorbis.so.0": {
-            "md5": "0f4f5536d14aa6f0f96679cf34d89610",
-            "size": 187056
+        "lib32/libvorbis.so.0": {
+            "md5": "4246dd858a40810cd938a31cd369264a",
+            "size": 177860
         },
-        "lib32\\libvorbisfile.so.3": {
-            "md5": "6badaeed9f2fdf46a76f49722e68c347",
-            "size": 44664
+        "lib32/libvorbisfile.so.3": {
+            "md5": "b1c2099c4b9fe686c0527e95606e21e7",
+            "size": 38472
         },
-        "lib32\\modules.lst": {
-            "md5": "c221377b54f42e843ec4db257cbcc550",
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
             "size": 249
         },
-        "lib64\\alleg-alsadigi.so": {
-            "md5": "33f42b726dab533574e21772655d4a62",
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
             "size": 27304
         },
-        "lib64\\alleg-alsamidi.so": {
-            "md5": "e51460b2c3c56c9d52f8066e0c5e4f18",
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
             "size": 11216
         },
-        "lib64\\alleg-sdl2digi.so": {
-            "md5": "9960b9c4fd243524d4d97bc99643db90",
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
             "size": 15592
         },
-        "lib64\\libaldmb.so.1": {
-            "md5": "16027c940583b14caccbc337056b1eea",
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
             "size": 14600
         },
-        "lib64\\liballeg.so.4.4": {
-            "md5": "6c767ad7bcb5c46ec99d883acdcd4bf7",
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
             "size": 1149312
         },
-        "lib64\\libdumb.so.1": {
-            "md5": "d8ab3dd44e5e916ca0f1a9964222638e",
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
             "size": 218760
         },
-        "lib64\\libogg.so.0": {
-            "md5": "42049fd171250aa301a8002cc62626a9",
-            "size": 71728
+        "lib64/libogg.so.0": {
+            "md5": "221f9991f8b74977534ef0cc23c85829",
+            "size": 34624
         },
-        "lib64\\libtheora.so.0": {
-            "md5": "beca32b512930193a254377a5f415adb",
-            "size": 112952
+        "lib64/libtheora.so.0": {
+            "md5": "60503f833153c7fd2e76dd7d6a390662",
+            "size": 325904
         },
-        "lib64\\libvorbis.so.0": {
-            "md5": "5f36bdb3728e57cd0212100103593c7b",
-            "size": 233560
+        "lib64/libvorbis.so.0": {
+            "md5": "1ae248fe5c1a66b306db7b377c8de785",
+            "size": 178944
         },
-        "lib64\\libvorbisfile.so.3": {
-            "md5": "5c7dfc341478a569d66d2011e9c84d71",
-            "size": 46176
+        "lib64/libvorbisfile.so.3": {
+            "md5": "c055bc1cd378774dcbc5fc67fea92e55",
+            "size": 35288
         },
-        "lib64\\modules.lst": {
-            "md5": "c44bec6f4c8de6f80a1bfff76d9231d0",
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
             "size": 249
         },
-        "licenses\\liballegro4.4-copyright": {
-            "md5": "1bedb919ef730e05b6cbb18b1c535b53",
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
             "size": 6949
         }
     },
-    "6": {
-        ".": {
-            "md5": "2884f6adfaf4cfa397829a07a08cd29b",
-            "size": 424448
-        },
+    "3.5.0.23": {
         "AGS Forums.url": {
-            "md5": "11700375cdc02c2b496f941e7c49b5b8",
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
             "size": 69
         },
         "AGS Website.url": {
-            "md5": "268dc4d036cd9c24ef9b146842ea4267",
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
             "size": 62
         },
         "AllegroFont.txt": {
-            "md5": "abacbcf1b421e5e7654510fb7131443d",
+            "md5": "bddce5c724c46bb3de8427a10262c576",
             "size": 3285
         },
         "AllegroMP3.txt": {
-            "md5": "c486db2bc54e6b7308547caa9d7bc86f",
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
             "size": 2820
         },
         "BASS.agt": {
-            "md5": "e2d4f0a91683fa662e79fbe4e9269bea",
-            "size": 1045343
+            "md5": "3370647f9fff614c865eb0d681b81c73",
+            "size": 1031273
         },
         "DUMB.txt": {
-            "md5": "9188db0b37d82a34111f8438f4c1052d",
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
             "size": 4104
         },
         "Empty Game.agt": {
-            "md5": "1048b570da4ee91f3b53172449c3c0f4",
-            "size": 73182
+            "md5": "ed12d5f290d1e4b379775cad9195ddc2",
+            "size": 73193
         },
         "FTL.txt": {
-            "md5": "dfe5a0a3897c882b3a3d70b2327740d7",
+            "md5": "02891d3fb5adadff2546b4279649112b",
             "size": 6912
         },
         "GNU GPL v2.1.txt": {
-            "md5": "793ccdfadb56a3af298dc8799ca88c25",
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
             "size": 26930
         },
         "Magick.NET.txt": {
-            "md5": "9a79b33143dcafcb595c5513456a09e9",
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
             "size": 605
         },
         "Newtonsoft JSON.NET.txt": {
-            "md5": "2861673aa3709341fad276898826ba45",
+            "md5": "3f101950ad2416f83a125e648c60d664",
             "size": 1098
         },
-        "SDL.txt": {
-            "md5": "5fbd95435cb20e25e41ba5ff732f568e",
-            "size": 884
-        },
-        "SDL_sound.txt": {
-            "md5": "1343168631b5d5d31926351b1c3f187b",
-            "size": 895
-        },
         "Scintilla.txt": {
-            "md5": "f1a4da37a483bd5480c2380e40abada2",
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
             "size": 888
         },
         "Sierra-style.agt": {
-            "md5": "39f49282fc43d0054d2fd1c2dd744bff",
-            "size": 1030524
+            "md5": "f4c61de33fd9636b17d79b512e17d6d5",
+            "size": 1030729
         },
         "Tumbleweed.agt": {
-            "md5": "6aa624a87bcaba0a6ff1759a88f6fba6",
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
             "size": 3450546
         },
         "Verb Coin.agt": {
-            "md5": "8f607095028973765a2e2bc45af73e95",
-            "size": 1145398
+            "md5": "31bac90a950d5c75eeeeae421996d4c0",
+            "size": 1131977
         },
         "Weifen Luo DockPanel Suite.txt": {
-            "md5": "61d67516a7e4ba36fe9d5378bf69b64f",
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
             "size": 1120
         },
         "Xiph.txt": {
-            "md5": "17779a1d090cb706ef33ca91bfee9c2b",
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "64ecfb5f93b8798e4c89ec13511329e5",
+            "size": 29920
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5d2eb741ef3a192e2c1f925806768a40",
+            "size": 341508
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "4246dd858a40810cd938a31cd369264a",
+            "size": 177860
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "b1c2099c4b9fe686c0527e95606e21e7",
+            "size": 38472
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "221f9991f8b74977534ef0cc23c85829",
+            "size": 34624
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "60503f833153c7fd2e76dd7d6a390662",
+            "size": 325904
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "1ae248fe5c1a66b306db7b377c8de785",
+            "size": 178944
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "c055bc1cd378774dcbc5fc67fea92e55",
+            "size": 35288
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.0.24": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "3370647f9fff614c865eb0d681b81c73",
+            "size": 1031273
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "ed12d5f290d1e4b379775cad9195ddc2",
+            "size": 73193
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "f4c61de33fd9636b17d79b512e17d6d5",
+            "size": 1030729
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "31bac90a950d5c75eeeeae421996d4c0",
+            "size": 1131977
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "64ecfb5f93b8798e4c89ec13511329e5",
+            "size": 29920
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5d2eb741ef3a192e2c1f925806768a40",
+            "size": 341508
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "4246dd858a40810cd938a31cd369264a",
+            "size": 177860
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "b1c2099c4b9fe686c0527e95606e21e7",
+            "size": 38472
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "221f9991f8b74977534ef0cc23c85829",
+            "size": 34624
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "60503f833153c7fd2e76dd7d6a390662",
+            "size": 325904
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "1ae248fe5c1a66b306db7b377c8de785",
+            "size": 178944
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "c055bc1cd378774dcbc5fc67fea92e55",
+            "size": 35288
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.0.25": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "64ecfb5f93b8798e4c89ec13511329e5",
+            "size": 29920
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5d2eb741ef3a192e2c1f925806768a40",
+            "size": 341508
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "4246dd858a40810cd938a31cd369264a",
+            "size": 177860
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "b1c2099c4b9fe686c0527e95606e21e7",
+            "size": 38472
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "221f9991f8b74977534ef0cc23c85829",
+            "size": 34624
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "60503f833153c7fd2e76dd7d6a390662",
+            "size": 325904
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "1ae248fe5c1a66b306db7b377c8de785",
+            "size": 178944
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "c055bc1cd378774dcbc5fc67fea92e55",
+            "size": 35288
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.0.26": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "64ecfb5f93b8798e4c89ec13511329e5",
+            "size": 29920
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5d2eb741ef3a192e2c1f925806768a40",
+            "size": 341508
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "4246dd858a40810cd938a31cd369264a",
+            "size": 177860
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "b1c2099c4b9fe686c0527e95606e21e7",
+            "size": 38472
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "221f9991f8b74977534ef0cc23c85829",
+            "size": 34624
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "60503f833153c7fd2e76dd7d6a390662",
+            "size": 325904
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "1ae248fe5c1a66b306db7b377c8de785",
+            "size": 178944
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "c055bc1cd378774dcbc5fc67fea92e55",
+            "size": 35288
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.0.27": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "64ecfb5f93b8798e4c89ec13511329e5",
+            "size": 29920
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5d2eb741ef3a192e2c1f925806768a40",
+            "size": 341508
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "4246dd858a40810cd938a31cd369264a",
+            "size": 177860
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "b1c2099c4b9fe686c0527e95606e21e7",
+            "size": 38472
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "221f9991f8b74977534ef0cc23c85829",
+            "size": 34624
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "60503f833153c7fd2e76dd7d6a390662",
+            "size": 325904
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "1ae248fe5c1a66b306db7b377c8de785",
+            "size": 178944
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "c055bc1cd378774dcbc5fc67fea92e55",
+            "size": 35288
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.0.28": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "64ecfb5f93b8798e4c89ec13511329e5",
+            "size": 29920
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5d2eb741ef3a192e2c1f925806768a40",
+            "size": 341508
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "4246dd858a40810cd938a31cd369264a",
+            "size": 177860
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "b1c2099c4b9fe686c0527e95606e21e7",
+            "size": 38472
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "221f9991f8b74977534ef0cc23c85829",
+            "size": 34624
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "60503f833153c7fd2e76dd7d6a390662",
+            "size": 325904
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "1ae248fe5c1a66b306db7b377c8de785",
+            "size": 178944
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "c055bc1cd378774dcbc5fc67fea92e55",
+            "size": 35288
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.0.29": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "64ecfb5f93b8798e4c89ec13511329e5",
+            "size": 29920
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5d2eb741ef3a192e2c1f925806768a40",
+            "size": 341508
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "4246dd858a40810cd938a31cd369264a",
+            "size": 177860
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "b1c2099c4b9fe686c0527e95606e21e7",
+            "size": 38472
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "221f9991f8b74977534ef0cc23c85829",
+            "size": 34624
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "60503f833153c7fd2e76dd7d6a390662",
+            "size": 325904
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "1ae248fe5c1a66b306db7b377c8de785",
+            "size": 178944
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "c055bc1cd378774dcbc5fc67fea92e55",
+            "size": 35288
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.0.30": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "64ecfb5f93b8798e4c89ec13511329e5",
+            "size": 29920
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5d2eb741ef3a192e2c1f925806768a40",
+            "size": 341508
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "4246dd858a40810cd938a31cd369264a",
+            "size": 177860
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "b1c2099c4b9fe686c0527e95606e21e7",
+            "size": 38472
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "221f9991f8b74977534ef0cc23c85829",
+            "size": 34624
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "60503f833153c7fd2e76dd7d6a390662",
+            "size": 325904
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "1ae248fe5c1a66b306db7b377c8de785",
+            "size": 178944
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "c055bc1cd378774dcbc5fc67fea92e55",
+            "size": 35288
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.0.31": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.0.32": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.1.0": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.1.1": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.1.10": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.1.11": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.1.12": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.1.13": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.1.14": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.1.2": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.1.3": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.1.4": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.1.5": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.1.6": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.1.7": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.1.8": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.5.1.9": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/alleg-alsadigi.so": {
+            "md5": "26df217edaaf25ea383d09cfa6662775",
+            "size": 22900
+        },
+        "lib32/alleg-alsamidi.so": {
+            "md5": "43701e402709543675d13e7a04168568",
+            "size": 8852
+        },
+        "lib32/alleg-sdl2digi.so": {
+            "md5": "d6c8e7793f0da5783f1bdb8e54b8f7c8",
+            "size": 11160
+        },
+        "lib32/libaldmb.so.1": {
+            "md5": "f8ecd0acb9b9aa531eca8a2bdaa81c92",
+            "size": 13716
+        },
+        "lib32/liballeg.so.4.4": {
+            "md5": "228336d4bf7e0e33f31cdfcd28c31ecf",
+            "size": 1110984
+        },
+        "lib32/libdumb.so.1": {
+            "md5": "f576dd03f2b00ae66fadc67fec5fed51",
+            "size": 217460
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib32/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "lib64/alleg-alsadigi.so": {
+            "md5": "b795ff697a4f684b3b56b728598a8136",
+            "size": 27304
+        },
+        "lib64/alleg-alsamidi.so": {
+            "md5": "c8855425af70fa283f94a154f1684a6c",
+            "size": 11216
+        },
+        "lib64/alleg-sdl2digi.so": {
+            "md5": "9cf47ba9afb3c79e50ef08c46eed41cc",
+            "size": 15592
+        },
+        "lib64/libaldmb.so.1": {
+            "md5": "6a83708a6ff693385889e31f9868ee6e",
+            "size": 14600
+        },
+        "lib64/liballeg.so.4.4": {
+            "md5": "6849c48f2f500b7ed85abdc0e0de5874",
+            "size": 1149312
+        },
+        "lib64/libdumb.so.1": {
+            "md5": "8fe4461a79ecdfefe1d5e4b04e2a0415",
+            "size": 218760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "lib64/modules.lst": {
+            "md5": "d828ab3c1c972a831d880cc5d71fd1b3",
+            "size": 249
+        },
+        "licenses/liballegro4.4-copyright": {
+            "md5": "c338e8a3d8a058fd8cd2c4e8a149a118",
+            "size": 6949
+        }
+    },
+    "3.6.0.0": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "fe6a76d072bc86185193d4b6bd0f7181",
+            "size": 6402072
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "534c4a7da43c8065a964d523d99ff483",
+            "size": 7873760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
+            "size": 16933
+        }
+    },
+    "3.6.0.1": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "fe6a76d072bc86185193d4b6bd0f7181",
+            "size": 6402072
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "534c4a7da43c8065a964d523d99ff483",
+            "size": 7873760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
+            "size": 16933
+        }
+    },
+    "3.6.0.10": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "SDL.txt": {
+            "md5": "095c2687a3c3908e26984eaa8ec2d770",
+            "size": 884
+        },
+        "SDL_sound.txt": {
+            "md5": "bd9fbc355e3d14a97d04d78755a44a2f",
+            "size": 895
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
             "size": 1516
         },
         "glm.txt": {
-            "md5": "a8d750412c13ec6faea9247afb14680b",
+            "md5": "462e4b97f73ef12f8171c3c546ce4e8d",
             "size": 2865
         },
         "irrKlang.txt": {
-            "md5": "4d80d317a3a83504006c991233bf04fe",
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
             "size": 3468
         },
-        "lib32\\libSDL2-2.0.so.0": {
-            "md5": "c91194271711ac807042c98e38c693b6",
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "fe6a76d072bc86185193d4b6bd0f7181",
             "size": 6402072
         },
-        "lib32\\libogg.so.0": {
-            "md5": "264d7b48219bd20ea2559ef9786e727a",
+        "lib32/libogg.so.0": {
+            "md5": "ee241613d52f50ce220a2bf5a5659921",
             "size": 57332
         },
-        "lib32\\libtheora.so.0": {
-            "md5": "d9ffd0419f1ec453d6c42481c586ed90",
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
             "size": 108644
         },
-        "lib32\\libvorbis.so.0": {
-            "md5": "2d4ab7bfa333811afc2ef4b08d299b84",
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
             "size": 187056
         },
-        "lib32\\libvorbisfile.so.3": {
-            "md5": "38c28cca22653c8725d012689bdb86ad",
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
             "size": 44664
         },
-        "lib64\\libSDL2-2.0.so.0": {
-            "md5": "4f442fa030768a3a38d5ee7ce2682d59",
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "534c4a7da43c8065a964d523d99ff483",
             "size": 7873760
         },
-        "lib64\\libogg.so.0": {
-            "md5": "5ff33c29197856f73715c63fce7dcd23",
+        "lib64/libogg.so.0": {
+            "md5": "ceb57039cabc9a1e3986be0bee598e75",
             "size": 71728
         },
-        "lib64\\libtheora.so.0": {
-            "md5": "a4a474c3d1e66a9c6d054c47c79a419f",
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
             "size": 112952
         },
-        "lib64\\libvorbis.so.0": {
-            "md5": "f15dc3869b91abf50416aa1c47cabbdd",
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
             "size": 233560
         },
-        "lib64\\libvorbisfile.so.3": {
-            "md5": "052e4e98d3a0241f5513db5e1b134359",
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
             "size": 46176
         },
-        "licenses\\libSDL2-2.0-copyright": {
-            "md5": "1a11bc31e68f83fc22605e6fcf343c03",
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
             "size": 16933
         },
         "mojoAL.txt": {
-            "md5": "342f3ed170d8abc8451801221af42423",
+            "md5": "76329f5c12c4e7898edebc14392dacb5",
+            "size": 949
+        }
+    },
+    "3.6.0.11": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "SDL.txt": {
+            "md5": "095c2687a3c3908e26984eaa8ec2d770",
+            "size": 884
+        },
+        "SDL_sound.txt": {
+            "md5": "bd9fbc355e3d14a97d04d78755a44a2f",
+            "size": 895
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "glm.txt": {
+            "md5": "462e4b97f73ef12f8171c3c546ce4e8d",
+            "size": 2865
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "fe6a76d072bc86185193d4b6bd0f7181",
+            "size": 6402072
+        },
+        "lib32/libogg.so.0": {
+            "md5": "ee241613d52f50ce220a2bf5a5659921",
+            "size": 57332
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "534c4a7da43c8065a964d523d99ff483",
+            "size": 7873760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "ceb57039cabc9a1e3986be0bee598e75",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
+            "size": 16933
+        },
+        "mojoAL.txt": {
+            "md5": "76329f5c12c4e7898edebc14392dacb5",
+            "size": 949
+        }
+    },
+    "3.6.0.12": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "SDL.txt": {
+            "md5": "095c2687a3c3908e26984eaa8ec2d770",
+            "size": 884
+        },
+        "SDL_sound.txt": {
+            "md5": "bd9fbc355e3d14a97d04d78755a44a2f",
+            "size": 895
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "glm.txt": {
+            "md5": "462e4b97f73ef12f8171c3c546ce4e8d",
+            "size": 2865
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "fe6a76d072bc86185193d4b6bd0f7181",
+            "size": 6402072
+        },
+        "lib32/libogg.so.0": {
+            "md5": "ee241613d52f50ce220a2bf5a5659921",
+            "size": 57332
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "534c4a7da43c8065a964d523d99ff483",
+            "size": 7873760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "ceb57039cabc9a1e3986be0bee598e75",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
+            "size": 16933
+        },
+        "mojoAL.txt": {
+            "md5": "76329f5c12c4e7898edebc14392dacb5",
+            "size": 949
+        }
+    },
+    "3.6.0.13": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "SDL.txt": {
+            "md5": "095c2687a3c3908e26984eaa8ec2d770",
+            "size": 884
+        },
+        "SDL_sound.txt": {
+            "md5": "bd9fbc355e3d14a97d04d78755a44a2f",
+            "size": 895
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "glm.txt": {
+            "md5": "462e4b97f73ef12f8171c3c546ce4e8d",
+            "size": 2865
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "fe6a76d072bc86185193d4b6bd0f7181",
+            "size": 6402072
+        },
+        "lib32/libogg.so.0": {
+            "md5": "ee241613d52f50ce220a2bf5a5659921",
+            "size": 57332
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "534c4a7da43c8065a964d523d99ff483",
+            "size": 7873760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "ceb57039cabc9a1e3986be0bee598e75",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
+            "size": 16933
+        },
+        "mojoAL.txt": {
+            "md5": "76329f5c12c4e7898edebc14392dacb5",
+            "size": 949
+        }
+    },
+    "3.6.0.14": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "SDL.txt": {
+            "md5": "095c2687a3c3908e26984eaa8ec2d770",
+            "size": 884
+        },
+        "SDL_sound.txt": {
+            "md5": "bd9fbc355e3d14a97d04d78755a44a2f",
+            "size": 895
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "glm.txt": {
+            "md5": "462e4b97f73ef12f8171c3c546ce4e8d",
+            "size": 2865
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "fe6a76d072bc86185193d4b6bd0f7181",
+            "size": 6402072
+        },
+        "lib32/libogg.so.0": {
+            "md5": "ee241613d52f50ce220a2bf5a5659921",
+            "size": 57332
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "534c4a7da43c8065a964d523d99ff483",
+            "size": 7873760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "ceb57039cabc9a1e3986be0bee598e75",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
+            "size": 16933
+        },
+        "mojoAL.txt": {
+            "md5": "76329f5c12c4e7898edebc14392dacb5",
+            "size": 949
+        }
+    },
+    "3.6.0.15": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "SDL.txt": {
+            "md5": "095c2687a3c3908e26984eaa8ec2d770",
+            "size": 884
+        },
+        "SDL_sound.txt": {
+            "md5": "bd9fbc355e3d14a97d04d78755a44a2f",
+            "size": 895
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "glm.txt": {
+            "md5": "462e4b97f73ef12f8171c3c546ce4e8d",
+            "size": 2865
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "80b6b10a2c3aed42fa69a07ac646472d",
+            "size": 6405020
+        },
+        "lib32/libogg.so.0": {
+            "md5": "ee241613d52f50ce220a2bf5a5659921",
+            "size": 57332
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "253afe27162d883ec2e873e05b4aaa11",
+            "size": 7876712
+        },
+        "lib64/libogg.so.0": {
+            "md5": "ceb57039cabc9a1e3986be0bee598e75",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
+            "size": 16933
+        },
+        "mojoAL.txt": {
+            "md5": "76329f5c12c4e7898edebc14392dacb5",
+            "size": 949
+        }
+    },
+    "3.6.0.2": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "fe6a76d072bc86185193d4b6bd0f7181",
+            "size": 6402072
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "534c4a7da43c8065a964d523d99ff483",
+            "size": 7873760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
+            "size": 16933
+        }
+    },
+    "3.6.0.3": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "fe6a76d072bc86185193d4b6bd0f7181",
+            "size": 6402072
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "534c4a7da43c8065a964d523d99ff483",
+            "size": 7873760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
+            "size": 16933
+        }
+    },
+    "3.6.0.4": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "AllegroMP3.txt": {
+            "md5": "3fc0bd151fc43fa3dfc895977566f75b",
+            "size": 2820
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "DUMB.txt": {
+            "md5": "81c7e2bcfd0f8187caab0d703a1929f9",
+            "size": 4104
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "fe6a76d072bc86185193d4b6bd0f7181",
+            "size": 6402072
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "534c4a7da43c8065a964d523d99ff483",
+            "size": 7873760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
+            "size": 16933
+        }
+    },
+    "3.6.0.5": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "SDL.txt": {
+            "md5": "095c2687a3c3908e26984eaa8ec2d770",
+            "size": 884
+        },
+        "SDL_sound.txt": {
+            "md5": "bd9fbc355e3d14a97d04d78755a44a2f",
+            "size": 895
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "glm.txt": {
+            "md5": "462e4b97f73ef12f8171c3c546ce4e8d",
+            "size": 2865
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "fe6a76d072bc86185193d4b6bd0f7181",
+            "size": 6402072
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "534c4a7da43c8065a964d523d99ff483",
+            "size": 7873760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
+            "size": 16933
+        },
+        "mojoAL.txt": {
+            "md5": "76329f5c12c4e7898edebc14392dacb5",
+            "size": 949
+        }
+    },
+    "3.6.0.6": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "SDL.txt": {
+            "md5": "095c2687a3c3908e26984eaa8ec2d770",
+            "size": 884
+        },
+        "SDL_sound.txt": {
+            "md5": "bd9fbc355e3d14a97d04d78755a44a2f",
+            "size": 895
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "glm.txt": {
+            "md5": "462e4b97f73ef12f8171c3c546ce4e8d",
+            "size": 2865
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "fe6a76d072bc86185193d4b6bd0f7181",
+            "size": 6402072
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "534c4a7da43c8065a964d523d99ff483",
+            "size": 7873760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
+            "size": 16933
+        },
+        "mojoAL.txt": {
+            "md5": "76329f5c12c4e7898edebc14392dacb5",
+            "size": 949
+        }
+    },
+    "3.6.0.7": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "SDL.txt": {
+            "md5": "095c2687a3c3908e26984eaa8ec2d770",
+            "size": 884
+        },
+        "SDL_sound.txt": {
+            "md5": "bd9fbc355e3d14a97d04d78755a44a2f",
+            "size": 895
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "glm.txt": {
+            "md5": "462e4b97f73ef12f8171c3c546ce4e8d",
+            "size": 2865
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "fe6a76d072bc86185193d4b6bd0f7181",
+            "size": 6402072
+        },
+        "lib32/libogg.so.0": {
+            "md5": "18306bdb35bc9f3677da4eca24256514",
+            "size": 57268
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "534c4a7da43c8065a964d523d99ff483",
+            "size": 7873760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "5eafefe98cd710411e6d53e310f50b6c",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
+            "size": 16933
+        },
+        "mojoAL.txt": {
+            "md5": "76329f5c12c4e7898edebc14392dacb5",
+            "size": 949
+        }
+    },
+    "3.6.0.8": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "SDL.txt": {
+            "md5": "095c2687a3c3908e26984eaa8ec2d770",
+            "size": 884
+        },
+        "SDL_sound.txt": {
+            "md5": "bd9fbc355e3d14a97d04d78755a44a2f",
+            "size": 895
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "glm.txt": {
+            "md5": "462e4b97f73ef12f8171c3c546ce4e8d",
+            "size": 2865
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "fe6a76d072bc86185193d4b6bd0f7181",
+            "size": 6402072
+        },
+        "lib32/libogg.so.0": {
+            "md5": "ee241613d52f50ce220a2bf5a5659921",
+            "size": 57332
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "534c4a7da43c8065a964d523d99ff483",
+            "size": 7873760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "ceb57039cabc9a1e3986be0bee598e75",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
+            "size": 16933
+        },
+        "mojoAL.txt": {
+            "md5": "76329f5c12c4e7898edebc14392dacb5",
+            "size": 949
+        }
+    },
+    "3.6.0.9": {
+        "AGS Forums.url": {
+            "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
+            "size": 69
+        },
+        "AGS Website.url": {
+            "md5": "8d7941dfdf9ef6d2dc31e2c331373d17",
+            "size": 62
+        },
+        "AllegroFont.txt": {
+            "md5": "bddce5c724c46bb3de8427a10262c576",
+            "size": 3285
+        },
+        "BASS.agt": {
+            "md5": "ffd523af1173ac6af4b3d51b12d0381b",
+            "size": 1045343
+        },
+        "Empty Game.agt": {
+            "md5": "82dbddd139c7f9c25d25b2cfb06e4354",
+            "size": 73182
+        },
+        "FTL.txt": {
+            "md5": "02891d3fb5adadff2546b4279649112b",
+            "size": 6912
+        },
+        "GNU GPL v2.1.txt": {
+            "md5": "8a3d6e2cd132ce22197604e46da9727f",
+            "size": 26930
+        },
+        "Magick.NET.txt": {
+            "md5": "1f456fb5d2f360cdfe44f7e0f3c3aaa8",
+            "size": 605
+        },
+        "Newtonsoft JSON.NET.txt": {
+            "md5": "3f101950ad2416f83a125e648c60d664",
+            "size": 1098
+        },
+        "SDL.txt": {
+            "md5": "095c2687a3c3908e26984eaa8ec2d770",
+            "size": 884
+        },
+        "SDL_sound.txt": {
+            "md5": "bd9fbc355e3d14a97d04d78755a44a2f",
+            "size": 895
+        },
+        "Scintilla.txt": {
+            "md5": "d22c7896a357709c4888ff7cd1afb520",
+            "size": 888
+        },
+        "Sierra-style.agt": {
+            "md5": "347c7364512f10bb7a5f5c425050f2c2",
+            "size": 1030524
+        },
+        "Tumbleweed.agt": {
+            "md5": "ec0c0e528070ad9c972935b64e1f38c4",
+            "size": 3450546
+        },
+        "Verb Coin.agt": {
+            "md5": "336259e1828f905bd50ba38ced9ac8dd",
+            "size": 1145398
+        },
+        "Weifen Luo DockPanel Suite.txt": {
+            "md5": "ba653c87dc09d85b022d20d36aeb6d91",
+            "size": 1120
+        },
+        "Xiph.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "glm.txt": {
+            "md5": "462e4b97f73ef12f8171c3c546ce4e8d",
+            "size": 2865
+        },
+        "irrKlang.txt": {
+            "md5": "fa20a80dc83d3daed888056f3b006bd9",
+            "size": 3468
+        },
+        "lib32/libSDL2-2.0.so.0": {
+            "md5": "fe6a76d072bc86185193d4b6bd0f7181",
+            "size": 6402072
+        },
+        "lib32/libogg.so.0": {
+            "md5": "ee241613d52f50ce220a2bf5a5659921",
+            "size": 57332
+        },
+        "lib32/libtheora.so.0": {
+            "md5": "5eaf812487c1ca4876cfa863a628b3da",
+            "size": 108644
+        },
+        "lib32/libvorbis.so.0": {
+            "md5": "162884ff5cb187404be38bbd934cf8d3",
+            "size": 187056
+        },
+        "lib32/libvorbisfile.so.3": {
+            "md5": "0aad5ceb1afc08b6f069739cf5fd4f88",
+            "size": 44664
+        },
+        "lib64/libSDL2-2.0.so.0": {
+            "md5": "534c4a7da43c8065a964d523d99ff483",
+            "size": 7873760
+        },
+        "lib64/libogg.so.0": {
+            "md5": "ceb57039cabc9a1e3986be0bee598e75",
+            "size": 71728
+        },
+        "lib64/libtheora.so.0": {
+            "md5": "7667eba3413720d5bf93d6d91dbe8277",
+            "size": 112952
+        },
+        "lib64/libvorbis.so.0": {
+            "md5": "7e2049b9baa864c8c793fa57df8a2e17",
+            "size": 233560
+        },
+        "lib64/libvorbisfile.so.3": {
+            "md5": "27ed3872b45d0b5034fdef752c05fa25",
+            "size": 46176
+        },
+        "licenses/libSDL2-2.0-copyright": {
+            "md5": "98705a0a07cf991e2c5e6ac7852a0277",
+            "size": 16933
+        },
+        "mojoAL.txt": {
+            "md5": "76329f5c12c4e7898edebc14392dacb5",
             "size": 949
         }
     }
