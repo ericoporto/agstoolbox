@@ -33,7 +33,7 @@ def do_update_projects(update_ended, update_canceled):
     return thread
 
 
-class ToolsUpdateThread(QThread):
+class ToolsUpdateThreadDownloads(QThread):
     update_started = Signal()
     update_ended = Signal()
     update_canceled = Signal()
@@ -51,8 +51,60 @@ class ToolsUpdateThread(QThread):
         self.update_canceled.emit()
 
 
-def do_update_tools(update_ended, update_canceled):
-    thread = ToolsUpdateThread()
+def do_update_tools_downloads(update_ended, update_canceled):
+    thread = ToolsUpdateThreadDownloads()
+    thread.update_ended.connect(update_ended)
+    thread.update_canceled.connect(update_canceled)
+    thread.start()
+    return thread
+
+
+class ToolsUpdateThreadUnmanaged(QThread):
+    update_started = Signal()
+    update_ended = Signal()
+    update_canceled = Signal()
+    tools_list = None
+
+    def __init__(self):
+        QThread.__init__(self)
+
+    def run(self) -> None:
+        self.update_started.emit()
+        # self.tools_list = list_releases()
+        self.update_ended.emit()
+
+    def stop(self):
+        self.update_canceled.emit()
+
+
+def do_update_tools_unmanaged(update_ended, update_canceled):
+    thread = ToolsUpdateThreadUnmanaged()
+    thread.update_ended.connect(update_ended)
+    thread.update_canceled.connect(update_canceled)
+    thread.start()
+    return thread
+
+
+class ToolsUpdateThreadManaged(QThread):
+    update_started = Signal()
+    update_ended = Signal()
+    update_canceled = Signal()
+    tools_list = None
+
+    def __init__(self):
+        QThread.__init__(self)
+
+    def run(self) -> None:
+        self.update_started.emit()
+        # self.tools_list = list_releases()
+        self.update_ended.emit()
+
+    def stop(self):
+        self.update_canceled.emit()
+
+
+def do_update_tools_managed(update_ended, update_canceled):
+    thread = ToolsUpdateThreadManaged()
     thread.update_ended.connect(update_ended)
     thread.update_canceled.connect(update_canceled)
     thread.start()

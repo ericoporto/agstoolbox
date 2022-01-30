@@ -101,7 +101,9 @@ class MainWindow(QMainWindow):
 
     def refresh_all(self):
         self.treeProjects.projects_schd_update()
-        self.treeTools.tools_schd_update()
+        self.treeTools.tools_schd_update_downloads()
+        self.treeTools.tools_schd_update_managed()
+        self.treeTools.tools_schd_update_unmanaged()
 
     def refresh_clicked(self):
         self.refresh_all()
