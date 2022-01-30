@@ -1,4 +1,12 @@
 AGS_EDITOR_VALIDATED_DATA_ZIP = {
+    "AGS-3.4.3.0.zip": {
+        "md5": "04cb81423e2aa7e1cc70b45c4706a79f",
+        "size": 7093585
+    },
+    "AGS-3.4.3.1-P1.zip": {
+        "md5": "2958de0e4e5c97fb0f55a114cf9578d5",
+        "size": 7093857
+    },
     "AGS-3.5.0.22.zip": {
         "md5": "d825f336666da9d8a0a4e050ea1c2577",
         "size": 18337984
@@ -172,6 +180,130 @@ AGS_EDITOR_VALIDATED_DATA_ZIP = {
 
 AGS_EDITOR_VALIDATED_DATA_CONTENTS = {
     "0": {},
+    "3.4.3.0": {
+        "9-verb MI-style.agt": {
+            "md5": "5c186dc607856ac6e6caa3d3b97e475a",
+            "size": 1423081
+        },
+        "AGS Forums.url": {
+            "md5": "c440a295bf52f4f91e2d9d5e9ea4445c",
+            "size": 70
+        },
+        "AGS Website.url": {
+            "md5": "5b9450779a47d5763820a1774fb4b36f",
+            "size": 63
+        },
+        "Changes.txt": {
+            "md5": "fc80caf91a448df9321bb1b27fcc343e",
+            "size": 227479
+        },
+        "Empty Game.agt": {
+            "md5": "40a957ec7420514729c21d90adaa952a",
+            "size": 90753
+        },
+        "LW_BASS_v2.0.agt": {
+            "md5": "af98e40ca39fff246971d37fc43841d6",
+            "size": 792960
+        },
+        "Sierra-style.agt": {
+            "md5": "81b57ff019ac24829841e1bad0e208f6",
+            "size": 989191
+        },
+        "Verb Coin.agt": {
+            "md5": "54a20f59b9208910c10a2e40ecf483fc",
+            "size": 2697285
+        },
+        "license_alfont.txt": {
+            "md5": "a774cd234bbe1501e6d4173be9d84b87",
+            "size": 2723
+        },
+        "license_almp3.txt": {
+            "md5": "23d7444b565aa6bdc84b6994dc5b0e64",
+            "size": 2824
+        },
+        "license_dumb.txt": {
+            "md5": "47f574b2502b5933026c63594e6bb6aa",
+            "size": 2824
+        },
+        "license_freetype.txt": {
+            "md5": "85a3a21b76f29f9a40d10a378df724ab",
+            "size": 6825
+        },
+        "license_gnulgpl.txt": {
+            "md5": "f14599a2f089f6ff8c97e2baa4e3d575",
+            "size": 26934
+        },
+        "license_ogg.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "license_scintilla.txt": {
+            "md5": "d578535b1bca44626661bcd07cf1c30b",
+            "size": 887
+        }
+    },
+    "3.4.3.1": {
+        "9-verb MI-style.agt": {
+            "md5": "5c186dc607856ac6e6caa3d3b97e475a",
+            "size": 1423081
+        },
+        "AGS Forums.url": {
+            "md5": "c440a295bf52f4f91e2d9d5e9ea4445c",
+            "size": 70
+        },
+        "AGS Website.url": {
+            "md5": "5b9450779a47d5763820a1774fb4b36f",
+            "size": 63
+        },
+        "Changes.txt": {
+            "md5": "41baeca5aae7ae2411fab4dd812f6652",
+            "size": 227806
+        },
+        "Empty Game.agt": {
+            "md5": "40a957ec7420514729c21d90adaa952a",
+            "size": 90753
+        },
+        "LW_BASS_v2.0.agt": {
+            "md5": "af98e40ca39fff246971d37fc43841d6",
+            "size": 792960
+        },
+        "Sierra-style.agt": {
+            "md5": "81b57ff019ac24829841e1bad0e208f6",
+            "size": 989191
+        },
+        "Verb Coin.agt": {
+            "md5": "54a20f59b9208910c10a2e40ecf483fc",
+            "size": 2697285
+        },
+        "license_alfont.txt": {
+            "md5": "a774cd234bbe1501e6d4173be9d84b87",
+            "size": 2723
+        },
+        "license_almp3.txt": {
+            "md5": "23d7444b565aa6bdc84b6994dc5b0e64",
+            "size": 2824
+        },
+        "license_dumb.txt": {
+            "md5": "47f574b2502b5933026c63594e6bb6aa",
+            "size": 2824
+        },
+        "license_freetype.txt": {
+            "md5": "85a3a21b76f29f9a40d10a378df724ab",
+            "size": 6825
+        },
+        "license_gnulgpl.txt": {
+            "md5": "f14599a2f089f6ff8c97e2baa4e3d575",
+            "size": 26934
+        },
+        "license_ogg.txt": {
+            "md5": "1e3c1a7e94dddc6dd1e8d1a0ea1474dc",
+            "size": 1516
+        },
+        "license_scintilla.txt": {
+            "md5": "d578535b1bca44626661bcd07cf1c30b",
+            "size": 887
+        }
+    },
     "3.5.0.22": {
         "AGS Forums.url": {
             "md5": "4dcb1e2ff71c1fc914cf91a7d0877973",
