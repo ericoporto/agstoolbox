@@ -1,9 +1,9 @@
 AGS_EDITOR_VALIDATED_DATA_ZIP = {
-    "AGS-3.4.3.0.zip": {
+    "AGS-3.4.3.zip": {
         "md5": "04cb81423e2aa7e1cc70b45c4706a79f",
         "size": 7093585
     },
-    "AGS-3.4.3.1-P1.zip": {
+    "AGS-3.4.3-P1.zip": {
         "md5": "2958de0e4e5c97fb0f55a114cf9578d5",
         "size": 7093857
     },
