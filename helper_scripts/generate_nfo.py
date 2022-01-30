@@ -9,7 +9,6 @@ from pathlib import Path
 BUF_SIZE = 131072
 
 
-
 def dict_to_string(a_dict):
     return str(json.dumps(a_dict, sort_keys=True, indent=4))
 
@@ -18,7 +17,6 @@ cur_dir = Path(__file__).resolve().parent
 base_dir = os.path.join(cur_dir, 'Vers')
 
 AGS_EDITOR_VALIDATED_DATA_ZIP = {}
-
 AGS_EDITOR_VALIDATED_DATA_CONTENTS = {}
 
 for file in glob.glob("**/*.*", recursive=True):
