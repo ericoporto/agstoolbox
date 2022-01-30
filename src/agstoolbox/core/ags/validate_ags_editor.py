@@ -36,5 +36,5 @@ def validate_ags_editor_zip(z_file):
     return validate_file(z_file, AGS_EDITOR_VALIDATED_DATA_ZIP)
 
 
-def validate_editor_contents(file):
-    return validate_file(file, AGS_EDITOR_VALIDATED_DATA_CONTENTS)
+def validate_editor_contents(file, version):
+    return validate_file(file, AGS_EDITOR_VALIDATED_DATA_CONTENTS[version])
