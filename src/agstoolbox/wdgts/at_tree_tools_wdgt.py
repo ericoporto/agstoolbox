@@ -32,6 +32,7 @@ class ToolsTree(QTreeWidget):
         self.addTopLevelItem(self.header_managed)
         self.addTopLevelItem(self.header_unmanaged)
         self.addTopLevelItem(self.header_download)
+        self.header_download.setExpanded(True)
         self.setIndentation(10)
 
         # make headers expand or recover in a single click
@@ -98,6 +99,7 @@ class ToolsTree(QTreeWidget):
     def tools_update_managed(self):
         self.header_managed.clear()
         tools = self.tool_update_managed_task.tools_list
+
         if tools is not None:
             for t in tools:
                 itm = TreeItemTool_Download(t)

@@ -44,7 +44,9 @@ class ToolsUpdateThreadDownloads(QThread):
 
     def run(self) -> None:
         self.update_started.emit()
-        self.tools_list = list_releases()
+
+        tools = list_releases()
+        self.tools_list = tools
         self.update_ended.emit()
 
     def stop(self):

@@ -11,6 +11,7 @@ class Release(AgsEditor):
     name = None
     text_details = None
     published_at = None
+    published_at_timestamp = None
     archive_name = None
     archive_url = None
     archive_size = None

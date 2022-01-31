@@ -1,4 +1,8 @@
 from __future__ import annotations  # for python 3.8
+
+from datetime import datetime
+from operator import attrgetter
+
 import requests
 
 from agstoolbox.core.gh.release import Release
@@ -90,10 +94,15 @@ def parse_releases(response_json) -> list[Release]:
 
         rls.prerelease = rel['prerelease']
         rls.published_at = rel['published_at']
+        tstamp = datetime.strptime(rel['published_at'], "%Y-%m-%dT%H:%M:%SZ")
+        rls.published_at_timestamp = tstamp.timestamp()
         releases[count] = rls
         count += 1
 
     releases = list(filter(None, releases))
+
+    releases.sort(key=attrgetter("published_at_timestamp"), reverse=True)
+
     return releases
 
 
