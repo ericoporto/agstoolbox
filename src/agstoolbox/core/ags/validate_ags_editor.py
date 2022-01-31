@@ -8,33 +8,38 @@ from agstoolbox.core.ags.ags_editor_validation_data import \
 BUF_SIZE = 131072
 
 
-def validate_file(z_file, validation_data):
-    if z_file not in validation_data:
+def validate_file(filepath, filename, validation_data):
+    if filename not in validation_data:
         return False
 
-    if not os.path.exists(z_file):
+    if not os.path.exists(filepath):
         return False
 
-    if os.path.isdir(z_file):
+    if os.path.isdir(filepath):
         return False
 
-    if os.path.getsize(z_file) != validation_data[z_file]['size']:
+    if os.path.getsize(filepath) != validation_data[filename]['size']:
         return False
 
     md5_checker = hashlib.md5()
-    with open(z_file, 'rb') as f:
+    with open(filepath, 'rb') as f:
         while True:
             data = f.read(BUF_SIZE)
             if not data:
                 break
             md5_checker.update(data)
 
-    return md5_checker.hexdigest() == validation_data[z_file]['md5']
+    return md5_checker.hexdigest() == validation_data[filename]['md5']
 
 
 def validate_ags_editor_zip(z_file):
-    return validate_file(z_file, AGS_EDITOR_VALIDATED_DATA_ZIP)
+    return validate_file(z_file, os.path.basename(z_file), AGS_EDITOR_VALIDATED_DATA_ZIP)
 
 
-def validate_editor_contents(file, version):
-    return validate_file(file, AGS_EDITOR_VALIDATED_DATA_CONTENTS[version])
+def validate_editor_contents(filepath, filename, version):
+    return validate_file(filepath, filename, AGS_EDITOR_VALIDATED_DATA_CONTENTS[version])
+
+
+def validate_editor_exe(filepath, version):
+    return validate_file(filepath, os.path.basename(filepath),
+                         AGS_EDITOR_VALIDATED_DATA_CONTENTS[version])

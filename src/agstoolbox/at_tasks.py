@@ -2,6 +2,7 @@ from __future__ import annotations  # for python 3.8
 from PyQt6.QtCore import QThread
 from PyQt6.QtCore import pyqtSignal as Signal
 
+from agstoolbox.core.ags.get_local_ags_editors import list_ags_editors_in_dir_list
 from agstoolbox.core.settings import ConstSettings
 from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir
 from agstoolbox.core.gh.list_releases import list_releases
@@ -72,7 +73,7 @@ class ToolsUpdateThreadUnmanaged(QThread):
 
     def run(self) -> None:
         self.update_started.emit()
-        # self.tools_list = list_releases()
+        self.tools_list = list_ags_editors_in_dir_list(ConstSettings.MANUALLY_INSTALLED_SEARCH_DIRS)
         self.update_ended.emit()
 
     def stop(self):
@@ -98,7 +99,7 @@ class ToolsUpdateThreadManaged(QThread):
 
     def run(self) -> None:
         self.update_started.emit()
-        # self.tools_list = list_releases()
+        # self.tools_list = list()
         self.update_ended.emit()
 
     def stop(self):

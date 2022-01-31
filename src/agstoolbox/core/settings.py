@@ -1,5 +1,6 @@
 from platformdirs import user_cache_dir, user_data_dir, user_log_dir, user_documents_dir
 import os
+from platform import platform
 from pathlib import Path
 
 from agstoolbox.core.utils.singleton import Singleton
@@ -12,6 +13,18 @@ appauthor = "eri0o"
 
 class StaticSettings:
     double_click_interval = 400
+    MANUALLY_INSTALLED_SEARCH_DIRS = []
+    if platform().lower().startswith('win'):
+        p_files1 = os.environ["ProgramFiles"]
+        p_files2 = os.environ["ProgramFiles(x86)"]
+        p_files3 = os.environ["ProgramW6432"]
+        if len(p_files1) > 1:
+            MANUALLY_INSTALLED_SEARCH_DIRS.append(p_files1)
+        if len(p_files2) > 1:
+            MANUALLY_INSTALLED_SEARCH_DIRS.append(p_files2)
+        if len(p_files3) > 1:
+            MANUALLY_INSTALLED_SEARCH_DIRS.append(p_files3)
+
     cache_dir = Path(user_cache_dir(appname, appauthor)).as_posix()
     data_dir = Path(user_data_dir(appname, appauthor)).as_posix()
     log_dir = Path(user_log_dir(appname, appauthor)).as_posix()

@@ -25,7 +25,7 @@ class TreeItemTool_Header(QTreeWidgetItem):
 
     def clear(self):
         for i in range(self.childCount()):
-            self.removeChild(self.child(i))
+            self.removeChild(self.child(0))
 
 
 class TreeItemTool_Download(QTreeWidgetItem):
@@ -53,12 +53,12 @@ class TreeItemTool_Managed(QTreeWidgetItem):
 
 
 class TreeItemTool_ExternallyInstalled(QTreeWidgetItem):
-    release = None
+    local_editor = None
     tool_type = ToolType.EXTERNALLY_INSTALLED_TOOL
 
-    def __init__(self, release: Release):
+    def __init__(self, local_editor: LocalAgsEditor):
         QTreeWidgetItem.__init__(self)
-        self.release = release
+        self.local_editor = local_editor
 
-        self.setText(0, self.release.name)
+        self.setText(0, self.local_editor.name)
         self.setIcon(0, main_icon())
