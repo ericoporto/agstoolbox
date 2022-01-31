@@ -37,6 +37,9 @@ def get_file_if_exists(directory: str, file: str):
 
 
 def get_gp_candidates_in_dir(directory: str, filename: str) -> list[str]:
+    if not os.path.exists(directory):
+        return []
+
     pathname = directory + "/**/" + filename
     files = glob.glob(pathname, recursive=True)
     return files

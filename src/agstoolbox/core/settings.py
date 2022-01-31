@@ -11,19 +11,33 @@ appname = __title__
 appauthor = "eri0o"
 
 
+def get_default_search_dirs_in_windows():
+    if not platform().lower().startswith('win'):
+        return []
+
+    versions = ['3.4.3', '3.5.0', '3.5.1', '3.6.0', '3.9.9', '4.0.0']
+    ret = []
+    dirs = []
+    p_files1 = os.environ["ProgramFiles"]
+    p_files2 = os.environ["ProgramFiles(x86)"]
+    p_files3 = os.environ["ProgramW6432"]
+    if len(p_files1) > 1:
+        dirs.append(p_files1)
+    if len(p_files2) > 1:
+        dirs.append(p_files2)
+    if len(p_files3) > 1:
+        dirs.append(p_files3)
+
+    for v in versions:
+        for d in dirs:
+            ret.append(os.path.join(d, 'Adventure Game Studio ' + v))
+
+    return ret
+
+
 class StaticSettings:
     double_click_interval = 400
-    MANUALLY_INSTALLED_SEARCH_DIRS = []
-    if platform().lower().startswith('win'):
-        p_files1 = os.environ["ProgramFiles"]
-        p_files2 = os.environ["ProgramFiles(x86)"]
-        p_files3 = os.environ["ProgramW6432"]
-        if len(p_files1) > 1:
-            MANUALLY_INSTALLED_SEARCH_DIRS.append(p_files1)
-        if len(p_files2) > 1:
-            MANUALLY_INSTALLED_SEARCH_DIRS.append(p_files2)
-        if len(p_files3) > 1:
-            MANUALLY_INSTALLED_SEARCH_DIRS.append(p_files3)
+    MANUALLY_INSTALLED_SEARCH_DIRS = get_default_search_dirs_in_windows()
 
     cache_dir = Path(user_cache_dir(appname, appauthor)).as_posix()
     data_dir = Path(user_data_dir(appname, appauthor)).as_posix()
