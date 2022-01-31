@@ -88,9 +88,9 @@ class MainWindow(QMainWindow):
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        self.setWindowTitle(_translate("AgsToolbox", "AGS Toolbox"))
+        self.setWindowTitle(_translate("AgsToolbox", "AGS Galley"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabTools),
-                                  _translate("AgsToolbox", "Tools"))
+                                  _translate("AgsToolbox", "Blue Cup Rack"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabProjects),
                                   _translate("AgsToolbox", "Projects"))
         self.toolBar.setWindowTitle(_translate("AgsToolbox", "toolBar"))
