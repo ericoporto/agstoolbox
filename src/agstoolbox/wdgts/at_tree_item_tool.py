@@ -3,6 +3,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QTreeWidgetItem
 
 from agstoolbox.at_icons import main_icon
+from agstoolbox.core.ags.ags_editor import LocalAgsEditor
 from agstoolbox.core.gh.release import Release
 from enum import Enum
 
