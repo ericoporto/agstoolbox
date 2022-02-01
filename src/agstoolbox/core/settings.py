@@ -1,14 +1,16 @@
 from platformdirs import user_cache_dir, user_data_dir, user_log_dir, user_documents_dir
 import os
+import json
 from platform import platform
 from pathlib import Path
 
 from agstoolbox.core.utils.singleton import Singleton
 from agstoolbox import __title__
 
-
 appname = __title__
 appauthor = "eri0o"
+
+SETTINGS_FILENAME = "settings.json"
 
 
 def get_default_search_dirs_in_windows():
@@ -51,23 +53,78 @@ class ConstSettings(StaticSettings, metaclass=Singleton):
     pass
 
 
-class BaseSettings:
-    agstoolbox_package_install = Path(os.path.join(ConstSettings.user_docs, 'AgsToolbox')).as_posix()
-    editor_base_install_dirs = Path(os.path.join(agstoolbox_package_install, 'Editor')).as_posix()
+def get_settings_path():
+    return os.path.join(ConstSettings.data_dir, SETTINGS_FILENAME)
 
-    tools_install_dir = None
+
+class BaseSettings:
+    agstoolbox_package_install = Path(os.path.join(ConstSettings.user_docs,
+                                                   'AgsToolbox')).as_posix()
+    editor_base_install_dir = Path(os.path.join(agstoolbox_package_install, 'Editor')).as_posix()
+    manually_installed_editors_search_dirs = ConstSettings.MANUALLY_INSTALLED_SEARCH_DIRS
+
+    editor_install_dir = editor_base_install_dir
+    tools_install_dir = agstoolbox_package_install
+
+    def set_manually_installed_editors_search_dirs(self, value: list[str]):
+        if value is None:
+            return
+
+        self.manually_installed_editors_search_dirs = value
+
+    def get_manually_installed_editors_search_dirs(self) -> list[str]:
+        if type(self.manually_installed_editors_search_dirs) == type(list()):
+            return self.manually_installed_editors_search_dirs
+
+        return []
 
     def set_tools_install_dir(self, value):
+        if value is None:
+            return
+
+        if not Path(value).exists():
+            raise ValueError("Invalid path, doesn't exist")
+
         self.tools_install_dir = value
+        self.editor_install_dir = Path(os.path.join(self.tools_install_dir, 'Editor')).as_posix()
 
     def get_tools_install_dir(self):
         return self.tools_install_dir
 
-    def get_agstoolbox_package_install(self):
-        return self.agstoolbox_package_install
+    def get_editor_install_dir(self):
+        return self.editor_install_dir
 
-    def get_editor_base_install_dirs(self):
-        return self.editor_base_install_dirs
+    def save(self):
+        Path(ConstSettings.data_dir).mkdir(parents=True, exist_ok=True)
+
+        data = {
+            "tools_install_dir": self.tools_install_dir,
+            "manually_installed_editors_search_dirs": self.manually_installed_editors_search_dirs
+        }
+
+        data_string = json.dumps(data, indent=4, sort_keys=True)
+
+        with open(get_settings_path(), 'w+') as f:
+            f.write(data_string)
+
+    def load(self):
+        if not Path(get_settings_path()).exists():
+            return
+
+        data = None
+        with open(get_settings_path(), 'r') as f:
+            data_string = f.read()
+            data = json.loads(data_string)
+
+        if data is None:
+            return
+
+        mi = data['manually_installed_editors_search_dirs']
+        if type(mi) == type(str()):
+            mi = [mi]
+
+        self.set_tools_install_dir(data['tools_install_dir'])
+        self.set_manually_installed_editors_search_dirs(mi)
 
 
 class Settings(BaseSettings, metaclass=Singleton):
