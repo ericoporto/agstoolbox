@@ -126,6 +126,9 @@ class BaseSettings:
         self.set_tools_install_dir(data['tools_install_dir'])
         self.set_manually_installed_editors_search_dirs(mi)
 
+    def __init__(self):
+        self.load()
+
 
 class Settings(BaseSettings, metaclass=Singleton):
     pass
