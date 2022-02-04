@@ -1,3 +1,4 @@
+from __future__ import annotations  # for python 3.8
 from pathlib import Path
 
 from PyQt6 import QtCore, QtGui, QtWidgets

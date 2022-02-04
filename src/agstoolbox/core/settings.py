@@ -1,3 +1,4 @@
+from __future__ import annotations  # for python 3.8
 from platformdirs import user_cache_dir, user_data_dir, user_log_dir, user_documents_dir
 import os
 import json
