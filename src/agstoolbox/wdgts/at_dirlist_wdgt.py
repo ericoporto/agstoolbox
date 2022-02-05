@@ -2,7 +2,9 @@ from __future__ import annotations  # for python 3.8
 from pathlib import Path
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QWidget
+from PyQt6.QtWidgets import QWidget, QFileDialog
+
+from agstoolbox.core.settings import ConstSettings
 
 
 def returned_folder_is_valid(folderpath: str) -> bool:
@@ -15,7 +17,7 @@ class DirListWidget(QWidget):
     proj_update_task = None
 
     def appendDir(self, d):
-        itm = QtWidgets.QListWidgetItem(text=d, parent=self.list)
+        itm = QtWidgets.QListWidgetItem(d, parent=self.list)
         self.list.addItem(itm)
 
     def setDirs(self, dirs: list[str]):
@@ -43,12 +45,20 @@ class DirListWidget(QWidget):
         return dirs
 
     def btn_new_clicked(self):
-        folderpath = QtWidgets.QFileDialog.getExistingDirectory(self, 'Select Folder')
+        folderpath = QFileDialog.getExistingDirectory(
+            self, 'Select Folder',
+            options=QFileDialog.Option.ShowDirsOnly,
+            directory=ConstSettings.user_docs
+        )
+
+        if folderpath is None or len(folderpath) <= 1:
+            return
 
         if not returned_folder_is_valid(folderpath):
             return
 
         folderpath = str(Path(str(folderpath)).as_posix())
+
         self.appendDir(folderpath)
 
     def btn_edit_clicked(self):
@@ -60,7 +70,7 @@ class DirListWidget(QWidget):
         if not returned_folder_is_valid(folderpath):
             folderpath = None
 
-        folderpath = QtWidgets.QFileDialog.getExistingDirectory(
+        folderpath = QFileDialog.getExistingDirectory(
             self, 'Select Folder', directory=folderpath)
 
         if not returned_folder_is_valid(folderpath):
