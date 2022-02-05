@@ -9,8 +9,8 @@ def s_ago(ft: float) -> str:
     """
     units = {
         'days': lambda diff: diff.days,
-        'hours': lambda diff: diff.seconds / 3600,
-        'minutes': lambda diff: diff.seconds % 3600 / 60,
+        'hours': lambda diff: int(diff.seconds / 3600),
+        'minutes': lambda diff: int(diff.seconds % 3600 / 60),
     }
     t = datetime.utcfromtimestamp(ft)
     diff = datetime.utcnow() - t
