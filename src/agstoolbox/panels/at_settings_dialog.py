@@ -4,8 +4,8 @@ from PyQt6.QtWidgets import QDialogButtonBox, QSizePolicy, QFormLayout, QHBoxLay
 
 
 class Ui_SettingsDialog(QtWidgets.QDialog):
-    def __init__(self):
-        QtWidgets.QDialog.__init__(self)
+    def __init__(self, parent: QtWidgets = None):
+        QtWidgets.QDialog.__init__(self, parent)
         self.setObjectName("SettingsDialog")
         self.resize(729, 388)
         self.setSizeGripEnabled(True)

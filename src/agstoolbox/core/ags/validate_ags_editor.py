@@ -41,5 +41,7 @@ def validate_editor_contents(filepath, filename, version):
 
 
 def validate_editor_exe(filepath, version):
+    if version not in AGS_EDITOR_VALIDATED_DATA_CONTENTS.keys():
+        return False
     return validate_file(filepath, os.path.basename(filepath),
                          AGS_EDITOR_VALIDATED_DATA_CONTENTS[version])

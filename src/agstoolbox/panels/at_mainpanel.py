@@ -4,6 +4,7 @@ from PyQt6.QtCore import QSize
 
 from agstoolbox.core.settings import ConstSettings
 from agstoolbox.at_icons import icon_exit, icon_refresh, icon_settings
+from agstoolbox.panels.at_settings_dialog import Ui_SettingsDialog
 from agstoolbox.wdgts.at_tree_projects_wdgt import ProjectsTree
 from agstoolbox.wdgts.at_tree_tools_wdgt import ToolsTree
 
@@ -73,6 +74,7 @@ class MainWindow(QMainWindow):
         self.actionSettings = QtGui.QAction(self)
         self.actionSettings.setIcon(icon_settings())
         self.actionSettings.setObjectName("actionSettings")
+        self.actionSettings.triggered.connect(self.settings_clicked)
 
         self.actionRefresh = QtGui.QAction(self)
         self.actionRefresh.setIcon(icon_refresh())
@@ -84,6 +86,8 @@ class MainWindow(QMainWindow):
 
         self.retranslateUi()
         self.tabWidget.setCurrentIndex(0)
+
+        self.settings_panel = Ui_SettingsDialog(parent=self)
         QtCore.QMetaObject.connectSlotsByName(self)
 
     def retranslateUi(self):
@@ -107,3 +111,6 @@ class MainWindow(QMainWindow):
 
     def refresh_clicked(self):
         self.refresh_all()
+
+    def settings_clicked(self):
+        self.settings_panel.show()
