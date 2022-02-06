@@ -10,7 +10,7 @@ class Ui_SettingsDialog(QDialog):
     def __init__(self, parent: QtWidgets = None):
         QDialog.__init__(self, parent)
         self.setObjectName("SettingsDialog")
-        self.resize(480, 400)
+        self.resize(512, 400)
         self.setSizeGripEnabled(True)
 
         self.label_settings_intro = QLabel(self)
