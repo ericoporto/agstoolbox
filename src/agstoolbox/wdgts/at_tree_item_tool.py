@@ -2,7 +2,7 @@ from __future__ import annotations  # for python 3.8
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QTreeWidgetItem
 
-from agstoolbox.at_icons import main_icon
+from agstoolbox.at_icons import ags_editor_icon
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
 from agstoolbox.core.gh.release import Release
 from enum import Enum
@@ -38,7 +38,7 @@ class TreeItemTool_Download(QTreeWidgetItem):
         self.release = release
 
         self.setText(0, self.release.name)
-        self.setIcon(0, main_icon())
+        self.setIcon(0, ags_editor_icon())
 
 
 class TreeItemTool_Managed(QTreeWidgetItem):
@@ -50,7 +50,7 @@ class TreeItemTool_Managed(QTreeWidgetItem):
         self.release = release
 
         self.setText(0, self.release.name)
-        self.setIcon(0, main_icon())
+        self.setIcon(0, ags_editor_icon())
 
 
 class TreeItemTool_ExternallyInstalled(QTreeWidgetItem):
@@ -62,4 +62,4 @@ class TreeItemTool_ExternallyInstalled(QTreeWidgetItem):
         self.local_editor = local_editor
 
         self.setText(0, self.local_editor.name)
-        self.setIcon(0, main_icon())
+        self.setIcon(0, ags_editor_icon())

@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import QMainWindow
 from PyQt6.QtCore import QSize
 
 from agstoolbox.core.settings import ConstSettings
-from agstoolbox.at_icons import icon_exit, icon_refresh, icon_settings
+from agstoolbox.at_icons import icon_exit, icon_refresh, icon_settings, main_icon
 from agstoolbox.panels.at_settings_dialog import Ui_SettingsDialog
 from agstoolbox.wdgts.at_tree_projects_wdgt import ProjectsTree
 from agstoolbox.wdgts.at_tree_tools_wdgt import ToolsTree
@@ -18,10 +18,13 @@ class MainWindow(QMainWindow):
 
         margin = 4
 
-        self.setMinimumSize(QSize(ConstSettings().DEFAULT_MAIN_PANEL_WIDTH,
-                                  ConstSettings().DEFAULT_MAIN_PANEL_HEIGHT))
         self.setWindowTitle("AGS Toolbox")
         self.setObjectName("AgsToolbox")
+
+        self.setWindowIcon(main_icon())
+
+        self.setMinimumSize(QSize(ConstSettings().DEFAULT_MAIN_PANEL_WIDTH,
+                                  ConstSettings().DEFAULT_MAIN_PANEL_HEIGHT))
         self.resize(QSize(ConstSettings().DEFAULT_MAIN_PANEL_WIDTH,
                           ConstSettings().DEFAULT_MAIN_PANEL_HEIGHT))
         self.setToolButtonStyle(QtCore.Qt.ToolButtonStyle.ToolButtonIconOnly)
