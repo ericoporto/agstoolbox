@@ -48,7 +48,7 @@ class DirListWidget(QWidget):
         folderpath = QFileDialog.getExistingDirectory(
             self, 'Select Folder',
             options=QFileDialog.Option.ShowDirsOnly,
-            directory=ConstSettings.user_docs
+            directory=ConstSettings().user_docs
         )
 
         if folderpath is None or len(folderpath) <= 1:

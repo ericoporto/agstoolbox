@@ -1,13 +1,14 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QDialogButtonBox, QSizePolicy, QFormLayout, QHBoxLayout, QVBoxLayout, \
-    QSpacerItem, QPushButton, QLabel, QLineEdit, QDialogButtonBox
+from PyQt6.QtWidgets import QDialog, QDialogButtonBox, QSizePolicy, QFormLayout, QHBoxLayout, \
+    QVBoxLayout, QSpacerItem, QPushButton, QLabel, QLineEdit, QDialogButtonBox
 
+from agstoolbox.core.settings import Settings
 from agstoolbox.wdgts.at_dirlist_wdgt import DirListWidget
 
 
-class Ui_SettingsDialog(QtWidgets.QDialog):
+class Ui_SettingsDialog(QDialog):
     def __init__(self, parent: QtWidgets = None):
-        QtWidgets.QDialog.__init__(self, parent)
+        QDialog.__init__(self, parent)
         self.setObjectName("SettingsDialog")
         self.resize(480, 400)
         self.setSizeGripEnabled(True)
@@ -15,8 +16,8 @@ class Ui_SettingsDialog(QtWidgets.QDialog):
         self.label_settings_intro = QLabel(self)
         self.label_settings_intro.setObjectName("label_settings_intro")
 
-        self.baseInstallDirLabel = QLabel(self)
-        self.baseInstallDirLabel.setObjectName("baseInstallDirLabel")
+        self.base_install_dir_label = QLabel(self)
+        self.base_install_dir_label.setObjectName("base_install_dir_label")
 
         self.install_dir_line_edit = QLineEdit(self)
         self.install_dir_line_edit.setEnabled(False)
@@ -48,7 +49,7 @@ class Ui_SettingsDialog(QtWidgets.QDialog):
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.verticalLayout_3.addWidget(self.label_settings_intro)
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.ItemRole.LabelRole,
-                                  self.baseInstallDirLabel)
+                                  self.base_install_dir_label)
 
         self.h_layout_install_dir = QHBoxLayout()
         self.h_layout_install_dir.setObjectName("horizontalLayout_2")
@@ -67,7 +68,7 @@ class Ui_SettingsDialog(QtWidgets.QDialog):
         self.formLayout.setWidget(1, QFormLayout.ItemRole.LabelRole, self.label)
         self.verticalLayout_3.addLayout(self.formLayout)
         spacer_item = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum,
-                                            QSizePolicy.Policy.Expanding)
+                                  QSizePolicy.Policy.Expanding)
         self.verticalLayout_3.addItem(spacer_item)
         self.verticalLayout_3.addWidget(self.button_box)
         self.horizontalLayout_3.addLayout(self.verticalLayout_3)
@@ -75,19 +76,32 @@ class Ui_SettingsDialog(QtWidgets.QDialog):
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
 
+        self.apply_from_settings_to_dialog()
         self.button_box.accepted.connect(self.clicked_ok)
         self.button_box.rejected.connect(self.clicked_cancel)
+
+
+    def apply_from_settings_to_dialog(self):
+        dirs = Settings().get_manually_installed_editors_search_dirs()
+        self.external_editors_dir_search_list.setDirs(dirs)
+        self.install_dir_line_edit.setText(Settings().get_tools_install_dir())
+
+    def apply_from_dialog_to_settings(self):
+        dirs = self.external_editors_dir_search_list.getDirs()
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("SettingsDialog", "SettingsDialog"))
         self.label_settings_intro.setText(
             _translate("SettingsDialog", "Adjust AGS Toolbox settings here."))
-        self.baseInstallDirLabel.setText(_translate("SettingsDialog", "Base install dir"))
+        self.base_install_dir_label.setText(_translate("SettingsDialog", "Base install dir"))
         self.install_dir_edit_button.setText(_translate("SettingsDialog", "Edit"))
         self.install_dir_defaults_button.setText(_translate("SettingsDialog", "Set Defaults"))
         self.label.setText(
             _translate("SettingsDialog", "Externally installed AGS Editors search paths"))
+
+    def closeEvent(self, evnt):
+        QDialog.closeEvent(self, evnt)
 
     def clicked_ok(self):
         self.accept()

@@ -41,8 +41,8 @@ class AtTrayIcon(QtWidgets.QSystemTrayIcon):
         tray_icon_rect = self.geometry()
         window_pos = QtCore.QRect()
         window_pos.setSize(QtCore.QSize(
-            ConstSettings.DEFAULT_MAIN_PANEL_WIDTH,
-            ConstSettings.DEFAULT_MAIN_PANEL_HEIGHT
+            ConstSettings().DEFAULT_MAIN_PANEL_WIDTH,
+            ConstSettings().DEFAULT_MAIN_PANEL_HEIGHT
         ))
 
         available_geometry = QtGui.QGuiApplication.primaryScreen().availableGeometry()
@@ -74,7 +74,7 @@ class AtTrayIcon(QtWidgets.QSystemTrayIcon):
 
     def onTrayIconActivated(self, reason):
         if reason == QSystemTrayIcon.ActivationReason.Trigger:
-            self.disambiguateTimer.start(ConstSettings.double_click_interval)
+            self.disambiguateTimer.start(ConstSettings().double_click_interval)
         elif reason == QSystemTrayIcon.ActivationReason.DoubleClick:
             self.disambiguateTimer.stop()
             self.double_clicked()
@@ -90,7 +90,7 @@ def run_tray_indicator(ap_args):
     # this prevents the tray to close if the main panel is closed,
     # we only exit when quit is explicitly clicked
     app.setQuitOnLastWindowClosed(False)
-    ConstSettings.double_click_interval = app.doubleClickInterval()
+    ConstSettings().double_click_interval = app.doubleClickInterval()
 
     w = QtWidgets.QWidget()
     tray_icon = AtTrayIcon(main_icon(), w)

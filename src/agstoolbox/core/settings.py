@@ -35,6 +35,8 @@ def get_default_search_dirs_in_windows():
         for d in dirs:
             ret.append(os.path.join(d, 'Adventure Game Studio ' + v))
 
+    ret = list(dict.fromkeys(ret))
+
     return ret
 
 
@@ -55,14 +57,14 @@ class ConstSettings(StaticSettings, metaclass=Singleton):
 
 
 def get_settings_path():
-    return os.path.join(ConstSettings.data_dir, SETTINGS_FILENAME)
+    return os.path.join(ConstSettings().data_dir, SETTINGS_FILENAME)
 
 
 class BaseSettings:
-    agstoolbox_package_install = Path(os.path.join(ConstSettings.user_docs,
+    agstoolbox_package_install = Path(os.path.join(ConstSettings().user_docs,
                                                    'AgsToolbox')).as_posix()
     editor_base_install_dir = Path(os.path.join(agstoolbox_package_install, 'Editor')).as_posix()
-    manually_installed_editors_search_dirs = ConstSettings.MANUALLY_INSTALLED_SEARCH_DIRS
+    manually_installed_editors_search_dirs = ConstSettings().MANUALLY_INSTALLED_SEARCH_DIRS
 
     editor_install_dir = editor_base_install_dir
     tools_install_dir = agstoolbox_package_install

@@ -18,12 +18,12 @@ class MainWindow(QMainWindow):
 
         margin = 4
 
-        self.setMinimumSize(QSize(ConstSettings.DEFAULT_MAIN_PANEL_WIDTH,
-                                  ConstSettings.DEFAULT_MAIN_PANEL_HEIGHT))
+        self.setMinimumSize(QSize(ConstSettings().DEFAULT_MAIN_PANEL_WIDTH,
+                                  ConstSettings().DEFAULT_MAIN_PANEL_HEIGHT))
         self.setWindowTitle("AGS Toolbox")
         self.setObjectName("AgsToolbox")
-        self.resize(QSize(ConstSettings.DEFAULT_MAIN_PANEL_WIDTH,
-                          ConstSettings.DEFAULT_MAIN_PANEL_HEIGHT))
+        self.resize(QSize(ConstSettings().DEFAULT_MAIN_PANEL_WIDTH,
+                          ConstSettings().DEFAULT_MAIN_PANEL_HEIGHT))
         self.setToolButtonStyle(QtCore.Qt.ToolButtonStyle.ToolButtonIconOnly)
         self.setUnifiedTitleAndToolBarOnMac(False)
 
