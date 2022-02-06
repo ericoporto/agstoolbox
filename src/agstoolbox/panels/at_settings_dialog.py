@@ -18,27 +18,27 @@ class Ui_SettingsDialog(QtWidgets.QDialog):
         self.baseInstallDirLabel = QLabel(self)
         self.baseInstallDirLabel.setObjectName("baseInstallDirLabel")
 
-        self.lineEdit = QLineEdit(self)
-        self.lineEdit.setEnabled(False)
-        self.lineEdit.setObjectName("lineEdit")
+        self.install_dir_line_edit = QLineEdit(self)
+        self.install_dir_line_edit.setEnabled(False)
+        self.install_dir_line_edit.setObjectName("install_dir_line_edit")
 
-        self.pushButton = QPushButton(self)
-        self.pushButton.setObjectName("pushButton")
+        self.install_dir_edit_button = QPushButton(self)
+        self.install_dir_edit_button.setObjectName("install_dir_edit_button")
 
-        self.pushButton_2 = QPushButton(self)
-        self.pushButton_2.setObjectName("pushButton_2")
+        self.install_dir_defaults_button = QPushButton(self)
+        self.install_dir_defaults_button.setObjectName("install_dir_defaults_button")
 
-        self.listWidget = DirListWidget(parent=self, dirs=[])
-        self.listWidget.setObjectName("listWidget")
+        self.external_editors_dir_search_list = DirListWidget(parent=self, dirs=[])
+        self.external_editors_dir_search_list.setObjectName("external_editors_dir_search_list")
 
         self.label = QtWidgets.QLabel(self)
         self.label.setWordWrap(True)
         self.label.setObjectName("label")
 
-        self.buttonBox = QDialogButtonBox(self)
-        self.buttonBox.setStandardButtons(
+        self.button_box = QDialogButtonBox(self)
+        self.button_box.setStandardButtons(
             QDialogButtonBox.StandardButton.Cancel | QDialogButtonBox.StandardButton.Ok)
-        self.buttonBox.setObjectName("buttonBox")
+        self.button_box.setObjectName("buttonBox")
 
         self.formLayout = QFormLayout()
         self.formLayout.setObjectName("formLayout")
@@ -49,16 +49,18 @@ class Ui_SettingsDialog(QtWidgets.QDialog):
         self.verticalLayout_3.addWidget(self.label_settings_intro)
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.ItemRole.LabelRole,
                                   self.baseInstallDirLabel)
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.horizontalLayout_2.addWidget(self.lineEdit)
-        self.horizontalLayout_2.addWidget(self.pushButton)
-        self.horizontalLayout_2.addWidget(self.pushButton_2)
+
+        self.h_layout_install_dir = QHBoxLayout()
+        self.h_layout_install_dir.setObjectName("horizontalLayout_2")
+        self.h_layout_install_dir.addWidget(self.install_dir_line_edit)
+        self.h_layout_install_dir.addWidget(self.install_dir_edit_button)
+        self.h_layout_install_dir.addWidget(self.install_dir_defaults_button)
         self.formLayout.setLayout(2, QtWidgets.QFormLayout.ItemRole.FieldRole,
-                                  self.horizontalLayout_2)
+                                  self.h_layout_install_dir)
+
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.horizontalLayout.addWidget(self.listWidget)
+        self.horizontalLayout.addWidget(self.external_editors_dir_search_list)
         self.formLayout.setLayout(1, QFormLayout.ItemRole.FieldRole,
                                   self.horizontalLayout)
 
@@ -67,11 +69,14 @@ class Ui_SettingsDialog(QtWidgets.QDialog):
         spacer_item = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum,
                                             QSizePolicy.Policy.Expanding)
         self.verticalLayout_3.addItem(spacer_item)
-        self.verticalLayout_3.addWidget(self.buttonBox)
+        self.verticalLayout_3.addWidget(self.button_box)
         self.horizontalLayout_3.addLayout(self.verticalLayout_3)
 
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
+
+        self.button_box.accepted.connect(self.clicked_ok)
+        self.button_box.rejected.connect(self.clicked_cancel)
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
@@ -79,7 +84,13 @@ class Ui_SettingsDialog(QtWidgets.QDialog):
         self.label_settings_intro.setText(
             _translate("SettingsDialog", "Adjust AGS Toolbox settings here."))
         self.baseInstallDirLabel.setText(_translate("SettingsDialog", "Base install dir"))
-        self.pushButton.setText(_translate("SettingsDialog", "Edit"))
-        self.pushButton_2.setText(_translate("SettingsDialog", "Set Defaults"))
+        self.install_dir_edit_button.setText(_translate("SettingsDialog", "Edit"))
+        self.install_dir_defaults_button.setText(_translate("SettingsDialog", "Set Defaults"))
         self.label.setText(
             _translate("SettingsDialog", "Externally installed AGS Editors search paths"))
+
+    def clicked_ok(self):
+        self.accept()
+
+    def clicked_cancel(self):
+        self.reject()
