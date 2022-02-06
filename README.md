@@ -1,6 +1,8 @@
 # AGS Toolbox 🧰
 Utility Adventure Game Studio software to help manage, install, and uninstall different AGS Editor versions
 
+![](https://raw.githubusercontent.com/ericoporto/agstoolbox/main/.github/repository-open-graph-template.png)
+
 _inspired by [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/), but different_
 
 
