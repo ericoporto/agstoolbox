@@ -1,2 +1,2 @@
 # exclude from language statistics for linguist
-tests/resources/* linguist-vendored
+tests/resources/** linguist-vendored
