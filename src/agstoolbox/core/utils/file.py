@@ -11,7 +11,7 @@ def get_dir(filepath):
     return Path(realpath(dirname(filepath))).as_posix()
 
 
-def folder_is_valid(folderpath: str) -> bool:
+def dir_is_valid(folderpath: str) -> bool:
     return folderpath is not None and \
            not "".__eq__(folderpath) and \
            Path(folderpath).exists() and \

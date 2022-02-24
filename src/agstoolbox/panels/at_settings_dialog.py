@@ -2,7 +2,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QDialog, QDialogButtonBox, QSizePolicy, QFormLayout, QHBoxLayout, \
     QVBoxLayout, QSpacerItem, QPushButton, QLabel, QLineEdit, QDialogButtonBox
 
-from agstoolbox.core.settings import Settings
+from agstoolbox.core.settings import Settings, ConstSettings
 from agstoolbox.wdgts.at_dirlist_wdgt import DirListWidget
 
 
@@ -103,7 +103,8 @@ class Ui_SettingsDialog(QDialog):
         dirs = Settings().get_project_search_dirs()
         self.project_dir_search_list.setDirs(dirs)
 
-        self.install_dir_line_edit.setText(Settings().get_tools_install_dir())
+        install_dir = Settings().get_tools_install_dir()
+        self.install_dir_line_edit.setText(install_dir)
 
     def apply_from_dialog_to_settings(self):
         dirs = self.external_editors_dir_search_list.getDirs()
@@ -111,6 +112,16 @@ class Ui_SettingsDialog(QDialog):
 
         dirs = self.project_dir_search_list.getDirs()
         Settings().set_project_search_dirs(dirs)
+
+        install_dir = self.install_dir_line_edit.text()
+        if install_dir == ConstSettings().DEFAULT_TOOLS_INSTALL_DIR:
+            return
+
+        try:
+            Settings().set_tools_install_dir(install_dir)
+        except ValueError:
+            QtWidgets.QMessageBox.warning(
+                self, "Warning", "tools installation dir not found and not set.")
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate

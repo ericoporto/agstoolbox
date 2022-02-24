@@ -50,6 +50,9 @@ class StaticSettings:
     data_dir = Path(user_data_dir(appname, appauthor)).as_posix()
     log_dir = Path(user_log_dir(appname, appauthor)).as_posix()
     user_docs = Path(user_documents_dir()).as_posix()
+
+    DEFAULT_TOOLS_INSTALL_DIR = Path(os.path.join(user_docs, 'AgsToolbox')).as_posix()
+
     DEFAULT_MAIN_PANEL_WIDTH = 320
     DEFAULT_MAIN_PANEL_HEIGHT = 512
 
@@ -63,8 +66,7 @@ def get_settings_path():
 
 
 class BaseSettings:
-    agstoolbox_package_install = Path(os.path.join(ConstSettings().user_docs,
-                                                   'AgsToolbox')).as_posix()
+    agstoolbox_package_install = ConstSettings.DEFAULT_TOOLS_INSTALL_DIR
     editor_base_install_dir = Path(os.path.join(agstoolbox_package_install, 'Editor')).as_posix()
     manually_installed_editors_search_dirs = ConstSettings().MANUALLY_INSTALLED_SEARCH_DIRS
 
@@ -100,8 +102,9 @@ class BaseSettings:
         if value is None:
             return
 
-        if not Path(value).exists():
-            raise ValueError("Invalid path, doesn't exist")
+        if not value == ConstSettings.DEFAULT_TOOLS_INSTALL_DIR:
+            if not Path(value).exists():
+                raise ValueError("Invalid path, doesn't exist")
 
         self.tools_install_dir = value
         self.editor_install_dir = Path(os.path.join(self.tools_install_dir, 'Editor')).as_posix()

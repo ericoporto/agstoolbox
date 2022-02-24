@@ -5,7 +5,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QWidget, QFileDialog
 
 from agstoolbox.core.settings import ConstSettings
-from agstoolbox.core.utils.file import folder_is_valid
+from agstoolbox.core.utils.file import dir_is_valid
 
 
 class DirListWidget(QWidget):
@@ -40,39 +40,39 @@ class DirListWidget(QWidget):
         return dirs
 
     def btn_new_clicked(self):
-        folderpath = QFileDialog.getExistingDirectory(
+        dir_path = QFileDialog.getExistingDirectory(
             self, 'Select Folder',
             options=QFileDialog.Option.ShowDirsOnly,
             directory=ConstSettings().user_docs
         )
 
-        if folderpath is None or len(folderpath) <= 1:
+        if dir_path is None or len(dir_path) <= 1:
             return
 
-        if not folder_is_valid(folderpath):
+        if not dir_is_valid(dir_path):
             return
 
-        folderpath = str(Path(str(folderpath)).as_posix())
+        dir_path = str(Path(str(dir_path)).as_posix())
 
-        self.appendDir(folderpath)
+        self.appendDir(dir_path)
 
     def btn_edit_clicked(self):
         if self.list.count() == 0:
             return
 
         itm = self.getSelectedItem()
-        folderpath = itm.text()
-        if not folder_is_valid(folderpath):
-            folderpath = None
+        dir_path = itm.text()
+        if not dir_is_valid(dir_path):
+            dir_path = None
 
-        folderpath = QFileDialog.getExistingDirectory(
-            self, 'Select Folder', directory=folderpath)
+        dir_path = QFileDialog.getExistingDirectory(
+            self, 'Select Folder', directory=dir_path)
 
-        if not folder_is_valid(folderpath):
+        if not dir_is_valid(dir_path):
             return
 
-        folderpath = str(Path(str(folderpath)).as_posix())
-        itm.setText(folderpath)
+        dir_path = str(Path(str(dir_path)).as_posix())
+        itm.setText(dir_path)
 
     def btn_del_clicked(self):
         if self.list.count() == 0:
