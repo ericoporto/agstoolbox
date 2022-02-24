@@ -5,13 +5,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QWidget, QFileDialog
 
 from agstoolbox.core.settings import ConstSettings
-
-
-def returned_folder_is_valid(folderpath: str) -> bool:
-    return folderpath is not None and \
-           not "".__eq__(folderpath) and \
-           Path(folderpath).exists() and \
-           Path(folderpath).is_dir()
+from agstoolbox.core.utils.file import folder_is_valid
 
 
 class DirListWidget(QWidget):
@@ -55,7 +49,7 @@ class DirListWidget(QWidget):
         if folderpath is None or len(folderpath) <= 1:
             return
 
-        if not returned_folder_is_valid(folderpath):
+        if not folder_is_valid(folderpath):
             return
 
         folderpath = str(Path(str(folderpath)).as_posix())
@@ -68,13 +62,13 @@ class DirListWidget(QWidget):
 
         itm = self.getSelectedItem()
         folderpath = itm.text()
-        if not returned_folder_is_valid(folderpath):
+        if not folder_is_valid(folderpath):
             folderpath = None
 
         folderpath = QFileDialog.getExistingDirectory(
             self, 'Select Folder', directory=folderpath)
 
-        if not returned_folder_is_valid(folderpath):
+        if not folder_is_valid(folderpath):
             return
 
         folderpath = str(Path(str(folderpath)).as_posix())
@@ -85,7 +79,13 @@ class DirListWidget(QWidget):
             return
 
         itm = self.getSelectedItem()
-        self.list.removeItemWidget(itm)
+        if itm is None:
+            return
+        row = self.list.row(itm)
+        if row >= self.list.count():
+            return 
+
+        self.list.takeItem(row)
 
     def __init__(self, dirs: list[str], parent: QWidget = None):
         QWidget.__init__(self, parent)

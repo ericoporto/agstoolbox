@@ -11,6 +11,13 @@ def get_dir(filepath):
     return Path(realpath(dirname(filepath))).as_posix()
 
 
+def folder_is_valid(folderpath: str) -> bool:
+    return folderpath is not None and \
+           not "".__eq__(folderpath) and \
+           Path(folderpath).exists() and \
+           Path(folderpath).is_dir()
+
+
 # TODO: do this non-hacky way!
 def get_file_if_exists(directory: str, file: str):
     path_test_1 = os.path.join(directory, file.upper())
