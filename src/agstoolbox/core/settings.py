@@ -14,7 +14,7 @@ appauthor = "eri0o"
 SETTINGS_FILENAME = "settings.json"
 
 
-def get_default_search_dirs_in_windows():
+def get_default_editor_search_dirs_in_windows():
     if not platform().lower().startswith('win'):
         return []
 
@@ -33,7 +33,9 @@ def get_default_search_dirs_in_windows():
 
     for v in versions:
         for d in dirs:
-            ret.append(os.path.join(d, 'Adventure Game Studio ' + v))
+            ags_ed_d = os.path.join(d, 'Adventure Game Studio ' + v)
+            if Path(ags_ed_d).exists():
+                ret.append(ags_ed_d)
 
     ret = list(dict.fromkeys(ret))
 
@@ -42,7 +44,7 @@ def get_default_search_dirs_in_windows():
 
 class StaticSettings:
     double_click_interval = 400
-    MANUALLY_INSTALLED_SEARCH_DIRS = get_default_search_dirs_in_windows()
+    MANUALLY_INSTALLED_SEARCH_DIRS = get_default_editor_search_dirs_in_windows()
 
     cache_dir = Path(user_cache_dir(appname, appauthor)).as_posix()
     data_dir = Path(user_data_dir(appname, appauthor)).as_posix()

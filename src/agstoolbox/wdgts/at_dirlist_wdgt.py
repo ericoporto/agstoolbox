@@ -9,6 +9,7 @@ from agstoolbox.core.settings import ConstSettings
 
 def returned_folder_is_valid(folderpath: str) -> bool:
     return folderpath is not None and \
+           not "".__eq__(folderpath) and \
            Path(folderpath).exists() and \
            Path(folderpath).is_dir()
 
@@ -132,6 +133,7 @@ class DirListWidget(QWidget):
         # Connect events
         self.push_button_new.clicked.connect(self.btn_new_clicked)
         self.push_button_del.clicked.connect(self.btn_del_clicked)
+        self.push_button_edit.clicked.connect(self.btn_edit_clicked)
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
