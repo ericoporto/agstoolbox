@@ -3,8 +3,9 @@ from PyQt6.QtCore import QThread
 from PyQt6.QtCore import pyqtSignal as Signal
 
 from agstoolbox.core.ags.get_local_ags_editors import list_ags_editors_in_dir_list
-from agstoolbox.core.settings import ConstSettings
-from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir
+from agstoolbox.core.settings import ConstSettings, Settings
+from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir, \
+    list_game_projects_in_dir_list
 from agstoolbox.core.gh.list_releases import list_releases
 
 
@@ -19,7 +20,7 @@ class ProjUpdateThread(QThread):
 
     def run(self) -> None:
         self.update_started.emit()
-        self.proj_list = list_game_projects_in_dir(ConstSettings().user_docs)
+        self.proj_list = list_game_projects_in_dir_list(Settings().get_project_search_dirs())
         self.update_ended.emit()
 
     def stop(self):

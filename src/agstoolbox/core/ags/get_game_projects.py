@@ -76,3 +76,12 @@ def list_game_projects_in_dir(filepath: str) -> list[GameProject]:
         ags_projects.append(gameagf_file_to_game_project(candidate))
 
     return ags_projects
+
+
+def list_game_projects_in_dir_list(filepaths: list[str]) -> list[GameProject]:
+    ags_projects = []
+    for path in filepaths:
+        candidates = list_game_projects_in_dir(path)
+        ags_projects.extend(candidates)
+
+    return ags_projects

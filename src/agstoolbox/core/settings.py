@@ -68,6 +68,7 @@ class BaseSettings:
     editor_base_install_dir = Path(os.path.join(agstoolbox_package_install, 'Editor')).as_posix()
     manually_installed_editors_search_dirs = ConstSettings().MANUALLY_INSTALLED_SEARCH_DIRS
 
+    project_search_dirs = [ConstSettings.user_docs]
     editor_install_dir = editor_base_install_dir
     tools_install_dir = agstoolbox_package_install
 
@@ -80,6 +81,18 @@ class BaseSettings:
     def get_manually_installed_editors_search_dirs(self) -> list[str]:
         if type(self.manually_installed_editors_search_dirs) == type(list()):
             return self.manually_installed_editors_search_dirs
+
+        return []
+
+    def set_project_search_dirs(self, value: list[str]):
+        if value is None:
+            return
+
+        self.project_search_dirs = value
+
+    def get_project_search_dirs(self) -> list[str]:
+        if type(self.project_search_dirs) == type(list()):
+            return self.project_search_dirs
 
         return []
 
