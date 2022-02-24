@@ -83,9 +83,10 @@ class DirListWidget(QWidget):
             return
         row = self.list.row(itm)
         if row >= self.list.count():
-            return 
+            return
 
         self.list.takeItem(row)
+        del itm
 
     def __init__(self, dirs: list[str], parent: QWidget = None):
         QWidget.__init__(self, parent)
