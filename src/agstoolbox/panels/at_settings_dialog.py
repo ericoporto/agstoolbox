@@ -96,7 +96,6 @@ class Ui_SettingsDialog(QDialog):
         self.button_box.accepted.connect(self.clicked_ok)
         self.button_box.rejected.connect(self.clicked_cancel)
 
-
     def apply_from_settings_to_dialog(self):
         dirs = Settings().get_manually_installed_editors_search_dirs()
         self.external_editors_dir_search_list.setDirs(dirs)
@@ -124,7 +123,7 @@ class Ui_SettingsDialog(QDialog):
         self.label_editors.setText(
             _translate("SettingsDialog", "Externally installed AGS Editors search paths"))
         self.label_projects.setText(
-            _translate("SettingsDialog", "AGS Game Projects search paths"))
+            _translate("SettingsDialog", "AGS Game projects search paths"))
 
     def closeEvent(self, evnt):
         QDialog.closeEvent(self, evnt)
