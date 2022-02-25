@@ -9,8 +9,6 @@ from agstoolbox.core.utils.file import dir_is_valid
 
 
 class DirListWidget(QWidget):
-    proj_update_task = None
-
     def appendDir(self, d):
         itm = QtWidgets.QListWidgetItem(d, parent=self.list)
         self.list.addItem(itm)
@@ -92,7 +90,7 @@ class DirListWidget(QWidget):
         QWidget.__init__(self, parent)
 
         self.setObjectName("dir_list_widget")
-        self.resize(600, 600)
+        self.resize(600, 400)
 
         self.list = QtWidgets.QListWidget(self)
         self.list.setObjectName("list")
@@ -112,9 +110,9 @@ class DirListWidget(QWidget):
 
         # Do Layout
         spacer_item_fixed = QtWidgets.QSpacerItem(
-            20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Fixed)
+            20, 20, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Fixed)
         spacer_item_expanding = QtWidgets.QSpacerItem(
-            20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+            20, 16, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.horizontalLayout = QtWidgets.QHBoxLayout(self)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.horizontalLayout.addWidget(self.list)

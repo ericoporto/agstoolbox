@@ -84,4 +84,7 @@ def list_game_projects_in_dir_list(filepaths: list[str]) -> list[GameProject]:
         candidates = list_game_projects_in_dir(path)
         ags_projects.extend(candidates)
 
+    unique = list(dict.fromkeys(ags_projects))
+    ags_projects = unique
+
     return ags_projects

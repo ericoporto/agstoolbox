@@ -69,4 +69,7 @@ def list_ags_editors_in_dir_list(filepaths: list[str]) -> list[LocalAgsEditor]:
         candidates = list_probable_ags_editors_in_dir(path)
         editors.extend(candidates)
 
+    unique = list(dict.fromkeys(editors))
+    editors = unique
+
     return editors

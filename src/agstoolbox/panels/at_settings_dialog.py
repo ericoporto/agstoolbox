@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import QDialog, QDialogButtonBox, QSizePolicy, QFormLayout,
 
 from agstoolbox.core.settings import Settings, ConstSettings
 from agstoolbox.wdgts.at_dirlist_wdgt import DirListWidget
+from agstoolbox.wdgts.at_single_dir_wdgt import DirEditWidget
 
 
 class Ui_SettingsDialog(QDialog):
@@ -19,15 +20,10 @@ class Ui_SettingsDialog(QDialog):
         self.base_install_dir_label = QLabel(self)
         self.base_install_dir_label.setObjectName("base_install_dir_label")
 
-        self.install_dir_line_edit = QLineEdit(self)
-        self.install_dir_line_edit.setEnabled(False)
-        self.install_dir_line_edit.setObjectName("install_dir_line_edit")
-
-        self.install_dir_edit_button = QPushButton(self)
-        self.install_dir_edit_button.setObjectName("install_dir_edit_button")
-
-        self.install_dir_defaults_button = QPushButton(self)
-        self.install_dir_defaults_button.setObjectName("install_dir_defaults_button")
+        self.install_dir_line_edit = DirEditWidget(
+            parent=self,
+            initial_dir=Settings().get_tools_install_dir(),
+            default_dir=ConstSettings().DEFAULT_TOOLS_INSTALL_DIR)
 
         self.label_editors = QtWidgets.QLabel(self)
         self.label_editors.setWordWrap(True)
@@ -55,16 +51,6 @@ class Ui_SettingsDialog(QDialog):
         self.verticalLayout_3 = QVBoxLayout()
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.verticalLayout_3.addWidget(self.label_settings_intro)
-        self.formLayout.setWidget(3, QtWidgets.QFormLayout.ItemRole.LabelRole,
-                                  self.base_install_dir_label)
-
-        self.h_layout_install_dir = QHBoxLayout()
-        self.h_layout_install_dir.setObjectName("horizontalLayout_2")
-        self.h_layout_install_dir.addWidget(self.install_dir_line_edit)
-        self.h_layout_install_dir.addWidget(self.install_dir_edit_button)
-        self.h_layout_install_dir.addWidget(self.install_dir_defaults_button)
-        self.formLayout.setLayout(3, QtWidgets.QFormLayout.ItemRole.FieldRole,
-                                  self.h_layout_install_dir)
 
         # manual editor search dirs
         self.horizontalLayout = QHBoxLayout()
@@ -81,6 +67,12 @@ class Ui_SettingsDialog(QDialog):
         self.formLayout.setLayout(2, QFormLayout.ItemRole.FieldRole,
                                   self.horizontalLayout2)
         self.formLayout.setWidget(2, QFormLayout.ItemRole.LabelRole, self.label_projects)
+
+        # install tools dir
+        self.formLayout.setWidget(3, QtWidgets.QFormLayout.ItemRole.FieldRole,
+                                  self.install_dir_line_edit)
+        self.formLayout.setWidget(3, QtWidgets.QFormLayout.ItemRole.LabelRole,
+                                  self.base_install_dir_label)
 
         self.verticalLayout_3.addLayout(self.formLayout)
         spacer_item = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum,
@@ -129,12 +121,13 @@ class Ui_SettingsDialog(QDialog):
         self.label_settings_intro.setText(
             _translate("SettingsDialog", "Adjust AGS Toolbox settings here."))
         self.base_install_dir_label.setText(_translate("SettingsDialog", "Base install dir"))
-        self.install_dir_edit_button.setText(_translate("SettingsDialog", "Edit"))
-        self.install_dir_defaults_button.setText(_translate("SettingsDialog", "Set Defaults"))
         self.label_editors.setText(
             _translate("SettingsDialog", "Externally installed AGS Editors search paths"))
         self.label_projects.setText(
             _translate("SettingsDialog", "AGS Game projects search paths"))
+        self.install_dir_line_edit.retranslateUi()
+        self.project_dir_search_list.retranslateUi()
+        self.external_editors_dir_search_list.retranslateUi()
 
     def closeEvent(self, evnt):
         QDialog.closeEvent(self, evnt)
