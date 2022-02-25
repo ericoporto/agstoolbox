@@ -11,6 +11,18 @@ from agstoolbox.core.utils.file import dir_is_valid
 class DirListWidget(QWidget):
     default_dirs_value = None
 
+    def is_selection_valid(self) -> bool:
+        if self.list.count() == 0:
+            return False
+
+        itm = self.getSelectedItem()
+        if itm is None:
+            return False
+        row = self.list.row(itm)
+        if row >= self.list.count():
+            return False
+        return True
+
     def appendDir(self, d):
         itm = QtWidgets.QListWidgetItem(d, parent=self.list)
         self.list.addItem(itm)
@@ -75,21 +87,44 @@ class DirListWidget(QWidget):
         itm.setText(dir_path)
 
     def btn_del_clicked(self):
-        if self.list.count() == 0:
+        if not self.is_selection_valid():
             return
 
         itm = self.getSelectedItem()
-        if itm is None:
-            return
         row = self.list.row(itm)
-        if row >= self.list.count():
-            return
-
         self.list.takeItem(row)
         del itm
 
     def btn_defaults_clicked(self):
         self.setDirs(self.default_dirs_value)
+
+    def btn_move_up_clicked(self):
+        if not self.is_selection_valid():
+            return
+        if self.list.count() <= 1:
+            return
+
+        itm = self.getSelectedItem()
+        row = self.list.row(itm)
+        if row > 0:
+            self.list.takeItem(row)
+            target_row = row - 1
+            self.list.insertItem(target_row, itm)
+            self.list.setCurrentRow(target_row)
+
+    def btn_move_down_clicked(self):
+        if not self.is_selection_valid():
+            return
+        if self.list.count() <= 1:
+            return
+
+        itm = self.getSelectedItem()
+        row = self.list.row(itm)
+        if row < self.list.count() - 1:
+            self.list.takeItem(row)
+            target_row = row + 1
+            self.list.insertItem(target_row, itm)
+            self.list.setCurrentRow(target_row)
 
     def __init__(self, dirs: list[str], default_dirs: list[str], parent: QWidget = None):
         QWidget.__init__(self, parent)
@@ -158,6 +193,8 @@ class DirListWidget(QWidget):
         self.push_button_del.clicked.connect(self.btn_del_clicked)
         self.push_button_edit.clicked.connect(self.btn_edit_clicked)
         self.push_button_defaults.clicked.connect(self.btn_defaults_clicked)
+        self.push_button_move_up.clicked.connect(self.btn_move_up_clicked)
+        self.push_button_move_down.clicked.connect(self.btn_move_down_clicked)
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
