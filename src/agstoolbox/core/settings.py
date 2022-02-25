@@ -44,7 +44,7 @@ def get_default_editor_search_dirs_in_windows():
 
 class StaticSettings:
     double_click_interval = 400
-    MANUALLY_INSTALLED_SEARCH_DIRS = get_default_editor_search_dirs_in_windows()
+    DEFAULT_EXT_EDITORS_SEARCH_DIRS = get_default_editor_search_dirs_in_windows()
 
     cache_dir = Path(user_cache_dir(appname, appauthor)).as_posix()
     data_dir = Path(user_data_dir(appname, appauthor)).as_posix()
@@ -52,6 +52,7 @@ class StaticSettings:
     user_docs = Path(user_documents_dir()).as_posix()
 
     DEFAULT_TOOLS_INSTALL_DIR = Path(os.path.join(user_docs, 'AgsToolbox')).as_posix()
+    DEFAULT_PROJECTS_SEARCH_DIRS = user_docs
 
     DEFAULT_MAIN_PANEL_WIDTH = 320
     DEFAULT_MAIN_PANEL_HEIGHT = 512
@@ -68,9 +69,9 @@ def get_settings_path():
 class BaseSettings:
     agstoolbox_package_install = ConstSettings.DEFAULT_TOOLS_INSTALL_DIR
     editor_base_install_dir = Path(os.path.join(agstoolbox_package_install, 'Editor')).as_posix()
-    manually_installed_editors_search_dirs = ConstSettings().MANUALLY_INSTALLED_SEARCH_DIRS
+    manually_installed_editors_search_dirs = ConstSettings().DEFAULT_EXT_EDITORS_SEARCH_DIRS
 
-    project_search_dirs = [ConstSettings.user_docs]
+    project_search_dirs = [ConstSettings().DEFAULT_PROJECTS_SEARCH_DIRS]
     editor_install_dir = editor_base_install_dir
     tools_install_dir = agstoolbox_package_install
 

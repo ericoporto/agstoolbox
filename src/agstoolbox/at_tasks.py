@@ -74,7 +74,8 @@ class ToolsUpdateThreadUnmanaged(QThread):
 
     def run(self) -> None:
         self.update_started.emit()
-        self.tools_list = list_ags_editors_in_dir_list(ConstSettings().MANUALLY_INSTALLED_SEARCH_DIRS)
+        self.tools_list = list_ags_editors_in_dir_list(
+            Settings().get_manually_installed_editors_search_dirs())
         self.update_ended.emit()
 
     def stop(self):

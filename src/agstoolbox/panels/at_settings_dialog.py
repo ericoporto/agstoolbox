@@ -29,14 +29,20 @@ class Ui_SettingsDialog(QDialog):
         self.label_editors.setWordWrap(True)
         self.label_editors.setObjectName("label_editors")
 
-        self.external_editors_dir_search_list = DirListWidget(parent=self, dirs=[])
+        self.external_editors_dir_search_list = DirListWidget(
+            parent=self,
+            default_dirs=ConstSettings().DEFAULT_EXT_EDITORS_SEARCH_DIRS,
+            dirs=[])
         self.external_editors_dir_search_list.setObjectName("external_editors_dir_search_list")
 
         self.label_projects = QtWidgets.QLabel(self)
         self.label_projects.setWordWrap(True)
         self.label_projects.setObjectName("label_projects")
 
-        self.project_dir_search_list = DirListWidget(parent=self, dirs=[])
+        self.project_dir_search_list = DirListWidget(
+            parent=self,
+            default_dirs=ConstSettings().DEFAULT_PROJECTS_SEARCH_DIRS,
+            dirs=[])
         self.project_dir_search_list.setObjectName("project_dir_search_list")
 
         self.button_box = QDialogButtonBox(self)
@@ -53,19 +59,13 @@ class Ui_SettingsDialog(QDialog):
         self.verticalLayout_3.addWidget(self.label_settings_intro)
 
         # manual editor search dirs
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.horizontalLayout.addWidget(self.external_editors_dir_search_list)
-        self.formLayout.setLayout(1, QFormLayout.ItemRole.FieldRole,
-                                  self.horizontalLayout)
+        self.formLayout.setWidget(1, QFormLayout.ItemRole.FieldRole,
+                                  self.external_editors_dir_search_list)
         self.formLayout.setWidget(1, QFormLayout.ItemRole.LabelRole, self.label_editors)
 
         # project search dirs
-        self.horizontalLayout2 = QHBoxLayout()
-        self.horizontalLayout2.setObjectName("horizontalLayout2")
-        self.horizontalLayout2.addWidget(self.project_dir_search_list)
-        self.formLayout.setLayout(2, QFormLayout.ItemRole.FieldRole,
-                                  self.horizontalLayout2)
+        self.formLayout.setWidget(2, QFormLayout.ItemRole.FieldRole,
+                                  self.project_dir_search_list)
         self.formLayout.setWidget(2, QFormLayout.ItemRole.LabelRole, self.label_projects)
 
         # install tools dir
@@ -117,7 +117,7 @@ class Ui_SettingsDialog(QDialog):
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        self.setWindowTitle(_translate("SettingsDialog", "SettingsDialog"))
+        self.setWindowTitle(_translate("SettingsDialog", "Settings"))
         self.label_settings_intro.setText(
             _translate("SettingsDialog", "Adjust AGS Toolbox settings here."))
         self.base_install_dir_label.setText(_translate("SettingsDialog", "Base install dir"))

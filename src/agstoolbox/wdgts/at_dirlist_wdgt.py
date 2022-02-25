@@ -2,13 +2,15 @@ from __future__ import annotations  # for python 3.8
 from pathlib import Path
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QWidget, QFileDialog
+from PyQt6.QtWidgets import QWidget, QFileDialog, QStyle, QSizePolicy, QFrame
 
 from agstoolbox.core.settings import ConstSettings
 from agstoolbox.core.utils.file import dir_is_valid
 
 
 class DirListWidget(QWidget):
+    default_dirs_value = None
+
     def appendDir(self, d):
         itm = QtWidgets.QListWidgetItem(d, parent=self.list)
         self.list.addItem(itm)
@@ -86,14 +88,19 @@ class DirListWidget(QWidget):
         self.list.takeItem(row)
         del itm
 
-    def __init__(self, dirs: list[str], parent: QWidget = None):
+    def btn_defaults_clicked(self):
+        self.setDirs(self.default_dirs_value)
+
+    def __init__(self, dirs: list[str], default_dirs: list[str], parent: QWidget = None):
         QWidget.__init__(self, parent)
 
         self.setObjectName("dir_list_widget")
-        self.resize(600, 400)
+
+        self.default_dirs_value = default_dirs
 
         self.list = QtWidgets.QListWidget(self)
         self.list.setObjectName("list")
+        self.list.setFrameStyle(QFrame.Shape.NoFrame)
         self.list.setSelectionMode(QtWidgets.QAbstractItemView.SelectionMode.SingleSelection)
         self.setDirs(dirs)
 
@@ -103,29 +110,42 @@ class DirListWidget(QWidget):
         self.push_button_edit.setObjectName("push_button_edit")
         self.push_button_del = QtWidgets.QPushButton(self)
         self.push_button_del.setObjectName("push_button_del")
+
         self.push_button_move_up = QtWidgets.QPushButton(self)
         self.push_button_move_up.setObjectName("push_button_move_up")
+        icon = self.style().standardIcon(QStyle.StandardPixmap.SP_ArrowUp)
+        self.push_button_move_up.setIcon(icon)
+
         self.push_button_move_down = QtWidgets.QPushButton(self)
         self.push_button_move_down.setObjectName("push_button_move_down")
+        icon = self.style().standardIcon(QStyle.StandardPixmap.SP_ArrowDown)
+        self.push_button_move_down.setIcon(icon)
 
         # Do Layout
         spacer_item_fixed = QtWidgets.QSpacerItem(
-            20, 20, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Fixed)
+            20, 16, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Fixed)
         spacer_item_expanding = QtWidgets.QSpacerItem(
             20, 16, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.horizontalLayout.addWidget(self.list)
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
         self.verticalLayout.addWidget(self.push_button_new)
         self.verticalLayout.addWidget(self.push_button_edit)
         self.verticalLayout.addWidget(self.push_button_del)
         self.verticalLayout.addItem(spacer_item_fixed)
-        self.verticalLayout.addWidget(self.push_button_move_up)
-        self.verticalLayout.addWidget(self.push_button_move_down)
+
+        self.h_move_layout = QtWidgets.QHBoxLayout()
+        self.h_move_layout.setObjectName("h_move_layout")
+        self.h_move_layout.addWidget(self.push_button_move_up)
+        self.h_move_layout.addWidget(self.push_button_move_down)
+
+        self.verticalLayout.addLayout(self.h_move_layout)
         self.verticalLayout.addItem(spacer_item_expanding)
+
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.horizontalLayout.addWidget(self.list)
         self.horizontalLayout.addLayout(self.verticalLayout)
+        self.setLayout(self.horizontalLayout)
 
         self.retranslateUi()
 
@@ -136,11 +156,13 @@ class DirListWidget(QWidget):
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        self.setWindowTitle(_translate("dir_list_widget", "Directories"))
-        self.push_button_new.setText(_translate("dir_list_widget", "New"))
-        self.push_button_edit.setText(_translate("dir_list_widget", "Edit"))
-        self.push_button_del.setText(_translate("dir_list_widget", "Delete"))
-        self.push_button_move_up.setText(_translate("dir_list_widget", "Move Up"))
-        self.push_button_move_down.setText(_translate("dir_list_widget", "Move Down"))
+
+        parent = "dir_list_widget"
+        if self.parent() is not None:
+            parent = self.parent().objectName()
+
+        self.push_button_new.setText(_translate(parent, "New"))
+        self.push_button_edit.setText(_translate(parent, "Edit"))
+        self.push_button_del.setText(_translate(parent, "Delete"))
 
 
