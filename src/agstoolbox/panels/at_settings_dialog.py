@@ -133,8 +133,15 @@ class SettingsDialog(QDialog):
         QDialog.closeEvent(self, evnt)
 
     def clicked_ok(self):
-        self.apply_from_dialog_to_settings()
         self.accept()
 
     def clicked_cancel(self):
         self.reject()
+
+    def accept(self) -> None:
+        self.apply_from_dialog_to_settings()
+        QDialog.accept(self)
+
+    def reject(self) -> None:
+        self.apply_from_settings_to_dialog()
+        QDialog.reject(self)

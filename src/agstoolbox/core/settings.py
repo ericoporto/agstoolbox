@@ -52,7 +52,7 @@ class StaticSettings:
     user_docs = Path(user_documents_dir()).as_posix()
 
     DEFAULT_TOOLS_INSTALL_DIR = Path(os.path.join(user_docs, 'AgsToolbox')).as_posix()
-    DEFAULT_PROJECTS_SEARCH_DIRS = user_docs
+    DEFAULT_PROJECTS_SEARCH_DIRS = [user_docs]
 
     DEFAULT_MAIN_PANEL_WIDTH = 320
     DEFAULT_MAIN_PANEL_HEIGHT = 512
@@ -71,7 +71,7 @@ class BaseSettings:
     editor_base_install_dir = Path(os.path.join(agstoolbox_package_install, 'Editor')).as_posix()
     manually_installed_editors_search_dirs = ConstSettings().DEFAULT_EXT_EDITORS_SEARCH_DIRS
 
-    project_search_dirs = [ConstSettings().DEFAULT_PROJECTS_SEARCH_DIRS]
+    project_search_dirs = ConstSettings().DEFAULT_PROJECTS_SEARCH_DIRS
     editor_install_dir = editor_base_install_dir
     tools_install_dir = agstoolbox_package_install
 

@@ -121,6 +121,9 @@ class DirListWidget(QWidget):
         icon = self.style().standardIcon(QStyle.StandardPixmap.SP_ArrowDown)
         self.push_button_move_down.setIcon(icon)
 
+        self.push_button_defaults = QtWidgets.QPushButton(self)
+        self.push_button_defaults.setObjectName("push_button_defaults")
+
         # Do Layout
         spacer_item_fixed = QtWidgets.QSpacerItem(
             20, 16, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Fixed)
@@ -139,6 +142,7 @@ class DirListWidget(QWidget):
         self.h_move_layout.addWidget(self.push_button_move_down)
 
         self.verticalLayout.addLayout(self.h_move_layout)
+        self.verticalLayout.addWidget(self.push_button_defaults)
         self.verticalLayout.addItem(spacer_item_expanding)
 
         self.horizontalLayout = QtWidgets.QHBoxLayout(self)
@@ -153,6 +157,7 @@ class DirListWidget(QWidget):
         self.push_button_new.clicked.connect(self.btn_new_clicked)
         self.push_button_del.clicked.connect(self.btn_del_clicked)
         self.push_button_edit.clicked.connect(self.btn_edit_clicked)
+        self.push_button_defaults.clicked.connect(self.btn_defaults_clicked)
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
@@ -164,5 +169,6 @@ class DirListWidget(QWidget):
         self.push_button_new.setText(_translate(parent, "New"))
         self.push_button_edit.setText(_translate(parent, "Edit"))
         self.push_button_del.setText(_translate(parent, "Delete"))
+        self.push_button_defaults.setText(_translate(parent, "Set Defaults"))
 
 
