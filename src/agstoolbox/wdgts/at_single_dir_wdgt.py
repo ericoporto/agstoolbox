@@ -51,10 +51,12 @@ class DirEditWidget(QWidget):
     def btn_edit_clicked(self):
         dir_path = self.dir_line_edit.text()
         if not dir_is_valid(dir_path):
-            dir_path = None
+            dir_path = ConstSettings().user_docs
 
         dir_path = QFileDialog.getExistingDirectory(
-            self, 'Select Folder', directory=dir_path)
+            self, 'Select Folder',
+            options=QFileDialog.Option.ShowDirsOnly,
+            directory=dir_path)
 
         if not dir_is_valid(dir_path):
             return

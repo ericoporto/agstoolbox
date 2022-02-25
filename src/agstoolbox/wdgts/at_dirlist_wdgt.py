@@ -2,7 +2,7 @@ from __future__ import annotations  # for python 3.8
 from pathlib import Path
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QWidget, QFileDialog, QStyle, QSizePolicy, QFrame
+from PyQt6.QtWidgets import QWidget, QFileDialog, QStyle, QFrame
 
 from agstoolbox.core.settings import ConstSettings
 from agstoolbox.core.utils.file import dir_is_valid
@@ -75,10 +75,12 @@ class DirListWidget(QWidget):
         itm = self.getSelectedItem()
         dir_path = itm.text()
         if not dir_is_valid(dir_path):
-            dir_path = None
+            dir_path = ConstSettings().user_docs
 
         dir_path = QFileDialog.getExistingDirectory(
-            self, 'Select Folder', directory=dir_path)
+            self, 'Select Folder',
+            options=QFileDialog.Option.ShowDirsOnly,
+            directory=dir_path)
 
         if not dir_is_valid(dir_path):
             return
