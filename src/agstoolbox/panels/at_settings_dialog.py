@@ -7,7 +7,7 @@ from agstoolbox.wdgts.at_dirlist_wdgt import DirListWidget
 from agstoolbox.wdgts.at_single_dir_wdgt import DirEditWidget
 
 
-class Ui_SettingsDialog(QDialog):
+class SettingsDialog(QDialog):
     def __init__(self, parent: QtWidgets = None):
         QDialog.__init__(self, parent)
         self.setObjectName("SettingsDialog")
