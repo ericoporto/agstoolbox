@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import glob
 import os
+import shutil
 from os.path import realpath
 from os.path import dirname
 from pathlib import Path
@@ -54,3 +55,12 @@ def get_gp_candidates_in_dir(directory: str, filename: str) -> list[str]:
 
 def join_paths_as_posix(path_first: str, path_second: str) -> str:
     return Path(os.path.join(path_first, path_second)).as_posix()
+
+
+def remove_dir_contents(target_dir: str):
+    with os.scandir(target_dir) as entries:
+        for entry in entries:
+            if entry.is_dir() and not entry.is_symlink():
+                shutil.rmtree(entry.path)
+            else:
+                os.remove(entry.path)

@@ -66,6 +66,12 @@ class MainWindow(QMainWindow):
         self.statusbar = QtWidgets.QStatusBar(self)
         self.statusbar.setObjectName("statusbar")
         self.setStatusBar(self.statusbar)
+
+        self.progressBar = QtWidgets.QProgressBar()
+        self.statusbar.addPermanentWidget(self.progressBar)
+        self.progressBar.hide()
+
+        # toolbar
         self.toolBar = QtWidgets.QToolBar(self)
         self.toolBar.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
         self.toolBar.setMovable(False)
