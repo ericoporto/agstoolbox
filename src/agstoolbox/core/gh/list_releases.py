@@ -10,6 +10,17 @@ from agstoolbox.core.utils.version import tag_to_version, tag_to_family, family_
     family_to_minor
 
 
+def is_asset_archive(release_name: str, asset_name: str) -> bool:
+    version = release_name.replace(" ", "").replace("v.", "")
+    is_patch = asset_name.startswith("AGS-" + version + "-P")
+    if is_patch:
+        patch = asset_name.split(version + "-P")[1].split(".")[0]
+        version += "-P" + patch
+
+    archive_name = "AGS-" + version + ".zip"
+    return asset_name == archive_name
+
+
 def parse_releases(response_json) -> list[Release]:
     releases = [None] * len(response_json)
     count = 0
@@ -17,12 +28,10 @@ def parse_releases(response_json) -> list[Release]:
     for rel in response_json:
         rls = None
         found_asset = False
-        version = rel['name'].replace(" ", "").replace("v.", "")
-        archive_name = "AGS-" + version + ".zip"
+
         for asset in rel['assets']:
-            if asset['name'] == archive_name or (
-                asset['name'].startswith("AGS-" + version + "-P") and asset['name'].endswith(".zip")
-            ):
+            # check for either predictable or patch release archives
+            if is_asset_archive(rel['name'], asset['name']):
                 rls = Release()
                 rls.archive_id = asset['id']
                 rls.archive_name = asset['name']
