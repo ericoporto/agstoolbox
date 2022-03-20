@@ -4,7 +4,7 @@ from PyQt6.QtWidgets import QTreeWidget, QWidget, QAbstractScrollArea, QFrame
 from agstoolbox.at_tasks import do_update_tools_downloads, do_update_tools_unmanaged, \
     do_update_tools_managed
 from agstoolbox.wdgts.at_tree_item_tool import TreeItemTool_Header, ToolType, \
-    TreeItemTool_Download
+    TreeItemTool_Download, TreeItemTool_ExternallyInstalled, TreeItemTool_Managed
 
 
 class ToolsTree(QTreeWidget):
@@ -57,6 +57,7 @@ class ToolsTree(QTreeWidget):
             for t in tools:
                 itm = TreeItemTool_Download(t)
                 self.header_download.addChild(itm)
+                itm.updateInTree()
 
         self.tools_update_downloads_ended()
 
@@ -78,8 +79,9 @@ class ToolsTree(QTreeWidget):
         tools = self.tool_update_unmanaged_task.tools_list
         if tools is not None:
             for t in tools:
-                itm = TreeItemTool_Download(t)
+                itm = TreeItemTool_ExternallyInstalled(t)
                 self.header_unmanaged.addChild(itm)
+                itm.updateInTree()
 
         self.tools_update_unmanaged_ended()
 
@@ -102,8 +104,9 @@ class ToolsTree(QTreeWidget):
 
         if tools is not None:
             for t in tools:
-                itm = TreeItemTool_Download(t)
+                itm = TreeItemTool_Managed(t)
                 self.header_managed.addChild(itm)
+                itm.updateInTree()
 
         self.tools_update_managed_ended()
 

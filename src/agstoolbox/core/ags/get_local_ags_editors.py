@@ -58,6 +58,7 @@ def list_probable_ags_editors_in_dir(filepath: str) -> list[LocalAgsEditor]:
         local_ae.path = c
         local_ae.validated = validate_editor_exe(c, version)
         local_ae.name = 'AGS Editor ' + version
+        local_ae.last_modified = os.path.getmtime(filepath)
         editors.append(local_ae)
 
     return editors

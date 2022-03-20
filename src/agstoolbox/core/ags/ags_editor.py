@@ -13,3 +13,4 @@ class LocalAgsEditor(AgsEditor):
     path = None
     externally_installed = False
     validated = None
+    last_modified = None
