@@ -19,13 +19,13 @@ def test_parse_releases():
     f = open(os.path.join(cur_dir, 'resources/gh_releases.json'))
     response_json = json.load(f)
     releases = parse_releases(response_json)
-    assert len(releases) == 30
+    assert len(releases) == 44
     assert releases[0].tag == "v.3.6.0.15"
     assert releases[1].tag == "v.3.6.0.14"
-    assert releases[2].tag == "v.3.6.0.13"
-    assert releases[2].name == "v.3.6.0.13 - Alpha 14"
-    assert releases[2].url == "https://api.github.com/repos/adventuregamestudio/ags/releases/56166627"
-    assert releases[2].archive_name == "AGS-3.6.0.13-Alpha14.zip"
-    assert releases[2].archive_url == \
+    assert releases[3].tag == "v.3.6.0.13"
+    assert releases[3].name == "v.3.6.0.13 - Alpha 14"
+    assert releases[3].url == "https://api.github.com/repos/adventuregamestudio/ags/releases/56166627"
+    assert releases[3].archive_name == "AGS-3.6.0.13-Alpha14.zip"
+    assert releases[3].archive_url == \
            "https://github.com/adventuregamestudio/ags/releases/download/v.3.6.0.13/AGS-3.6.0.13-Alpha14.zip"
-    assert releases[2].archive_size == 25219327
+    assert releases[3].archive_size == 25219327
