@@ -101,7 +101,8 @@ class ToolsUpdateThreadManaged(QThread):
 
     def run(self) -> None:
         self.update_started.emit()
-        # self.tools_list = list()
+        self.tools_list = list_ags_editors_in_dir_list(
+            list(Settings().get_tools_install_dir()))
         self.update_ended.emit()
 
     def stop(self):
