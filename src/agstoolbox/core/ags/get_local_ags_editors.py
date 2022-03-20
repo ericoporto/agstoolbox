@@ -5,7 +5,8 @@ from agstoolbox.core.ags.ags_editor import EDITOR_FILE_NAME, LocalAgsEditor
 from agstoolbox.core.ags.validate_ags_editor import validate_editor_exe
 from agstoolbox.core.utils.file import get_gp_candidates_in_dir
 from agstoolbox.core.utils.pe import is_valid_exe, get_exe_information
-from agstoolbox.core.utils.version import version_to_family, family_to_major, family_to_minor
+from agstoolbox.core.version.version_utils import version_to_family, family_to_major, \
+    family_to_minor, version_str_to_version
 
 
 def is_possibly_editor_file(filepath: str) -> bool:
@@ -49,15 +50,11 @@ def list_probable_ags_editors_in_dir(filepath: str) -> list[LocalAgsEditor]:
     for c in candidates:
         local_ae = LocalAgsEditor()
         pe_info = get_exe_information(c)
-        version = pe_info.product_version
-        family = version_to_family(version)
+        version = version_str_to_version(pe_info.product_version)
         local_ae.version = version
-        local_ae.version_family = family
-        local_ae.version_major = family_to_major(family)
-        local_ae.version_minor = family_to_minor(family)
         local_ae.path = c
-        local_ae.validated = validate_editor_exe(c, version)
-        local_ae.name = 'AGS Editor ' + version
+        local_ae.validated = validate_editor_exe(c, version.as_str)
+        local_ae.name = 'AGS Editor ' + version.as_str
         local_ae.last_modified = os.path.getmtime(filepath)
         editors.append(local_ae)
 

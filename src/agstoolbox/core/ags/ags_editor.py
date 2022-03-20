@@ -1,11 +1,11 @@
+from __future__ import annotations  # for python 3.8
+from agstoolbox.core.version.version import Version
+
 EDITOR_FILE_NAME = 'AGSEditor.exe'
 
 
 class AgsEditor:
-    version = None
-    version_family = None
-    version_major = None
-    version_minor = None
+    version: Version = None
     name = None
 
 

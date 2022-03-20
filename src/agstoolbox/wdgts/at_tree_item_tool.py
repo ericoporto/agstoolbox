@@ -118,7 +118,7 @@ class TreeItemTool_Local_Widget(QWidget):
             self.labelName.font().pointSize() * 0.75,
         )
 
-        self.labelVersion = QLabel(self.ags_editor.version)
+        self.labelVersion = QLabel(self.ags_editor.version.as_str)
         self.labelVersion.setFont(smaller_font)
         self.labelVersion.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
 
