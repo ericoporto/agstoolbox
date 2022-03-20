@@ -20,7 +20,9 @@ def parse_releases(response_json) -> list[Release]:
         version = rel['name'].replace(" ", "").replace("v.", "")
         archive_name = "AGS-" + version + ".zip"
         for asset in rel['assets']:
-            if asset['name'] == archive_name:
+            if asset['name'] == archive_name or (
+                asset['name'].startswith("AGS-" + version + "-P") and asset['name'].endswith(".zip")
+            ):
                 rls = Release()
                 rls.archive_id = asset['id']
                 rls.archive_name = asset['name']

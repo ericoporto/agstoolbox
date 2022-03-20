@@ -53,6 +53,7 @@ class ToolsTree(QTreeWidget):
     def tools_update_downloads(self):
         self.header_download.clear()
         tools = self.tool_update_downloads_task.tools_list
+
         if tools is not None:
             for t in tools:
                 itm = TreeItemTool_Download(t)
