@@ -64,3 +64,7 @@ def remove_dir_contents(target_dir: str):
                 shutil.rmtree(entry.path)
             else:
                 os.remove(entry.path)
+
+
+def mkdirp(path_dir: str):
+    Path(path_dir).mkdir(parents=True, exist_ok=True)

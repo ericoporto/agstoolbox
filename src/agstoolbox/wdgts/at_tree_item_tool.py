@@ -4,6 +4,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QTreeWidgetItem, QLabel, QHBoxLayout, QVBoxLayout, QGridLayout, QWidget
 
 from agstoolbox.at_icons import ags_editor_icon, ags_editor_as_pixmap
+from agstoolbox.at_tasks import do_download_managed
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
 from agstoolbox.core.ags.ags_editor_run import start_ags_editor
 from agstoolbox.core.gh.release import Release
@@ -95,6 +96,9 @@ class TreeItemTool_Download_Widget(QWidget):
 
         self.setLayout(main_qgrid)
 
+#    def mouseDoubleClickEvent(self, event):
+#        do_download_managed(self.release, None, None)
+
 
 # tool available locally for use
 # either managed or unmanaged (externally installed)
@@ -151,7 +155,7 @@ class TreeItemTool_Local_Widget(QWidget):
         main_qgrid.addLayout(vbox, 0, 1)
 
         self.setLayout(main_qgrid)
-        
+
     def mouseDoubleClickEvent(self, event):
         start_ags_editor(self.ags_editor)
 
