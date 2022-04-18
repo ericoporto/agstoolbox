@@ -58,12 +58,15 @@ def join_paths_as_posix(path_first: str, path_second: str) -> str:
 
 
 def remove_dir_contents(target_dir: str):
-    with os.scandir(target_dir) as entries:
-        for entry in entries:
-            if entry.is_dir() and not entry.is_symlink():
-                shutil.rmtree(entry.path)
-            else:
-                os.remove(entry.path)
+    try:
+        with os.scandir(target_dir) as entries:
+            for entry in entries:
+                if entry.is_dir() and not entry.is_symlink():
+                    shutil.rmtree(entry.path)
+                elif entry.is_file():
+                    os.remove(entry.path)
+    except (FileNotFoundError, IOError):
+        print("nothing to remove")
 
 
 def mkdirp(path_dir: str):
