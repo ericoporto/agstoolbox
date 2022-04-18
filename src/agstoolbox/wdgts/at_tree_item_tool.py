@@ -5,6 +5,7 @@ from PyQt6.QtWidgets import QTreeWidgetItem, QLabel, QHBoxLayout, QVBoxLayout, Q
 
 from agstoolbox.at_icons import ags_editor_icon, ags_editor_as_pixmap
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
+from agstoolbox.core.ags.ags_editor_run import start_ags_editor
 from agstoolbox.core.gh.release import Release
 from agstoolbox.core.utils.time import s_ago
 
@@ -150,6 +151,9 @@ class TreeItemTool_Local_Widget(QWidget):
         main_qgrid.addLayout(vbox, 0, 1)
 
         self.setLayout(main_qgrid)
+        
+    def mouseDoubleClickEvent(self, event):
+        start_ags_editor(self.ags_editor)
 
 
 ##################################################################################################
