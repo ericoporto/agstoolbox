@@ -120,12 +120,14 @@ class DownloadAManagedToolThread(QThread):
 
     def __init__(self, release: Release = None):
         QThread.__init__(self)
+
         self.release = release
 
     def run(self) -> None:
         self.update_started.emit()
-        download_release_to_cache(self.release)
-        install_release_from_cache(self.release)
+        release = self.release
+        download_release_to_cache(release)
+        install_release_from_cache(release)
         self.update_ended.emit()
 
     def stop(self):

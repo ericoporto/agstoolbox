@@ -3,7 +3,7 @@ from enum import Enum
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QTreeWidgetItem, QLabel, QHBoxLayout, QVBoxLayout, QGridLayout, QWidget
 
-from agstoolbox.at_icons import ags_editor_icon, ags_editor_as_pixmap
+from agstoolbox.at_icons import ags_editor_as_pixmap
 from agstoolbox.at_tasks import do_download_managed
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
 from agstoolbox.core.ags.ags_editor_run import start_ags_editor
@@ -49,6 +49,8 @@ class TreeItemTool_Header(QTreeWidgetItem):
 # Tool Download Item
 class TreeItemTool_Download_Widget(QWidget):
     release = None
+    # we need to store the thread or the garbage collector will remove it!
+    thread_download = None
 
     def __init__(self, release: Release, parent: QWidget = None):
         QWidget.__init__(self, parent)
@@ -96,8 +98,14 @@ class TreeItemTool_Download_Widget(QWidget):
 
         self.setLayout(main_qgrid)
 
-#    def mouseDoubleClickEvent(self, event):
-#        do_download_managed(self.release, None, None)
+    def mouseDoubleClickEvent(self, event):
+        if self.thread_download is not None:
+            return
+        self.thread_download = do_download_managed(self.release, self.download_ended)
+
+    def download_ended(self):
+        self.thread_download = None
+        self.parent().parent().tools_schd_update_managed()
 
 
 # tool available locally for use
@@ -164,7 +172,6 @@ class TreeItemTool_Local_Widget(QWidget):
 # item widgets
 
 class TreeItemTool_Managed(QTreeWidgetItem):
-    ags_editor = None
     tool_type = ToolType.MANAGED_TOOL
 
     def __init__(self, ags_editor: LocalAgsEditor):
@@ -176,7 +183,6 @@ class TreeItemTool_Managed(QTreeWidgetItem):
 
 
 class TreeItemTool_ExternallyInstalled(QTreeWidgetItem):
-    local_editor = None
     tool_type = ToolType.EXTERNALLY_INSTALLED_TOOL
 
     def __init__(self, ags_editor: LocalAgsEditor):
@@ -188,7 +194,6 @@ class TreeItemTool_ExternallyInstalled(QTreeWidgetItem):
 
 
 class TreeItemTool_Download(QTreeWidgetItem):
-    release = None
     tool_type = ToolType.AVAILABLE_TO_DOWNLOAD
 
     def __init__(self, release: Release):
