@@ -58,72 +58,65 @@ class ToolsUpdateThreadDownloads(QThread):
         self.update_canceled.emit()
 
 
-def do_update_tools_downloads(update_ended, update_canceled):
+def do_update_tools_downloads(update_ended=None, update_canceled=None):
     thread = ToolsUpdateThreadDownloads()
-    thread.update_ended.connect(update_ended)
-    thread.update_canceled.connect(update_canceled)
+    if update_ended is not None:
+        thread.update_ended.connect(update_ended)
+    if update_canceled is not None:
+        thread.update_canceled.connect(update_canceled)
     thread.start()
     return thread
 
 
-class ToolsUpdateThreadUnmanaged(QThread):
+class ToolsUpdateLocalThread(QThread):
     update_started = Signal()
     update_ended = Signal()
     update_canceled = Signal()
     tools_list = None
+    directory_list = None
 
-    def __init__(self):
+    def __init__(self, directory_list: list[str]):
         QThread.__init__(self)
+
+        self.tools_list = None
+        self.directory_list = directory_list
 
     def run(self) -> None:
         self.update_started.emit()
-        self.tools_list = list_ags_editors_in_dir_list(
-            Settings().get_manually_installed_editors_search_dirs())
+        self.tools_list = list_ags_editors_in_dir_list(self.directory_list)
         self.update_ended.emit()
 
     def stop(self):
         self.update_canceled.emit()
 
 
-def do_update_tools_unmanaged(update_ended, update_canceled):
-    thread = ToolsUpdateThreadUnmanaged()
-    thread.update_ended.connect(update_ended)
-    thread.update_canceled.connect(update_canceled)
+def do_update_tools(directory_list: list[str], update_ended=None, update_canceled=None):
+    thread = ToolsUpdateLocalThread(directory_list)
+    if update_ended is not None:
+        thread.update_ended.connect(update_ended)
+    if update_canceled is not None:
+        thread.update_canceled.connect(update_canceled)
     thread.start()
     return thread
 
 
-class ToolsUpdateThreadManaged(QThread):
-    update_started = Signal()
-    update_ended = Signal()
-    update_canceled = Signal()
-    tools_list = None
-
-    def __init__(self):
-        QThread.__init__(self)
-
-    def run(self) -> None:
-        self.update_started.emit()
-        self.tools_list = list_ags_editors_in_dir_list(
-            list(Settings().get_tools_install_dir()))
-        self.update_ended.emit()
-
-    def stop(self):
-        self.update_canceled.emit()
+def do_update_tools_unmanaged(update_ended=None, update_canceled=None):
+    return do_update_tools(
+        Settings().get_manually_installed_editors_search_dirs(),
+        update_ended, update_canceled)
 
 
-def do_update_tools_managed(update_ended, update_canceled):
-    thread = ToolsUpdateThreadManaged()
-    thread.update_ended.connect(update_ended)
-    thread.update_canceled.connect(update_canceled)
-    thread.start()
-    return thread
+def do_update_tools_managed(update_ended=None, update_canceled=None):
+    return do_update_tools(
+        list(Settings().get_tools_install_dir()),
+        update_ended, update_canceled)
 
 
 # actual download
 class DownloadAManagedToolThread(QThread):
     update_started = Signal()
     update_ended = Signal()
+    update_canceled = Signal()
     release: Release = None
 
     def __init__(self, release: Release = None):
@@ -136,12 +129,15 @@ class DownloadAManagedToolThread(QThread):
         install_release_from_cache(self.release)
         self.update_ended.emit()
 
+    def stop(self):
+        self.update_canceled.emit()
 
-def do_download_managed(release: Release, update_ended=None, update_started=None):
+
+def do_download_managed(release: Release, update_ended=None, update_canceled=None):
     thread = DownloadAManagedToolThread(release)
     if update_ended is not None:
         thread.update_ended.connect(update_ended)
-    if update_started is not None:
-        thread.update_started.connect(update_started)
+    if update_canceled is not None:
+        thread.update_canceled.connect(update_canceled)
     thread.start()
     return thread

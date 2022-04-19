@@ -97,7 +97,7 @@ class ToolsTree(QTreeWidget):
             return
 
         self.tool_update_managed_task = do_update_tools_managed(
-            self.tools_update_managed, self.tools_update_unmanaged_ended)
+            self.tools_update_managed, self.tools_update_managed_ended)
 
     def tools_update_managed(self):
         self.header_managed.clear()
