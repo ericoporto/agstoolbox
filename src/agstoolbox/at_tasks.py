@@ -101,15 +101,14 @@ def do_update_tools(directory_list: list[str], update_ended=None, update_cancele
 
 
 def do_update_tools_unmanaged(update_ended=None, update_canceled=None):
-    return do_update_tools(
-        Settings().get_manually_installed_editors_search_dirs(),
-        update_ended, update_canceled)
+    dir_list: list[str] = Settings().get_manually_installed_editors_search_dirs()
+    return do_update_tools(dir_list, update_ended, update_canceled)
 
 
 def do_update_tools_managed(update_ended=None, update_canceled=None):
-    return do_update_tools(
-        list(Settings().get_tools_install_dir()),
-        update_ended, update_canceled)
+    dir_list: list[str] = list()
+    dir_list.append(Settings().get_tools_install_dir())
+    return do_update_tools(dir_list, update_ended, update_canceled)
 
 
 # actual download

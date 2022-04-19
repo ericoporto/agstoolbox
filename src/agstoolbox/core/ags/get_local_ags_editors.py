@@ -1,5 +1,6 @@
 from __future__ import annotations  # for python 3.8
 import os
+from operator import attrgetter
 
 from agstoolbox.core.ags.ags_editor import EDITOR_FILE_NAME, LocalAgsEditor
 from agstoolbox.core.ags.validate_ags_editor import validate_editor_exe
@@ -69,5 +70,7 @@ def list_ags_editors_in_dir_list(filepaths: list[str]) -> list[LocalAgsEditor]:
 
     unique = list(dict.fromkeys(editors))
     editors = unique
+
+    editors.sort(key=attrgetter("last_modified"), reverse=True)
 
     return editors
