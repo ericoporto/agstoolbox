@@ -102,10 +102,12 @@ class TreeItemTool_Download_Widget(QWidget):
         if self.thread_download is not None:
             return
         self.thread_download = do_download_managed(self.release, self.download_ended)
+        self.setEnabled(False)
 
     def download_ended(self):
         self.thread_download = None
         self.parent().parent().tools_schd_update_managed()
+        self.setEnabled(True)
 
 
 # tool available locally for use
