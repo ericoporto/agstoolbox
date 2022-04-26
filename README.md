@@ -37,19 +37,20 @@ For running, you can call the script on the rootfolder directly.
 
 ##  Desired features
 
-- Download any archive.zip of any AGS version from 3.5.0 forward
-- buttons for launching Editor or opening folder in windows explorer
-- monitoring new releases
-- check download integrity with some hashing
-- allow setting a default AGS to use
-- allow removing a downloaded Editor from hard drive
-- launching link to online AGS manual, and forums
-- detect AGS editors installed through other means (but not manage them)
-- see how much storage each AGS Editor is using.
-- add folders as project libraries (may contain `game.agf` files)
-- allow listing game projects in libraries, with version used in `game.agf`
-- allow opening a game project directory in the file explorer
-- open the editor of the version if editor can open through command line and is available ([see](https://github.com/adventuregamestudio/ags/blob/970e023af4db037e2fe24488e583b9dd3ad935aa/Editor/AGS.Editor/GUI/GUIController.cs#L872))
+- [x] Download any archive.zip of any AGS version from 3.5.0 forward
+- [x] buttons for launching Editor 
+- [x] detect AGS editors installed through other means (but not manage them)
+- [x] add folders as project libraries (may contain `game.agf` files)
+- [x] monitoring new releases
+- [x] allow listing game projects in libraries, with version used in `game.agf`
+- [ ] opening Editor folder in windows explorer
+- [ ] check download integrity with some hashing
+- [ ] allow setting a default AGS to use
+- [ ] allow removing a downloaded Editor from hard drive
+- [ ] launching link to online AGS manual, and forums
+- [ ] see how much storage each AGS Editor is using.
+- [ ] allow opening a game project directory in the file explorer
+- [ ] open the editor of the version if editor can open through command line and is available ([see](https://github.com/adventuregamestudio/ags/blob/970e023af4db037e2fe24488e583b9dd3ad935aa/Editor/AGS.Editor/GUI/GUIController.cs#L872))
 
 
 ## how it (will!) works
