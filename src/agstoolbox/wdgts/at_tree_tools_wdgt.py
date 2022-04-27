@@ -3,6 +3,10 @@ from PyQt6.QtWidgets import QTreeWidget, QWidget, QAbstractScrollArea, QFrame
 
 from agstoolbox.at_tasks import do_update_tools_downloads, do_update_tools_unmanaged, \
     do_update_tools_managed
+from agstoolbox.core.ags.ags_editor import LocalAgsEditor
+from agstoolbox.core.ags.ags_editor_run import ags_editor_load_project
+from agstoolbox.core.ags.game_project import GameProject
+from agstoolbox.core.version.version import Version
 from agstoolbox.wdgts.at_tree_item_tool import TreeItemTool_Header, ToolType, \
     TreeItemTool_Download, TreeItemTool_ExternallyInstalled, TreeItemTool_Managed
 
@@ -14,6 +18,8 @@ class ToolsTree(QTreeWidget):
     header_managed = None
     header_download = None
     header_unmanaged = None
+    managed_editors_list: list[LocalAgsEditor] = None
+    unmanaged_editors_list: list[LocalAgsEditor] = None
 
     def __init__(self, parent: QWidget = None):
         QTreeWidget.__init__(self, parent)
@@ -78,6 +84,8 @@ class ToolsTree(QTreeWidget):
     def tools_update_unmanaged(self):
         self.header_unmanaged.clear()
         tools = self.tool_update_unmanaged_task.tools_list
+        self.unmanaged_editors_list = tools
+
         if tools is not None:
             for t in tools:
                 itm = TreeItemTool_ExternallyInstalled(t)
@@ -102,6 +110,7 @@ class ToolsTree(QTreeWidget):
     def tools_update_managed(self):
         self.header_managed.clear()
         tools = self.tool_update_managed_task.tools_list
+        self.managed_editors_list = tools
 
         if tools is not None:
             for t in tools:
@@ -114,3 +123,16 @@ class ToolsTree(QTreeWidget):
     def tools_update_managed_ended(self):
         self.tool_update_managed_task = None
     ###############################################################################################
+
+    def open_project_tool(self, game_project: GameProject):
+        project_version: Version = game_project.ags_editor_version
+
+        for editor in self.managed_editors_list:
+            if editor.version.as_int == project_version.as_int:
+                ags_editor_load_project(editor, game_project)
+                return
+
+        for editor in self.unmanaged_editors_list:
+            if editor.version.as_int == project_version.as_int:
+                ags_editor_load_project(editor, game_project)
+                return 

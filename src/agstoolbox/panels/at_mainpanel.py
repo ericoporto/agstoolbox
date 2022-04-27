@@ -39,24 +39,24 @@ class MainWindow(QMainWindow):
         self.tabWidget.setObjectName("tabWidget")
 
         # Tools
-        self.tabTools = QtWidgets.QTabBar()
+        self.tabTools = QtWidgets.QTabBar(self)
         self.tabTools.setObjectName("tabTools")
         self.tabTools.setDrawBase(False)
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.tabTools)
         self.verticalLayout_2.setContentsMargins(margin, margin, margin, margin)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.treeTools = ToolsTree(self.tabTools)
+        self.treeTools = ToolsTree(parent=self)
         self.verticalLayout_2.addWidget(self.treeTools)
         self.tabWidget.addTab(self.tabTools, "")
 
         # Projects
-        self.tabProjects = QtWidgets.QTabBar()
+        self.tabProjects = QtWidgets.QTabBar(self)
         self.tabProjects.setObjectName("tabProjects")
         self.tabProjects.setDrawBase(False)
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.tabProjects)
         self.verticalLayout_3.setContentsMargins(margin, margin, margin, margin)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.treeProjects = ProjectsTree(self.tabProjects)
+        self.treeProjects = ProjectsTree(parent=self, toolsTree=self.treeTools)
         self.verticalLayout_3.addWidget(self.treeProjects)
         self.tabWidget.addTab(self.tabProjects, "")
 

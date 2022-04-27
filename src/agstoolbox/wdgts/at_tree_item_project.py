@@ -45,7 +45,7 @@ class ProjectWidget(QWidget):
             self.labelName.font().pointSize() * 0.75,
         )
 
-        self.labelVersion = QLabel(self.project.ags_editor_version)
+        self.labelVersion = QLabel(self.project.ags_editor_version.as_str)
         self.labelVersion.setFont(smaller_font)
         self.labelVersion.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
 
@@ -77,6 +77,9 @@ class ProjectWidget(QWidget):
         main_qgrid.addLayout(vbox, 0, 1)
 
         self.setLayout(main_qgrid)
+
+    def mouseDoubleClickEvent(self, event):
+        self.parent().parent().tools_tree.open_project_tool(self.project)
 
 
 class TreeItemProject(QTreeWidgetItem):

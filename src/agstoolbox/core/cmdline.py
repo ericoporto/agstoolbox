@@ -9,7 +9,7 @@ from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir
 def at_cmd_list(args):
     projects = list_game_projects_in_dir(args.Path)
     for p in projects:
-        print(p.name + ', ' + p.ags_editor_version + ', ' + p.path)
+        print(p.name + ', ' + p.ags_editor_version.as_str + ', ' + p.path)
     pass
 
 
