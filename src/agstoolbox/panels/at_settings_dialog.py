@@ -1,6 +1,6 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QDialog, QDialogButtonBox, QSizePolicy, QFormLayout, QHBoxLayout, \
-    QVBoxLayout, QSpacerItem, QPushButton, QLabel, QLineEdit, QDialogButtonBox
+from PyQt6.QtWidgets import QDialog, QSizePolicy, QFormLayout, QHBoxLayout, QVBoxLayout, \
+    QSpacerItem, QLabel, QDialogButtonBox
 
 from agstoolbox.core.settings import Settings, ConstSettings
 from agstoolbox.wdgts.at_dirlist_wdgt import DirListWidget

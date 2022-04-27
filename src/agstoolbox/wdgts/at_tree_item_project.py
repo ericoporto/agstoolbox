@@ -1,12 +1,12 @@
 from __future__ import annotations  # for python 3.8
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QTreeWidgetItem, QWidget, QLabel, QHBoxLayout, QVBoxLayout, QGridLayout
-from PyQt6.QtGui import QTransform, QAction
+from PyQt6.QtGui import QAction
 
 from agstoolbox.at_icons import main_icon_as_pixmap
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
-from agstoolbox.core.ags.ags_local_run import ags_project_folder_in_explorer, \
-    ags_editor_load_project
+from agstoolbox.core.ags.ags_local_run import ags_editor_load_project
+from agstoolbox.wdgts_utils.ags_local_extra import ags_project_folder_in_explorer
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.utils.time import s_ago
 from agstoolbox.wdgts_utils.action_utils import DefaultMenuQAction

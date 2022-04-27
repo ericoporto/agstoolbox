@@ -3,7 +3,7 @@ import zipfile
 
 from agstoolbox.core.gh.download_release import get_zip_archive_cache_path
 from agstoolbox.core.gh.release import Release
-from agstoolbox.core.settings import ConstSettings, Settings
+from agstoolbox.core.settings import Settings
 from agstoolbox.core.utils.file import remove_dir_contents, mkdirp
 
 

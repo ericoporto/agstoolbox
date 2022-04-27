@@ -6,9 +6,7 @@ from operator import attrgetter
 import requests
 
 from agstoolbox.core.gh.release import Release
-from agstoolbox.core.version.version_utils import tag_to_version_str, tag_to_family, \
-    family_to_major, \
-    family_to_minor, tag_to_version
+from agstoolbox.core.version.version_utils import tag_to_version
 
 
 def is_asset_archive(release_name: str, asset_name: str) -> bool:
@@ -53,7 +51,7 @@ def parse_releases(response_json) -> list[Release]:
         rls.tag = tag
         rls.version = tag_to_version(tag)
 
-        rls.prerelease = rel['prerelease']
+        rls.is_pre_release = rel['prerelease']
         rls.published_at = rel['published_at']
         tstamp = datetime.strptime(rel['published_at'], "%Y-%m-%dT%H:%M:%SZ")
         rls.published_at_timestamp = tstamp.timestamp()

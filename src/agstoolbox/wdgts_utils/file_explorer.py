@@ -24,12 +24,10 @@ def _show_file_win32(path):
     subprocess.check_call(["explorer", "/select", path])
 
 
-_show_file_func = {'darwin': _show_file_darwin,
-                   'linux': _show_file_linux,
-                   'win32': _show_file_win32}
-
-
 def open_folder(path: str):
+    _show_file_func = {'darwin': _show_file_darwin,
+                       'linux': _show_file_linux,
+                       'win32': _show_file_win32}
     fullpath = os.path.realpath(path)
     if not QtGui.QDesktopServices.openUrl(QtCore.QUrl.fromLocalFile(fullpath)):
         # failed

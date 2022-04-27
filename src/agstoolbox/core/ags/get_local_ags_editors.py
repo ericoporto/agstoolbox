@@ -6,8 +6,7 @@ from agstoolbox.core.ags.ags_editor import EDITOR_FILE_NAME, LocalAgsEditor
 from agstoolbox.core.ags.validate_ags_editor import validate_editor_exe
 from agstoolbox.core.utils.file import get_gp_candidates_in_dir
 from agstoolbox.core.utils.pe import is_valid_exe, get_exe_information
-from agstoolbox.core.version.version_utils import version_to_family, family_to_major, \
-    family_to_minor, version_str_to_version
+from agstoolbox.core.version.version_utils import version_str_to_version
 
 
 def is_possibly_editor_file(filepath: str) -> bool:
