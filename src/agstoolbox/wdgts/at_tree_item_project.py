@@ -9,6 +9,7 @@ from agstoolbox.core.ags.ags_local_run import ags_project_folder_in_explorer, \
     ags_editor_load_project
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.utils.time import s_ago
+from agstoolbox.wdgts_utils.action_utils import DefaultMenuQAction
 
 
 class ActionEditorPair:
@@ -126,8 +127,7 @@ class ProjectWidget(QWidget):
 
     def contextMenuEvent(self, event):
         menu = QtWidgets.QMenu(self)
-        quick_open_action = menu.addAction("Quick Open Project")
-        menu.addSeparator()
+        quick_open_action = DefaultMenuQAction(menu, "Quick Open Project")
         open_folder_action = menu.addAction("Open Folder in File Explorer")
         menu.addSeparator()
         managed_actions = self.set_managed_editors_menu(menu)

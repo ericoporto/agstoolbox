@@ -9,6 +9,7 @@ from agstoolbox.core.ags.ags_editor import LocalAgsEditor
 from agstoolbox.core.ags.ags_local_run import start_ags_editor, ags_editor_folder_in_explorer
 from agstoolbox.core.gh.release import Release
 from agstoolbox.core.utils.time import s_ago
+from agstoolbox.wdgts_utils.action_utils import DefaultMenuQAction
 
 
 class ToolType(Enum):
@@ -114,7 +115,7 @@ class TreeItemTool_Download_Widget(QWidget):
 
     def contextMenuEvent(self, event):
         menu = QtWidgets.QMenu(self)
-        install_action = menu.addAction("Install as managed Editor")
+        install_action = DefaultMenuQAction(menu, "Install as managed Editor")
         action = menu.exec(self.mapToGlobal(event.pos()))
         if action == install_action:
             self.install()
@@ -184,8 +185,7 @@ class TreeItemTool_Local_Widget(QWidget):
 
     def contextMenuEvent(self, event):
         menu = QtWidgets.QMenu(self)
-        open_editor_action = menu.addAction("Open Editor")
-        menu.addSeparator()
+        open_editor_action = DefaultMenuQAction(menu, "Open Editor")
         open_folder_action = menu.addAction("Open Folder in File Explorer")
         action = menu.exec(self.mapToGlobal(event.pos()))
         if action == open_editor_action:
