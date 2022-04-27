@@ -90,8 +90,11 @@ class ProjectWidget(QWidget):
 
         self.setLayout(main_qgrid)
 
-    def mouseDoubleClickEvent(self, event):
+    def quick_open_project(self):
         self.parent().parent().tools_tree.open_project_tool(self.project)
+
+    def mouseDoubleClickEvent(self, event):
+        self.quick_open_project()
 
     def get_managed_editors(self) -> list[LocalAgsEditor]:
         return self.parent().parent().tools_tree.managed_editors_list
@@ -123,6 +126,8 @@ class ProjectWidget(QWidget):
 
     def contextMenuEvent(self, event):
         menu = QtWidgets.QMenu(self)
+        quick_open_action = menu.addAction("Quick Open Project")
+        menu.addSeparator()
         open_folder_action = menu.addAction("Open Folder in File Explorer")
         menu.addSeparator()
         managed_actions = self.set_managed_editors_menu(menu)
@@ -131,6 +136,9 @@ class ProjectWidget(QWidget):
         action = menu.exec(self.mapToGlobal(event.pos()))
         if action == open_folder_action:
             ags_project_folder_in_explorer(self.project)
+            return
+        elif action == quick_open_action:
+            self.quick_open_project()
             return
         else:
             for a_pair in managed_actions:

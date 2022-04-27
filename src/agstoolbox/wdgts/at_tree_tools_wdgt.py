@@ -30,7 +30,7 @@ class ToolsTree(QTreeWidget):
         self.setFrameStyle(QFrame.Shape.NoFrame)
         self.clear()
         self.header_managed = TreeItemTool_Header(
-            "Installed", ToolType.MANAGED_TOOL)
+            "Managed", ToolType.MANAGED_TOOL)
         self.header_unmanaged = TreeItemTool_Header(
             "Externally Installed", ToolType.EXTERNALLY_INSTALLED_TOOL)
         self.header_download = TreeItemTool_Header(

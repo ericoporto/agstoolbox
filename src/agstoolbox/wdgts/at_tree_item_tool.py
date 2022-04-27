@@ -98,16 +98,26 @@ class TreeItemTool_Download_Widget(QWidget):
 
         self.setLayout(main_qgrid)
 
-    def mouseDoubleClickEvent(self, event):
+    def install(self):
         if self.thread_download is not None:
             return
         self.thread_download = do_download_managed(self.release, self.download_ended)
         self.setEnabled(False)
 
+    def mouseDoubleClickEvent(self, event):
+        self.install()
+
     def download_ended(self):
         self.thread_download = None
         self.parent().parent().tools_schd_update_managed()
         self.setEnabled(True)
+
+    def contextMenuEvent(self, event):
+        menu = QtWidgets.QMenu(self)
+        install_action = menu.addAction("Install as managed Editor")
+        action = menu.exec(self.mapToGlobal(event.pos()))
+        if action == install_action:
+            self.install()
 
 
 # tool available locally for use
@@ -166,14 +176,21 @@ class TreeItemTool_Local_Widget(QWidget):
 
         self.setLayout(main_qgrid)
 
-    def mouseDoubleClickEvent(self, event):
+    def open_editor(self):
         start_ags_editor(self.ags_editor)
+
+    def mouseDoubleClickEvent(self, event):
+        self.open_editor()
 
     def contextMenuEvent(self, event):
         menu = QtWidgets.QMenu(self)
+        open_editor_action = menu.addAction("Open Editor")
+        menu.addSeparator()
         open_folder_action = menu.addAction("Open Folder in File Explorer")
         action = menu.exec(self.mapToGlobal(event.pos()))
-        if action == open_folder_action:
+        if action == open_editor_action:
+            self.open_editor()
+        elif action == open_folder_action:
             ags_editor_folder_in_explorer(self.ags_editor)
 
 
