@@ -1,12 +1,23 @@
 from __future__ import annotations  # for python 3.8
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QTreeWidgetItem, QWidget, QLabel, QHBoxLayout, QVBoxLayout, QGridLayout
-from PyQt6.QtGui import QTransform
+from PyQt6.QtGui import QTransform, QAction
 
 from agstoolbox.at_icons import main_icon_as_pixmap
-from agstoolbox.core.ags.ags_local_run import ags_project_folder_in_explorer
+from agstoolbox.core.ags.ags_editor import LocalAgsEditor
+from agstoolbox.core.ags.ags_local_run import ags_project_folder_in_explorer, \
+    ags_editor_load_project
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.utils.time import s_ago
+
+
+class ActionEditorPair:
+    action: QAction = None
+    editor: LocalAgsEditor = None
+
+    def __init__(self, action: QAction = None, editor: LocalAgsEditor = None):
+        self.action = action
+        self.editor = editor
 
 
 class ProjectImage(QLabel):
@@ -82,12 +93,55 @@ class ProjectWidget(QWidget):
     def mouseDoubleClickEvent(self, event):
         self.parent().parent().tools_tree.open_project_tool(self.project)
 
+    def get_managed_editors(self) -> list[LocalAgsEditor]:
+        return self.parent().parent().tools_tree.managed_editors_list
+
+    def get_unmanaged_editors(self) -> list[LocalAgsEditor]:
+        return self.parent().parent().tools_tree.unmanaged_editors_list
+
+    def set_managed_editors_menu(self, parent_menu: QtWidgets.QMenu = None) -> list[ActionEditorPair]:
+        submenu = QtWidgets.QMenu("Open in Managed Editor", parent_menu)
+        parent_menu.addMenu(submenu)
+        editors = self.get_managed_editors()
+        actions: list[ActionEditorPair] = list()
+        for editor in editors:
+            action = submenu.addAction(editor.name)
+            actions.append(ActionEditorPair(action=action, editor=editor))
+
+        return actions
+
+    def set_unmanaged_editors_menu(self, parent_menu: QtWidgets.QMenu = None) -> list[ActionEditorPair]:
+        submenu = QtWidgets.QMenu("Open in External Editor", parent_menu)
+        parent_menu.addMenu(submenu)
+        editors = self.get_unmanaged_editors()
+        actions: list[ActionEditorPair] = list()
+        for editor in editors:
+            action = submenu.addAction(editor.name)
+            actions.append(ActionEditorPair(action=action, editor=editor))
+
+        return actions
+
     def contextMenuEvent(self, event):
         menu = QtWidgets.QMenu(self)
         open_folder_action = menu.addAction("Open Folder in File Explorer")
+        menu.addSeparator()
+        managed_actions = self.set_managed_editors_menu(menu)
+        unmanaged_actions = self.set_unmanaged_editors_menu(menu)
+
         action = menu.exec(self.mapToGlobal(event.pos()))
         if action == open_folder_action:
             ags_project_folder_in_explorer(self.project)
+            return
+        else:
+            for a_pair in managed_actions:
+                if a_pair.action == action:
+                    ags_editor_load_project(a_pair.editor, self.project)
+                    return
+
+            for a_pair in unmanaged_actions:
+                if a_pair.action == action:
+                    ags_editor_load_project(a_pair.editor, self.project)
+                    return
 
 
 class TreeItemProject(QTreeWidgetItem):
