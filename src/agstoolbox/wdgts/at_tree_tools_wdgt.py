@@ -135,4 +135,4 @@ class ToolsTree(QTreeWidget):
         for editor in self.unmanaged_editors_list:
             if editor.version.as_int == project_version.as_int:
                 ags_editor_load_project(editor, game_project)
-                return 
+                return
