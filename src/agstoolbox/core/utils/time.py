@@ -8,9 +8,9 @@ def s_ago(ft: float) -> str:
         if time less than 5 days, otherwise, return date as day/month/year
     """
     units = {
-        'days': lambda diff: diff.days,
-        'hours': lambda diff: int(diff.seconds / 3600),
-        'minutes': lambda diff: int(diff.seconds % 3600 / 60),
+        'days': lambda diff_t: diff_t.days,
+        'hours': lambda diff_t: int(diff_t.seconds / 3600),
+        'minutes': lambda diff_t: int(diff_t.seconds % 3600 / 60),
     }
     t = datetime.utcfromtimestamp(ft)
     diff = datetime.utcnow() - t
