@@ -4,7 +4,7 @@ from PyQt6.QtWidgets import QTreeWidget, QWidget, QAbstractScrollArea, QFrame
 from agstoolbox.at_tasks import do_update_tools_downloads, do_update_tools_unmanaged, \
     do_update_tools_managed
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
-from agstoolbox.core.ags.ags_editor_run import ags_editor_load_project
+from agstoolbox.core.ags.ags_local_run import ags_editor_load_project
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.version.version import Version
 from agstoolbox.wdgts.at_tree_item_tool import TreeItemTool_Header, ToolType, \

@@ -6,7 +6,7 @@ from PyQt6.QtWidgets import QTreeWidgetItem, QLabel, QHBoxLayout, QVBoxLayout, Q
 from agstoolbox.at_icons import ags_editor_as_pixmap
 from agstoolbox.at_tasks import do_download_managed
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
-from agstoolbox.core.ags.ags_editor_run import start_ags_editor
+from agstoolbox.core.ags.ags_local_run import start_ags_editor, ags_editor_folder_in_explorer
 from agstoolbox.core.gh.release import Release
 from agstoolbox.core.utils.time import s_ago
 
@@ -168,6 +168,13 @@ class TreeItemTool_Local_Widget(QWidget):
 
     def mouseDoubleClickEvent(self, event):
         start_ags_editor(self.ags_editor)
+
+    def contextMenuEvent(self, event):
+        menu = QtWidgets.QMenu(self)
+        open_folder_action = menu.addAction("Open Folder in File Explorer")
+        action = menu.exec(self.mapToGlobal(event.pos()))
+        if action == open_folder_action:
+            ags_editor_folder_in_explorer(self.ags_editor)
 
 
 ##################################################################################################
