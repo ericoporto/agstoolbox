@@ -4,7 +4,7 @@ from subprocess import Popen
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.utils.file import get_dir
-from agstoolbox.core.utils.file_explorer import open_folder
+from agstoolbox.wdgts_utils.file_explorer import open_folder
 
 
 def start_ags_editor(editor: LocalAgsEditor):
