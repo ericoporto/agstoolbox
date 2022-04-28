@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import errno
 import glob
 import os
 import shutil
 from os.path import realpath
 from os.path import dirname
+from os.path import join as join_paths
 from pathlib import Path
 
 
@@ -69,5 +71,25 @@ def remove_dir_contents(target_dir: str):
         print("nothing to remove")
 
 
+def _mk_dir_recursive(dir_path):
+
+    if os.path.isdir(dir_path):
+        return
+    h, t = os.path.split(dir_path)  # head/tail
+    if not os.path.isdir(h):
+        _mk_dir_recursive(h)
+
+    new_path = join_paths(h, t)
+    if not os.path.isdir(new_path):
+        try:
+            os.mkdir(str(new_path))
+        except OSError as exc:
+            if exc.errno != errno.EEXIST:
+                raise
+            pass
+
+
 def mkdirp(path_dir: str):
-    Path(path_dir).mkdir(parents=True, exist_ok=True)
+    _mk_dir_recursive(path_dir)
+    # alternate implementation if needed
+    # Path(path_dir).mkdir(parents=True, exist_ok=True)

@@ -1,10 +1,12 @@
 from __future__ import annotations  # for python 3.8
+
 from platformdirs import user_cache_dir, user_data_dir, user_log_dir, user_documents_dir
 import os
 import json
 from platform import platform
 from pathlib import Path
 
+from agstoolbox.core.utils.file import mkdirp
 from agstoolbox.core.utils.singleton import Singleton
 from agstoolbox import __title__
 
@@ -62,8 +64,12 @@ class ConstSettings(StaticSettings, metaclass=Singleton):
     pass
 
 
+def get_settings_dir():
+    return Path(ConstSettings().data_dir).as_posix()
+
+
 def get_settings_path():
-    return os.path.join(ConstSettings().data_dir, SETTINGS_FILENAME)
+    return Path(os.path.join(os.path.abspath(ConstSettings().data_dir), SETTINGS_FILENAME)).as_posix()
 
 
 class BaseSettings:
@@ -117,7 +123,10 @@ class BaseSettings:
         return self.editor_install_dir
 
     def save(self):
-        Path(ConstSettings.data_dir).mkdir(parents=True, exist_ok=True)
+        settings_dir = get_settings_dir()
+        settings_path = get_settings_path()
+
+        mkdirp(settings_dir)
 
         data = {
             "tools_install_dir": self.tools_install_dir,
@@ -126,7 +135,7 @@ class BaseSettings:
 
         data_string = json.dumps(data, indent=4, sort_keys=True)
 
-        with open(get_settings_path(), 'w+') as f:
+        with open(settings_path, 'w+') as f:
             f.write(data_string)
 
     def load(self):

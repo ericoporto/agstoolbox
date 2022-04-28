@@ -106,14 +106,17 @@ class SettingsDialog(QDialog):
         Settings().set_project_search_dirs(dirs)
 
         install_dir = self.install_dir_line_edit.text()
-        if install_dir == ConstSettings().DEFAULT_TOOLS_INSTALL_DIR:
-            return
-
         try:
             Settings().set_tools_install_dir(install_dir)
         except ValueError:
             QtWidgets.QMessageBox.warning(
                 self, "Warning", "tools installation dir not found and not set.")
+
+        try:
+            Settings().save()
+        except OSError:
+            QtWidgets.QMessageBox.warning(
+                self, "Warning", "failed to save settings.")
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
