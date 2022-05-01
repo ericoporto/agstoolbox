@@ -69,7 +69,8 @@ def get_settings_dir():
 
 
 def get_settings_path():
-    return Path(os.path.join(os.path.abspath(ConstSettings().data_dir), SETTINGS_FILENAME)).as_posix()
+    return Path(
+        os.path.join(os.path.abspath(ConstSettings().data_dir), SETTINGS_FILENAME)).as_posix()
 
 
 class BaseSettings:
@@ -130,6 +131,7 @@ class BaseSettings:
 
         data = {
             "tools_install_dir": self.tools_install_dir,
+            "project_search_dirs": self.project_search_dirs,
             "manually_installed_editors_search_dirs": self.manually_installed_editors_search_dirs
         }
 
@@ -150,12 +152,36 @@ class BaseSettings:
         if data is None:
             return
 
-        mi = data['manually_installed_editors_search_dirs']
-        if type(mi) == type(str()):
-            mi = [mi]
+        mi_search_dirs = None
+        try:
+            mi_search_dirs = data['manually_installed_editors_search_dirs']
+            if type(mi_search_dirs) == type(str()):
+                mi_search_dirs = [mi_search_dirs]
+        except KeyError:
+            mi_search_dirs = None
+        finally:
+            if mi_search_dirs is not None:
+                self.set_manually_installed_editors_search_dirs(mi_search_dirs)
 
-        self.set_tools_install_dir(data['tools_install_dir'])
-        self.set_manually_installed_editors_search_dirs(mi)
+        project_search_dirs = None
+        try:
+            project_search_dirs = data['project_search_dirs']
+            if type(project_search_dirs) == type(str()):
+                project_search_dirs = [project_search_dirs]
+        except KeyError:
+            project_search_dirs = None
+        finally:
+            if project_search_dirs is not None:
+                self.set_project_search_dirs(project_search_dirs)
+
+        tools_install_dir = None
+        try:
+            tools_install_dir = data['tools_install_dir']
+        except KeyError:
+            tools_install_dir = None
+        finally:
+            if tools_install_dir is not None:
+                self.set_tools_install_dir(tools_install_dir)
 
     def __init__(self):
         self.load()
