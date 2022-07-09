@@ -45,28 +45,28 @@ def test_family_to_minor():
 
 
 def test_version_str_to_int():
-    assert version_str_to_int("v.3.5.1.14") == 3050114
-    assert version_str_to_int("v.3.  6.1.14") == 3060114
-    assert version_str_to_int("v.4.0.0.14") == 4000014
-    assert version_str_to_int("3.4.3.14") == 3040314
-    assert version_str_to_int("version.3.3.1.14") == 3030114
+    assert version_str_to_int("v.3.5.1.14") == 3005001014
+    assert version_str_to_int("v.3.  6.1.14") == 3006001014
+    assert version_str_to_int("v.4.0.0.14") == 4000000014
+    assert version_str_to_int("3.4.3.14") == 3004003014
+    assert version_str_to_int("version.3.3.1.14") == 3003001014
     assert version_str_to_int("vivaldi.1") == -1
 
 
 def test_family_str_to_int():
-    assert family_str_to_int("3.5") == 3050000
-    assert family_str_to_int("3.6") == 3060000
-    assert family_str_to_int("4.0") == 4000000
-    assert family_str_to_int("3.4") == 3040000
-    assert family_str_to_int("3.3") == 3030000
+    assert family_str_to_int("3.5") == 3005000000
+    assert family_str_to_int("3.6") == 3006000000
+    assert family_str_to_int("4.0") == 4000000000
+    assert family_str_to_int("3.4") == 3004000000
+    assert family_str_to_int("3.3") == 3003000000
     assert family_str_to_int("vivaldi.1") == -1
 
 
 def test_tag_to_version():
     v = tag_to_version("v.3.5.1.14")
-    assert v.as_int == 3050114
+    assert v.as_int == 3005001014
     assert v.major == "3"
     assert v.minor == "5"
     assert v.family == "3.5"
-    assert v.family_as_int == 3050000
+    assert v.family_as_int == 3005000000
 

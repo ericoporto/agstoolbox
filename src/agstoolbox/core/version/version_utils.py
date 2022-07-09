@@ -72,7 +72,7 @@ def version_str_to_int(version: str) -> int:
             tk_val = int(tk)
         except ValueError:
             return -1
-        version_as_int += tk_val*(100**(3-i))
+        version_as_int += tk_val*(1000**(3-i))
 
     return version_as_int
 
@@ -94,7 +94,7 @@ def family_str_to_int(family: str) -> int:
         except ValueError:
             return -1
 
-        family_as_int += tk_val*(100**(3-i))
+        family_as_int += tk_val*(1000**(3-i))
 
     return family_as_int
 
