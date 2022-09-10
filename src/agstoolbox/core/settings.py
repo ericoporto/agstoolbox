@@ -20,7 +20,7 @@ def get_default_editor_search_dirs_in_windows():
     if not platform().lower().startswith('win'):
         return []
 
-    versions = ['3.4.3', '3.5.0', '3.5.1', '3.6.0', '3.9.9', '4.0.0']
+    versions = ['3.4.3', '3.5.0', '3.5.1', '3.6.0', '3.9.9', '3.99.99', '4.0.0']
     ret = []
     dirs = []
     p_files1 = os.environ["ProgramFiles"]
