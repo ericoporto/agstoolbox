@@ -12,10 +12,22 @@ def tag_to_version_str(tag: str) -> str:
     if (tks[0][0] == 'v' and len(tks[0]) <= 2) or tks[0] == "version":
         first_tk = 1
 
-    major = tks[first_tk].strip()
-    minor = tks[first_tk+1].strip()
-    improv = tks[first_tk+2].strip()
-    patch = tks[first_tk+3].strip()
+    major: str = "0"
+    minor: str = "0"
+    improv: str = "0"
+    patch: str = "0"
+
+    if len(tks) >= 1:
+        major = tks[first_tk].strip()
+
+    if len(tks) >= 2:
+        minor = tks[first_tk+1].strip()
+
+    if len(tks) >= 3:
+        improv = tks[first_tk+2].strip()
+
+    if len(tks) >= 4:
+        patch = tks[first_tk+3].strip()
 
     return major + "." + minor + "." + improv + "." + patch
 
