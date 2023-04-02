@@ -8,6 +8,7 @@ from agstoolbox.at_icons import main_icon
 from agstoolbox.core.settings import ConstSettings
 from agstoolbox import __title__
 from agstoolbox.core.utils.math import clamp
+from agstoolbox.system.at_unique_application import unique_application
 
 
 class AtTrayIcon(QtWidgets.QSystemTrayIcon):
@@ -84,8 +85,7 @@ class AtTrayIcon(QtWidgets.QSystemTrayIcon):
 
 
 def run_tray_indicator(ap_args):
-    app = QtWidgets.QApplication(ap_args)
-    app.setApplicationName(__title__)
+    app = unique_application(__title__, ap_args)
 
     # this prevents the tray to close if the main panel is closed,
     # we only exit when quit is explicitly clicked
