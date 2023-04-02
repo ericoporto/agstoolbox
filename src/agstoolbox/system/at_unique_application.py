@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from PyQt6 import QtWidgets
 
 from agstoolbox.system.at_runguard import RunGuard
