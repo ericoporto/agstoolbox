@@ -84,6 +84,15 @@ class AtTrayIcon(QtWidgets.QSystemTrayIcon):
         self.single_clicked()
 
 
+class UniqueWidget(QtWidgets.QWidget):
+    def __init__(self):
+        super().__init__()
+        QtWidgets.QApplication.instance().another_instance.connect(self.another_instance)
+
+    def another_instance(self):
+        self.findChild(AtTrayIcon, __title__).open_toolbox()
+
+
 def run_tray_indicator(ap_args):
     app = unique_application(__title__, ap_args)
 
@@ -92,7 +101,8 @@ def run_tray_indicator(ap_args):
     app.setQuitOnLastWindowClosed(False)
     ConstSettings().double_click_interval = app.doubleClickInterval()
 
-    w = QtWidgets.QWidget()
+    w = UniqueWidget()
     tray_icon = AtTrayIcon(main_icon(), w)
+    tray_icon.setObjectName(__title__)
     tray_icon.show()
     exit(app.exec())
