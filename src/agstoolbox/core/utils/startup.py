@@ -3,10 +3,9 @@ from __future__ import annotations
 import os
 import sys
 
-from agstoolbox.core.utils.win_registry import set_run_key, get_run_key
-
 
 def _win32_unsafe_remove_app_at_startup(app_name: str):
+    from agstoolbox.core.utils.win_registry import set_run_key
     set_run_key(app_name, None)
 
 
@@ -18,6 +17,7 @@ def _win32_remove_app_at_startup(app_name: str):
 
 
 def _win32_set_app_at_startup(app_name: str, app_path: str) -> bool:
+    from agstoolbox.core.utils.win_registry import set_run_key, get_run_key
     set_failed = False
 
     try:
