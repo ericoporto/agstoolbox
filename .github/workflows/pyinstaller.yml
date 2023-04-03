@@ -17,6 +17,7 @@ jobs:
     - name: Package Application
       uses: ericoporto/pyinstaller-action-windows@main
       with:
+        exe_file_info: agstoolbox_version_info.txt
         spec: agstoolbox.spec
         path: .
 
