@@ -95,6 +95,9 @@ class UniqueWidget(QtWidgets.QWidget):
 
 def run_tray_indicator(ap_args):
     app = unique_application(__title__, ap_args)
+    if not app.is_unique:
+        app.exit()
+        exit(1)
 
     # this prevents the tray to close if the main panel is closed,
     # we only exit when quit is explicitly clicked

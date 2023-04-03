@@ -12,6 +12,7 @@ class unique_application(QtWidgets.QApplication):
     _listener: QtNetwork.QLocalServer = None
 
     another_instance = QtCore.pyqtSignal()
+    is_unique: bool = False
 
     def __init__(self, title: str, argv: list[str]):
         QtWidgets.QApplication.__init__(self, argv)
@@ -20,13 +21,15 @@ class unique_application(QtWidgets.QApplication):
         self._run_guard = RunGuard(parent=self, key=self._key)
 
         if not self._run_guard.unique:
+            self.is_unique = False
             _socket = QtNetwork.QLocalSocket()
             _socket.connectToServer(self._key)
             _socket.close()
-            self.exit()
-
-        self.listener = QtNetwork.QLocalServer(self)
-        self.listener.setSocketOptions(QtNetwork.QLocalServer.SocketOption.WorldAccessOption)
-        self.listener.newConnection.connect(self.another_instance)
-        self.listener.listen(self._key)
+            return
+        else:
+            self.is_unique = True
+            self.listener = QtNetwork.QLocalServer(self)
+            self.listener.setSocketOptions(QtNetwork.QLocalServer.SocketOption.WorldAccessOption)
+            self.listener.newConnection.connect(self.another_instance)
+            self.listener.listen(self._key)
 
