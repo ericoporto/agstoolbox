@@ -23,7 +23,7 @@ class unique_application(QtWidgets.QApplication):
             _socket = QtNetwork.QLocalSocket()
             _socket.connectToServer(self._key)
             _socket.close()
-            exit()
+            self.exit()
 
         self.listener = QtNetwork.QLocalServer(self)
         self.listener.setSocketOptions(QtNetwork.QLocalServer.SocketOption.WorldAccessOption)
