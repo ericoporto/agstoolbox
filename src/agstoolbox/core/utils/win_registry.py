@@ -1,4 +1,7 @@
-import winreg
+import sys
+
+if sys.platform == 'win32':
+    import winreg
 
 
 def set_run_key(key, value):
