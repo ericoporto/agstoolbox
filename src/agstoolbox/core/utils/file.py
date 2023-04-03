@@ -15,14 +15,28 @@ def get_dir(filepath):
 
 
 def dir_is_valid(folderpath: str) -> bool:
-    return folderpath is not None and \
-        not "".__eq__(folderpath) and \
-        Path(folderpath).exists() and \
-        Path(folderpath).is_dir()
+    res: bool = False
+    try:
+        res = folderpath is not None and \
+           not "".__eq__(folderpath) and \
+           Path(folderpath).exists() and \
+           Path(folderpath).is_dir()
+    except Exception as e:
+        res = False
+    finally:
+        return res
 
 
 def get_valid_dirs(directories: list[str]) -> list[str]:
     return [d for d in directories if dir_is_valid(d)]
+
+
+def get_unique_list(lst: list[str]) -> list[str]:
+    return list(dict.fromkeys(lst))
+
+
+def get_unique_valid_dirs(directories: list[str]) -> list[str]:
+    return get_valid_dirs(get_unique_list(directories))
 
 
 # TODO: do this non-hacky way!

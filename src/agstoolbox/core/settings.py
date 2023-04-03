@@ -6,7 +6,7 @@ import json
 from platform import platform
 from pathlib import Path
 
-from agstoolbox.core.utils.file import mkdirp, get_valid_dirs
+from agstoolbox.core.utils.file import mkdirp, get_unique_valid_dirs
 from agstoolbox.core.utils.singleton import Singleton
 from agstoolbox import __title__
 from agstoolbox.core.utils.startup import remove_app_at_startup, set_app_at_startup
@@ -89,11 +89,11 @@ class BaseSettings:
         if value is None:
             return
 
-        self.manually_installed_editors_search_dirs = get_valid_dirs(value)
+        self.manually_installed_editors_search_dirs = get_unique_valid_dirs(value)
 
     def get_manually_installed_editors_search_dirs(self) -> list[str]:
         if type(self.manually_installed_editors_search_dirs) == type(list()):
-            return get_valid_dirs(self.manually_installed_editors_search_dirs)
+            return get_unique_valid_dirs(self.manually_installed_editors_search_dirs)
 
         return []
 
@@ -101,11 +101,11 @@ class BaseSettings:
         if value is None:
             return
 
-        self.project_search_dirs = get_valid_dirs(value)
+        self.project_search_dirs = get_unique_valid_dirs(value)
 
     def get_project_search_dirs(self) -> list[str]:
         if type(self.project_search_dirs) == type(list()):
-            return get_valid_dirs(self.project_search_dirs)
+            return get_unique_valid_dirs(self.project_search_dirs)
 
         return []
 
@@ -155,15 +155,17 @@ class BaseSettings:
 
         data_string = json.dumps(data, indent=4, sort_keys=True)
 
-        with open(settings_path, 'w+') as f:
+        with open(settings_path, 'w+', encoding="utf-8") as f:
             f.write(data_string)
+            f.flush()
 
     def load(self):
-        if not Path(get_settings_path()).exists():
+        settings_path: str = get_settings_path()
+        if not Path(settings_path).exists():
             return
 
         data = None
-        with open(get_settings_path(), 'r') as f:
+        with open(settings_path, 'r', encoding="utf-8") as f:
             data_string = f.read()
             data = json.loads(data_string)
 
