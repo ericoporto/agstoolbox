@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 import sys
+from pathlib import Path
 
 
 def _win32_unsafe_remove_app_at_startup(app_name: str):
@@ -32,7 +33,12 @@ def _win32_set_app_at_startup(app_name: str, app_path: str) -> bool:
             set_failed = True
     else:
         set_path = get_run_key(app_name)
-        set_failed = not set_path == app_path
+        if set_path is None:
+            return False
+
+        set_path_posix = Path(set_path).absolute().as_posix()
+        app_path_posix = Path(app_path).absolute().as_posix()
+        set_failed = not set_path_posix == app_path_posix
 
     return not set_failed
 
@@ -71,4 +77,3 @@ def set_app_at_startup(app_name: str, app_path: str) -> bool:
         'win32': _win32_set_app_at_startup}
 
     return _set_app_at_startup[sys.platform](app_name, app_path)
-

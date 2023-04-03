@@ -1,4 +1,5 @@
 import winreg
+from pathlib import PureWindowsPath
 
 
 def set_run_key(key, value):
@@ -14,6 +15,9 @@ def set_run_key(key, value):
         winreg.HKEY_CURRENT_USER,
         r'Software\Microsoft\Windows\CurrentVersion\Run',
         0, winreg.KEY_WRITE | winreg.KEY_READ)
+
+    if not value is None:
+        value = str(PureWindowsPath(value))
 
     with reg_key:
         if value is None:
