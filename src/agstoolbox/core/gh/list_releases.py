@@ -40,6 +40,18 @@ def parse_releases(response_json) -> list[Release]:
                 break
 
         if not found_asset:
+            for asset in rel['assets']:
+                # check for either predictable or patch release archives
+                if is_asset_archive(rel['tag_name'], asset['name']):
+                    rls = Release()
+                    rls.archive_id = asset['id']
+                    rls.archive_name = asset['name']
+                    rls.archive_url = asset['browser_download_url']
+                    rls.archive_size = asset['size']
+                    found_asset = True
+                    break
+
+        if not found_asset:
             continue
 
         rls.text_details = rel['body']
