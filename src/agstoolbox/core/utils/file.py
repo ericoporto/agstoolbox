@@ -16,9 +16,13 @@ def get_dir(filepath):
 
 def dir_is_valid(folderpath: str) -> bool:
     return folderpath is not None and \
-           not "".__eq__(folderpath) and \
-           Path(folderpath).exists() and \
-           Path(folderpath).is_dir()
+        not "".__eq__(folderpath) and \
+        Path(folderpath).exists() and \
+        Path(folderpath).is_dir()
+
+
+def get_valid_dirs(directories: list[str]) -> list[str]:
+    return [d for d in directories if dir_is_valid(d)]
 
 
 # TODO: do this non-hacky way!
@@ -72,7 +76,6 @@ def remove_dir_contents(target_dir: str):
 
 
 def _mk_dir_recursive(dir_path):
-
     if os.path.isdir(dir_path):
         return
     h, t = os.path.split(dir_path)  # head/tail

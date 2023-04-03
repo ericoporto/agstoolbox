@@ -6,7 +6,7 @@ import json
 from platform import platform
 from pathlib import Path
 
-from agstoolbox.core.utils.file import mkdirp
+from agstoolbox.core.utils.file import mkdirp, get_valid_dirs
 from agstoolbox.core.utils.singleton import Singleton
 from agstoolbox import __title__
 from agstoolbox.core.utils.startup import remove_app_at_startup, set_app_at_startup
@@ -89,11 +89,11 @@ class BaseSettings:
         if value is None:
             return
 
-        self.manually_installed_editors_search_dirs = value
+        self.manually_installed_editors_search_dirs = get_valid_dirs(value)
 
     def get_manually_installed_editors_search_dirs(self) -> list[str]:
         if type(self.manually_installed_editors_search_dirs) == type(list()):
-            return self.manually_installed_editors_search_dirs
+            return get_valid_dirs(self.manually_installed_editors_search_dirs)
 
         return []
 
@@ -101,11 +101,11 @@ class BaseSettings:
         if value is None:
             return
 
-        self.project_search_dirs = value
+        self.project_search_dirs = get_valid_dirs(value)
 
     def get_project_search_dirs(self) -> list[str]:
         if type(self.project_search_dirs) == type(list()):
-            return self.project_search_dirs
+            return get_valid_dirs(self.project_search_dirs)
 
         return []
 
