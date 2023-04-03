@@ -1,4 +1,6 @@
 from __future__ import annotations  # for python 3.8
+
+from PyQt6 import QtCore
 from PyQt6.QtWidgets import QTreeWidget, QWidget, QAbstractScrollArea, QFrame
 
 from agstoolbox.at_tasks import do_update_tools_downloads, do_update_tools_unmanaged, \
@@ -84,6 +86,7 @@ class ToolsTree(QTreeWidget):
     def tools_update_unmanaged(self):
         self.header_unmanaged.clear()
         tools = self.tool_update_unmanaged_task.tools_list
+        tools.sort(key=lambda ed: ed.version.as_int, reverse=True)
         self.unmanaged_editors_list = tools
 
         if tools is not None:
@@ -96,6 +99,7 @@ class ToolsTree(QTreeWidget):
 
     def tools_update_unmanaged_ended(self):
         self.tool_update_unmanaged_task = None
+        self.header_unmanaged.sortChildren(0, QtCore.Qt.SortOrder.DescendingOrder)
     ###############################################################################################
 
     ###############################################################################################
@@ -110,6 +114,7 @@ class ToolsTree(QTreeWidget):
     def tools_update_managed(self):
         self.header_managed.clear()
         tools = self.tool_update_managed_task.tools_list
+        tools.sort(key=lambda ed: ed.version.as_int, reverse=True)
         self.managed_editors_list = tools
 
         if tools is not None:
@@ -122,6 +127,7 @@ class ToolsTree(QTreeWidget):
 
     def tools_update_managed_ended(self):
         self.tool_update_managed_task = None
+        self.header_managed.sortChildren(0, QtCore.Qt.SortOrder.DescendingOrder)
     ###############################################################################################
 
     def open_project_tool(self, game_project: GameProject):

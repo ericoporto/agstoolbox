@@ -43,6 +43,9 @@ class TreeItemTool_Header(QTreeWidgetItem):
         self.tool_type = tool_type
         self.setText(0, name)
 
+    def __lt__(self, other):
+        return False  # keeps unaltered when sorting
+
     def clear(self):
         for i in range(self.childCount()):
             self.removeChild(self.child(0))
@@ -205,6 +208,9 @@ class TreeItemTool_Managed(QTreeWidgetItem):
         QTreeWidgetItem.__init__(self)
         self.itm_wdgt = TreeItemTool_Local_Widget(ags_editor, self.tool_type)
 
+    def __lt__(self, other):
+        return self.itm_wdgt.ags_editor.version.as_int < other.itm_wdgt.ags_editor.version.as_int
+
     def updateInTree(self):
         self.treeWidget().setItemWidget(self, 0, self.itm_wdgt)
 
@@ -215,6 +221,9 @@ class TreeItemTool_ExternallyInstalled(QTreeWidgetItem):
     def __init__(self, ags_editor: LocalAgsEditor):
         QTreeWidgetItem.__init__(self)
         self.itm_wdgt = TreeItemTool_Local_Widget(ags_editor, self.tool_type)
+
+    def __lt__(self, other):
+        return self.itm_wdgt.ags_editor.version.as_int < other.itm_wdgt.ags_editor.version.as_int
 
     def updateInTree(self):
         self.treeWidget().setItemWidget(self, 0, self.itm_wdgt)
