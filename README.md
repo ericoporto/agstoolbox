@@ -6,9 +6,8 @@ Utility Adventure Game Studio software to help manage, install, and uninstall di
 _inspired by [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/), but different_
 
 
-⚠**under construction**⚠
 
-This software is Windows only - since the Editor is Windows only. This will allow to develop a more tailor made software. This may change in the future.
+This software is Windows only - since the Editor is Windows only. This will allow to develop a more tailor made software. This may change in the future - compatibility is kept with macOS and Linux, but functionality may be absent.
 
 
 ## Building a portable EXE
@@ -34,6 +33,7 @@ For running, you can call the script on the rootfolder directly.
 
     python agstoolbox
 
+***WARNING⚠:*** if you are using Python from Windows Store, most writes to `AppData/Local` and similar will be redirected and you will not be able to properly use or debug AGS Toolbox, I recomend you use a Win32 Python to avoid debugging frustrations.
 
 ##  Desired features
 
