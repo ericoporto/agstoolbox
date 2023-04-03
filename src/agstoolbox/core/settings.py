@@ -9,6 +9,8 @@ from pathlib import Path
 from agstoolbox.core.utils.file import mkdirp
 from agstoolbox.core.utils.singleton import Singleton
 from agstoolbox import __title__
+from agstoolbox.core.utils.startup import remove_app_at_startup, set_app_at_startup
+from agstoolbox.wdgts_utils.get_self_path import get_app_path
 
 appname = __title__
 appauthor = "eri0o"
@@ -81,6 +83,7 @@ class BaseSettings:
     project_search_dirs = ConstSettings().DEFAULT_PROJECTS_SEARCH_DIRS
     editor_install_dir = editor_base_install_dir
     tools_install_dir = agstoolbox_package_install
+    _run_when_os_starts: bool = False
 
     def set_manually_installed_editors_search_dirs(self, value: list[str]):
         if value is None:
@@ -117,11 +120,21 @@ class BaseSettings:
         self.tools_install_dir = value
         self.editor_install_dir = Path(os.path.join(self.tools_install_dir, 'Editor')).as_posix()
 
+    def set_run_when_os_starts(self, value: bool):
+        if not value:
+            remove_app_at_startup(__title__)
+            self._run_when_os_starts = False
+        else:
+            self._run_when_os_starts = set_app_at_startup(__title__, get_app_path())
+
     def get_tools_install_dir(self):
         return self.tools_install_dir
 
     def get_editor_install_dir(self):
         return self.editor_install_dir
+
+    def get_run_when_os_starts(self):
+        return self._run_when_os_starts
 
     def save(self):
         settings_dir = get_settings_dir()
@@ -132,7 +145,8 @@ class BaseSettings:
         data = {
             "tools_install_dir": self.tools_install_dir,
             "project_search_dirs": self.project_search_dirs,
-            "manually_installed_editors_search_dirs": self.manually_installed_editors_search_dirs
+            "manually_installed_editors_search_dirs": self.manually_installed_editors_search_dirs,
+            "run_when_os_starts": self._run_when_os_starts
         }
 
         data_string = json.dumps(data, indent=4, sort_keys=True)
@@ -182,6 +196,15 @@ class BaseSettings:
         finally:
             if tools_install_dir is not None:
                 self.set_tools_install_dir(tools_install_dir)
+
+        run_when_os_starts = None
+        try:
+            run_when_os_starts = data['run_when_os_starts']
+        except KeyError:
+            run_when_os_starts = None
+        finally:
+            if run_when_os_starts is not None:
+                self.set_run_when_os_starts(run_when_os_starts)
 
     def __init__(self):
         self.load()

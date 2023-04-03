@@ -16,6 +16,12 @@ class SettingsDialog(QDialog):
 
         self.label_settings_intro = QLabel(self)
         self.label_settings_intro.setObjectName("label_settings_intro")
+        self.label_settings_intro.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight)
+
+        self.run_at_startup_label = QLabel(self)
+        self.run_at_startup_label.setObjectName("run_at_startup_label")
+        self.run_at_startup_checkbox = QtWidgets.QCheckBox(self)
+        self.run_at_startup_checkbox.setObjectName("run_at_startup_checkbox")
 
         self.base_install_dir_label = QLabel(self)
         self.base_install_dir_label.setObjectName("base_install_dir_label")
@@ -58,20 +64,25 @@ class SettingsDialog(QDialog):
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.verticalLayout_3.addWidget(self.label_settings_intro)
 
-        # manual editor search dirs
+        # run at startup
         self.formLayout.setWidget(1, QFormLayout.ItemRole.FieldRole,
+                                  self.run_at_startup_checkbox)
+        self.formLayout.setWidget(1, QFormLayout.ItemRole.LabelRole, self.run_at_startup_label)
+
+        # manual editor search dirs
+        self.formLayout.setWidget(2, QFormLayout.ItemRole.FieldRole,
                                   self.external_editors_dir_search_list)
-        self.formLayout.setWidget(1, QFormLayout.ItemRole.LabelRole, self.label_editors)
+        self.formLayout.setWidget(2, QFormLayout.ItemRole.LabelRole, self.label_editors)
 
         # project search dirs
-        self.formLayout.setWidget(2, QFormLayout.ItemRole.FieldRole,
+        self.formLayout.setWidget(3, QFormLayout.ItemRole.FieldRole,
                                   self.project_dir_search_list)
-        self.formLayout.setWidget(2, QFormLayout.ItemRole.LabelRole, self.label_projects)
+        self.formLayout.setWidget(3, QFormLayout.ItemRole.LabelRole, self.label_projects)
 
         # install tools dir
-        self.formLayout.setWidget(3, QtWidgets.QFormLayout.ItemRole.FieldRole,
+        self.formLayout.setWidget(4, QtWidgets.QFormLayout.ItemRole.FieldRole,
                                   self.install_dir_line_edit)
-        self.formLayout.setWidget(3, QtWidgets.QFormLayout.ItemRole.LabelRole,
+        self.formLayout.setWidget(4, QtWidgets.QFormLayout.ItemRole.LabelRole,
                                   self.base_install_dir_label)
 
         self.verticalLayout_3.addLayout(self.formLayout)
@@ -89,6 +100,9 @@ class SettingsDialog(QDialog):
         self.button_box.rejected.connect(self.clicked_cancel)
 
     def apply_from_settings_to_dialog(self):
+        run_at_startup = Settings().get_run_when_os_starts()
+        self.run_at_startup_checkbox.setChecked(run_at_startup)
+
         dirs = Settings().get_manually_installed_editors_search_dirs()
         self.external_editors_dir_search_list.setDirs(dirs)
 
@@ -99,6 +113,9 @@ class SettingsDialog(QDialog):
         self.install_dir_line_edit.setText(install_dir)
 
     def apply_from_dialog_to_settings(self):
+        run_at_startup = self.run_at_startup_checkbox.isChecked()
+        Settings().set_run_when_os_starts(run_at_startup)
+
         dirs = self.external_editors_dir_search_list.getDirs()
         Settings().set_manually_installed_editors_search_dirs(dirs)
 
@@ -123,6 +140,9 @@ class SettingsDialog(QDialog):
         self.setWindowTitle(_translate("SettingsDialog", "Settings"))
         self.label_settings_intro.setText(
             _translate("SettingsDialog", "Adjust AGS Toolbox settings here."))
+        self.run_at_startup_label.setText(
+            _translate("SettingsDialog",
+                       "Run on OS startup (experimental)"))
         self.base_install_dir_label.setText(_translate("SettingsDialog", "Base install dir"))
         self.label_editors.setText(
             _translate("SettingsDialog", "Externally installed AGS Editors search paths"))
@@ -143,6 +163,7 @@ class SettingsDialog(QDialog):
 
     def accept(self) -> None:
         self.apply_from_dialog_to_settings()
+        self.apply_from_settings_to_dialog()
         QDialog.accept(self)
 
     def reject(self) -> None:
