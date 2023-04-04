@@ -7,7 +7,7 @@ _inspired by [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/), but di
 
 
 
-This software is Windows only - since the Editor is Windows only. This will allow to develop a more tailor made software. This may change in the future - compatibility is kept with macOS and Linux, but functionality may be absent.
+This software is **Windows** only - since AGS Editor is Windows only. This may change in the future - compatibility is kept with macOS and Linux, but functionality may be absent.
 
 
 ## Building a portable EXE
