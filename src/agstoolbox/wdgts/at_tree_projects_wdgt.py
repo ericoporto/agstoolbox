@@ -20,6 +20,7 @@ class ProjectsTree(QTreeWidget):
         self.setObjectName("treeProjects")
         self.setFrameStyle(QFrame.Shape.NoFrame)
         self.setRootIsDecorated(False)
+        self.setIndentation(0)
 
     # AGS Projects stuff
     def projects_schd_update(self):
