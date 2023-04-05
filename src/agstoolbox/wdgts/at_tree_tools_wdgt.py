@@ -1,7 +1,7 @@
 from __future__ import annotations  # for python 3.8
 
 from PyQt6 import QtCore
-from PyQt6.QtWidgets import QTreeWidget, QWidget, QAbstractScrollArea, QFrame
+from PyQt6.QtWidgets import QTreeWidget, QWidget, QAbstractScrollArea, QFrame, QTreeWidgetItem
 
 from agstoolbox.at_tasks import do_update_tools_downloads, do_update_tools_unmanaged, \
     do_update_tools_managed
@@ -40,11 +40,25 @@ class ToolsTree(QTreeWidget):
         self.addTopLevelItem(self.header_managed)
         self.addTopLevelItem(self.header_unmanaged)
         self.addTopLevelItem(self.header_download)
-        self.header_download.setExpanded(True)
-        self.setIndentation(10)
+        self.setRootIsDecorated(False)
+        self.setIndentation(0)
 
         # make headers expand or recover in a single click
         self.clicked.connect(self.toggleExpandSlot)
+        self.itemExpanded.connect(self.itemIsExpanded)
+        self.itemCollapsed.connect(self.itemIsCollapsed)
+
+        self.header_managed.setExpanded(True)
+        self.header_unmanaged.setExpanded(True)
+        self.header_download.setExpanded(True)
+        self.header_managed.setExpanded(False)
+        self.header_unmanaged.setExpanded(False)
+
+    def itemIsExpanded(self, itm: QTreeWidgetItem):
+        itm.setText(0, "- " + itm.whatsThis(0))
+
+    def itemIsCollapsed(self, itm: QTreeWidgetItem):
+        itm.setText(0, "+ " + itm.whatsThis(0))
 
     def toggleExpandSlot(self, i):
         self.setExpanded(i, not self.isExpanded(i))
@@ -64,7 +78,7 @@ class ToolsTree(QTreeWidget):
 
         if tools is not None:
             for t in tools:
-                itm = TreeItemTool_Download(t)
+                itm = TreeItemTool_Download(self.header_download, t)
                 self.header_download.addChild(itm)
                 itm.updateInTree()
 
@@ -72,6 +86,7 @@ class ToolsTree(QTreeWidget):
 
     def tools_update_downloads_ended(self):
         self.tool_update_downloads_task = None
+
     ###############################################################################################
 
     ###############################################################################################
@@ -91,7 +106,7 @@ class ToolsTree(QTreeWidget):
 
         if tools is not None:
             for t in tools:
-                itm = TreeItemTool_ExternallyInstalled(t)
+                itm = TreeItemTool_ExternallyInstalled(self.header_unmanaged, t)
                 self.header_unmanaged.addChild(itm)
                 itm.updateInTree()
 
@@ -100,6 +115,7 @@ class ToolsTree(QTreeWidget):
     def tools_update_unmanaged_ended(self):
         self.tool_update_unmanaged_task = None
         self.header_unmanaged.sortChildren(0, QtCore.Qt.SortOrder.DescendingOrder)
+
     ###############################################################################################
 
     ###############################################################################################
@@ -119,7 +135,7 @@ class ToolsTree(QTreeWidget):
 
         if tools is not None:
             for t in tools:
-                itm = TreeItemTool_Managed(t)
+                itm = TreeItemTool_Managed(self.header_managed, t)
                 self.header_managed.addChild(itm)
                 itm.updateInTree()
 
@@ -128,6 +144,7 @@ class ToolsTree(QTreeWidget):
     def tools_update_managed_ended(self):
         self.tool_update_managed_task = None
         self.header_managed.sortChildren(0, QtCore.Qt.SortOrder.DescendingOrder)
+
     ###############################################################################################
 
     def open_project_tool(self, game_project: GameProject):

@@ -7,6 +7,8 @@ class Release(AgsEditor):
     id = None
     tag = None
 
+    html_url = None
+
     is_pre_release = False
     text_details = None
     published_at = None

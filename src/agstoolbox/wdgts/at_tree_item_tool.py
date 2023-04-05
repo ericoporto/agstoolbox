@@ -1,12 +1,14 @@
 from __future__ import annotations  # for python 3.8
 from enum import Enum
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QTreeWidgetItem, QLabel, QHBoxLayout, QVBoxLayout, QGridLayout, QWidget
+from PyQt6.QtWidgets import QTreeWidgetItem, QLabel, QHBoxLayout, QVBoxLayout, QGridLayout, QWidget, \
+    QTreeWidget
 
 from agstoolbox.at_icons import ags_editor_as_pixmap
 from agstoolbox.at_tasks import do_download_managed
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
 from agstoolbox.core.ags.ags_local_run import start_ags_editor
+from agstoolbox.core.utils.open_in_browser import open_in_browser
 from agstoolbox.wdgts_utils.ags_local_extra import ags_editor_folder_in_explorer
 from agstoolbox.core.gh.release import Release
 from agstoolbox.core.utils.time import s_ago
@@ -40,6 +42,7 @@ class TreeItemTool_Header(QTreeWidgetItem):
     def __init__(self, name: str, tool_type: ToolType):
         QTreeWidgetItem.__init__(self)
         self.name = name
+        self.setWhatsThis(0, name)
         self.tool_type = tool_type
         self.setText(0, name)
 
@@ -109,6 +112,9 @@ class TreeItemTool_Download_Widget(QWidget):
         self.thread_download = do_download_managed(self.release, self.download_ended)
         self.setEnabled(False)
 
+    def show_gh_rel_page(self):
+        open_in_browser(self.release.html_url)
+
     def mouseDoubleClickEvent(self, event):
         self.install()
 
@@ -120,9 +126,12 @@ class TreeItemTool_Download_Widget(QWidget):
     def contextMenuEvent(self, event):
         menu = QtWidgets.QMenu(self)
         install_action = DefaultMenuQAction(menu, "Install as managed Editor")
+        show_gh_rel_page_action = menu.addAction("Show GitHub Release Page")
         action = menu.exec(self.mapToGlobal(event.pos()))
         if action == install_action:
             self.install()
+        elif action == show_gh_rel_page_action:
+            self.show_gh_rel_page()
 
 
 # tool available locally for use
@@ -204,8 +213,8 @@ class TreeItemTool_Local_Widget(QWidget):
 class TreeItemTool_Managed(QTreeWidgetItem):
     tool_type = ToolType.MANAGED_TOOL
 
-    def __init__(self, ags_editor: LocalAgsEditor):
-        QTreeWidgetItem.__init__(self)
+    def __init__(self, parent: QTreeWidgetItem, ags_editor: LocalAgsEditor):
+        QTreeWidgetItem.__init__(self, parent)
         self.itm_wdgt = TreeItemTool_Local_Widget(ags_editor, self.tool_type)
 
     def __lt__(self, other):
@@ -218,8 +227,8 @@ class TreeItemTool_Managed(QTreeWidgetItem):
 class TreeItemTool_ExternallyInstalled(QTreeWidgetItem):
     tool_type = ToolType.EXTERNALLY_INSTALLED_TOOL
 
-    def __init__(self, ags_editor: LocalAgsEditor):
-        QTreeWidgetItem.__init__(self)
+    def __init__(self, parent: QTreeWidgetItem, ags_editor: LocalAgsEditor):
+        QTreeWidgetItem.__init__(self, parent)
         self.itm_wdgt = TreeItemTool_Local_Widget(ags_editor, self.tool_type)
 
     def __lt__(self, other):
@@ -232,8 +241,8 @@ class TreeItemTool_ExternallyInstalled(QTreeWidgetItem):
 class TreeItemTool_Download(QTreeWidgetItem):
     tool_type = ToolType.AVAILABLE_TO_DOWNLOAD
 
-    def __init__(self, release: Release):
-        QTreeWidgetItem.__init__(self)
+    def __init__(self, parent: QTreeWidgetItem, release: Release):
+        QTreeWidgetItem.__init__(self, parent)
         self.itm_wdgt = TreeItemTool_Download_Widget(release)
 
     def updateInTree(self):

@@ -58,6 +58,7 @@ def parse_releases(response_json) -> list[Release]:
         rls.name = rel['name']
         rls.id = rel['id']
         rls.url = rel['url']
+        rls.html_url = rel['html_url']
 
         tag = rel['tag_name']
         rls.tag = tag
