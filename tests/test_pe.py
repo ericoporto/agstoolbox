@@ -11,7 +11,7 @@ if os.path.isdir(os.path.join(".", "src")) and os.path.isfile(os.path.join(".", 
 from agstoolbox.core.utils.file import join_paths_as_posix
 from agstoolbox.core.utils.pe import is_valid_exe, get_exe_information
 
-cur_dir = Path(__file__).resolve().parent
+cur_dir = str(Path(__file__).resolve().parent)
 
 file_path01 = join_paths_as_posix(cur_dir, 'resources/fakedir1/AGSEditor.exe')
 file_path02 = join_paths_as_posix(cur_dir, 'resources/fakedir2/fakedirA/AGSEditor.exe')
