@@ -1,8 +1,7 @@
 from __future__ import annotations  # for python 3.8
 from enum import Enum
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QTreeWidgetItem, QLabel, QHBoxLayout, QVBoxLayout, QGridLayout, QWidget, \
-    QTreeWidget
+from PyQt6.QtWidgets import QTreeWidgetItem, QLabel, QHBoxLayout, QVBoxLayout, QGridLayout, QWidget
 
 from agstoolbox.at_icons import ags_editor_as_pixmap
 from agstoolbox.at_tasks import do_download_managed
