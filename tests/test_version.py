@@ -7,7 +7,8 @@ if os.path.isdir(os.path.join(".", "src")) and os.path.isfile(os.path.join(".", 
     sys.path.append(os.path.realpath("src"))
     sys.path.append(os.path.realpath("src/agstoolbox"))
 
-from agstoolbox.core.version.version_utils import tag_to_version_str, tag_to_family, family_to_major, family_to_minor, \
+from agstoolbox.core.version.version_utils import tag_to_version_str, tag_to_family, \
+    family_to_major, family_to_minor, \
     version_str_to_int, family_str_to_int, tag_to_version
 
 
@@ -18,6 +19,18 @@ def test_tag_to_version_str():
     assert tag_to_version_str("3.4.3.14") == "3.4.3.14"
     assert tag_to_version_str("version.3.3.1.14") == "3.3.1.14"
     assert tag_to_version_str("vivaldi.1") == "vivaldi.1"
+    assert tag_to_version_str("v1.0.0.0") == "1.0.0.0"
+    assert tag_to_version_str("version.1.2.3.4") == "1.2.3.4"
+    assert tag_to_version_str("v1.2.3.4") == "1.2.3.4"
+    assert tag_to_version_str("1.2.3.4") == "1.2.3.4"
+    assert tag_to_version_str("v1.2.3") == "1.2.3.0"
+    assert tag_to_version_str("1.2.3") == "1.2.3.0"
+    assert tag_to_version_str("v1.2") == "1.2.0.0"
+    assert tag_to_version_str("1.2") == "1.2.0.0"
+    assert tag_to_version_str("v1") == "1.0.0.0"
+    assert tag_to_version_str("1") == "1.0.0.0"
+    assert tag_to_version_str("not.a.tag") == "not.a.tag"
+    assert tag_to_version_str("") == ""
 
 
 def test_tag_to_family():
@@ -70,4 +83,3 @@ def test_tag_to_version():
     assert v.minor == "5"
     assert v.family == "3.5"
     assert v.family_as_int == 3005000000
-

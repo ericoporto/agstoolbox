@@ -4,13 +4,23 @@ from agstoolbox.core.version.version import Version
 
 
 def tag_to_version_str(tag: str) -> str:
+    if tag is None or "".__eq__(tag):
+        return ""
+
     tks = tag.split(".")
-    if len(tks) <= 2 or len(tks) > 5:
+    if len(tks) > 5:
         return tag
 
     first_tk = 0
+    if tks[0][0] == 'v' and len(tks[0]) > 1:
+        if tks[0][1] != '.' and tks[0][1].isnumeric():
+            tks[0] = tks[0][1:]
+
     if (tks[0][0] == 'v' and len(tks[0]) <= 2) or tks[0] == "version":
         first_tk = 1
+
+    if not tks[first_tk].isnumeric():
+        return tag
 
     major: str = "0"
     minor: str = "0"
