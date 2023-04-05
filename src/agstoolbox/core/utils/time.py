@@ -1,8 +1,8 @@
 from __future__ import annotations  # for python 3.8
-from datetime import datetime
+from datetime import datetime, timedelta
 
 
-def s_ago(ft: float) -> str:
+def internal_s_ago(t: datetime, diff: timedelta):
     """
         Calculate a '3 hours ago' type string from a python datetime,
         if time less than 5 days, otherwise, return date as day/month/year
@@ -12,8 +12,6 @@ def s_ago(ft: float) -> str:
         'hours': lambda diff_t: int(diff_t.seconds / 3600),
         'minutes': lambda diff_t: int(diff_t.seconds % 3600 / 60),
     }
-    t = datetime.utcfromtimestamp(ft)
-    diff = datetime.utcnow() - t
 
     if diff.days >= 5:
         return t.strftime("%d/%m/%Y")
@@ -26,3 +24,9 @@ def s_ago(ft: float) -> str:
             return '%s %s ago' % (dur, unit)
     return 'just now'
 
+
+def s_ago(ft: float) -> str:
+    t = datetime.utcfromtimestamp(ft)
+    diff = datetime.utcnow() - t
+
+    return internal_s_ago(t, diff)
