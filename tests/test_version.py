@@ -40,6 +40,18 @@ def test_tag_to_family():
     assert tag_to_family("3.4.3.14") == "3.4"
     assert tag_to_family("3.3.1.14") == "3.3"
     assert tag_to_family("vivaldi.1") == "vivaldi.1"
+    assert tag_to_family("v1.0.0.0") == "1.0"
+    assert tag_to_family("version.1.2.3.4") == "1.2"
+    assert tag_to_family("v1.2.3.4") == "1.2"
+    assert tag_to_family("1.2.3.4") == "1.2"
+    assert tag_to_family("v1.2.3") == "1.2"
+    assert tag_to_family("1.2.3") == "1.2"
+    assert tag_to_family("v1.2") == "1.2"
+    assert tag_to_family("1.2") == "1.2"
+    assert tag_to_family("v1") == "1.0"
+    assert tag_to_family("1") == "1.0"
+    assert tag_to_family("not.a.tag") == "not.a.tag"
+    assert tag_to_family("") == ""
 
 
 def test_family_to_major():

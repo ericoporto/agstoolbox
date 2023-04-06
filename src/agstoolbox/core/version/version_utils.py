@@ -43,16 +43,15 @@ def tag_to_version_str(tag: str) -> str:
 
 
 def tag_to_family(tag: str) -> str:
-    tks = tag.split(".")
+    tks = tag_to_version_str(tag).split(".")
     if len(tks) <= 1 or len(tks) > 5:
         return tag
 
-    first_tk = 0
-    if tks[0] == "v":
-        first_tk = 1
+    major = tks[0]
+    minor = tks[1]
 
-    major = tks[first_tk]
-    minor = tks[first_tk+1]
+    if not major.isnumeric() and not minor.isnumeric():
+        return tag
 
     family = major + "." + minor
     return family
