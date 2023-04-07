@@ -1,4 +1,4 @@
-from __future__ import annotations 
+from __future__ import annotations  # for python 3.8
 from typing import Callable
 
 import requests

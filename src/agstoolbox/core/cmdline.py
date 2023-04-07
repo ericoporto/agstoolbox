@@ -105,9 +105,10 @@ def cmdline(show_help_when_empty: bool):
 
     p_i = subparsers.add_parser('install', help='install thing help')
     p_i.set_defaults(func=at_cmd_install)
-
-    p_i = subparsers.add_parser('install', help='install thing help')
-    p_i.set_defaults(func=at_cmd_install)
+    p_ii = p_i.add_subparsers(title='sub_install', dest='sub_install')
+    p_iie = p_ii.add_parser('editors', help='install managed AGS Editors')
+    p_iie.add_argument('editor_version',
+                       help='version to install or project path if we should guess')
 
     p_r = subparsers.add_parser('run', help='install thing help')
     p_r.set_defaults(func=at_cmd_run)
