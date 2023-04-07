@@ -35,18 +35,17 @@ def cmdline(show_help_when_empty: bool):
     subparsers = parser.add_subparsers(help='command')
 
     # create the parser for the "command_a" command
-    parser_list = subparsers.add_parser('list', help='command_a help')
-    parser_list.set_defaults(func=at_cmd_list)
-    parser_list.add_argument('Path', metavar='path', type=str, help='the path to list')
+    p_l = subparsers.add_parser('list', help='command_a help')
+    p_l.set_defaults(func=at_cmd_list)
+    p_l.add_argument('Path', metavar='path', type=str, help='the path to list')
+    p_l.add_argument('-p', '--proj', action='store_true', default=False, help='list AGS Projects')
+    p_l.add_argument('-e', '--editors', action='store_true', default=False, help='list AGS Editors')
 
-    parser_install = subparsers.add_parser('install', help='install thing help')
-    parser_install.set_defaults(func=at_cmd_install)
+    p_i = subparsers.add_parser('install', help='install thing help')
+    p_i.set_defaults(func=at_cmd_install)
 
-    parser_run = subparsers.add_parser('run', help='install thing help')
-    parser_run.set_defaults(func=at_cmd_run)
-
-    parser_list.add_argument('-p', '--proj', action='store_true', default=False, help='list AGS Projects')
-    parser_list.add_argument('-e', '--editors', action='store_true', default=False, help='list AGS Editors')
+    p_r = subparsers.add_parser('run', help='install thing help')
+    p_r.set_defaults(func=at_cmd_run)
 
     args = parser.parse_args()
     if 'func' in args.__dict__:
