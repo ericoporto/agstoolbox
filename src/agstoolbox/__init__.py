@@ -4,5 +4,5 @@
 __title__ = 'agstoolbox'
 __author__ = 'Érico Vieira Porto'
 __license__ = 'MIT'
-__copyright__ = 'Copyright 2022 Erico Vieira Porto'
+__copyright__ = 'Copyright 2023 Erico Vieira Porto'
 __version__ = '0.3.0'
