@@ -3,7 +3,8 @@ AGS Toolbox - Utility to manage different AGS Editor versions
 *************************************************************
 
 AGS Toolbox is a PyQt tool to manage different versions of the
-Adventure Game Studio Editor, side by side.
+Adventure Game Studio Editor, side by side, along with your
+game projects!
 
 
 Windows install and run
