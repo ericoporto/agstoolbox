@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-import os
 import sys
-from pathlib import Path
 
 
 def _win32_unsafe_remove_app_at_startup(app_name: str):
@@ -18,7 +16,7 @@ def _win32_remove_app_at_startup(app_name: str):
 
 
 def _win32_set_app_at_startup(app_name: str, app_path: str) -> bool:
-    from agstoolbox.core.utils.win_registry import set_run_key, get_run_key
+    from agstoolbox.core.utils.win_registry import set_run_key
     set_failed = False
 
     try:
@@ -31,14 +29,6 @@ def _win32_set_app_at_startup(app_name: str, app_path: str) -> bool:
             _win32_unsafe_remove_app_at_startup(app_name)
         except OSError:
             set_failed = True
-    # else:
-    #     set_path = get_run_key(app_name)
-    #     if set_path is None:
-    #         return False
-    #
-    #     set_path_posix = Path(set_path).absolute().as_posix()
-    #     app_path_posix = Path(app_path).absolute().as_posix()
-    #     set_failed = not set_path_posix == app_path_posix
 
     return not set_failed
 

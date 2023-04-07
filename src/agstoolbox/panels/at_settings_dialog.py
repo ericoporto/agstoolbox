@@ -5,6 +5,7 @@ from PyQt6.QtWidgets import QDialog, QSizePolicy, QFormLayout, QHBoxLayout, QVBo
 from agstoolbox.core.settings import Settings, ConstSettings
 from agstoolbox.wdgts.at_dirlist_wdgt import DirListWidget
 from agstoolbox.wdgts.at_single_dir_wdgt import DirEditWidget
+from agstoolbox.wdgts_utils.get_self_path import get_app_path
 
 
 class SettingsDialog(QDialog):
@@ -100,6 +101,8 @@ class SettingsDialog(QDialog):
         self.button_box.rejected.connect(self.clicked_cancel)
 
     def apply_from_settings_to_dialog(self):
+        Settings().set_app_path(get_app_path())
+
         run_at_startup = Settings().get_run_when_os_starts()
         self.run_at_startup_checkbox.setChecked(run_at_startup)
 
@@ -113,6 +116,8 @@ class SettingsDialog(QDialog):
         self.install_dir_line_edit.setText(install_dir)
 
     def apply_from_dialog_to_settings(self):
+        Settings().set_app_path(get_app_path())
+
         run_at_startup = self.run_at_startup_checkbox.isChecked()
         Settings().set_run_when_os_starts(run_at_startup)
 
