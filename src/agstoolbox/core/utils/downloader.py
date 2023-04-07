@@ -1,7 +1,11 @@
+from __future__ import annotations 
+from typing import Callable
+
 import requests
 
 
-def download_from_url(url: str, save_path: str, chunk_size: int = 128, progress_update=None):
+def download_from_url(url: str, save_path: str, chunk_size: int = 128,
+                      progress_update: Callable[[float, int, int], None] = None):
     response = requests.get(url, stream=True)
     total_size_in_bytes = int(response.headers.get('content-length', 0))
     acc_c_size = 0
