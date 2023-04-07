@@ -16,10 +16,12 @@ def get_zip_archive_cache_path(release: Release):
     return os.path.join(cache_dir, release.archive_name)
 
 
-def download_release_to_cache(release: Release):
+def download_release_to_cache(release: Release, progress_update=None):
     r_url = release.archive_url
     filepath_in_cache = get_zip_archive_cache_path(release)
     remove_dir_contents(filepath_in_cache)
     cache_dir = get_cache_dir(release)
     mkdirp(cache_dir)
-    download_from_url(url=r_url, save_path=filepath_in_cache)
+    download_from_url(url=r_url,
+                      save_path=filepath_in_cache,
+                      progress_update=progress_update)
