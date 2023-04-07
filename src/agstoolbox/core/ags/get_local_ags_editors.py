@@ -16,7 +16,7 @@ def is_possibly_editor_file(filepath: str) -> bool:
     if not filepath.endswith(EDITOR_FILE_NAME):
         return False
 
-    if os.path.getsize(filepath) > 33554432 or os.path.getsize(filepath) < 32768:
+    if os.path.getsize(filepath) < 32768 or os.path.getsize(filepath) > 33554432:
         return False
 
     if not is_valid_exe(filepath):
@@ -53,10 +53,15 @@ def list_probable_ags_editors_in_dir(filepath: str) -> list[LocalAgsEditor]:
         version = version_str_to_version(pe_info.product_version)
         local_ae.version = version
         local_ae.path = c
-        local_ae.validated = validate_editor_exe(c, version.as_str)
+        # TODO: skip validation until we can better maintain validation data
+        # local_ae.validated = validate_editor_exe(c, version.as_str)
         local_ae.name = 'AGS Editor ' + version.as_str
         local_ae.last_modified = os.path.getmtime(filepath)
         editors.append(local_ae)
+
+    unique = list(dict.fromkeys(editors))
+    editors = unique
+    editors.sort(key=attrgetter("last_modified"), reverse=True)
 
     return editors
 
@@ -69,7 +74,6 @@ def list_ags_editors_in_dir_list(filepaths: list[str]) -> list[LocalAgsEditor]:
 
     unique = list(dict.fromkeys(editors))
     editors = unique
-
     editors.sort(key=attrgetter("last_modified"), reverse=True)
 
     return editors

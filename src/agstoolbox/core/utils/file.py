@@ -18,9 +18,9 @@ def dir_is_valid(folderpath: str) -> bool:
     res: bool = False
     try:
         res = folderpath is not None and \
-           not "".__eq__(folderpath) and \
-           Path(folderpath).exists() and \
-           Path(folderpath).is_dir()
+              not "".__eq__(folderpath) and \
+              Path(folderpath).exists() and \
+              Path(folderpath).is_dir()
     except Exception as e:
         res = False
     finally:
@@ -64,12 +64,53 @@ def get_file_if_exists(directory: str, file: str):
     return None
 
 
+def internal_run_fast_scandir(directory: str, filename: str):  # dir: str, ext: list
+    sub_folders, files = [], []
+
+    directory = Path(directory).as_posix()
+
+    os_scandir_res = []
+    try:
+        os_scandir_res = os.scandir(directory)
+    except PermissionError:
+        os_scandir_res = []
+
+    for f in os_scandir_res:
+        if f.is_dir():
+            sub_folders.append(f.path)
+        if f.is_file():
+            if f.name == filename:
+                files.append(f.path)
+
+    for s_dir in list(sub_folders):
+        sf, f = internal_run_fast_scandir(s_dir, filename)
+        sub_folders.extend(sf)
+        files.extend(f)
+    return sub_folders, files
+
+
+def get_gp_candidates_in_dir_fastscandir(directory: str, filename: str) -> list[str]:
+    # in Python 3.8, this is ~25% faster, but python 3.10 it's slower
+    # unfortunately, we are using Python 3.8 for the time being
+    _, files = internal_run_fast_scandir(directory, filename)
+    return files
+
+
+def get_gp_candidates_in_dir_glob(directory: str, filename: str) -> list[str]:
+    pathname = directory + "/**/" + filename
+    return glob.glob(pathname, recursive=True)
+
+
 def get_gp_candidates_in_dir(directory: str, filename: str) -> list[str]:
     if not os.path.exists(directory):
         return []
 
-    pathname = directory + "/**/" + filename
-    files = glob.glob(pathname, recursive=True)
+    files = get_gp_candidates_in_dir_fastscandir(directory, filename)
+    if not files:
+        return []
+
+    files = [Path(f).as_posix() for f in files]
+
     return files
 
 

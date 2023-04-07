@@ -1,5 +1,7 @@
 from __future__ import annotations  # for python 3.8
 import os.path
+from operator import attrgetter
+
 import defusedxml.ElementTree as ETree
 
 from agstoolbox.core.ags.game_project import GameProject, PROJECT_FILE_NAME
@@ -76,6 +78,10 @@ def list_game_projects_in_dir(filepath: str) -> list[GameProject]:
 
         ags_projects.append(gameagf_file_to_game_project(candidate))
 
+    unique = list(dict.fromkeys(ags_projects))
+    ags_projects = unique
+    ags_projects.sort(key=attrgetter("last_modified"), reverse=True)
+
     return ags_projects
 
 
@@ -87,5 +93,6 @@ def list_game_projects_in_dir_list(filepaths: list[str]) -> list[GameProject]:
 
     unique = list(dict.fromkeys(ags_projects))
     ags_projects = unique
+    ags_projects.sort(key=attrgetter("last_modified"), reverse=True)
 
     return ags_projects

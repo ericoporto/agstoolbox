@@ -98,8 +98,8 @@ class BaseSettings:
         self.editor_install_dir = Path(os.path.join(self.tools_install_dir, 'Editor')).as_posix()
 
     def set_run_when_os_starts(self, value: bool):
-        if value is None:
-            print("run_when_os_starts is None")
+        if value is None or self.app_path is None or self.app_path == "":
+            return
 
         if value is False:
             remove_app_at_startup(__title__)
