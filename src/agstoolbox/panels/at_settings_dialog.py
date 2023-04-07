@@ -6,6 +6,7 @@ from agstoolbox.core.settings.settings import Settings, ConstSettings
 from agstoolbox.wdgts.at_dirlist_wdgt import DirListWidget
 from agstoolbox.wdgts.at_single_dir_wdgt import DirEditWidget
 from agstoolbox.wdgts_utils.get_self_path import get_app_path
+from agstoolbox import __version__
 
 
 class SettingsDialog(QDialog):
@@ -144,7 +145,8 @@ class SettingsDialog(QDialog):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("SettingsDialog", "Settings"))
         self.label_settings_intro.setText(
-            _translate("SettingsDialog", "Adjust AGS Toolbox settings here."))
+            "AGS Toolbox " + __version__ + ". " +
+            _translate("SettingsDialog", "Adjust settings here."))
         self.run_at_startup_label.setText(
             _translate("SettingsDialog",
                        "Run on OS startup (experimental)"))
