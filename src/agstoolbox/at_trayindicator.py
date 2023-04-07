@@ -5,7 +5,7 @@ from PyQt6.QtWidgets import QSystemTrayIcon
 
 from agstoolbox.panels.at_mainpanel import MainWindow
 from agstoolbox.at_icons import main_icon
-from agstoolbox.core.settings import ConstSettings
+from agstoolbox.core.settings.settings import ConstSettings
 from agstoolbox import __title__
 from agstoolbox.core.utils.math import clamp
 from agstoolbox.system.at_unique_application import unique_application

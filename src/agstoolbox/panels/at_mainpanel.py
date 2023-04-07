@@ -2,7 +2,7 @@ from PyQt6 import QtWidgets, QtCore, QtGui
 from PyQt6.QtWidgets import QMainWindow
 from PyQt6.QtCore import QSize
 
-from agstoolbox.core.settings import ConstSettings
+from agstoolbox.core.settings.settings import ConstSettings
 from agstoolbox.at_icons import icon_refresh, icon_settings, main_icon
 from agstoolbox.panels.at_settings_dialog import SettingsDialog
 from agstoolbox.wdgts.at_tree_projects_wdgt import ProjectsTree

@@ -2,7 +2,7 @@ from __future__ import annotations  # for python 3.8
 import os.path
 
 from agstoolbox.core.gh.release import Release
-from agstoolbox.core.settings import ConstSettings
+from agstoolbox.core.settings.settings import ConstSettings
 from agstoolbox.core.utils.downloader import download_from_url
 from agstoolbox.core.utils.file import remove_dir_contents, mkdirp
 

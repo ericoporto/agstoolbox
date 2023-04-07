@@ -4,7 +4,7 @@ from pathlib import Path
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QWidget, QFileDialog, QLineEdit, QPushButton, QHBoxLayout
 
-from agstoolbox.core.settings import ConstSettings
+from agstoolbox.core.settings.settings import ConstSettings
 from agstoolbox.core.utils.file import dir_is_valid
 
 

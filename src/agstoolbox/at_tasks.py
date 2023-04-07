@@ -6,9 +6,8 @@ from agstoolbox.core.ags.get_local_ags_editors import list_ags_editors_in_dir_li
 from agstoolbox.core.gh.download_release import download_release_to_cache
 from agstoolbox.core.gh.install_release import install_release_from_cache
 from agstoolbox.core.gh.release import Release
-from agstoolbox.core.settings import ConstSettings, Settings
-from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir, \
-    list_game_projects_in_dir_list
+from agstoolbox.core.settings.settings import Settings
+from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir_list
 from agstoolbox.core.gh.list_releases import list_releases
 
 
