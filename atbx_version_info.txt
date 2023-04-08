@@ -30,11 +30,11 @@ VSVersionInfo(
       StringTable(
         '040904B0',
         [StringStruct('CompanyName', 'eri0o'),
-        StringStruct('FileDescription', 'AGS Toolbox Utility'),
+        StringStruct('FileDescription', 'ATBX AGS Toolbox Command Line Utility'),
         StringStruct('FileVersion', '0.3.3.0'),
         StringStruct('InternalName', 'cmd'),
         StringStruct('LegalCopyright', '© eri0o. All rights reserved.'),
-        StringStruct('OriginalFilename', 'agstoolbox.exe'),
+        StringStruct('OriginalFilename', 'atbx.exe'),
         StringStruct('ProductName', 'AGS Toolbox'),
         StringStruct('ProductVersion', '0.3.3.0')])
       ]),

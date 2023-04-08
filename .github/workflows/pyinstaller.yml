@@ -24,6 +24,7 @@ jobs:
     - name: Package Application
       uses: ericoporto/pyinstaller-action-windows@main
       with:
+        exe_file_info: atbx_version_info.txt
         spec: atbx.spec
         path: .
 
