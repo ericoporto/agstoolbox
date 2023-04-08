@@ -38,13 +38,15 @@ def get_unique_game_project_in_path(project_path: str) -> GameProject | None:
 
 
 def at_cmd_list_projects(args):
-    if args.path is None:
+    a_path: str | None = args.path
+
+    if a_path is None:
         Settings().load()
         prj_dirs: list[str] = Settings().get_project_search_dirs()
         projects = list_game_projects_in_dir_list(prj_dirs)
 
     else:
-        projects = list_game_projects_in_dir(args.path)
+        projects = list_game_projects_in_dir(a_path)
 
     for p in projects:
         print(p.name + ', ' + p.ags_editor_version.as_str + ', ' + p.path)
@@ -52,21 +54,25 @@ def at_cmd_list_projects(args):
 
 
 def at_cmd_list_editors(args):
+    is_unmanaged: bool = args.unmanaged and True
+    is_download: bool = args.download and True
+    a_path: str | None = args.path
+
     releases: list[Release] = []
     editors: list[LocalAgsEditor] = []
-    if args.path is None:
+    if a_path is None:
         Settings().load()
-        if args.unmanaged:
+        if is_unmanaged:
             unmanaged_dirs: list[str] = Settings().get_manually_installed_editors_search_dirs()
             editors = list_ags_editors_in_dir_list(unmanaged_dirs)
-        elif args.download:
+        elif is_download:
             releases = list_releases()
         else:
             managed_dir: str = Settings().get_tools_install_dir()
             editors = list_probable_ags_editors_in_dir(managed_dir)
 
     else:
-        editors = list_probable_ags_editors_in_dir(args.path)
+        editors = list_probable_ags_editors_in_dir(a_path)
 
     for e in editors:
         print(e.name + ', ' + e.version.as_str + ', ' + e.path)
@@ -91,9 +97,8 @@ def at_cmd_list(args):
 
 def at_cmd_install(args):
     force: bool = True and args.force
-    release_to_install: Release = Release()
-    install_arg: str = args.editor_version
-    releases: list[Release] = list_releases()
+    install_arg: str = args.VERSION_OR_PROJECT_PATH
+
     if install_arg is None or install_arg == "":
         print('ERROR: Editor Version specified is invalid!')
         return
@@ -104,17 +109,18 @@ def at_cmd_install(args):
         if game_project is not None:
             editor_version = game_project.ags_editor_version
 
+    release_to_install: Release = Release()
+    releases: list[Release] = list_releases()
+
     if editor_version is None or editor_version.as_int < 3000000000:
         # arg was really a version
         editor_version = version_str_to_version(install_arg)
         if editor_version.improv == "0" and editor_version.patch == "0":
             release_to_install = get_latest_release_family(releases, editor_version.family)
 
-    release_not_already_valid: bool = release_to_install is None or \
-        release_to_install.archive_url is None or len(release_to_install.archive_url) <= 1
-
-    if release_not_already_valid:
-        release_to_install = get_release_version(releases, editor_version)
+    with release_to_install as ri:
+        if ri is None or ri.archive_url is None or len(ri.archive_url) <= 1:
+            release_to_install = get_release_version(releases, editor_version)
 
     if release_to_install is None:
         print('ERROR: Editor Version specified is invalid!')
@@ -135,7 +141,7 @@ def at_cmd_install(args):
 
 
 def at_cmd_open_editor(args):
-    editor_version: Version = version_str_to_version(args.editor_version)
+    editor_version: Version = version_str_to_version(args.EDITOR_VERSION)
 
     if editor_version is None or editor_version.as_int < 3000000000:
         print('ERROR: Invalid version!')
@@ -175,7 +181,8 @@ def at_cmd_open_editor(args):
 
 
 def at_cmd_open_project(args):
-    prj_path: str = args.project_path
+    prj_path: str = args.PROJECT_PATH
+
     if not Path(prj_path).exists():
         print('ERROR: Invalid project path')
         return
@@ -248,7 +255,7 @@ def cmdline(show_help_when_empty: bool):
     p_i.set_defaults(func=at_cmd_install)
     p_ii = p_i.add_subparsers(title='sub_install', dest='sub_install')
     p_iie = p_ii.add_parser('editor', help='install managed AGS Editor')
-    p_iie.add_argument('editor_version',
+    p_iie.add_argument('VERSION_OR_PROJECT_PATH',
                        help='version to install or project path if we should guess')
     p_iie.add_argument('-f', '--force', action='store_true', default=None,
                        help='forces installation, overwrite if already exists')
@@ -257,10 +264,10 @@ def cmdline(show_help_when_empty: bool):
     p_o.set_defaults(func=at_cmd_open)
     p_oo = p_o.add_subparsers(title='sub_open', dest='sub_open')
     p_ooe = p_oo.add_parser('editor', help='open AGS Editor, by default only managed editors')
-    p_ooe.add_argument('editor_version',
+    p_ooe.add_argument('EDITOR_VERSION',
                        help='version to open')
     p_oop = p_oo.add_parser('project', help='open AGS Project')
-    p_oop.add_argument('project_path',
+    p_oop.add_argument('PROJECT_PATH',
                        help='project path')
 
     args = parser.parse_args()
