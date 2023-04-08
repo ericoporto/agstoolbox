@@ -96,6 +96,7 @@ def at_cmd_install(args):
 
     if editor_version.as_int < 3000000000 or \
             release_to_install is None or \
+            release_to_install.archive_url is None or \
             len(release_to_install.archive_url) <= 1:
         release_to_install = get_release_version(releases, editor_version)
 
@@ -149,7 +150,7 @@ def cmdline(show_help_when_empty: bool):
     p_llp.add_argument('-p', '--path', action='store', default=None, type=str,
                        help='the path to look for list')
 
-    p_i = subparsers.add_parser('install', help='install thing help')
+    p_i = subparsers.add_parser('install', help='install tools')
     p_i.set_defaults(func=at_cmd_install)
     p_ii = p_i.add_subparsers(title='sub_install', dest='sub_install')
     p_iie = p_ii.add_parser('editor', help='install managed AGS Editor')
