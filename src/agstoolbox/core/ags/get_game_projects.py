@@ -68,6 +68,13 @@ def gameagf_file_to_game_project(filepath: str) -> GameProject:
     return gp
 
 
+def valid_gameagf_file_to_game_project(filepath: str) -> GameProject | None:
+    if is_game_file(filepath):
+        return gameagf_file_to_game_project(filepath)
+    else:
+        return None
+
+
 def list_game_projects_in_dir(filepath: str) -> list[GameProject]:
     candidates = get_gp_candidates_in_dir(filepath, PROJECT_FILE_NAME)
     ags_projects = []
