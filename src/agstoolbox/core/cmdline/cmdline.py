@@ -256,7 +256,7 @@ def cmdline(show_help_when_empty: bool):
     p_ii = p_i.add_subparsers(title='sub_install', dest='sub_install')
     p_iie = p_ii.add_parser('editor', help='install managed AGS Editor')
     p_iie.add_argument('VERSION_OR_PROJECT_PATH',
-                       help='version to install or project path if we should guess')
+                       help='version to install or project to grab editor version')
     p_iie.add_argument('-f', '--force', action='store_true', default=None,
                        help='forces installation, overwrite if already exists')
 
@@ -265,10 +265,10 @@ def cmdline(show_help_when_empty: bool):
     p_oo = p_o.add_subparsers(title='sub_open', dest='sub_open')
     p_ooe = p_oo.add_parser('editor', help='open AGS Editor, by default only managed editors')
     p_ooe.add_argument('EDITOR_VERSION',
-                       help='version to open')
+                       help='Editor version to open')
     p_oop = p_oo.add_parser('project', help='open AGS Project')
     p_oop.add_argument('PROJECT_PATH',
-                       help='project path')
+                       help='path to the project to be opened')
 
     args = parser.parse_args()
     if 'func' in args.__dict__:
