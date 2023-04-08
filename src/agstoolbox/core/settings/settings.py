@@ -1,6 +1,5 @@
 from __future__ import annotations  # for python 3.8
 
-from platformdirs import user_cache_dir, user_data_dir, user_log_dir, user_documents_dir
 import os
 from pathlib import Path
 
@@ -11,6 +10,8 @@ from agstoolbox.core.utils.file import mkdirp, get_unique_valid_dirs
 from agstoolbox.core.utils.singleton import Singleton
 from agstoolbox import __title__
 from agstoolbox.core.utils.startup import remove_app_at_startup, set_app_at_startup
+from agstoolbox.core.utils.systemdirs import get_user_cache_dir, get_user_data_dir, \
+    get_user_log_dir, get_user_documents_dir
 
 app_name = __title__
 app_author = "eri0o"
@@ -20,10 +21,10 @@ class StaticSettings:
     double_click_interval = 400
     DEFAULT_EXT_EDITORS_SEARCH_DIRS = win_get_default_editor_search_dirs()
 
-    cache_dir = Path(user_cache_dir(app_name, app_author)).as_posix()
-    data_dir = Path(user_data_dir(app_name, app_author)).as_posix()
-    log_dir = Path(user_log_dir(app_name, app_author)).as_posix()
-    user_docs = Path(user_documents_dir()).as_posix()
+    cache_dir = get_user_cache_dir(app_name, app_author)
+    data_dir = get_user_data_dir(app_name, app_author)
+    log_dir = get_user_log_dir(app_name, app_author)
+    user_docs = get_user_documents_dir()
 
     DEFAULT_TOOLS_INSTALL_DIR = Path(os.path.join(user_docs, 'AgsToolbox')).as_posix()
     DEFAULT_PROJECTS_SEARCH_DIRS = [user_docs]
