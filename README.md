@@ -10,6 +10,18 @@ _inspired by [JetBrains Toolbox](https://www.jetbrains.com/toolbox-app/), but di
 This software is **Windows** only - since AGS Editor is Windows only. This may change in the future - compatibility is kept with macOS and Linux, but functionality may be absent.
 
 
+## Installation
+
+You should use the `agstoolbox.exe` from latest release. Place it in a directory under your user like `C:\Users\MY_USER\software\agstoolbox.exe` and double click it.
+
+### Installing from pip
+
+You can install it from [pip](https://pypi.org/project/agstoolbox/)
+
+    pip install agstoolbox
+
+**NOTE:** On MS Windows, instalation from pip may not work correctly, see [Warning on Windows Store Python](#warning-on-windows-store-python) for more information.
+
 ## Development
 
 ### Building a portable EXE
@@ -35,6 +47,14 @@ For running, you can call the script on the rootfolder directly.
 
     python agstoolbox
 
-***WARNING⚠:*** if you are using Python from Windows Store, most writes to `AppData/Local` and similar [will be redirected](https://github.com/python/cpython/issues/95029) and you will not be able to properly use or debug AGS Toolbox, I recomend you use a Win32 Python to avoid debugging frustrations.
+    
+## Warning on Windows Store Python
+
+If you are using Python from Windows Store, most writes to `AppData/Local` and similar [will be redirected](https://github.com/python/cpython/issues/95029) and you will not be able to properly use or debug AGS Toolbox, I recomend you use a **Win32** Python to avoid debugging frustrations.
 
 There's probably ways to break the redirection from MS Windows Store Python, but we need to look carefully to not break cross os compatibility, so we may need to diverge Windows vs Nix, see https://github.com/python/cpython/issues/85368
+
+
+## Author and License
+
+This code is made by Érico Porto, and licensed with MIT [`LICENSE`](LICENSE).
