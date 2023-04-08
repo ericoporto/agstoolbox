@@ -1,21 +1,24 @@
+from __future__ import annotations  # for python 3.8
+from datetime import datetime
+
 from agstoolbox.core.ags.ags_editor import AgsEditor
 
 
 class Release(AgsEditor):
     """a GitHub release object"""
-    url = None
-    id = None
-    tag = None
+    url: str = None
+    id: str = None
+    tag: str = None
 
-    html_url = None
+    html_url: str = None
 
-    is_pre_release = False
-    text_details = None
-    published_at = None
-    published_at_timestamp = None
-    archive_name = None
-    archive_url = None
+    is_pre_release: bool = False
+    text_details: str = None
+    published_at: str = None
+    published_at_timestamp: datetime = None
+    archive_name: str = None
+    archive_url: str = None
     archive_size = None
-    archive_id = None
+    archive_id: str = None
 
 

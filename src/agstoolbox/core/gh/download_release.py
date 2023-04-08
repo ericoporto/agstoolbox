@@ -18,7 +18,7 @@ def get_zip_archive_cache_path(release: Release):
 
 
 def download_release_to_cache(release: Release,
-                              progress_update: Callable[[float, int, int], None] = None):
+                              progress_update: Callable[[float, int, int, int], None] = None):
     r_url = release.archive_url
     filepath_in_cache = get_zip_archive_cache_path(release)
     remove_dir_contents(filepath_in_cache)

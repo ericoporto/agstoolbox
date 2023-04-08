@@ -31,13 +31,13 @@ def tag_to_version_str(tag: str) -> str:
         major = tks[first_tk].strip()
 
     if len(tks) >= 2:
-        minor = tks[first_tk+1].strip()
+        minor = tks[first_tk + 1].strip()
 
     if len(tks) >= 3:
-        improv = tks[first_tk+2].strip()
+        improv = tks[first_tk + 2].strip()
 
     if len(tks) >= 4:
-        patch = tks[first_tk+3].strip()
+        patch = tks[first_tk + 3].strip()
 
     return major + "." + minor + "." + improv + "." + patch
 
@@ -73,6 +73,22 @@ def family_to_minor(family: str) -> str:
     return tks[1]
 
 
+def tag_to_patch(tag: str) -> str:
+    tks = tag_to_version_str(tag).split(".")
+    if len(tks) != 4:
+        return "0"
+
+    return tks[3]
+
+
+def tag_to_improv(tag: str) -> str:
+    tks = tag_to_version_str(tag).split(".")
+    if len(tks) != 4:
+        return "0"
+
+    return tks[2]
+
+
 def version_to_family(version: str) -> str:
     return tag_to_family(version)
 
@@ -93,7 +109,7 @@ def version_str_to_int(version: str) -> int:
             tk_val = int(tk)
         except ValueError:
             return -1
-        version_as_int += tk_val*(1000**(3-i))
+        version_as_int += tk_val * (1000 ** (3 - i))
 
     return version_as_int
 
@@ -115,7 +131,7 @@ def family_str_to_int(family: str) -> int:
         except ValueError:
             return -1
 
-        family_as_int += tk_val*(1000**(3-i))
+        family_as_int += tk_val * (1000 ** (3 - i))
 
     return family_as_int
 
@@ -126,6 +142,8 @@ def tag_to_version(tag: str) -> Version:
     v.family = tag_to_family(tag)
     v.major = family_to_major(v.family)
     v.minor = family_to_minor(v.family)
+    v.improv = tag_to_improv(v.as_str)
+    v.patch = tag_to_patch(v.as_str)
     v.as_int = version_str_to_int(v.as_str)
     v.family_as_int = family_str_to_int(v.family)
     return v

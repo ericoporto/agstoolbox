@@ -127,7 +127,8 @@ def remove_dir_contents(target_dir: str):
                 elif entry.is_file():
                     os.remove(entry.path)
     except (FileNotFoundError, IOError):
-        print("nothing to remove")
+        # print("nothing to remove")
+        pass
 
 
 def _mk_dir_recursive(dir_path):

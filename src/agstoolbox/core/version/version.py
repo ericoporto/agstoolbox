@@ -8,3 +8,5 @@ class Version:
     family_as_int: int = None
     major: str = None
     minor: str = None
+    improv: str = None
+    patch: str = None
