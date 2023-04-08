@@ -38,37 +38,3 @@ For running, you can call the script on the rootfolder directly.
 ***WARNING⚠:*** if you are using Python from Windows Store, most writes to `AppData/Local` and similar [will be redirected](https://github.com/python/cpython/issues/95029) and you will not be able to properly use or debug AGS Toolbox, I recomend you use a Win32 Python to avoid debugging frustrations.
 
 There's probably ways to break the redirection from MS Windows Store Python, but we need to look carefully to not break cross os compatibility, so we may need to diverge Windows vs Nix, see https://github.com/python/cpython/issues/85368
-
-
-##  Desired features
-
-- [x] Download any archive.zip of any AGS version from 3.5.0 forward
-- [x] buttons for launching Editor 
-- [x] detect AGS editors installed through other means (but not manage them)
-- [x] add folders as project libraries (may contain `game.agf` files)
-- [x] monitoring new releases
-- [x] allow listing game projects in libraries, with version used in `game.agf`
-- [x] opening Editor folder in windows explorer
-- [x] allow opening a game project directory in the file explorer
-- [ ] check download integrity with some hashing
-- [ ] allow setting a default AGS to use
-- [ ] allow removing a downloaded Editor from hard drive
-- [ ] launching link to online AGS manual, and forums
-- [ ] see how much storage each AGS Editor is using.
-- [ ] open the editor of the version if editor can open through command line and is available ([see](https://github.com/adventuregamestudio/ags/blob/970e023af4db037e2fe24488e583b9dd3ad935aa/Editor/AGS.Editor/GUI/GUIController.cs#L872))
-
-
-## how it (will!) works
-
-A [NotifyIcon](https://docs.microsoft.com/en-us/dotnet/desktop/winforms/controls/app-icons-to-the-taskbar-with-wf-notifyicon?view=netframeworkdesktop-4.8) is placed on the taskbar. This allows the application to continuously run and occasionally check for new releases (at launch, once each six hours?).
-The icon has two options, open the toolbox, and quit. If toolbox is opened a small panel is loaded.
-- This panel contains a clearly highlighted AGS Editor marked as default (it's possible no default is set), and a list of found AGS Editors. 
-- A settings gear icon is available, as is two links, one for the online manual and one for the forums. 
-- AGS Editors that are managed by the toolbox have the option to go to load and tree dots for doing additional things (like going to it's folder). 
-- AGS Editors that are not managed by the toolbox are available to launch but marked not as such. 
-- The list is ordered by the most recent version to least. 
-- Pre-releases (alpha and beta versions) are marked as such in their icons.
-- If a newer release is available, an icon is placed to allow quick download of it.
-
-In the settings following options are available
-- you can filter release versions you are not interested (say 3.5.1.X)
