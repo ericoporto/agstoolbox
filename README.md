@@ -35,6 +35,8 @@ For running, you can call the script on the rootfolder directly.
 
 ***WARNING⚠:*** if you are using Python from Windows Store, most writes to `AppData/Local` and similar [will be redirected](https://github.com/python/cpython/issues/95029) and you will not be able to properly use or debug AGS Toolbox, I recomend you use a Win32 Python to avoid debugging frustrations.
 
+There's probably ways to break the redirection from MS Windows Store Python, but we need to look carefully to not break cross os compatibility, so we may need to diverge Windows vs Nix, see https://github.com/python/cpython/issues/85368
+
 ##  Desired features
 
 - [x] Download any archive.zip of any AGS version from 3.5.0 forward
