@@ -11,12 +11,13 @@ class ProgressBar:
     else:
         phases = (' ', '▏', '▎', '▍', '▌', '▋', '▊', '▉', '█')
 
-    def __init__(self, l_descript: str, r_descript: str, max_value: int, width: int = 32):
+    def __init__(self, l_text: str, r_text: str, max_value: int, unit: str = '', width: int = 32):
         self.max: int = max_value
         self.width: int = width
         self.progress: float = 0.0
-        self.l_des: str = l_descript
-        self.r_des: str = r_descript
+        self.l_text: str = l_text
+        self.r_text: str = r_text
+        self.unit = unit
 
     def update(self, current_value: int, total_size: int):
         self.max = total_size
@@ -29,9 +30,9 @@ class ProgressBar:
         bar: str = self.phases[-1] * nfull
         current: str = self.phases[phase] if phase > 0 else ''
         empty: str = ' ' * max(0, nempty - len(current))
-        line = f"{current_value}/{self.max} |{bar}{current}{empty}|"
+        line = f"{current_value}/{self.max} {self.unit} |{bar}{current}{empty}|"
 
-        sys.stdout.write('\r' + self.l_des + line + self.r_des)
+        sys.stdout.write('\r' + self.l_text + line + self.r_text)
         sys.stdout.flush()
 
     def finish(self):

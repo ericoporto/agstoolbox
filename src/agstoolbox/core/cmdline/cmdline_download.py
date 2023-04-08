@@ -6,7 +6,8 @@ from agstoolbox.core.gh.release import Release
 
 
 def cmdline_download_release_to_cache(release: Release):
-    bar = ProgressBar(' downloading... ', ' ' + release.archive_name + ' ', release.archive_size)
+    max_size: int = release.archive_size
+    bar = ProgressBar(' Downloading... ', ' ' + release.archive_name + ' ', max_size, 'B')
 
     def progress_updates(completed_percent: float,
                          c_size: int,
