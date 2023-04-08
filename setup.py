@@ -1,7 +1,7 @@
 from codecs import open
 from pathlib import Path
 
-from setuptools import setup
+from setuptools import setup, find_packages
 import re
 
 
@@ -30,7 +30,18 @@ setup(
     keywords=['AGS Toolbox', 'Adventure Game Studio', 'development', 'ags', 'Game Development',
               'gamedev'],
     install_requires=['pyqt6', 'requests', 'defusedxml', 'platformdirs', 'pefile'],
-    packages=["agstoolbox"],
+    packages=['agstoolbox',
+              'agstoolbox.core',
+              'agstoolbox.core.ags',
+              'agstoolbox.core.cmdline',
+              'agstoolbox.core.gh',
+              'agstoolbox.core.settings',
+              'agstoolbox.core.utils',
+              'agstoolbox.core.version',
+              'agstoolbox.panels',
+              'agstoolbox.system',
+              'agstoolbox.wdgts',
+              'agstoolbox.wdgts_utils'],
     package_dir={"": "src"},
     scripts=["agstoolbox", "atbx"],
     package_data={
