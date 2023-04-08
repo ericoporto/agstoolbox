@@ -33,7 +33,7 @@ For running, you can call the script on the rootfolder directly.
 
     python agstoolbox
 
-***WARNING⚠:*** if you are using Python from Windows Store, most writes to `AppData/Local` and similar will be redirected and you will not be able to properly use or debug AGS Toolbox, I recomend you use a Win32 Python to avoid debugging frustrations.
+***WARNING⚠:*** if you are using Python from Windows Store, most writes to `AppData/Local` and similar [will be redirected](https://github.com/python/cpython/issues/95029) and you will not be able to properly use or debug AGS Toolbox, I recomend you use a Win32 Python to avoid debugging frustrations.
 
 ##  Desired features
 
