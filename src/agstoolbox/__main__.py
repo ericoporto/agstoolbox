@@ -11,7 +11,7 @@ from os import environ as environ
 
 # TODO: figure out how to avoid import when no graphical environment exists
 from agstoolbox.at_trayindicator import run_tray_indicator
-from agstoolbox.core.cmdline import cmdline
+from agstoolbox.core.cmdline.cmdline import cmdline
 
 
 def main():

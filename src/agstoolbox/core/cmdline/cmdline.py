@@ -1,11 +1,13 @@
 from __future__ import annotations  # for python 3.8
 
+from operator import attrgetter
 from pathlib import Path
 from sys import exit
 import argparse
 
 from agstoolbox import __title__, __version__, __copyright__, __license__
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
+from agstoolbox.core.ags.ags_local_run import ags_editor_load_project, start_ags_editor
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir, \
     list_game_projects_in_dir_list
@@ -95,9 +97,9 @@ def at_cmd_install(args):
             release_to_install = get_latest_release_family(releases, editor_version.family)
 
     if editor_version.as_int < 3000000000 or \
-            release_to_install is None or \
-            release_to_install.archive_url is None or \
-            len(release_to_install.archive_url) <= 1:
+        release_to_install is None or \
+        release_to_install.archive_url is None or \
+        len(release_to_install.archive_url) <= 1:
         release_to_install = get_release_version(releases, editor_version)
 
     if release_to_install is None:
@@ -118,10 +120,89 @@ def at_cmd_install(args):
     pass
 
 
-def at_cmd_run(args):
-    print('Run: Not implemented yet!')
-    print(args)
-    pass
+def at_cmd_open_editor(args):
+    editor_version: Version = version_str_to_version(args.editor_version)
+
+    if editor_version is None or editor_version.as_int < 3000000000:
+        print('ERROR: Invalid version!')
+        return
+
+    managed_dir: str = Settings().get_tools_install_dir()
+    editors = list_probable_ags_editors_in_dir(managed_dir)
+
+    for editor in editors:
+        if editor.version.as_int == editor_version.as_int:
+            start_ags_editor(editor)
+            return
+
+    unmanaged_dirs: list[str] = Settings().get_manually_installed_editors_search_dirs()
+    un_editors = list_ags_editors_in_dir_list(unmanaged_dirs)
+
+    for editor in un_editors:
+        if editor.version.as_int == editor_version.as_int:
+            start_ags_editor(editor)
+            return
+
+    print("WARN: Failed to find exact match of AGS Editor, will try to find a compatible one")
+
+    filtered_editors = [ae for ae in editors if ae.version.family == editor_version.family]
+    filtered_editors.sort(key=attrgetter("version.as_int"), reverse=True)
+    if len(filtered_editors) >= 1:
+        start_ags_editor(filtered_editors[0])
+        return
+
+    filtered_un_editors = [ae for ae in un_editors if ae.version.family == editor_version.family]
+    filtered_un_editors.sort(key=attrgetter("version.as_int"), reverse=True)
+    if len(filtered_un_editors) >= 1:
+        start_ags_editor(filtered_un_editors[0])
+        return
+
+    print("ERROR: No compatible AGS Editor available")
+
+
+def at_cmd_open_project(args):
+    prj_path: str = args.project_path
+    if not Path(prj_path).exists():
+        print('ERROR: Invalid project path')
+        return
+
+    projects: list[GameProject] = list_game_projects_in_dir(prj_path)
+    if len(projects) != 1:
+        print('ERROR: Invalid project path, not exactly 1 game project found!')
+        return
+
+    game_project: GameProject = projects[0]
+    project_version: Version = game_project.ags_editor_version
+
+    managed_dir: str = Settings().get_tools_install_dir()
+    editors = list_probable_ags_editors_in_dir(managed_dir)
+
+    for editor in editors:
+        if editor.version.as_int == project_version.as_int:
+            ags_editor_load_project(editor, game_project)
+            return
+
+    unmanaged_dirs: list[str] = Settings().get_manually_installed_editors_search_dirs()
+    editors = list_ags_editors_in_dir_list(unmanaged_dirs)
+
+    for editor in editors:
+        if editor.version.as_int == project_version.as_int:
+            ags_editor_load_project(editor, game_project)
+            return
+
+    print("ERROR: Failed to find exact match of AGS Editor")
+
+
+def at_cmd_open(args):
+    is_editor_open: bool = args.sub_open == 'editor'
+    is_proj_open: bool = args.sub_open == 'project'
+
+    if is_proj_open:
+        at_cmd_open_project(args)
+    elif is_editor_open:
+        at_cmd_open_editor(args)
+    else:
+        print('ERROR: Invalid open command!')
 
 
 def cmdline(show_help_when_empty: bool):
@@ -159,8 +240,15 @@ def cmdline(show_help_when_empty: bool):
     p_iie.add_argument('-f', '--force', action='store_true', default=None,
                        help='forces installation, overwrite if already exists')
 
-    p_r = subparsers.add_parser('run', help='install thing help')
-    p_r.set_defaults(func=at_cmd_run)
+    p_o = subparsers.add_parser('open', help='open an editor or project')
+    p_o.set_defaults(func=at_cmd_open)
+    p_oo = p_o.add_subparsers(title='sub_open', dest='sub_open')
+    p_ooe = p_oo.add_parser('editor', help='open AGS Editor, by default only managed editors')
+    p_ooe.add_argument('editor_version',
+                       help='version to open')
+    p_oop = p_oo.add_parser('project', help='open AGS Project')
+    p_oop.add_argument('project_path',
+                       help='project path')
 
     args = parser.parse_args()
     if 'func' in args.__dict__:
