@@ -111,6 +111,12 @@ For running, you can call the script on the rootfolder directly.
 
     python agstoolbox
 
+You can do the same with stbx
+
+    python atbx
+
+You can configure your IDE to run both of these scripts and alternate between them when debugging.
+
     
 ## Warning on Windows Store Python
 
