@@ -28,16 +28,17 @@ NOTE: On Windows, due to OS and PyInstaller limitations, `agstoolbox.exe` doesn'
 
 ```sh
 $ atbx --help
-usage: atbx [-h] [-s {bash,zsh,tcsh}] [-v] {list,install,open,settings} ...
+usage: atbx [-h] [-s {bash,zsh,tcsh}] [-v] {list,install,open,build,settings} ...
 
 agstoolbox is an application to help manage AGS Editor versions.
 
 positional arguments:
-  {list,install,open,settings}
+  {list,install,open,build,settings}
                         command
     list                lists things
     install             install tools
     open                open an editor or project
+    build               build an ags project
     settings            modify or show settings
 
 optional arguments:
