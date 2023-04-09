@@ -26,34 +26,65 @@ You can install it from [pip](https://pypi.org/project/agstoolbox/)
 
 NOTE: On Windows, due to OS and PyInstaller limitations, `agstoolbox.exe` doesn't work with command line arguments, so `atbx.exe` is made available to for command line arguments.
 
-```bash
-$ python atbx --help
-usage: agstoolbox [-h] [-v] {list,install,open} ...
+```sh
+$ atbx --help
+usage: atbx [-h] [-s {bash,zsh,tcsh}] [-v] {list,install,open,settings} ...
 
 agstoolbox is an application to help manage AGS Editor versions.
 
 positional arguments:
-  {list,install,open}  command
-    list               lists things
-    install            install tools
-    open               open an editor or project
+  {list,install,open,settings}
+                        command
+    list                lists things
+    install             install tools
+    open                open an editor or project
+    settings            modify or show settings
 
 optional arguments:
-  -h, --help           show this help message and exit
-  -v, --version        get software version.
+  -h, --help            show this help message and exit
+  -s {bash,zsh,tcsh}    print shell completion script
+  -v, --version         get software version.
 
 Copyright 2023 Erico Vieira Porto, MIT.
 ```
 
 As an example, a command line to force install the latest 3.6 AGS Editor, as a managed Editor is as follows
 
-```
+```sh
 $ python atbx install editor 3.6 -f
 Will install managed AGS Editor release 3.6.0.47
  Downloading... 40475597/40475597 B |████████████████████████████████| AGS-3.6.0.47.zip
 Extracting...
 Installed release 3.6.0.47
 ```
+
+### atbx with bash completion on Windows Git-Bash
+
+Check if you have a `~/.bashrc` file, attempt to show it
+
+```sh
+cat ~/.bashrc
+```
+
+If you get an error message, you don't have one yet, lets generate one
+
+```
+cat  /etc/bash.bashrc > ~/.bashrc
+```
+
+We are going to create a directory to store additional bash completion in your Windows user home,
+and then use atbx to generate the bash completion script and then add a line to bashrc to load it
+once a new shell loads.
+
+```
+mkdir ~/bash_completion.d/
+atbx -s bash > ~/bash_completion.d/atbx
+echo "source ~/bash_completion.d/atbx" >> ~/.bashrc
+```
+
+Once you close and reload the terminal, using atbx and pressing tab should show the commands, like
+`list`, `install`, ...
+
 
 ## Development
 
