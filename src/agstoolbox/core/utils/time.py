@@ -19,8 +19,8 @@ def internal_s_ago(t: datetime, diff: timedelta):
     for unit in units:
         dur = units[unit](diff)  # Run the lambda function to get a duration
         if dur > 0:
-            unit = unit[:-dur] if dur == 1 else unit  # De-pluralize if duration is 1 ('1 day' vs
-            # '2 days')
+            # if duration is 1 ('1 day' vs '2 days')
+            unit = unit[:-dur] if dur == 1 else unit  # De-pluralize
             return '%s %s ago' % (dur, unit)
     return 'just now'
 

@@ -14,8 +14,9 @@ from agstoolbox.at_trayindicator import run_tray_indicator
 from agstoolbox.core.cmdline.cmdline import cmdline
 from agstoolbox import __title__
 
+
 def main():
-    """"
+    """
     agstoolbox main routine
     When you use `python -m agstoolbox`, the main routine is called.
     If you use `pip install agstoolbox`, typing agstoolbox will also call this routine.

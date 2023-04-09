@@ -103,7 +103,8 @@ class ProjectWidget(QWidget):
     def get_unmanaged_editors(self) -> list[LocalAgsEditor]:
         return self.parent().parent().tools_tree.unmanaged_editors_list
 
-    def set_managed_editors_menu(self, parent_menu: QtWidgets.QMenu = None) -> list[ActionEditorPair]:
+    def set_managed_editors_menu(self,
+                                 parent_menu: QtWidgets.QMenu = None) -> list[ActionEditorPair]:
         submenu = QtWidgets.QMenu("Open in Managed Editor", parent_menu)
         parent_menu.addMenu(submenu)
         editors = self.get_managed_editors()
@@ -114,7 +115,8 @@ class ProjectWidget(QWidget):
 
         return actions
 
-    def set_unmanaged_editors_menu(self, parent_menu: QtWidgets.QMenu = None) -> list[ActionEditorPair]:
+    def set_unmanaged_editors_menu(self,
+                                   parent_menu: QtWidgets.QMenu = None) -> list[ActionEditorPair]:
         submenu = QtWidgets.QMenu("Open in External Editor", parent_menu)
         parent_menu.addMenu(submenu)
         editors = self.get_unmanaged_editors()

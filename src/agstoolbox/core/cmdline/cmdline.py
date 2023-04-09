@@ -6,7 +6,6 @@ from sys import exit
 import argparse
 import shtab  # for completion magic
 
-
 from agstoolbox import __title__, __version__, __copyright__, __license__
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
 from agstoolbox.core.ags.ags_local_run import ags_editor_load_project, start_ags_editor
@@ -307,17 +306,17 @@ def cmdline(show_help_when_empty: bool, program_name: str):
     p_s.set_defaults(func=at_cmd_settings)
     p_ss = p_s.add_subparsers(title='sub_settings', dest='sub_settings')
 
-    p_sss = p_ss.add_parser('show', help='show settings values')
-    p_sssp = p_sss.add_subparsers(title='sub_setting_param',
+    p_ssh = p_ss.add_parser('show', help='show settings values')
+    p_sshp = p_ssh.add_subparsers(title='sub_setting_param',
                                   dest='sub_setting_param', required=False)
-    p_sssp_proj = p_sssp.add_parser('project_search_dirs', help='show project search dirs')
-    p_sssp_tools = p_sssp.add_parser('tools_install_dir', help='show tools install dir')
+    p_sshp.add_parser('project_search_dirs', help='show project search dirs')
+    p_sshp.add_parser('tools_install_dir', help='show tools install dir')
 
-    p_sss = p_ss.add_parser('set', help='set settings values')
-    p_sssp = p_sss.add_subparsers(title='sub_setting_param', dest='sub_setting_param')
-    p_sssp_tools = p_sssp.add_parser('tools_install_dir', help='set tools install dir')
-    p_sssp_tools.add_argument('value',
-                              help='path to the tools install dir').complete = shtab.DIRECTORY
+    p_sse = p_ss.add_parser('set', help='set settings values')
+    p_ssep = p_sse.add_subparsers(title='sub_setting_param', dest='sub_setting_param')
+    p_ssep_t = p_ssep.add_parser('tools_install_dir', help='set tools install dir')
+    p_ssep_t.add_argument('value',
+                          help='path to the tools install dir').complete = shtab.DIRECTORY
 
     args = parser.parse_args()
     if 'func' in args.__dict__:

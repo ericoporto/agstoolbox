@@ -4,7 +4,7 @@ from pathlib import PureWindowsPath
 
 def set_run_key(key, value):
     """
-    Set/Remove Run Key in windows registry.
+    Set/Remove Run Key in Windows registry.
 
     :param key: Run Key Name
     :param value: Program to Run
@@ -16,7 +16,7 @@ def set_run_key(key, value):
         r'Software\Microsoft\Windows\CurrentVersion\Run',
         0, winreg.KEY_WRITE | winreg.KEY_READ)
 
-    if not value is None:
+    if value is not None:
         value = str(PureWindowsPath(value))
 
     with reg_key:
