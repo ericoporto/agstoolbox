@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Package Application
-      uses: ericoporto/pyinstaller-action-windows@main
+      uses: ericoporto/agstoolbox-pyinstaller-action@main
       with:
         exe_file: agstoolbox.exe
         exe_file_info: agstoolbox_version_info.txt
@@ -23,7 +23,7 @@ jobs:
         path: .
 
     - name: Package Application
-      uses: ericoporto/pyinstaller-action-windows@main
+      uses: ericoporto/agstoolbox-pyinstaller-action@main
       with:
         exe_file: atbx.exe
         exe_file_info: atbx_version_info.txt
