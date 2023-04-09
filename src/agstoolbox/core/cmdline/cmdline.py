@@ -142,9 +142,9 @@ def at_cmd_install(args):
         if editor_version.improv == "0" and editor_version.patch == "0":
             release_to_install = get_latest_release_family(releases, editor_version.family)
 
-    with release_to_install as ri:
-        if ri is None or ri.archive_url is None or len(ri.archive_url) <= 1:
-            release_to_install = get_release_version(releases, editor_version)
+    ri = release_to_install
+    if ri is None or ri.archive_url is None or len(ri.archive_url) <= 1:
+        release_to_install = get_release_version(releases, editor_version)
 
     if release_to_install is None:
         print('ERROR: Editor Version specified is invalid!')
