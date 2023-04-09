@@ -1,8 +1,8 @@
 PyQt6==6.2.3
 PyQt6-Qt6==6.2.4
-setuptools~=57.0.0
-requests~=2.27.1
+setuptools==67.6.1
+requests==2.28.2
 defusedxml~=0.7.1
-platformdirs~=2.4.1
+platformdirs==3.2.0
 pefile==2023.2.7
 shtab==1.6.1
