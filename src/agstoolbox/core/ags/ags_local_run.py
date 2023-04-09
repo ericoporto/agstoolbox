@@ -9,16 +9,16 @@ from agstoolbox.core.utils.file import get_absolute_path
 from agstoolbox.core.utils.run import run_exe_params
 
 
-def start_ags_editor(editor: LocalAgsEditor):
-    run_exe_params(editor.path)
+def start_ags_editor(editor: LocalAgsEditor, block: bool = False):
+    run_exe_params(editor.path, block)
 
 
-def ags_editor_load_project(editor: LocalAgsEditor, project: GameProject):
+def ags_editor_load_project(editor: LocalAgsEditor, project: GameProject, block: bool = False):
     project_path = get_absolute_path(project.path)
-    run_exe_params(editor.path, [project_path])
+    run_exe_params(editor.path, block, [project_path], )
 
 
-def ags_editor_build_project(editor: LocalAgsEditor, project: GameProject):
+def ags_editor_build_project(editor: LocalAgsEditor, project: GameProject, block: bool = False):
     project_path = get_absolute_path(project.path)
-    run_exe_params(editor.path, ['/compile', project_path])
+    run_exe_params(editor.path, block, ['/compile', project_path])
 

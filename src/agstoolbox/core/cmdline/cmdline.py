@@ -28,7 +28,9 @@ from agstoolbox.core.version.version_utils import version_str_to_version
 
 
 def meta_cmd_project(args,
-                     ags_editor_proj_command: Callable[[LocalAgsEditor, GameProject], None] = None):
+                     ags_editor_proj_command: Callable[
+                         [LocalAgsEditor, GameProject, bool], None] = None):
+    block: bool = not args.non_blocking
     prj_path: str = args.PROJECT_PATH
 
     if not Path(prj_path).exists():
@@ -47,7 +49,7 @@ def meta_cmd_project(args,
 
     for editor in editors:
         if editor.version.as_int == project_version.as_int:
-            ags_editor_proj_command(editor, game_project)
+            ags_editor_proj_command(editor, game_project, block)
             return
 
     unmanaged_dirs: list[str] = Settings().get_manually_installed_editors_search_dirs()
@@ -55,7 +57,7 @@ def meta_cmd_project(args,
 
     for editor in editors:
         if editor.version.as_int == project_version.as_int:
-            ags_editor_proj_command(editor, game_project)
+            ags_editor_proj_command(editor, game_project, block)
             return
 
     print("ERROR: Failed to find exact match of AGS Editor, wanted " + project_version.as_str)
@@ -120,6 +122,7 @@ def at_cmd_list(args):
 
 
 def at_cmd_install(args):
+    quiet: bool = True and args.quiet
     force: bool = True and args.force
     install_arg: str = args.VERSION_OR_PROJECT_PATH
 
@@ -156,7 +159,7 @@ def at_cmd_install(args):
 
     print("Will install managed AGS Editor release " + release_to_install.version.as_str)
 
-    cmdline_download_release_to_cache(release_to_install)
+    cmdline_download_release_to_cache(release_to_install, quiet)
 
     print("Extracting...")
     install_release_from_cache(release_to_install)
@@ -306,6 +309,8 @@ def cmdline(show_help_when_empty: bool, program_name: str):
                        help='version to install or project to grab editor version')
     p_iie.add_argument('-f', '--force', action='store_true', default=None,
                        help='forces installation, overwrite if already exists')
+    p_iie.add_argument('-q', '--quiet', action='store_true', default=False,
+                       help='do not print download progress')
 
     # open command
     p_o = subparsers.add_parser('open', help='open an editor or project')
@@ -317,12 +322,16 @@ def cmdline(show_help_when_empty: bool, program_name: str):
     p_oop = p_oo.add_parser('project', help='open AGS Project')
     p_oop.add_argument('PROJECT_PATH',
                        help='path to the project to be opened').complete = shtab.FILE
+    p_oop.add_argument('-n', '--non-blocking', action='store_true', default=False,
+                       help='do not wait for Editor to be closed to continue')
 
     # build command
     p_b = subparsers.add_parser('build', help='build an ags project')
     p_b.set_defaults(func=at_cmd_build)
     p_b.add_argument('PROJECT_PATH',
                      help='path to the project to be built').complete = shtab.FILE
+    p_b.add_argument('-n', '--non-blocking', action='store_true', default=False,
+                     help='do not wait for Editor to be closed to continue')
 
     # settings command
     p_s = subparsers.add_parser('settings', help='modify or show settings')
