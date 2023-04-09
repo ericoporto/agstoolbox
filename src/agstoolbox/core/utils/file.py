@@ -67,11 +67,16 @@ def get_file_if_exists(directory: str, file: str):
 def internal_run_fast_scandir(directory: str, filename: str):  # dir: str, ext: list
     sub_folders, files = [], []
 
-    directory = Path(directory).as_posix()
+    if Path(directory).is_dir() and Path(directory).exists():
+        directory = Path(directory).as_posix()
+    else:
+        directory = get_dir(directory)
 
     os_scandir_res = []
     try:
         os_scandir_res = os.scandir(directory)
+    except NotADirectoryError:
+        os_scandir_res = []
     except PermissionError:
         os_scandir_res = []
 
