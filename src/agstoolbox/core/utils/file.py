@@ -10,8 +10,16 @@ from os.path import join as join_paths
 from pathlib import Path
 
 
-def get_dir(filepath):
+def get_dir(filepath: str):
     return Path(realpath(dirname(filepath))).as_posix()
+
+
+def get_file(filepath: str):
+    return os.path.basename(Path(filepath).as_posix())
+
+
+def get_absolute_path(filepath: str) -> str:
+    return os.path.abspath(os.path.expanduser(os.path.expandvars(filepath)))
 
 
 def dir_is_valid(folderpath: str) -> bool:
@@ -157,8 +165,3 @@ def mkdirp(path_dir: str):
     _mk_dir_recursive(path_dir)
     # alternate implementation if needed
     # Path(path_dir).mkdir(parents=True, exist_ok=True)
-
-
-def get_absolute_path(a_path: str) -> str:
-    return os.path.abspath(os.path.expanduser(os.path.expandvars(a_path)))
-
