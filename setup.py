@@ -4,11 +4,9 @@ from pathlib import Path
 from setuptools import setup, find_packages
 import re
 
-
 with open('src/agstoolbox/__init__.py', 'r') as fd:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
                         fd.read(), re.MULTILINE).group(1)
-
 
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.rst").read_text()
@@ -27,21 +25,31 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License'
     ],
-    keywords=['AGS Toolbox', 'Adventure Game Studio', 'development', 'ags', 'Game Development',
-              'gamedev'],
-    install_requires=['pyqt6', 'requests', 'defusedxml', 'platformdirs', 'pefile', 'shtab'],
-    packages=['agstoolbox',
-              'agstoolbox.core',
-              'agstoolbox.core.ags',
-              'agstoolbox.core.cmdline',
-              'agstoolbox.core.gh',
-              'agstoolbox.core.settings',
-              'agstoolbox.core.utils',
-              'agstoolbox.core.version',
-              'agstoolbox.panels',
-              'agstoolbox.system',
-              'agstoolbox.wdgts',
-              'agstoolbox.wdgts_utils'],
+    keywords=[
+        'AGS Toolbox', 'Adventure Game Studio', 'development', 'ags', 'Game Development', 'gamedev'
+    ],
+    install_requires=[
+        'pyqt6',
+        'requests',
+        'defusedxml',
+        'platformdirs',
+        'pefile',
+        'shtab'
+    ],
+    packages=[
+        'agstoolbox',
+        'agstoolbox.core',
+        'agstoolbox.core.ags',
+        'agstoolbox.core.cmdline',
+        'agstoolbox.core.gh',
+        'agstoolbox.core.settings',
+        'agstoolbox.core.utils',
+        'agstoolbox.core.version',
+        'agstoolbox.panels',
+        'agstoolbox.system',
+        'agstoolbox.wdgts',
+        'agstoolbox.wdgts_utils'
+    ],
     package_dir={"": "src"},
     scripts=["agstoolbox", "atbx"],
     package_data={
