@@ -85,6 +85,10 @@ echo "source ~/bash_completion.d/atbx" >> ~/.bashrc
 Once you close and reload the terminal, using atbx and pressing tab should show the commands, like
 `list`, `install`, ...
 
+Whenever you update atbx, regenerate it's completion script using
+```
+atbx -s bash > ~/bash_completion.d/atbx
+```
 
 ## Development
 
