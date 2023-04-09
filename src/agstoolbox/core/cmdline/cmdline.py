@@ -58,7 +58,7 @@ def meta_cmd_project(args,
             ags_editor_proj_command(editor, game_project)
             return
 
-    print("ERROR: Failed to find exact match of AGS Editor")
+    print("ERROR: Failed to find exact match of AGS Editor, wanted " + project_version.as_str)
 
 
 def at_cmd_list_projects(args):
@@ -187,7 +187,8 @@ def at_cmd_open_editor(args):
             start_ags_editor(editor)
             return
 
-    print("WARN: Failed to find exact match of AGS Editor, will try to find a compatible one")
+    print("WARN: Failed to find exact match of AGS Editor( " + editor_version.as_str +
+          " ), will try to find a compatible one")
 
     filtered_editors = [ae for ae in editors if ae.version.family == editor_version.family]
     filtered_editors.sort(key=attrgetter("version.as_int"), reverse=True)
@@ -201,7 +202,7 @@ def at_cmd_open_editor(args):
         start_ags_editor(filtered_un_editors[0])
         return
 
-    print("ERROR: No compatible AGS Editor available")
+    print("ERROR: No compatible AGS Editor available, wanted " + editor_version.family)
 
 
 def at_cmd_open_project(args):
