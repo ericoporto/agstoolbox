@@ -27,9 +27,13 @@ def test_load_json_string_empty():
 
 def test_load_json_string_all_fields():
     # Test that a JSON string with all fields set returns the correct SettingsData object
-    json_string = '{"run_when_os_starts": true, "project_search_dirs": ["dir1", "dir2"], ' \
-                  '"manually_installed_editors_search_dirs": "dir3", "tools_install_dir": ' \
-                  '"/usr/local/bin"} '
+    json_string = \
+        '{' \
+        '"run_when_os_starts": true, ' \
+        '"project_search_dirs": ["dir1", "dir2"], ' \
+        '"manually_installed_editors_search_dirs": "dir3", "tools_install_dir": ' \
+        '"/usr/local/bin"' \
+        '} '
     result = load_settings_data_from_json_string(json_string)
     assert isinstance(result, SettingsData)
     assert result.run_when_os_starts
