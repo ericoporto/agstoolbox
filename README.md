@@ -51,7 +51,7 @@ Copyright 2023 Erico Vieira Porto, MIT.
 As an example, a command line to force install the latest 3.6 AGS Editor, as a managed Editor is as follows
 
 ```sh
-$ python atbx install editor 3.6 -f
+$ atbx install editor 3.6 -f
 Will install managed AGS Editor release 3.6.0.47
  Downloading... 40475597/40475597 B |████████████████████████████████| AGS-3.6.0.47.zip
 Extracting...
