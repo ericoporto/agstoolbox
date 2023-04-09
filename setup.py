@@ -23,11 +23,17 @@ setup(
     license='MIT',
     classifiers=[
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License'
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3 :: Only'
     ],
     keywords=[
         'AGS Toolbox', 'Adventure Game Studio', 'development', 'ags', 'Game Development', 'gamedev'
     ],
+    python_requires='>=3.8',
     install_requires=[
         'pyqt6',
         'requests',
