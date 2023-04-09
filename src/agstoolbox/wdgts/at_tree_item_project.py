@@ -94,6 +94,9 @@ class ProjectWidget(QWidget):
     def quick_open_project(self):
         self.parent().parent().tools_tree.open_project_tool(self.project)
 
+    def quick_build_project(self):
+        self.parent().parent().tools_tree.build_project_tool(self.project)
+
     def mouseDoubleClickEvent(self, event):
         self.quick_open_project()
 
@@ -130,6 +133,7 @@ class ProjectWidget(QWidget):
     def contextMenuEvent(self, event):
         menu = QtWidgets.QMenu(self)
         quick_open_action = DefaultMenuQAction(menu, "Quick Open Project")
+        quick_build_action = menu.addAction("Quick Build Project")
         open_folder_action = menu.addAction("Open Folder in File Explorer")
         menu.addSeparator()
         managed_actions = self.set_managed_editors_menu(menu)
@@ -141,6 +145,9 @@ class ProjectWidget(QWidget):
             return
         elif action == quick_open_action:
             self.quick_open_project()
+            return
+        elif action == quick_build_action:
+            self.quick_build_project()
             return
         else:
             for a_pair in managed_actions:

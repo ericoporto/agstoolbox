@@ -6,7 +6,7 @@ from PyQt6.QtWidgets import QTreeWidget, QWidget, QAbstractScrollArea, QFrame, Q
 from agstoolbox.at_tasks import do_update_tools_downloads, do_update_tools_unmanaged, \
     do_update_tools_managed
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
-from agstoolbox.core.ags.ags_local_run import ags_editor_load_project
+from agstoolbox.core.ags.ags_local_run import ags_editor_load_project, ags_editor_build_project
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.version.version import Version
 from agstoolbox.wdgts.at_tree_item_tool import TreeItemTool_Header, ToolType, \
@@ -158,4 +158,17 @@ class ToolsTree(QTreeWidget):
         for editor in self.unmanaged_editors_list:
             if editor.version.as_int == project_version.as_int:
                 ags_editor_load_project(editor, game_project)
+                return
+
+    def build_project_tool(self, game_project: GameProject):
+        project_version: Version = game_project.ags_editor_version
+
+        for editor in self.managed_editors_list:
+            if editor.version.as_int == project_version.as_int:
+                ags_editor_build_project(editor, game_project)
+                return
+
+        for editor in self.unmanaged_editors_list:
+            if editor.version.as_int == project_version.as_int:
+                ags_editor_build_project(editor, game_project)
                 return
