@@ -103,3 +103,17 @@ def list_game_projects_in_dir_list(filepaths: list[str]) -> list[GameProject]:
     ags_projects.sort(key=attrgetter("last_modified"), reverse=True)
 
     return ags_projects
+
+
+def get_unique_game_project_in_path(project_path: str) -> GameProject | None:
+    game_project: GameProject | None = valid_gameagf_file_to_game_project(project_path)
+
+    if game_project is None:
+        projects: list[GameProject] = list_game_projects_in_dir(project_path)
+        if len(projects) != 1:
+            print('WARN: Invalid project path, not exactly 1 game project found!')
+            return None
+
+        game_project = projects[0]
+
+    return game_project

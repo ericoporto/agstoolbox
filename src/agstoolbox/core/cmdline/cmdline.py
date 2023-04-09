@@ -12,7 +12,7 @@ from agstoolbox.core.ags.ags_editor import LocalAgsEditor
 from agstoolbox.core.ags.ags_local_run import ags_editor_load_project, start_ags_editor
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir, \
-    list_game_projects_in_dir_list, valid_gameagf_file_to_game_project
+    list_game_projects_in_dir_list, get_unique_game_project_in_path
 from agstoolbox.core.ags.get_local_ags_editors import list_probable_ags_editors_in_dir, \
     list_ags_editors_in_dir_list
 from agstoolbox.core.cmdline.cmdline_download import cmdline_download_release_to_cache
@@ -23,20 +23,6 @@ from agstoolbox.core.gh.release import Release
 from agstoolbox.core.settings.settings import Settings
 from agstoolbox.core.version.version import Version
 from agstoolbox.core.version.version_utils import version_str_to_version
-
-
-def get_unique_game_project_in_path(project_path: str) -> GameProject | None:
-    game_project: GameProject | None = valid_gameagf_file_to_game_project(project_path)
-
-    if game_project is None:
-        projects: list[GameProject] = list_game_projects_in_dir(project_path)
-        if len(projects) != 1:
-            print('WARN: Invalid project path, not exactly 1 game project found!')
-            return None
-
-        game_project = projects[0]
-
-    return game_project
 
 
 def at_cmd_list_projects(args):
