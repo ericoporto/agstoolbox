@@ -11,8 +11,8 @@ if os.path.isdir(os.path.join(".", "src")) and os.path.isfile(
 from agstoolbox.core.cmdline.cmdline import cmdline
 
 if __name__ == '__main__':
-    cmdline(True)
+    cmdline(True, 'atbx')
 
 
 def main():
-    cmdline(True)
+    cmdline(True, 'atbx')

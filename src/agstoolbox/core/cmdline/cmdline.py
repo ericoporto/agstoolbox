@@ -5,6 +5,7 @@ from pathlib import Path
 from sys import exit
 import argparse
 
+
 from agstoolbox import __title__, __version__, __copyright__, __license__
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
 from agstoolbox.core.ags.ags_local_run import ags_editor_load_project, start_ags_editor
@@ -225,11 +226,53 @@ def at_cmd_open(args):
         print('ERROR: Invalid open command!')
 
 
-def cmdline(show_help_when_empty: bool):
+def at_cmd_settings_show(args):
+    show_what: str | None = args.sub_setting_param
+
+    if show_what is None or show_what == 'all':
+        print(Settings().dump())
+    elif show_what == 'project_search_dirs':
+        print("Project Search Dirs:", ', '.join(Settings().get_project_search_dirs()))
+    elif show_what == 'tools_install_dir':
+        print("Tools Install Dir:", Settings().get_tools_install_dir())
+    else:
+        print('ERROR: Invalid settings show command!')
+        return
+
+
+def at_cmd_settings_set(args):
+    set_what: str | None = args.sub_setting_param
+
+    if set_what == 'tools_install_dir':
+        Settings().set_tools_install_dir(args.value)
+    else:
+        print('ERROR: Invalid settings set command!')
+        return
+
+    Settings().save()
+
+
+def at_cmd_settings(args):
+    is_show_settings: bool = args.sub_settings == 'show'
+    is_set_settings: bool = args.sub_settings == 'set'
+
+    if is_show_settings:
+        at_cmd_settings_show(args)
+        return
+    elif is_set_settings:
+        at_cmd_settings_set(args)
+        return
+    else:
+        print('ERROR: Invalid settings command!')
+        return
+
+
+def cmdline(show_help_when_empty: bool, program_name: str):
     parser = argparse.ArgumentParser(
-        prog=__title__,
+        prog=program_name,
         description=__title__ + ' is an application to help manage AGS Editor versions.',
         epilog=__copyright__ + ", " + __license__ + ".")
+
     parser.add_argument(
         '-v', '--version', action='store_true', default=False, help='get software version.')
     subparsers = parser.add_subparsers(help='command')
@@ -240,7 +283,8 @@ def cmdline(show_help_when_empty: bool):
     p_ll = p_l.add_subparsers(title='sub_list', dest='sub_list')
     p_lle = p_ll.add_parser('editors', help='lists AGS Editors, by default only managed editors')
     p_lle.add_argument('-p', '--path', action='store', default=None, type=str,
-                       help='look for AGS Editors in specific path, ignore settings')
+                       help='look for AGS Editors in specific path, ignore settings'
+                       )
     p_lle.add_argument(
         '-u', '--unmanaged', action='store_true', default=False,
         help='search for unmanaged editors in settings')
@@ -269,6 +313,23 @@ def cmdline(show_help_when_empty: bool):
     p_oop = p_oo.add_parser('project', help='open AGS Project')
     p_oop.add_argument('PROJECT_PATH',
                        help='path to the project to be opened')
+
+    # settings command
+    p_s = subparsers.add_parser('settings', help='modify or show settings')
+    p_s.set_defaults(func=at_cmd_settings)
+    p_ss = p_s.add_subparsers(title='sub_settings', dest='sub_settings')
+
+    p_sss = p_ss.add_parser('show', help='show settings values')
+    p_sssp = p_sss.add_subparsers(title='sub_setting_param',
+                                  dest='sub_setting_param', required=False)
+    p_sssp_proj = p_sssp.add_parser('project_search_dirs', help='show project search dirs')
+    p_sssp_tools = p_sssp.add_parser('tools_install_dir', help='show tools install dir')
+
+    p_sss = p_ss.add_parser('set', help='set settings values')
+    p_sssp = p_sss.add_subparsers(title='sub_setting_param', dest='sub_setting_param')
+    p_sssp_tools = p_sssp.add_parser('tools_install_dir', help='set tools install dir')
+    p_sssp_tools.add_argument('value',
+                              help='path to the tools install dir')
 
     args = parser.parse_args()
     if 'func' in args.__dict__:

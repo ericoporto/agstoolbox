@@ -118,19 +118,21 @@ class BaseSettings:
     def get_run_when_os_starts(self):
         return self.run_when_os_starts
 
-    def save(self):
-        settings_dir = get_settings_dir()
-        settings_path = get_settings_path()
-
-        mkdirp(settings_dir)
-
+    def dump(self) -> str:
         data = SettingsData()
         data.run_when_os_starts = self.run_when_os_starts
         data.project_search_dirs = self.project_search_dirs
         data.manually_installed_editors_search_dirs = self.manually_installed_editors_search_dirs
         data.tools_install_dir = self.tools_install_dir
 
-        data_string = save_settings_data_to_json_string(data)
+        return save_settings_data_to_json_string(data)
+
+    def save(self):
+        settings_dir = get_settings_dir()
+        settings_path = get_settings_path()
+
+        mkdirp(settings_dir)
+        data_string: str = self.dump()
 
         with open(settings_path, 'w+', encoding="utf-8") as f:
             f.write(data_string)
