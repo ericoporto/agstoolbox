@@ -157,3 +157,8 @@ def mkdirp(path_dir: str):
     _mk_dir_recursive(path_dir)
     # alternate implementation if needed
     # Path(path_dir).mkdir(parents=True, exist_ok=True)
+
+
+def get_absolute_path(a_path: str) -> str:
+    return os.path.abspath(os.path.expanduser(os.path.expandvars(a_path)))
+

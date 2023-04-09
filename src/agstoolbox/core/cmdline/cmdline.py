@@ -4,11 +4,14 @@ from operator import attrgetter
 from pathlib import Path
 from sys import exit
 import argparse
+from typing import Callable
+
 import shtab  # for completion magic
 
 from agstoolbox import __title__, __version__, __copyright__, __license__
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
-from agstoolbox.core.ags.ags_local_run import ags_editor_load_project, start_ags_editor
+from agstoolbox.core.ags.ags_local_run import ags_editor_load_project, start_ags_editor, \
+    ags_editor_build_project
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir, \
     list_game_projects_in_dir_list, get_unique_game_project_in_path
@@ -22,6 +25,40 @@ from agstoolbox.core.gh.release import Release
 from agstoolbox.core.settings.settings import Settings
 from agstoolbox.core.version.version import Version
 from agstoolbox.core.version.version_utils import version_str_to_version
+
+
+def meta_cmd_project(args,
+                     ags_editor_proj_command: Callable[[LocalAgsEditor, GameProject], None] = None):
+    prj_path: str = args.PROJECT_PATH
+
+    if not Path(prj_path).exists():
+        print('ERROR: Invalid project path')
+        return
+
+    game_project: GameProject | None = get_unique_game_project_in_path(prj_path)
+    if game_project is None:
+        print('ERROR: Invalid project path')
+        return
+
+    project_version: Version = game_project.ags_editor_version
+
+    managed_dir: str = Settings().get_tools_install_dir()
+    editors = list_probable_ags_editors_in_dir(managed_dir)
+
+    for editor in editors:
+        if editor.version.as_int == project_version.as_int:
+            ags_editor_proj_command(editor, game_project)
+            return
+
+    unmanaged_dirs: list[str] = Settings().get_manually_installed_editors_search_dirs()
+    editors = list_ags_editors_in_dir_list(unmanaged_dirs)
+
+    for editor in editors:
+        if editor.version.as_int == project_version.as_int:
+            ags_editor_proj_command(editor, game_project)
+            return
+
+    print("ERROR: Failed to find exact match of AGS Editor")
 
 
 def at_cmd_list_projects(args):
@@ -168,36 +205,8 @@ def at_cmd_open_editor(args):
 
 
 def at_cmd_open_project(args):
-    prj_path: str = args.PROJECT_PATH
-
-    if not Path(prj_path).exists():
-        print('ERROR: Invalid project path')
-        return
-
-    game_project: GameProject | None = get_unique_game_project_in_path(prj_path)
-    if game_project is None:
-        print('ERROR: Invalid project path')
-        return
-
-    project_version: Version = game_project.ags_editor_version
-
-    managed_dir: str = Settings().get_tools_install_dir()
-    editors = list_probable_ags_editors_in_dir(managed_dir)
-
-    for editor in editors:
-        if editor.version.as_int == project_version.as_int:
-            ags_editor_load_project(editor, game_project)
-            return
-
-    unmanaged_dirs: list[str] = Settings().get_manually_installed_editors_search_dirs()
-    editors = list_ags_editors_in_dir_list(unmanaged_dirs)
-
-    for editor in editors:
-        if editor.version.as_int == project_version.as_int:
-            ags_editor_load_project(editor, game_project)
-            return
-
-    print("ERROR: Failed to find exact match of AGS Editor")
+    meta_cmd_project(args, ags_editor_load_project)
+    return
 
 
 def at_cmd_open(args):
@@ -210,6 +219,11 @@ def at_cmd_open(args):
         at_cmd_open_editor(args)
     else:
         print('ERROR: Invalid open command!')
+
+
+def at_cmd_build(args):
+    meta_cmd_project(args, ags_editor_build_project)
+    return
 
 
 def at_cmd_settings_show(args):
@@ -264,7 +278,7 @@ def cmdline(show_help_when_empty: bool, program_name: str):
         '-v', '--version', action='store_true', default=False, help='get software version.')
     subparsers = parser.add_subparsers(help='command')
 
-    # create the parser for the "command_a" command
+    # list command
     p_l = subparsers.add_parser('list', help='lists things')
     p_l.set_defaults(func=at_cmd_list)
     p_ll = p_l.add_subparsers(title='sub_list', dest='sub_list')
@@ -282,6 +296,7 @@ def cmdline(show_help_when_empty: bool, program_name: str):
     p_llp.add_argument('-p', '--path', action='store', default=None, type=str,
                        help='the path to look for list').complete = shtab.DIRECTORY
 
+    # install command
     p_i = subparsers.add_parser('install', help='install tools')
     p_i.set_defaults(func=at_cmd_install)
     p_ii = p_i.add_subparsers(title='sub_install', dest='sub_install')
@@ -291,6 +306,7 @@ def cmdline(show_help_when_empty: bool, program_name: str):
     p_iie.add_argument('-f', '--force', action='store_true', default=None,
                        help='forces installation, overwrite if already exists')
 
+    # open command
     p_o = subparsers.add_parser('open', help='open an editor or project')
     p_o.set_defaults(func=at_cmd_open)
     p_oo = p_o.add_subparsers(title='sub_open', dest='sub_open')
@@ -300,6 +316,12 @@ def cmdline(show_help_when_empty: bool, program_name: str):
     p_oop = p_oo.add_parser('project', help='open AGS Project')
     p_oop.add_argument('PROJECT_PATH',
                        help='path to the project to be opened').complete = shtab.FILE
+
+    # build command
+    p_b = subparsers.add_parser('build', help='build an ags project')
+    p_b.set_defaults(func=at_cmd_build)
+    p_b.add_argument('PROJECT_PATH',
+                     help='path to the project to be built').complete = shtab.FILE
 
     # settings command
     p_s = subparsers.add_parser('settings', help='modify or show settings')
