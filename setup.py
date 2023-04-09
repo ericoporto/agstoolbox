@@ -29,7 +29,7 @@ setup(
     ],
     keywords=['AGS Toolbox', 'Adventure Game Studio', 'development', 'ags', 'Game Development',
               'gamedev'],
-    install_requires=['pyqt6', 'requests', 'defusedxml', 'platformdirs', 'pefile'],
+    install_requires=['pyqt6', 'requests', 'defusedxml', 'platformdirs', 'pefile', 'shtab'],
     packages=['agstoolbox',
               'agstoolbox.core',
               'agstoolbox.core.ags',

@@ -4,6 +4,7 @@ from operator import attrgetter
 from pathlib import Path
 from sys import exit
 import argparse
+import shtab  # for completion magic
 
 
 from agstoolbox import __title__, __version__, __copyright__, __license__
@@ -273,6 +274,7 @@ def cmdline(show_help_when_empty: bool, program_name: str):
         description=__title__ + ' is an application to help manage AGS Editor versions.',
         epilog=__copyright__ + ", " + __license__ + ".")
 
+    shtab.add_argument_to(parser, ["-s"])  # magic!
     parser.add_argument(
         '-v', '--version', action='store_true', default=False, help='get software version.')
     subparsers = parser.add_subparsers(help='command')
@@ -284,7 +286,7 @@ def cmdline(show_help_when_empty: bool, program_name: str):
     p_lle = p_ll.add_parser('editors', help='lists AGS Editors, by default only managed editors')
     p_lle.add_argument('-p', '--path', action='store', default=None, type=str,
                        help='look for AGS Editors in specific path, ignore settings'
-                       )
+                       ).complete = shtab.DIRECTORY
     p_lle.add_argument(
         '-u', '--unmanaged', action='store_true', default=False,
         help='search for unmanaged editors in settings')
@@ -293,7 +295,7 @@ def cmdline(show_help_when_empty: bool, program_name: str):
         help='lists for editors available for download')
     p_llp = p_ll.add_parser('projects', help='lists AGS Projects')
     p_llp.add_argument('-p', '--path', action='store', default=None, type=str,
-                       help='the path to look for list')
+                       help='the path to look for list').complete = shtab.DIRECTORY
 
     p_i = subparsers.add_parser('install', help='install tools')
     p_i.set_defaults(func=at_cmd_install)
@@ -312,7 +314,7 @@ def cmdline(show_help_when_empty: bool, program_name: str):
                        help='Editor version to open')
     p_oop = p_oo.add_parser('project', help='open AGS Project')
     p_oop.add_argument('PROJECT_PATH',
-                       help='path to the project to be opened')
+                       help='path to the project to be opened').complete = shtab.FILE
 
     # settings command
     p_s = subparsers.add_parser('settings', help='modify or show settings')
@@ -329,7 +331,7 @@ def cmdline(show_help_when_empty: bool, program_name: str):
     p_sssp = p_sss.add_subparsers(title='sub_setting_param', dest='sub_setting_param')
     p_sssp_tools = p_sssp.add_parser('tools_install_dir', help='set tools install dir')
     p_sssp_tools.add_argument('value',
-                              help='path to the tools install dir')
+                              help='path to the tools install dir').complete = shtab.DIRECTORY
 
     args = parser.parse_args()
     if 'func' in args.__dict__:
