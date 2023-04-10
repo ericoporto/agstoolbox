@@ -29,6 +29,7 @@ def parse_releases(response_json) -> list[Release]:
         rls = None
         found_asset = False
 
+        # This can raise a TypeError in some weird condition I don't know what it is
         for asset in rel['assets']:
             # check for either predictable or patch release archives
             if is_asset_archive(rel['name'], asset['name']):
