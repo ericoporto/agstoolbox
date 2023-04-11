@@ -3,6 +3,7 @@ from PyQt6 import QtWidgets, QtCore, QtGui
 from PyQt6.QtCore import QTimer
 from PyQt6.QtWidgets import QSystemTrayIcon
 
+from agstoolbox.at_fonts import set_custom_fonts
 from agstoolbox.panels.at_mainpanel import MainWindow
 from agstoolbox.at_icons import main_icon
 from agstoolbox.core.settings.settings import ConstSettings
@@ -105,6 +106,7 @@ def run_tray_indicator(ap_args):
     ConstSettings().double_click_interval = app.doubleClickInterval()
 
     w = UniqueWidget()
+    set_custom_fonts(app, w)
     tray_icon = AtTrayIcon(main_icon(), w)
     tray_icon.setObjectName(__title__)
     tray_icon.show()
