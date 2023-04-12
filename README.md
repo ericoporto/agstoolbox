@@ -1,6 +1,8 @@
 # AGS Toolbox 🧰
 Utility Adventure Game Studio software to help manage, install, and uninstall different AGS Editor versions
 
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/agstoolbox) ![PyPI](https://img.shields.io/pypi/v/agstoolbox)
+
 For usability information and questions, go to the [**ags forums topic**](https://www.adventuregamestudio.co.uk/forums/index.php?topic=59938.0).
 
 ![](https://user-images.githubusercontent.com/2244442/230735148-7aa061f5-90f7-4db7-ab7f-fcb5a5ea243f.png)
