@@ -108,7 +108,7 @@ This should generate a `agstoolbox.exe` file under the `dist/` directory in the 
 [PyCharm Community](https://www.jetbrains.com/pycharm/) is highly recommended for development, you can setup a venv and have it install dependencies and running the project as soon as you point to the root directory.
 Be sure to set agstoolbox as the command to run in it.
 
-This project uses Python 3, I am currently developing with 3.9, because it provides compatibility with additional type information that is not supported out of the box in previous versions. 
+This project uses Python 3, I am currently developing with 3.9, because it provides compatibility with additional type information that is not supported out of the box in previous versions. For now it's been possible to use future imports to keep this type annotation compatible with Python 3.8.
 
 Use pip to install dependencies
 
