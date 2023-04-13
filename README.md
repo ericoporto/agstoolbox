@@ -61,7 +61,7 @@ Extracting...
 Installed release 3.6.0.47
 ```
 
-### atbx with bash completion on Windows Git-Bash
+### tab completion on Windows Git-Bash
 
 Check if you have a `~/.bashrc` file, attempt to show it
 
