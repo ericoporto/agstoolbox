@@ -8,6 +8,8 @@ class ExpandableSearchBar(QtWidgets.QLineEdit):
     unfocused_width = None
     original_font = None
     focus_functions = dict()
+    context = dict()
+    previous_tab_id: int = None
 
     def __init__(self, parent: QtWidgets.QWidget = None,
                  top_widget: QtWidgets.QWidget = None):
@@ -31,6 +33,19 @@ class ExpandableSearchBar(QtWidgets.QLineEdit):
 
         shortcut = QtGui.QShortcut(QtGui.QKeySequence("Ctrl+S"), self)
         shortcut.activated.connect(self.setFocus)
+
+    def context_changed(self, new_context, previous_context):
+        if previous_context is not None:
+            self.context[previous_context] = self.text()
+        if new_context in self.context:
+            self.setText(self.context[new_context])
+        else:
+            self.setText("")
+
+    def parent_tab_changed(self, index: int):
+        self.context_changed(index, self.previous_tab_id)
+        self.previous_tab_id = index
+        self.set_icon_font_if_needed(self.text())
 
     def set_parent_focus_functions(self,
                                    f_focus_in: Callable[[QtWidgets.QWidget], None],

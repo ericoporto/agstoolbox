@@ -102,6 +102,7 @@ class MainWindow(QMainWindow):
 
         self.retranslateUi()
         self.tabWidget.setCurrentIndex(0)
+        self.tabWidget.currentChanged.connect(self.searchWidget.parent_tab_changed)
 
         self.settings_panel = SettingsDialog(parent=self)
         QtCore.QMetaObject.connectSlotsByName(self)
