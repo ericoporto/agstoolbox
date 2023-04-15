@@ -11,6 +11,8 @@ from agstoolbox.wdgts.at_tree_tools_wdgt import ToolsTree
 
 
 class MainWindow(QMainWindow):
+    tool_tab_id: int = None
+    proj_tab_id: int = None
     proj_update_task = None
     tool_update_task = None
 
@@ -48,7 +50,7 @@ class MainWindow(QMainWindow):
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.treeTools = ToolsTree(parent=self)
         self.verticalLayout_2.addWidget(self.treeTools)
-        self.tabWidget.addTab(self.tabTools, "")
+        self.tool_tab_id = self.tabWidget.addTab(self.tabTools, "")
 
         # Projects
         self.tabProjects = QtWidgets.QTabBar(self)
@@ -59,7 +61,7 @@ class MainWindow(QMainWindow):
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.treeProjects = ProjectsTree(parent=self, toolsTree=self.treeTools)
         self.verticalLayout_3.addWidget(self.treeProjects)
-        self.tabWidget.addTab(self.tabProjects, "")
+        self.proj_tab_id = self.tabWidget.addTab(self.tabProjects, "")
 
         # back to main window things
         self.verticalLayout.addWidget(self.tabWidget)
@@ -103,9 +105,16 @@ class MainWindow(QMainWindow):
         self.retranslateUi()
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget.currentChanged.connect(self.searchWidget.parent_tab_changed)
+        self.searchWidget.textChanged.connect(self.search_apply)
 
         self.settings_panel = SettingsDialog(parent=self)
         QtCore.QMetaObject.connectSlotsByName(self)
+
+    def search_apply(self, query: str):
+        if self.tabWidget.currentIndex() == self.proj_tab_id:
+            self.treeProjects.filter(query)
+        elif self.tabWidget.currentIndex() == self.tool_tab_id:
+            self.treeTools.filter(query)
 
     def search_focus_in(self):
         self.actionRefresh.setVisible(False)
