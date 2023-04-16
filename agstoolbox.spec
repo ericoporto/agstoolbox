@@ -5,6 +5,7 @@ block_cipher = None
 
 added_files = [
          ('src/agstoolbox/data/*.png', 'data'),
+         ('src/agstoolbox/data/fonts/*.ttf', 'data/fonts'),
          ]
 
 a = Analysis(['agstoolbox'],
@@ -27,7 +28,7 @@ exe = EXE(pyz,
           a.scripts,
           a.binaries,
           a.zipfiles,
-          a.datas,  
+          a.datas,
           [],
           name='agstoolbox',
           debug=False,
@@ -40,5 +41,5 @@ exe = EXE(pyz,
           disable_windowed_traceback=False,
           target_arch=None,
           codesign_identity=None,
-          entitlements_file=None, 
+          entitlements_file=None,
 		  icon='at_icon_pi.ico' )
