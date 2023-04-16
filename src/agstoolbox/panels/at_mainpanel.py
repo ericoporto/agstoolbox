@@ -97,6 +97,7 @@ class MainWindow(QMainWindow):
         self.searchWidget.set_parent_focus_functions(self.search_focus_in, self.search_focus_out)
         self.actionsSearch = QtWidgets.QWidgetAction(self)
         self.actionsSearch.setDefaultWidget(self.searchWidget)
+        self.searchWidget.searchChanged.connect(self.search_apply)
 
         self.toolBar.addAction(self.actionSettings)
         self.toolBar.addAction(self.actionRefresh)
@@ -104,8 +105,8 @@ class MainWindow(QMainWindow):
 
         self.retranslateUi()
         self.tabWidget.setCurrentIndex(0)
+        self.searchWidget.initContext(self.tabWidget.currentIndex(), self.tabWidget.count())
         self.tabWidget.currentChanged.connect(self.searchWidget.parent_tab_changed)
-        self.searchWidget.textChanged.connect(self.search_apply)
 
         self.settings_panel = SettingsDialog(parent=self)
         QtCore.QMetaObject.connectSlotsByName(self)
