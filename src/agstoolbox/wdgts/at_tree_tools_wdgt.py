@@ -1,5 +1,7 @@
 from __future__ import annotations  # for python 3.8
 
+from typing import cast
+
 from PyQt6 import QtCore
 from PyQt6.QtWidgets import QTreeWidget, QWidget, QAbstractScrollArea, QFrame, QTreeWidgetItem
 
@@ -10,7 +12,7 @@ from agstoolbox.core.ags.ags_local_run import ags_editor_load_project, ags_edito
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.version.version import Version
 from agstoolbox.wdgts.at_tree_item_tool import TreeItemTool_Header, ToolType, \
-    TreeItemTool_Download, TreeItemTool_ExternallyInstalled, TreeItemTool_Managed
+    TreeItemTool_Download, TreeItemTool_ExternallyInstalled, TreeItemTool_Managed, TreeItemTool
 
 
 class ToolsTree(QTreeWidget):
@@ -32,11 +34,11 @@ class ToolsTree(QTreeWidget):
         self.setFrameStyle(QFrame.Shape.NoFrame)
         self.clear()
         self.header_managed = TreeItemTool_Header(
-            "Managed", ToolType.MANAGED_TOOL)
+            "Managed", ToolType.MANAGED_TOOL_HEADER)
         self.header_unmanaged = TreeItemTool_Header(
-            "Externally Installed", ToolType.EXTERNALLY_INSTALLED_TOOL)
+            "Externally Installed", ToolType.EXTERNALLY_INSTALLED_TOOL_HEADER)
         self.header_download = TreeItemTool_Header(
-            "Available for Download", ToolType.AVAILABLE_TO_DOWNLOAD)
+            "Available for Download", ToolType.AVAILABLE_TO_DOWNLOAD_HEADER)
         self.addTopLevelItem(self.header_managed)
         self.addTopLevelItem(self.header_unmanaged)
         self.addTopLevelItem(self.header_download)
@@ -172,3 +174,40 @@ class ToolsTree(QTreeWidget):
             if editor.version.as_int == project_version.as_int:
                 ags_editor_build_project(editor, game_project)
                 return
+
+    def filter(self, query: str):
+        query = query.lower()
+        non_empty_query: bool = query is not None and len(query) != 0
+        root = self.invisibleRootItem()
+        child_count = root.childCount()
+        for i in range(child_count):
+            item_header: TreeItemTool_Header = cast(TreeItemTool_Header, root.child(i))
+            i_c_count = item_header.childCount()
+
+            for k in range(i_c_count):
+                item: TreeItemTool = cast(TreeItemTool, item_header.child(k))
+                hidden: bool = False
+
+                if non_empty_query:
+                    if item.tool_type == ToolType.MANAGED_TOOL:
+                        item_m: TreeItemTool_Managed = cast(TreeItemTool_Managed, item)
+                        version_str: str = item_m.itm_wdgt.ags_editor.version.as_str
+                        path: str = item_m.itm_wdgt.ags_editor.path
+                        path = path.lower()
+                        hidden = not(query in version_str or query in path)
+
+                    elif item.tool_type == ToolType.EXTERNALLY_INSTALLED_TOOL:
+                        item_e: TreeItemTool_ExternallyInstalled = cast(
+                            TreeItemTool_ExternallyInstalled, item)
+                        version_str: str = item_e.itm_wdgt.ags_editor.version.as_str
+                        path: str = item_e.itm_wdgt.ags_editor.path
+                        path = path.lower()
+                        hidden = not(query in version_str or query in path)
+
+                    elif item.tool_type == ToolType.AVAILABLE_TO_DOWNLOAD:
+                        item_d: TreeItemTool_Download = cast(TreeItemTool_Download, item)
+                        version_str: str = item_d.itm_wdgt.release.version.as_str
+                        hidden = not(query in version_str)
+
+                item.setHidden(hidden)
+

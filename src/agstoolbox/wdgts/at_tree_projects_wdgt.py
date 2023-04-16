@@ -1,5 +1,6 @@
 from __future__ import annotations  # for python 3.8
 from operator import attrgetter
+from typing import cast
 
 from PyQt6.QtWidgets import QTreeWidget, QWidget, QFrame
 
@@ -44,3 +45,21 @@ class ProjectsTree(QTreeWidget):
 
     def projects_update_ended(self):
         self.proj_update_task = None
+
+    def filter(self, query: str):
+        query = query.lower()
+        non_empty_query: bool = query is not None and len(query) != 0
+        root = self.invisibleRootItem()
+        child_count = root.childCount()
+        for i in range(child_count):
+            hidden: bool = False
+            item: TreeItemProject = cast(TreeItemProject, root.child(i))
+            if non_empty_query:
+                name: str = item.itm_wdgt.project.name
+                name = name.lower()
+                game_file: str = item.itm_wdgt.project.game_file
+                game_file = game_file.lower()
+                version_str: str = item.itm_wdgt.project.ags_editor_version.as_str
+                hidden = not(query in name or query in game_file or query in version_str)
+
+            item.setHidden(hidden)

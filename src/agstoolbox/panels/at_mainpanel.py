@@ -5,11 +5,14 @@ from PyQt6.QtCore import QSize
 from agstoolbox.core.settings.settings import ConstSettings
 from agstoolbox.at_icons import icon_refresh, icon_settings, main_icon
 from agstoolbox.panels.at_settings_dialog import SettingsDialog
+from agstoolbox.wdgts.at_searchedit import ExpandableSearchBar
 from agstoolbox.wdgts.at_tree_projects_wdgt import ProjectsTree
 from agstoolbox.wdgts.at_tree_tools_wdgt import ToolsTree
 
 
 class MainWindow(QMainWindow):
+    tool_tab_id: int = None
+    proj_tab_id: int = None
     proj_update_task = None
     tool_update_task = None
 
@@ -47,7 +50,7 @@ class MainWindow(QMainWindow):
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.treeTools = ToolsTree(parent=self)
         self.verticalLayout_2.addWidget(self.treeTools)
-        self.tabWidget.addTab(self.tabTools, "")
+        self.tool_tab_id = self.tabWidget.addTab(self.tabTools, "")
 
         # Projects
         self.tabProjects = QtWidgets.QTabBar(self)
@@ -58,7 +61,7 @@ class MainWindow(QMainWindow):
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.treeProjects = ProjectsTree(parent=self, toolsTree=self.treeTools)
         self.verticalLayout_3.addWidget(self.treeProjects)
-        self.tabWidget.addTab(self.tabProjects, "")
+        self.proj_tab_id = self.tabWidget.addTab(self.tabProjects, "")
 
         # back to main window things
         self.verticalLayout.addWidget(self.tabWidget)
@@ -90,14 +93,37 @@ class MainWindow(QMainWindow):
         self.actionRefresh.setObjectName("actionRefresh")
         self.actionRefresh.triggered.connect(self.refresh_clicked)
 
+        self.searchWidget = ExpandableSearchBar(parent=self.toolBar, top_widget=self)
+        self.searchWidget.set_parent_focus_functions(self.search_focus_in, self.search_focus_out)
+        self.actionsSearch = QtWidgets.QWidgetAction(self)
+        self.actionsSearch.setDefaultWidget(self.searchWidget)
+        self.searchWidget.searchChanged.connect(self.search_apply)
+
         self.toolBar.addAction(self.actionSettings)
         self.toolBar.addAction(self.actionRefresh)
+        self.toolBar.addAction(self.actionsSearch)
 
         self.retranslateUi()
         self.tabWidget.setCurrentIndex(0)
+        self.searchWidget.initContext(self.tabWidget.currentIndex(), self.tabWidget.count())
+        self.tabWidget.currentChanged.connect(self.searchWidget.parent_tab_changed)
 
         self.settings_panel = SettingsDialog(parent=self)
         QtCore.QMetaObject.connectSlotsByName(self)
+
+    def search_apply(self, query: str):
+        if self.tabWidget.currentIndex() == self.proj_tab_id:
+            self.treeProjects.filter(query)
+        elif self.tabWidget.currentIndex() == self.tool_tab_id:
+            self.treeTools.filter(query)
+
+    def search_focus_in(self):
+        self.actionRefresh.setVisible(False)
+        self.actionSettings.setVisible(False)
+
+    def search_focus_out(self):
+        self.actionRefresh.setVisible(True)
+        self.actionSettings.setVisible(True)
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate

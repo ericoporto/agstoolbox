@@ -1,3 +1,3 @@
 include setup.py AUTHORS README.rst COPYING LICENSE
-include src/agstoolbox/data/*.png
+include src/agstoolbox/data/*.png src/agstoolbox/data/fonts/*.ttf
 exclude tests/*

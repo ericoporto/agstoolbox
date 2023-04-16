@@ -15,9 +15,22 @@ from agstoolbox.wdgts_utils.action_utils import DefaultMenuQAction
 
 
 class ToolType(Enum):
+    HEADER = 16
     MANAGED_TOOL = 1
     AVAILABLE_TO_DOWNLOAD = 2
-    EXTERNALLY_INSTALLED_TOOL = 3
+    EXTERNALLY_INSTALLED_TOOL = 4
+
+    MANAGED_TOOL_HEADER = 17
+    AVAILABLE_TO_DOWNLOAD_HEADER = 18
+    EXTERNALLY_INSTALLED_TOOL_HEADER = 20
+
+
+class TreeItemTool(QTreeWidgetItem):
+    tool_type: ToolType = None
+
+    def __init__(self, parent: QTreeWidgetItem | None, tool_type: ToolType):
+        QTreeWidgetItem.__init__(self, parent)
+        self.tool_type = tool_type
 
 
 class EditorImage(QLabel):
@@ -34,12 +47,11 @@ class EditorImage(QLabel):
         self.setMinimumSize(32, 32)
 
 
-class TreeItemTool_Header(QTreeWidgetItem):
+class TreeItemTool_Header(TreeItemTool):
     name = None
-    tool_type = None
 
     def __init__(self, name: str, tool_type: ToolType):
-        QTreeWidgetItem.__init__(self)
+        TreeItemTool.__init__(self, None, tool_type)
         self.name = name
         self.setWhatsThis(0, name)
         self.tool_type = tool_type
@@ -209,11 +221,9 @@ class TreeItemTool_Local_Widget(QWidget):
 ##################################################################################################
 # item widgets
 
-class TreeItemTool_Managed(QTreeWidgetItem):
-    tool_type = ToolType.MANAGED_TOOL
-
+class TreeItemTool_Managed(TreeItemTool):
     def __init__(self, parent: QTreeWidgetItem, ags_editor: LocalAgsEditor):
-        QTreeWidgetItem.__init__(self, parent)
+        TreeItemTool.__init__(self, parent, ToolType.MANAGED_TOOL)
         self.itm_wdgt = TreeItemTool_Local_Widget(ags_editor, self.tool_type)
 
     def __lt__(self, other):
@@ -223,11 +233,9 @@ class TreeItemTool_Managed(QTreeWidgetItem):
         self.treeWidget().setItemWidget(self, 0, self.itm_wdgt)
 
 
-class TreeItemTool_ExternallyInstalled(QTreeWidgetItem):
-    tool_type = ToolType.EXTERNALLY_INSTALLED_TOOL
-
+class TreeItemTool_ExternallyInstalled(TreeItemTool):
     def __init__(self, parent: QTreeWidgetItem, ags_editor: LocalAgsEditor):
-        QTreeWidgetItem.__init__(self, parent)
+        TreeItemTool.__init__(self, parent, ToolType.EXTERNALLY_INSTALLED_TOOL)
         self.itm_wdgt = TreeItemTool_Local_Widget(ags_editor, self.tool_type)
 
     def __lt__(self, other):
@@ -237,11 +245,9 @@ class TreeItemTool_ExternallyInstalled(QTreeWidgetItem):
         self.treeWidget().setItemWidget(self, 0, self.itm_wdgt)
 
 
-class TreeItemTool_Download(QTreeWidgetItem):
-    tool_type = ToolType.AVAILABLE_TO_DOWNLOAD
-
+class TreeItemTool_Download(TreeItemTool):
     def __init__(self, parent: QTreeWidgetItem, release: Release):
-        QTreeWidgetItem.__init__(self, parent)
+        TreeItemTool.__init__(self, parent, ToolType.AVAILABLE_TO_DOWNLOAD)
         self.itm_wdgt = TreeItemTool_Download_Widget(release)
 
     def updateInTree(self):

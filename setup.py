@@ -59,6 +59,6 @@ setup(
     package_dir={"": "src"},
     scripts=["agstoolbox", "atbx"],
     package_data={
-        'agstoolbox': ['data/*.png']
+        'agstoolbox': ['data/*.png', 'data/fonts/*.ttf']
     },
 )

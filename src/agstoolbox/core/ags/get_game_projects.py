@@ -63,6 +63,11 @@ def gameagf_file_to_game_project(filepath: str) -> GameProject:
     gp.last_modified = os.path.getmtime(filepath)
 
     gp.name = root.find('Game/Settings/GameName').text
+    game_file_name_htag = root.find('Game/Settings/GameFileName')
+    if game_file_name_htag is not None:
+        gp.game_file = game_file_name_htag.text
+    else:
+        gp.game_file = ""
     gp.ags_editor_version = version_str_to_version(root.attrib['EditorVersion'])
     gp.ags_editor_version_index = root.attrib['VersionIndex']
     return gp
