@@ -1,0 +1,70 @@
+[size=14pt][b]AGS Toolbox🧰[/b][/size] [color=gray][b]version 0.4.0 [/b][/color]
+
+[url="https://github.com/ericoporto/agstoolbox/releases/download/0.4.0/agstoolbox.exe"]Get Latest Release [b]agstoolbox.exe[/b][/url] | [url="https://github.com/ericoporto/agstoolbox/releases/download/0.4.0/atbx.exe"]companion [b]atbx.exe[/b][/url] | [url="https://github.com/ericoporto/agstoolbox"]GitHub Repo[/url]
+
+[img]https://img.shields.io/pypi/pyversions/agstoolbox[/img] [url="https://pypi.org/project/agstoolbox/"][img]https://img.shields.io/pypi/v/agstoolbox[/img][/url] [url="https://github.com/ericoporto/agstoolbox"][img]https://img.shields.io/github/release-date/ericoporto/agstoolbox?color=blue&label=%F0%9F%93%85[/img][/url] 
+
+Hi, I made something intended for those that deal with [b]multiple versions of AGS Editors and multiple AGS Game Projects[/b]. Place the agstoolbox.exe in a folder under your user, like "[font=Courier New]C:\Users\MY_USER\software[/font]", before you run it.
+
+[img]https://i.imgur.com/UnwSeDU.png[/img]
+
+After you run the agstoolbox.exe, you will find [b]a bluecup in your indicator area of your taskbar[/b], near the clock area. Double click or right click it, to open the main panel.
+
+[u]Features[/u]
+[list]
+[li]Editors that you install using AGS Toolbox are called Managed Editors, as they are managed through the tool. Just double click in any Editor available to Download to get one.[/li]
+[li]Editors you have acquired through other means (like installed through Chocolatey), are called Externally Installed Editors, directories to look for can be configured in the Settings.[/li]
+[li]Game Projects are looked for in directories set in the Settings. It will understand the Editor Version it was used to create, open in it by simply double clicking. You can also use right click to open in a different version.[/li]
+[li]You can add it to your Windows initialization if you want a quick shortcut to AGS game development (it's in the settings menu)[/li]
+[/list]
+
+[size=1][i]Right clicking any item on the list will show available actions, double clicking will execute the command marked in [b]bold[/b].[/i][/size]
+
+I made it initially for myself to help handle my own games and modules. It will, in future, have an additional pair tool, that will provide the same functionalities through a command line interface - intended for CI and automation.
+
+For people in Unity, this may be a similar AGS version of the Unity Hub. I actually modeled it on the JetBrains Toolbox, which I use to manage different versions of CLion, Android Studio and PyCharm - it's also developed in PyCharm!
+
+[b]Command Line Usage[/b]
+
+NOTE: On Windows, due to OS and PyInstaller limitations, [font=Courier New]agstoolbox.exe[/font] doesn't work with command line arguments, so [font=Courier New]atbx.exe[/font] is for exclusive command line usage.
+
+[code=bash]$ atbx --help
+usage: atbx [-h] [-s {bash,zsh,tcsh}] [-v] {list,install,open,build,settings} ...
+
+agstoolbox is an application to help manage AGS Editor versions.
+
+positional arguments:
+  {list,install,open,build,settings}
+                        command
+    list                lists things
+    install            install tools
+    open                open an editor or project
+    build              build an ags project
+    settings            modify or show settings
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s {bash,zsh,tcsh}    print shell completion script
+  -v, --version        get software version.
+
+Copyright 2023 Erico Vieira Porto, MIT.[/code]
+
+As an example, a command line to force install the latest 3.6 AGS Editor, as a managed Editor is as follows
+
+[code=bash]$ atbx install editor 3.6 -f
+Will install managed AGS Editor release 3.6.0.47
+ Downloading... 40475597/40475597 B |████████████████████████████████| AGS-3.6.0.47.zip
+Extracting...
+Installed release 3.6.0.47[/code]
+
+The command line interface is working, but it is still quite limited, if you have more needs for it, please ask me!
+
+Tab completion is also provided, the script for it can be generated with [font=Courier New]-s[/font] parameter, if you need help setting up just ask.
+
+[hr]
+
+Experimentally, AGS Toolbox is also available on PyPI. Prefer the exe releases above for now, the PyPI releases are intended for uses of it's core parts and the [b]atbx[/b] command line utility in a future continuous integration tool.
+
+[hr]
+
+AGS Toolbox is written in Python, so if you are interested in a new feature and want to contribute code, just ask me and I can explain the basics of it.
