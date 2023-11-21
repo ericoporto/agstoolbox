@@ -11,13 +11,20 @@ from agstoolbox.core.version.version_utils import tag_to_version
 
 
 def is_asset_archive(release_name: str, asset_name: str) -> bool:
-    version = release_name.replace(" ", "").replace("v.", "")
-    is_patch = asset_name.startswith("AGS-" + version + "-P")
+    nversion = release_name.replace(" ", "").replace("v.", "")
+    if nversion.startswith('v'):
+        nversion = nversion[1:]
+    is_patch = asset_name.startswith("AGS-" + nversion + "-P")
+    is_beta = asset_name.startswith("AGS-" + nversion + "-Beta")
     if is_patch:
-        patch = asset_name.split(version + "-P")[1].split(".")[0]
-        version += "-P" + patch
+        patch = asset_name.split(nversion + "-P")[1].split(".")[0]
+        nversion += "-P" + patch
 
-    archive_name = "AGS-" + version + ".zip"
+    if is_beta:
+        beta = asset_name.split(nversion + "-Beta")[1].split(".")[0]
+        nversion += "-Beta" + beta
+
+    archive_name = "AGS-" + nversion + ".zip"
     return asset_name == archive_name
 
 
