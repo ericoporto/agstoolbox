@@ -29,18 +29,18 @@ from agstoolbox.core.version.version_utils import version_str_to_version
 
 def meta_cmd_project(args,
                      ags_editor_proj_command: Callable[
-                         [LocalAgsEditor, GameProject, bool], None] = None):
+                         [LocalAgsEditor, GameProject, bool], int] = None) -> int:
     block: bool = not args.non_blocking
     prj_path: str = args.PROJECT_PATH
 
     if not Path(prj_path).exists():
         print('ERROR: Invalid project path')
-        return
+        return -1
 
     game_project: GameProject | None = get_unique_game_project_in_path(prj_path)
     if game_project is None:
         print('ERROR: Invalid project path')
-        return
+        return -1
 
     project_version: Version = game_project.ags_editor_version
 
@@ -49,16 +49,14 @@ def meta_cmd_project(args,
 
     for editor in editors:
         if editor.version.as_int == project_version.as_int:
-            ags_editor_proj_command(editor, game_project, block)
-            return
+            return ags_editor_proj_command(editor, game_project, block)
 
     unmanaged_dirs: list[str] = Settings().get_manually_installed_editors_search_dirs()
     editors = list_ags_editors_in_dir_list(unmanaged_dirs)
 
     for editor in editors:
         if editor.version.as_int == project_version.as_int:
-            ags_editor_proj_command(editor, game_project, block)
-            return
+            return ags_editor_proj_command(editor, game_project, block)
 
     print("ERROR: Failed to find exact match of AGS Editor, wanted " + project_version.as_str)
 
@@ -226,7 +224,9 @@ def at_cmd_open(args):
 
 
 def at_cmd_build(args):
-    meta_cmd_project(args, ags_editor_build)
+    exit_code: int = meta_cmd_project(args, ags_editor_build)
+    if exit_code != 0:
+        exit(exit_code)
     return
 
 
