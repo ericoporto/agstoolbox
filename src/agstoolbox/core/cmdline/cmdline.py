@@ -10,8 +10,8 @@ import shtab  # for completion magic
 
 from agstoolbox import __title__, __version__, __copyright__, __license__
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
-from agstoolbox.core.ags.ags_local_run import ags_editor_load_project, start_ags_editor, \
-    ags_editor_build_project
+from agstoolbox.core.ags.ags_local_run import ags_editor_load, ags_editor_start, \
+    ags_editor_build
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir, \
     list_game_projects_in_dir_list, get_unique_game_project_in_path
@@ -179,7 +179,7 @@ def at_cmd_open_editor(args):
 
     for editor in editors:
         if editor.version.as_int == editor_version.as_int:
-            start_ags_editor(editor)
+            ags_editor_start(editor)
             return
 
     unmanaged_dirs: list[str] = Settings().get_manually_installed_editors_search_dirs()
@@ -187,7 +187,7 @@ def at_cmd_open_editor(args):
 
     for editor in un_editors:
         if editor.version.as_int == editor_version.as_int:
-            start_ags_editor(editor)
+            ags_editor_start(editor)
             return
 
     print("WARN: Failed to find exact match of AGS Editor( " + editor_version.as_str +
@@ -196,20 +196,20 @@ def at_cmd_open_editor(args):
     filtered_editors = [ae for ae in editors if ae.version.family == editor_version.family]
     filtered_editors.sort(key=attrgetter("version.as_int"), reverse=True)
     if len(filtered_editors) >= 1:
-        start_ags_editor(filtered_editors[0])
+        ags_editor_start(filtered_editors[0])
         return
 
     filtered_un_editors = [ae for ae in un_editors if ae.version.family == editor_version.family]
     filtered_un_editors.sort(key=attrgetter("version.as_int"), reverse=True)
     if len(filtered_un_editors) >= 1:
-        start_ags_editor(filtered_un_editors[0])
+        ags_editor_start(filtered_un_editors[0])
         return
 
     print("ERROR: No compatible AGS Editor available, wanted " + editor_version.family)
 
 
 def at_cmd_open_project(args):
-    meta_cmd_project(args, ags_editor_load_project)
+    meta_cmd_project(args, ags_editor_load)
     return
 
 
@@ -226,7 +226,7 @@ def at_cmd_open(args):
 
 
 def at_cmd_build(args):
-    meta_cmd_project(args, ags_editor_build_project)
+    meta_cmd_project(args, ags_editor_build)
     return
 
 

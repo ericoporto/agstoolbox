@@ -5,7 +5,7 @@ from PyQt6.QtGui import QAction
 
 from agstoolbox.at_icons import main_icon_as_pixmap
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
-from agstoolbox.core.ags.ags_local_run import ags_editor_load_project
+from agstoolbox.core.ags.ags_local_run import ags_editor_load
 from agstoolbox.wdgts_utils.ags_local_extra import ags_project_folder_in_explorer
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.utils.time import s_ago
@@ -152,12 +152,12 @@ class ProjectWidget(QWidget):
         else:
             for a_pair in managed_actions:
                 if a_pair.action == action:
-                    ags_editor_load_project(a_pair.editor, self.project)
+                    ags_editor_load(a_pair.editor, self.project)
                     return
 
             for a_pair in unmanaged_actions:
                 if a_pair.action == action:
-                    ags_editor_load_project(a_pair.editor, self.project)
+                    ags_editor_load(a_pair.editor, self.project)
                     return
 
 

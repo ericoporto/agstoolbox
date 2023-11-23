@@ -13,12 +13,12 @@ def start_ags_editor(editor: LocalAgsEditor, block: bool = False):
     run_exe_params(editor.path, block)
 
 
-def ags_editor_load_project(editor: LocalAgsEditor, project: GameProject, block: bool = False):
+def ags_editor_load(editor: LocalAgsEditor, project: GameProject, block: bool = False):
     project_path = get_absolute_path(project.path)
     run_exe_params(editor.path, block, [project_path], )
 
 
-def ags_editor_build_project(editor: LocalAgsEditor, project: GameProject, block: bool = False):
+def ags_editor_build(editor: LocalAgsEditor, project: GameProject, block: bool = False):
     project_path = get_absolute_path(project.path)
     run_exe_params(editor.path, block, ['/compile', project_path])
 

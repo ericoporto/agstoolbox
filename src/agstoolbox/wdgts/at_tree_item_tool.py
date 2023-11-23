@@ -6,7 +6,7 @@ from PyQt6.QtWidgets import QTreeWidgetItem, QLabel, QHBoxLayout, QVBoxLayout, Q
 from agstoolbox.at_icons import ags_editor_as_pixmap
 from agstoolbox.at_tasks import do_download_managed
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
-from agstoolbox.core.ags.ags_local_run import start_ags_editor
+from agstoolbox.core.ags.ags_local_run import ags_editor_start
 from agstoolbox.core.utils.open_in_browser import open_in_browser
 from agstoolbox.wdgts_utils.ags_local_extra import ags_editor_folder_in_explorer
 from agstoolbox.core.gh.release import Release
@@ -202,7 +202,7 @@ class TreeItemTool_Local_Widget(QWidget):
         self.setLayout(main_qgrid)
 
     def open_editor(self):
-        start_ags_editor(self.ags_editor)
+        ags_editor_start(self.ags_editor)
 
     def mouseDoubleClickEvent(self, event):
         self.open_editor()
