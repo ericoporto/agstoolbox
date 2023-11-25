@@ -7,7 +7,7 @@ from agstoolbox.core.utils.pyinstaller_hacks import is_running_from_pyinstaller,
 # am I running from pyinstaller ?
 if is_running_from_pyinstaller():
     # yes, running from pyinstaller
-    data_path = os.path.join(os.path.join(get_extracted_path()), 'data')
+    data_path = os.path.join(get_extracted_path(), 'data')
 elif __file__:
     # no, this is the realworld
     data_path = os.path.join(os.path.dirname(__file__), 'data')
