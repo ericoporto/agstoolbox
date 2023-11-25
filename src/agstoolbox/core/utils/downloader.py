@@ -4,7 +4,7 @@ from typing import Callable
 import requests
 
 
-def download_from_url(url: str, save_path: str, chunk_size: int = 128,
+def download_from_url(url: str, save_path: str, chunk_size: int = 4096,
                       progress_update: Callable[[float, int, int, int], None] = None):
     response = requests.get(url, stream=True)
     total_size_in_bytes = int(response.headers.get('content-length', 0))
