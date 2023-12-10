@@ -20,7 +20,7 @@ def run_exe_params(exe_path: str, block: bool = False, params=None) -> int:
     os.chdir(working_dir)
     lock_dll_dir()
     print('Popen: cwd=' + working_dir + ', ' + ' '.join(p_params))
-    proc = Popen(p_params, cwd=working_dir, start_new_session=True)
+    proc = Popen(p_params, cwd=working_dir)
     count = 0
     if block:
         while count < 1000:
