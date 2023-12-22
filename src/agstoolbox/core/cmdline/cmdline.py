@@ -30,6 +30,7 @@ from agstoolbox.core.version.version_utils import version_str_to_version
 def meta_cmd_project(args,
                      ags_editor_proj_command: Callable[
                          [LocalAgsEditor, GameProject, bool], int] = None) -> int:
+    which_only: bool = args.which_editor and True
     block: bool = not args.non_blocking
     prj_path: str = args.PROJECT_PATH
 
@@ -47,18 +48,31 @@ def meta_cmd_project(args,
     managed_dir: str = Settings().get_tools_install_dir()
     editors = list_probable_ags_editors_in_dir(managed_dir)
 
-    for editor in editors:
-        if editor.version.as_int == project_version.as_int:
-            return ags_editor_proj_command(editor, game_project, block)
-
-    unmanaged_dirs: list[str] = Settings().get_manually_installed_editors_search_dirs()
-    editors = list_ags_editors_in_dir_list(unmanaged_dirs)
+    editor_candidate: LocalAgsEditor | None = None
 
     for editor in editors:
         if editor.version.as_int == project_version.as_int:
-            return ags_editor_proj_command(editor, game_project, block)
+            editor_candidate = editor
+            break
 
-    print("ERROR: Failed to find exact match of AGS Editor, wanted " + project_version.as_str)
+    if editor_candidate is None:
+        unmanaged_dirs: list[str] = Settings().get_manually_installed_editors_search_dirs()
+        editors = list_ags_editors_in_dir_list(unmanaged_dirs)
+
+        for editor in editors:
+            if editor.version.as_int == project_version.as_int:
+                editor_candidate = editor
+                break
+
+    if editor_candidate is None:
+        print("ERROR: Failed to find exact match of AGS Editor, wanted " + project_version.as_str)
+        return -1
+
+    if which_only:
+        print(editor_candidate.path)
+        return 0
+
+    return ags_editor_proj_command(editor_candidate, game_project, block)
 
 
 def at_cmd_list_projects(args):
@@ -324,6 +338,8 @@ def cmdline(show_help_when_empty: bool, program_name: str):
                        help='path to the project to be opened').complete = shtab.FILE
     p_oop.add_argument('-n', '--non-blocking', action='store_true', default=False,
                        help='do not wait for Editor to be closed to continue')
+    p_oop.add_argument('-w', '--which-editor', action='store_true', default=False,
+                       help='give editor path only, don\'t open project')
 
     # build command
     p_b = subparsers.add_parser('build', help='build an ags project')
