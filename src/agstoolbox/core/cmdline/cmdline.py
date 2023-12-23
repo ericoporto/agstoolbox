@@ -27,10 +27,12 @@ from agstoolbox.core.version.version import Version
 from agstoolbox.core.version.version_utils import version_str_to_version
 
 
-def meta_cmd_project(args,
+def meta_cmd_project(args, is_open: bool,
                      ags_editor_proj_command: Callable[
                          [LocalAgsEditor, GameProject, bool], int] = None) -> int:
-    which_only: bool = args.which_editor and True
+    which_only: bool = False
+    if is_open:
+        which_only = args.which_editor and True
     block: bool = not args.non_blocking
     prj_path: str = args.PROJECT_PATH
 
@@ -221,7 +223,7 @@ def at_cmd_open_editor(args):
 
 
 def at_cmd_open_project(args):
-    meta_cmd_project(args, ags_editor_load)
+    meta_cmd_project(args, True, ags_editor_load)
     return
 
 
@@ -238,7 +240,7 @@ def at_cmd_open(args):
 
 
 def at_cmd_build(args):
-    exit_code: int = meta_cmd_project(args, ags_editor_build)
+    exit_code: int = meta_cmd_project(args, False, ags_editor_build)
     if exit_code != 0:
         exit(exit_code)
     return
