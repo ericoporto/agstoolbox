@@ -1,6 +1,6 @@
-[size=14pt][b]AGS Toolbox🧰[/b][/size] [color=gray][b]version 0.4.5 [/b][/color]
+[size=14pt][b]AGS Toolbox🧰[/b][/size] [color=gray][b]version 0.4.6 [/b][/color]
 
-[url="https://github.com/ericoporto/agstoolbox/releases/download/0.4.5/agstoolbox.exe"]Get Latest Release [b]agstoolbox.exe[/b][/url] | [url="https://github.com/ericoporto/agstoolbox/releases/download/0.4.5/atbx.exe"]companion [b]atbx.exe[/b][/url] | [url="https://github.com/ericoporto/agstoolbox"]GitHub Repo[/url]
+[url="https://github.com/ericoporto/agstoolbox/releases/download/0.4.6/agstoolbox.exe"]Get Latest Release [b]agstoolbox.exe[/b][/url] | [url="https://github.com/ericoporto/agstoolbox/releases/download/0.4.6/atbx.exe"]companion [b]atbx.exe[/b][/url] | [url="https://github.com/ericoporto/agstoolbox"]GitHub Repo[/url]
 
 [img]https://img.shields.io/pypi/pyversions/agstoolbox[/img] [url="https://pypi.org/project/agstoolbox/"][img]https://img.shields.io/pypi/v/agstoolbox[/img][/url] [url="https://github.com/ericoporto/agstoolbox"][img]https://img.shields.io/github/release-date/ericoporto/agstoolbox?color=blue&label=%F0%9F%93%85[/img][/url]
 
@@ -29,23 +29,24 @@ For people in Unity, this may be a similar AGS version of the Unity Hub. I actua
 NOTE: On Windows, due to OS and PyInstaller limitations, [font=Courier New]agstoolbox.exe[/font] doesn't work with command line arguments, so [font=Courier New]atbx.exe[/font] is for exclusive command line usage.
 
 [code=bash]$ atbx --help
-usage: atbx [-h] [-s {bash,zsh,tcsh}] [-v] {list,install,open,build,settings} ...
+usage: atbx [-h] [-s {bash,zsh,tcsh}] [-v] {list,install,open,build,settings,export} ...
 
 agstoolbox is an application to help manage AGS Editor versions.
 
 positional arguments:
-  {list,install,open,build,settings}
-                        command
-    list                lists things
-    install            install tools
-    open                open an editor or project
-    build              build an ags project
-    settings            modify or show settings
+  {list,install,open,build,settings,export}
+                        command
+    list                lists things
+    install             install tools
+    open                open an editor or project
+    build               build an ags project
+    settings            modify or show settings
+    export              export from ags project
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -s {bash,zsh,tcsh}    print shell completion script
-  -v, --version        get software version.
+  -h, --help            show this help message and exit
+  -s {bash,zsh,tcsh}    print shell completion script
+  -v, --version         get software version.
 
 Copyright 2023 Erico Vieira Porto, MIT.[/code]
 
