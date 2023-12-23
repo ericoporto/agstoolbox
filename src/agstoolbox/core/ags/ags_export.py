@@ -33,7 +33,7 @@ def export_script_module(sm: ScriptModule, out_dir: str, enc: str, codepage: int
         write_string_long_terminated(sm.script, enc, f)
         write_string_long_terminated(sm.header, enc, f)
 
-        f.write(pack('i', sm.unique_key))
+        f.write(pack('i', sm.unique_key_int))
         f.write(pack('i', 0))  # Permissions (obsolete)
         f.write(pack('i', 0))  # We are owner (obsolete)
 

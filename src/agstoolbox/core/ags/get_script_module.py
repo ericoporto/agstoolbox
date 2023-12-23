@@ -56,6 +56,8 @@ def module_from_game_project(game_project: GameProject, module_name: str) -> Scr
     sm.unique_key = script_htag.find('Key').text
     sm.description = script_htag.find('Description').text
 
+    sm.unique_key_int = int(sm.unique_key)
+
     with open(full_header_filename, "r") as f:
         sm.header = f.read()
 

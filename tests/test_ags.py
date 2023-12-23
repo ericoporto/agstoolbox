@@ -68,10 +68,12 @@ def test_script_module_from_game_file():
     sm03 = module_from_game_project(game_proj03, "GlobalScript")
     assert sm03 is not None
     assert sm03.unique_key == "764688079"
+    assert sm03.unique_key_int == 764688079
     assert sm03.header.startswith("// Main header script") is True
     assert sm03.script.startswith("// main global script file") is True
     sm04 = module_from_game_project(game_proj04, "GlobalScript")
     assert sm04 is not None
     assert sm04.unique_key == "764688079"
+    assert sm04.unique_key_int == 764688079
     assert sm04.header.startswith("// Main header script") is True
     assert sm04.script.startswith("// main global script file") is True

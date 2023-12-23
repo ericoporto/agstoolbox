@@ -13,5 +13,6 @@ class ScriptModule:
     author: str | None = None
     description: str | None = None
     unique_key: str | None = None
+    unique_key_int: int | None = None
     script: str | None = None
     header: str | None = None
