@@ -1,7 +1,8 @@
 from __future__ import annotations  # for python 3.8
 
 import os
-from subprocess import Popen, TimeoutExpired
+import sys
+from subprocess import Popen, PIPE, TimeoutExpired
 
 from agstoolbox.core.utils.file import get_file, get_dir
 from agstoolbox.core.utils.pyinstaller_hacks import lock_dll_dir, unlock_dll_dir
@@ -20,10 +21,15 @@ def run_exe_params(exe_path: str, block: bool = False, params=None) -> int:
     os.chdir(working_dir)
     lock_dll_dir()
     print('Popen: cwd=' + working_dir + ', ' + ' '.join(p_params))
-    proc = Popen(p_params, cwd=working_dir)
+    proc = Popen(p_params, cwd=working_dir, stdout=PIPE, stderr=PIPE, bufsize=1,
+                 universal_newlines=True)
     count = 0
     if block:
         while count < 1000:
+            for line in proc.stdout:
+                sys.stdout.write(line)
+            for line in proc.stderr:
+                sys.stdout.write(line)
             try:
                 proc.wait(10)
             except TimeoutExpired:
