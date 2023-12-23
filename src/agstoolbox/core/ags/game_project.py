@@ -12,5 +12,7 @@ class GameProject:
     ags_editor_version_index = None
     path: str | None = None
     directory: str | None = None
+    encoding: str | None = None
+    codepage: int | None = None
     last_modified = None
     ico_path = None

@@ -7,6 +7,7 @@ MODULE_FILE_TRAILER = 0xb4f76a66
 
 
 class ScriptModule:
+    basename: str | None = None
     name: str | None = None
     version: str | None = None
     author: str | None = None

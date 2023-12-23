@@ -10,6 +10,7 @@ import shtab  # for completion magic
 
 from agstoolbox import __title__, __version__, __copyright__, __license__
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
+from agstoolbox.core.ags.ags_export import export_script_module_from_project
 from agstoolbox.core.ags.ags_local_run import ags_editor_load, ags_editor_start, \
     ags_editor_build
 from agstoolbox.core.ags.game_project import GameProject
@@ -17,6 +18,7 @@ from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir, \
     list_game_projects_in_dir_list, get_unique_game_project_in_path
 from agstoolbox.core.ags.get_local_ags_editors import list_probable_ags_editors_in_dir, \
     list_ags_editors_in_dir_list
+from agstoolbox.core.ags.get_script_module import exists_module_in_game_project
 from agstoolbox.core.cmdline.cmdline_download import cmdline_download_release_to_cache
 from agstoolbox.core.gh.install_release import is_install_dir_busy, install_release_from_cache
 from agstoolbox.core.gh.list_releases import list_releases, get_latest_release_family, \
@@ -287,6 +289,34 @@ def at_cmd_settings(args):
         return
 
 
+def at_cmd_export(args):
+    prj_path: str = args.PROJECT_PATH
+    mod_name: str = args.MODULE_NAME
+    out_dir: str = args.OUT_DIR
+
+    if not Path(prj_path).exists():
+        print('ERROR: Invalid project path')
+        return -1
+
+    game_project: GameProject | None = get_unique_game_project_in_path(prj_path)
+    if game_project is None:
+        print('ERROR: Invalid project path')
+        return -1
+
+    if out_dir is None:
+        out_dir = game_project.directory
+
+    if not Path(out_dir).exists():
+        print('ERROR: Invalid output dir path')
+        return -1
+
+    if not exists_module_in_game_project(game_project, mod_name):
+        print('ERROR: Module "' + mod_name + '" doesn\'t exist in Game Project')
+        return -1
+
+    export_script_module_from_project(game_project, mod_name, out_dir)
+
+
 def cmdline(show_help_when_empty: bool, program_name: str):
     parser = argparse.ArgumentParser(
         prog=program_name,
@@ -367,6 +397,18 @@ def cmdline(show_help_when_empty: bool, program_name: str):
     p_ssep_t = p_ssep.add_parser('tools_install_dir', help='set tools install dir')
     p_ssep_t.add_argument('value',
                           help='path to the tools install dir').complete = shtab.DIRECTORY
+
+    # export command
+    p_e = subparsers.add_parser('export', help='export from ags project')
+    p_e.set_defaults(func=at_cmd_export)
+    p_ee = p_e.add_subparsers(title='sub_export', dest='sub_export')
+    p_ees = p_ee.add_parser('script', help='export script module from project')
+    p_ees.add_argument('PROJECT_PATH',
+                       help='path to the project with the module').complete = shtab.FILE
+    p_ees.add_argument('MODULE_NAME',
+                       help='name of the script module')
+    p_ees.add_argument('OUT_DIR',
+                       help='where to export the script module').complete = shtab.DIRECTORY
 
     args = parser.parse_args()
     if 'func' in args.__dict__:

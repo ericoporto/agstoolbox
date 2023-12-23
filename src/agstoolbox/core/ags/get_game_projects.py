@@ -63,6 +63,14 @@ def gameagf_file_to_game_project(filepath: str) -> GameProject:
     gp.last_modified = os.path.getmtime(filepath)
 
     gp.name = root.find('Game/Settings/GameName').text
+
+    game_encoding = root.find('Game/Settings/GameTextEncoding')
+    if game_encoding is not None:
+        game_encoding = game_encoding.text
+    [enc, codepage] = get_encoding_codepage(game_encoding)
+    gp.encoding = enc
+    gp.codepage = codepage
+
     game_file_name_htag = root.find('Game/Settings/GameFileName')
     if game_file_name_htag is not None:
         gp.game_file = game_file_name_htag.text
@@ -71,6 +79,20 @@ def gameagf_file_to_game_project(filepath: str) -> GameProject:
     gp.ags_editor_version = version_str_to_version(root.attrib['EditorVersion'])
     gp.ags_editor_version_index = root.attrib['VersionIndex']
     return gp
+
+
+def get_encoding_codepage(enc: str) -> [str, str]:
+    codepage = 65001
+
+    if enc is None:
+        enc = 'utf-8'
+
+    enc = enc.lower()
+    if enc == '1252' or enc == 'ascii' or enc == 'ansi' or enc == 'windows-1252':
+        enc = 'Windows-1252'
+        codepage = 1252
+
+    return [enc, codepage]
 
 
 def valid_gameagf_file_to_game_project(filepath: str) -> GameProject | None:

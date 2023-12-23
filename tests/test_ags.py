@@ -15,7 +15,8 @@ from agstoolbox.core.ags.get_game_projects import is_game_file, \
     text_file_starts_with_xml_Windows1252, list_game_projects_in_dir, \
     get_unique_game_project_in_path
 from agstoolbox.core.ags.game_project import GameProject
-from agstoolbox.core.ags.get_script_module import module_from_game_project
+from agstoolbox.core.ags.get_script_module import module_from_game_project, \
+    exists_module_in_game_project
 
 cur_dir = Path(__file__).resolve().parent
 file_path01 = join_paths_as_posix(cur_dir, 'resources/fakedir2/Game.agf')
@@ -60,6 +61,10 @@ def test_get_unique_game_project_in_path():
 def test_script_module_from_game_file():
     game_proj03 = get_unique_game_project_in_path(file_path03)
     game_proj04 = get_unique_game_project_in_path(file_path04)
+
+    assert exists_module_in_game_project(game_proj03, "GlobalScript") is True
+    assert exists_module_in_game_project(game_proj04, "GlobalScript") is True
+
     sm03 = module_from_game_project(game_proj03, "GlobalScript")
     assert sm03 is not None
     assert sm03.unique_key == "764688079"
