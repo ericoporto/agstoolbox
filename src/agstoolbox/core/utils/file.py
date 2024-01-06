@@ -22,6 +22,34 @@ def get_absolute_path(filepath: str) -> str:
     return os.path.abspath(os.path.expanduser(os.path.expandvars(filepath)))
 
 
+def get_absolute_paths(filepaths: list[str]) -> list[str]:
+    ret: list[str] = list[str]()
+    for filepath in filepaths:
+        ret.append(get_absolute_path(filepath))
+
+    return ret
+
+
+def get_relative_path(filepath: str, base_dir: str) -> str:
+    filepath = os.path.abspath(os.path.expanduser(os.path.expandvars(filepath)))
+    base_dir = os.path.abspath(os.path.expanduser(os.path.expandvars(base_dir)))
+
+    relative_path = os.path.relpath(filepath, base_dir)
+    return Path(relative_path).as_posix()
+
+
+def get_relative_paths(filepaths: list[str], base_dir: str) -> list[str]:
+    ret: list[str] = list[str]()
+    for filepath in filepaths:
+        ret.append(get_relative_path(filepath, base_dir))
+
+    return ret
+
+
+def get_size(filepath: str) -> int:
+    return os.path.getsize(filepath)
+
+
 def dir_is_valid(folderpath: str) -> bool:
     res: bool = False
     try:
