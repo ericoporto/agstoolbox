@@ -33,21 +33,45 @@ def export_script_module(sm: ScriptModule, out_dir: str, enc: str, codepage: int
         write_string_long_terminated(sm.script, enc, f)
         write_string_long_terminated(sm.header, enc, f)
 
-        f.write(pack('i', sm.unique_key_int))
-        f.write(pack('i', 0))  # Permissions (obsolete)
-        f.write(pack('i', 0))  # We are owner (obsolete)
+        write_int(sm.unique_key_int, f)
+        write_int(0, f)  # Permissions (obsolete)
+        write_int(0, f)  # We are owner (obsolete)
 
         # format extension 1
-        f.write(pack('I', MODULE_FILE_SECTION))
-        f.write(pack('I', codepage))
+        write_uint(MODULE_FILE_SECTION, f)
+        write_uint(codepage, f)
 
         # end of format
-        f.write(pack('I', MODULE_FILE_TRAILER))
+        write_uint(MODULE_FILE_TRAILER, f)
+
+
+def write_int(value: int, f: BinaryIO):
+    f.write(pack('<i', value))
+
+
+def write_uint(value: int, f: BinaryIO):
+    f.write(pack('<I', value))
+
+
+def write_uint8(value: int, f: BinaryIO):
+    f.write(pack('B', value))
+
+
+def write_bytes(bytes_n: bytes, f: BinaryIO):
+    f.write(bytearray(bytes_n))
+
+
+def write_uint64(value: int, f: BinaryIO):
+    f.write(pack('<Q', value))
+
+
+def write_string_unterminated(text: str, enc: str, f: BinaryIO):
+    text_bytes: bytes = text.encode(encoding=enc)
+    f.write(text_bytes)
 
 
 def write_string_terminated(text: str, enc: str, f: BinaryIO):
-    text_bytes: bytes = text.encode(encoding=enc)
-    f.write(text_bytes)
+    write_string_unterminated(text, enc, f)
     f.write(b'\x00')
 
 
@@ -56,4 +80,3 @@ def write_string_long_terminated(text: str, enc: str, f: BinaryIO):
     f.write(pack('I', len(text_bytes)))
     f.write(text_bytes)
     f.write(b'\x00')
-
