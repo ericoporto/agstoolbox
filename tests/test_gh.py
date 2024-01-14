@@ -19,17 +19,17 @@ def test_parse_releases():
     f = open(os.path.join(cur_dir, 'resources/gh_releases.json'))
     response_json = json.load(f)
     r = parse_releases(response_json)
-    assert len(r) == 90
-    assert r[43].tag == "v.3.6.0.15"
-    assert r[44].tag == "v.3.6.0.14"
-    assert r[46].tag == "v.3.6.0.13"
-    assert r[46].name == "v.3.6.0.13 - Alpha 14"
-    assert r[46].url == "https://api.github.com/repos/adventuregamestudio/ags/releases/56166627"
-    assert r[46].archive_name == "AGS-3.6.0.13-Alpha14.zip"
-    assert r[46].archive_url == \
+    assert len(r) == 93
+    assert r[43].tag == "v.3.6.0.16"
+    assert r[46].tag == "v.3.6.0.14"
+    assert r[48].tag == "v.3.6.0.13"
+    assert r[48].name == "v.3.6.0.13 - Alpha 14"
+    assert r[48].url == "https://api.github.com/repos/adventuregamestudio/ags/releases/56166627"
+    assert r[48].archive_name == "AGS-3.6.0.13-Alpha14.zip"
+    assert r[48].archive_url == \
            "https://github.com/" \
            "adventuregamestudio/ags/releases/download/v.3.6.0.13/AGS-3.6.0.13-Alpha14.zip"
-    assert r[46].archive_size == 25219327
+    assert r[48].archive_size == 25219327
     assert r[0].tag == "v.3.6.0.47"
     assert r[0].name == "3.6.0 Release"
     assert r[0].url == "https://api.github.com/repos/adventuregamestudio/ags/releases/97715961"
