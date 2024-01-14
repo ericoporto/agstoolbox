@@ -16,6 +16,7 @@ def is_asset_archive(release_name: str, asset_name: str) -> bool:
         nversion = nversion[1:]
     is_patch = asset_name.startswith("AGS-" + nversion + "-P")
     is_beta = asset_name.startswith("AGS-" + nversion + "-Beta")
+    is_release_candidate = asset_name.startswith("AGS-" + nversion + "-RC")
     if is_patch:
         patch = asset_name.split(nversion + "-P")[1].split(".")[0]
         nversion += "-P" + patch
@@ -23,6 +24,10 @@ def is_asset_archive(release_name: str, asset_name: str) -> bool:
     if is_beta:
         beta = asset_name.split(nversion + "-Beta")[1].split(".")[0]
         nversion += "-Beta" + beta
+
+    if is_release_candidate:
+        rc = asset_name.split(nversion + "-RC")[1].split(".")[0]
+        nversion += "-RC" + rc
 
     archive_name = "AGS-" + nversion + ".zip"
     return asset_name == archive_name
