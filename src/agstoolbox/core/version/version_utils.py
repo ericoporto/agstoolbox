@@ -114,6 +114,20 @@ def version_str_to_int(version: str) -> int:
     return version_as_int
 
 
+def version_int_to_str(version_as_int: int) -> str:
+
+    major_i: int = int(version_as_int/(1000 ** 3)) % 1000
+    minor_i: int = int(version_as_int/(1000 ** 2)) % 1000
+    improv_i: int = int(version_as_int/1000) % 1000
+    patch_i: int = int(version_as_int) % 1000
+
+    if major_i <= 3:
+        version_str = "{}.{}.{}.{}".format(major_i, minor_i, improv_i, patch_i)
+    else:
+        version_str = "{}.{:02}.{:02}.{:02}".format(major_i, minor_i, improv_i, patch_i)
+    return version_str
+
+
 def family_str_to_int(family: str) -> int:
     fam = tag_to_family(family)
 
@@ -145,6 +159,7 @@ def tag_to_version(tag: str) -> Version:
     v.improv = tag_to_improv(v.as_str)
     v.patch = tag_to_patch(v.as_str)
     v.as_int = version_str_to_int(v.as_str)
+    v.as_ags4_str = version_int_to_str(v.as_int)
     v.family_as_int = family_str_to_int(v.family)
     return v
 

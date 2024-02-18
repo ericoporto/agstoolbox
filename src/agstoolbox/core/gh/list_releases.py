@@ -10,12 +10,11 @@ from agstoolbox.core.version.version import Version
 from agstoolbox.core.version.version_utils import tag_to_version
 
 
-def is_asset_archive(release_name: str, asset_name: str) -> bool:
-    nversion = release_name.replace(" ", "").replace("v.", "")
-    if nversion.startswith('v'):
-        nversion = nversion[1:]
+def is_asset_archive_from_version_and_name(version_str: str, asset_name: str) -> bool:
+    nversion: str = version_str
     is_patch = asset_name.startswith("AGS-" + nversion + "-P")
     is_beta = asset_name.startswith("AGS-" + nversion + "-Beta")
+    is_alpha = asset_name.startswith("AGS-" + nversion + "-Alpha")
     is_release_candidate = asset_name.startswith("AGS-" + nversion + "-RC")
     if is_patch:
         patch = asset_name.split(nversion + "-P")[1].split(".")[0]
@@ -25,12 +24,32 @@ def is_asset_archive(release_name: str, asset_name: str) -> bool:
         beta = asset_name.split(nversion + "-Beta")[1].split(".")[0]
         nversion += "-Beta" + beta
 
+    if is_alpha:
+        alpha = asset_name.split(nversion + "-Alpha")[1].split(".")[0]
+        nversion += "-Alpha" + alpha
+
     if is_release_candidate:
         rc = asset_name.split(nversion + "-RC")[1].split(".")[0]
         nversion += "-RC" + rc
 
     archive_name = "AGS-" + nversion + ".zip"
     return asset_name == archive_name
+
+
+def is_asset_archive(release_name: str, asset_name: str) -> bool:
+    nversion = release_name.replace(" ", "").replace("v.", "")
+    if nversion.startswith('v'):
+        nversion = nversion[1:]
+
+    if is_asset_archive_from_version_and_name(nversion, asset_name):
+        return True
+
+    version: Version = tag_to_version(nversion)
+
+    if is_asset_archive_from_version_and_name(version.as_str, asset_name):
+        return True
+
+    return is_asset_archive_from_version_and_name(version.as_ags4_str, asset_name)
 
 
 def parse_releases(response_json) -> list[Release]:

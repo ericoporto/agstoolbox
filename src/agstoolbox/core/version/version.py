@@ -3,6 +3,7 @@ from __future__ import annotations  # for python 3.8
 
 class Version:
     as_str: str = None
+    as_ags4_str: str = None
     as_int: int = None
     family: str = None
     family_as_int: int = None
