@@ -137,8 +137,10 @@ def get_unique_game_project_in_path(project_path: str) -> GameProject | None:
 
     if game_project is None:
         projects: list[GameProject] = list_game_projects_in_dir(project_path)
-        if len(projects) != 1:
+        project_count: int = len(projects)
+        if project_count != 1:
             print('WARN: Invalid project path, not exactly 1 game project found!')
+            print('WARN: Found ' + str(project_count) + ' projects.')
             return None
 
         game_project = projects[0]
