@@ -141,6 +141,9 @@ def get_unique_game_project_in_path(project_path: str) -> GameProject | None:
         if project_count != 1:
             print('WARN: Invalid project path, not exactly 1 game project found!')
             print('WARN: Found ' + str(project_count) + ' projects.')
+            if project_count > 1:
+                for p in projects:
+                    print('WARN: Project candidate: ' + str(p) + '.')
             return None
 
         game_project = projects[0]
