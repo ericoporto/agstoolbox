@@ -13,6 +13,7 @@ from agstoolbox.core.ags.ags_editor import LocalAgsEditor
 from agstoolbox.core.ags.ags_export import export_script_module_from_project
 from agstoolbox.core.ags.ags_local_run import ags_editor_load, ags_editor_start, \
     ags_editor_build
+from agstoolbox.core.ags.ags_template import create_template_from_project
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir, \
     list_game_projects_in_dir_list, get_unique_game_project_in_path
@@ -290,9 +291,13 @@ def at_cmd_settings(args):
 
 
 def at_cmd_export(args):
+    target_name: str = str()
     prj_path: str = args.PROJECT_PATH
-    mod_name: str = args.MODULE_NAME
     out_dir: str = args.OUT_DIR
+    if args.sub_export == 'script':
+        target_name = args.MODULE_NAME
+    else:
+        target_name = args.TEMPLATE_NAME
 
     if not Path(prj_path).exists():
         print('ERROR: Invalid project path')
@@ -310,11 +315,15 @@ def at_cmd_export(args):
         print('ERROR: Invalid output dir path')
         return -1
 
-    if not exists_module_in_game_project(game_project, mod_name):
-        print('ERROR: Module "' + mod_name + '" doesn\'t exist in Game Project')
-        return -1
+    if args.sub_export == 'script':
+        mod_name: str = target_name
+        if not exists_module_in_game_project(game_project, mod_name):
+            print('ERROR: Module "' + mod_name + '" doesn\'t exist in Game Project')
+            return -1
 
-    export_script_module_from_project(game_project, mod_name, out_dir)
+        export_script_module_from_project(game_project, mod_name, out_dir)
+    else:
+        create_template_from_project(game_project, target_name, out_dir)
 
 
 def cmdline(show_help_when_empty: bool, program_name: str):
@@ -409,6 +418,14 @@ def cmdline(show_help_when_empty: bool, program_name: str):
                        help='name of the script module')
     p_ees.add_argument('OUT_DIR',
                        help='where to export the script module').complete = shtab.DIRECTORY
+
+    p_eet = p_ee.add_parser('template', help='export project as template')
+    p_eet.add_argument('PROJECT_PATH',
+                       help='path to the project to be exported').complete = shtab.FILE
+    p_eet.add_argument('TEMPLATE_NAME',
+                       help='name of the template (e.g. "template.agt")')
+    p_eet.add_argument('OUT_DIR',
+                       help='where to export the template').complete = shtab.DIRECTORY
 
     args = parser.parse_args()
     if 'func' in args.__dict__:
