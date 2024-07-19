@@ -84,6 +84,7 @@ def find_file_in_path(file_name: str) -> str:
 def make_data_file_from_multifile_lib(our_lib: MultiFileLib, out_dir: str):
     mkdirp(out_dir)
 
+    first_data_file_full_path: str = str()
     for i, data_filename in enumerate(our_lib.data_file_names):
         output_file_name = os.path.join(out_dir, data_filename)
 
