@@ -1,5 +1,8 @@
 from __future__ import annotations  # for python 3.8
 
+import fnmatch
+import os
+import re
 from typing import List
 from pathlib import Path
 
@@ -9,20 +12,27 @@ from agstoolbox.core.ags.multifilelib import MultiFileLib
 from agstoolbox.core.utils.file import join_paths_as_posix
 
 
-def get_dir_file_list(directory: str, file_mask: str, search_option: str = 'top'):
+def case_insensitive_glob(directory: str, file_mask: str) -> list[Path]:
+    reg_expr = re.compile(fnmatch.translate(file_mask), re.IGNORECASE)
+    list_path = [i for i in os.listdir(directory) if os.path.isfile(os.path.join(directory, i))]
+    result = [os.path.join(directory, j) for j in list_path if re.match(reg_expr, j)]
+    result = [Path(j) for j in result]
+    if result is None:
+        return []
+    return result
+
+
+def get_dir_file_list(directory: str, file_mask: str):
     try:
-        path = Path(directory)
-        if search_option == 'top':
-            return list(path.glob(file_mask))
-        elif search_option == 'all':
-            return list(path.rglob(file_mask))
+        path = Path(directory).as_posix()
+        return case_insensitive_glob(path, file_mask)
     except IOError:
         return []
 
 
 def add_matching_files(file_list: List[str], file_mask: str, parent_dir: str,
-                       full_paths: bool = False, search_option: str = 'top'):
-    files = get_dir_file_list(parent_dir, file_mask, search_option)
+                       full_paths: bool = False):
+    files = get_dir_file_list(parent_dir, file_mask)
     if full_paths:
         file_list.extend([str(file) for file in files])
     else:
