@@ -32,18 +32,18 @@ def test_construct_template_filelist():
 
     filelist_1: List[str] = construct_template_filelist(dir_path01)
     assert filelist_1 is not None
-    assert len(filelist_1) is 1
+    assert len(filelist_1) == 1
     assert 'Game.agf' in filelist_1
 
     filelist_2: List[str] = construct_template_filelist(dir_path02)
     assert filelist_2 is not None
-    assert len(filelist_2) is 2
+    assert len(filelist_2) == 2
     assert 'Game.agf' in filelist_2
     assert 'fake_file.txt' in filelist_2
 
     filelist_3: List[str] = construct_template_filelist(dir_path03)
     assert filelist_3 is not None
-    assert len(filelist_3) is 11
+    assert len(filelist_3) == 11
     assert 'template.ico' in filelist_3
     assert 'Game.agf' in filelist_3
     assert 'acsprset.spr' in filelist_3
@@ -58,7 +58,7 @@ def test_construct_template_filelist():
 
     filelist_4: List[str] = construct_template_filelist(dir_path04)
     assert filelist_4 is not None
-    assert len(filelist_4) is 11
+    assert len(filelist_4) == 11
     assert 'template.ico' in filelist_4
     assert 'Game.agf' in filelist_4
     assert 'acsprset.spr' in filelist_4
