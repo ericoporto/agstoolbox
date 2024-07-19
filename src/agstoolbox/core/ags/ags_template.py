@@ -6,7 +6,7 @@ from pathlib import Path
 from agstoolbox.core.ags.datafile_writer import get_multifile_lib, make_data_file_from_multifile_lib
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.ags.multifilelib import MultiFileLib
-from agstoolbox.core.utils.file import join_paths_as_posix, get_relative_paths
+from agstoolbox.core.utils.file import join_paths_as_posix
 
 
 def get_dir_file_list(directory: str, file_mask: str, search_option: str = 'top'):
