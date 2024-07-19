@@ -4,7 +4,9 @@ from typing import List
 from pathlib import Path
 
 from agstoolbox.core.ags.datafile_writer import get_multifile_lib, make_data_file_from_multifile_lib
+from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.ags.multifilelib import MultiFileLib
+from agstoolbox.core.utils.file import join_paths_as_posix, get_relative_paths
 
 
 def get_dir_file_list(directory: str, file_mask: str, search_option: str = 'top'):
@@ -55,6 +57,19 @@ def create_template_from_game_dir(project_dir: str, template_filepath: str):
     template_filename: str = Path(template_filepath).name
     template_dir: str = str(Path(template_filepath).parent.as_posix())
 
-    filelist: List[str] = construct_template_filelist(project_dir)
+    template_filelist: List[str] = construct_template_filelist(project_dir)
+    filelist: List[str] = list()
+    for file in template_filelist:
+        filelist.append(join_paths_as_posix(project_dir, file))
+
     mlib: MultiFileLib = get_multifile_lib(filelist, project_dir, template_filename, False)
     make_data_file_from_multifile_lib(mlib, template_dir)
+
+
+def create_template_from_project(game_project: GameProject, template_name: str, out: str | None):
+    if out is None:
+        out = game_project.directory
+
+    template_name = Path(template_name).name
+    template_filepath: str = join_paths_as_posix(out, template_name)
+    create_template_from_game_dir(game_project.directory, template_filepath)
