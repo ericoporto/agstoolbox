@@ -27,7 +27,7 @@ dir_path04 = join_paths_as_posix(cur_dir, 'resources/otherfakedir/MinGame')
 def test_construct_template_filelist():
     filelist_0: List[str] = construct_template_filelist(dir_path00)
     assert filelist_0 is not None
-    assert len(filelist_0) is 1
+    assert len(filelist_0) == 1
     assert 'Game.agf.txt' in filelist_0
 
     filelist_1: List[str] = construct_template_filelist(dir_path01)
