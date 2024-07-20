@@ -23,7 +23,7 @@ def get_absolute_path(filepath: str) -> str:
 
 
 def get_absolute_paths(filepaths: list[str]) -> list[str]:
-    ret: list[str] = list[str]()
+    ret: list[str] = list()
     for filepath in filepaths:
         ret.append(get_absolute_path(filepath))
 
@@ -39,7 +39,7 @@ def get_relative_path(filepath: str, base_dir: str) -> str:
 
 
 def get_relative_paths(filepaths: list[str], base_dir: str) -> list[str]:
-    ret: list[str] = list[str]()
+    ret: list[str] = list()
     for filepath in filepaths:
         ret.append(get_relative_path(filepath, base_dir))
 
