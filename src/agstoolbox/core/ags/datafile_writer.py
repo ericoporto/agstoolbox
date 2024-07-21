@@ -3,8 +3,8 @@ from __future__ import annotations  # for python 3.8
 import os
 from typing import BinaryIO, Final
 
-from agstoolbox.core.ags.ags_export import write_uint8, write_string_unterminated, write_bytes, \
-    write_uint, write_string_terminated, write_uint64
+from agstoolbox.core.ags.ags_export import write_uint8, write_bytes, write_uint, write_uint64, \
+    write_string_terminated
 from agstoolbox.core.utils.file import get_relative_paths, get_size, get_file, mkdirp
 from agstoolbox.core.ags.multifilelib import MultiFileLib
 from agstoolbox.core.ags.multifile import MultiFile
@@ -67,7 +67,7 @@ def get_multifile_lib(files: list[str], files_base_dir: str, base_file_name: str
     return our_lib
 
 
-def find_file_in_path(file_name: str) -> str:
+def find_file_in_path(file_name: str) -> str | None:
     paths_to_try = ["AudioCache", "Speech"]
 
     if os.path.exists(file_name):
@@ -125,5 +125,3 @@ def make_data_file_from_multifile_lib(our_lib: MultiFileLib, out_dir: str):
         with open(first_data_file_full_path, 'r+b') as wout:
             wout.seek(main_header_offset, os.SEEK_SET)
             write_clib_header(our_lib, wout)
-
-
