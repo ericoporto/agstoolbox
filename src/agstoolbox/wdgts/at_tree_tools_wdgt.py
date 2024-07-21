@@ -194,7 +194,7 @@ class ToolsTree(QTreeWidget):
                         version_str: str = item_m.itm_wdgt.ags_editor.version.as_str
                         path: str = item_m.itm_wdgt.ags_editor.path
                         path = path.lower()
-                        hidden = not(query in version_str or query in path)
+                        hidden = not (query in version_str or query in path)
 
                     elif item.tool_type == ToolType.EXTERNALLY_INSTALLED_TOOL:
                         item_e: TreeItemTool_ExternallyInstalled = cast(
@@ -202,12 +202,11 @@ class ToolsTree(QTreeWidget):
                         version_str: str = item_e.itm_wdgt.ags_editor.version.as_str
                         path: str = item_e.itm_wdgt.ags_editor.path
                         path = path.lower()
-                        hidden = not(query in version_str or query in path)
+                        hidden = not (query in version_str or query in path)
 
                     elif item.tool_type == ToolType.AVAILABLE_TO_DOWNLOAD:
                         item_d: TreeItemTool_Download = cast(TreeItemTool_Download, item)
                         version_str: str = item_d.itm_wdgt.release.version.as_str
-                        hidden = not(query in version_str)
+                        hidden = not (query in version_str)
 
                 item.setHidden(hidden)
-
