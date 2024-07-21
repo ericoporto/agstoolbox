@@ -1,5 +1,6 @@
 from __future__ import annotations  # for python 3.8
 import os.path
+from typing import Final
 from operator import attrgetter
 
 import defusedxml.ElementTree as ETree
@@ -8,7 +9,7 @@ from agstoolbox.core.ags.game_project import GameProject, PROJECT_FILE_NAME
 from agstoolbox.core.utils.file import get_dir, get_file_if_exists, get_gp_candidates_in_dir
 from agstoolbox.core.version.version_utils import version_str_to_version
 
-AGS_EDITOR_ROOT_TAG = 'AGSEditorDocument'
+AGS_EDITOR_ROOT_TAG: Final[str] = 'AGSEditorDocument'
 
 
 def text_file_starts_with_xml_Windows1252(filepath: str) -> bool:

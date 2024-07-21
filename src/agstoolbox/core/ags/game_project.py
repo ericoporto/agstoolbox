@@ -1,7 +1,10 @@
 from __future__ import annotations  # for python 3.8
+
+from typing import Final
+
 from agstoolbox.core.version.version import Version
 
-PROJECT_FILE_NAME = 'Game.agf'
+PROJECT_FILE_NAME: Final[str] = 'Game.agf'
 
 
 class GameProject:

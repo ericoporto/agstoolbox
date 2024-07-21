@@ -1,6 +1,8 @@
 from __future__ import annotations  # for python 3.8
 
-SETTINGS_FILENAME = "settings.json"
+from typing import Final
+
+SETTINGS_FILENAME: Final[str] = "settings.json"
 
 
 class SettingsData:

@@ -1,7 +1,7 @@
 from __future__ import annotations  # for python 3.8
 
 import os
-from typing import BinaryIO
+from typing import BinaryIO, Final
 
 from agstoolbox.core.ags.ags_export import write_uint8, write_string_unterminated, write_bytes, \
     write_uint, write_string_terminated, write_uint64
@@ -9,11 +9,11 @@ from agstoolbox.core.utils.file import get_relative_paths, get_size, get_file, m
 from agstoolbox.core.ags.multifilelib import MultiFileLib
 from agstoolbox.core.ags.multifile import MultiFile
 
-CLIB_BEGIN_SIGNATURE = b"CLIB\x1a"
-CLIB_END_SIGNATURE = b"CLIB\x01\x02\x03\x04SIGE"
-CLIB_VERSION = 30  # large file support, non-encoded
-MAXMULTIFILES = 256  # 1-byte index
-MAX_PATH = 260  # corresponds to WinAPI definition
+CLIB_BEGIN_SIGNATURE: Final[bytes] = b"CLIB\x1a"
+CLIB_END_SIGNATURE: Final[bytes] = b"CLIB\x01\x02\x03\x04SIGE"
+CLIB_VERSION: Final[int] = 30  # large file support, non-encoded
+MAXMULTIFILES: Final[int] = 256  # 1-byte index
+MAX_PATH: Final[int] = 260  # corresponds to WinAPI definition
 
 
 # Write asset library header with the table of contents.
