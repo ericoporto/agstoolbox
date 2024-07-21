@@ -3,7 +3,7 @@ import os
 from operator import attrgetter
 
 from agstoolbox.core.ags.ags_editor import EDITOR_FILE_NAME, LocalAgsEditor
-from agstoolbox.core.ags.validate_ags_editor import validate_editor_exe
+# from agstoolbox.core.ags.validate_ags_editor import validate_editor_exe
 from agstoolbox.core.utils.file import get_gp_candidates_in_dir
 from agstoolbox.core.utils.pe import is_valid_exe, get_exe_information
 from agstoolbox.core.version.version_utils import version_str_to_version
