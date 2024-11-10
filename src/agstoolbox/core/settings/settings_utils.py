@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 from platform import platform
 
+from agstoolbox.core.ags.ags_editor_versions import get_installable_ags_versions
 from agstoolbox.core.settings.settings_data import SettingsData
 from agstoolbox.core.utils.basics import get_str_list_from_dict, get_str_from_dict, \
     get_bool_from_dict
@@ -54,7 +55,7 @@ def win_get_default_editor_search_dirs():
     if not platform().lower().startswith('win'):
         return []
 
-    versions = ['3.4.3', '3.5.0', '3.5.1', '3.6.0', '3.6.1', '3.99.99', '3.99.100', '4.0.0']
+    versions = get_installable_ags_versions()
     ret = []
     dirs = []
     p_files1 = os.environ["ProgramFiles"]
