@@ -12,8 +12,9 @@ from agstoolbox import __title__, __version__, __copyright__, __license__
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
 from agstoolbox.core.ags.ags_export import export_script_module_from_project
 from agstoolbox.core.ags.ags_local_run import ags_editor_load, ags_editor_start, \
-    ags_editor_build
-from agstoolbox.core.ags.ags_template import create_template_from_project
+    ags_editor_build, ags_editor_template_build
+from agstoolbox.core.ags.ags_template import create_template_from_project, \
+    editor_supports_template_export, fix_editor_built_template
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir, \
     list_game_projects_in_dir_list, get_unique_game_project_in_path
@@ -30,6 +31,12 @@ from agstoolbox.core.version.version import Version
 from agstoolbox.core.version.version_utils import version_str_to_version
 
 
+class MetaCmdProjectArgs:
+    which_only: bool
+    block: bool
+    prj_path: str
+
+
 def meta_cmd_project(args, is_open: bool,
                      ags_editor_proj_command: Callable[
                          [LocalAgsEditor, GameProject, bool], int] = None) -> int:
@@ -38,6 +45,18 @@ def meta_cmd_project(args, is_open: bool,
         which_only = args.which_editor and True
     block: bool = not args.non_blocking
     prj_path: str = args.PROJECT_PATH
+    meta_args: MetaCmdProjectArgs = MetaCmdProjectArgs()
+    meta_args.block = block
+    meta_args.which_only = which_only
+    meta_args.prj_path = prj_path
+    return base_meta_cmd_project(meta_args, is_open, ags_editor_proj_command)
+
+def base_meta_cmd_project(meta_args: MetaCmdProjectArgs, is_open: bool,
+                     ags_editor_proj_command: Callable[
+                         [LocalAgsEditor, GameProject, bool], int] = None) -> int:
+    which_only: bool = meta_args.which_only
+    block: bool = meta_args.block
+    prj_path: str = meta_args.prj_path
 
     if not Path(prj_path).exists():
         print('ERROR: Invalid project path')
@@ -290,10 +309,31 @@ def at_cmd_settings(args):
         return
 
 
+def at_cmd_export_template_editor(game_project: GameProject, out_dir: str, template_name: str) -> int:
+    meta_args: MetaCmdProjectArgs = MetaCmdProjectArgs()
+    meta_args.block = True
+    meta_args.which_only = False
+    meta_args.prj_path = game_project.path
+
+    if not editor_supports_template_export(game_project):
+        print('ERROR: Project uses Editor "' + game_project.ags_editor_version.as_str +
+              '", which doesn\'t support /template command')
+        return -1
+
+    res: int = base_meta_cmd_project(meta_args, False, ags_editor_template_build)
+    success: bool = fix_editor_built_template(game_project, out_dir, template_name)
+    if not success:
+        print('ERROR: Failed to rename template')
+        return -1
+
+    return res
+
+
 def at_cmd_export(args):
     target_name: str = str()
     prj_path: str = args.PROJECT_PATH
     out_dir: str = args.OUT_DIR
+    force_editor: bool = not args.force_editor
     if args.sub_export == 'script':
         target_name = args.MODULE_NAME
     else:
@@ -323,7 +363,12 @@ def at_cmd_export(args):
 
         export_script_module_from_project(game_project, mod_name, out_dir)
     else:
-        create_template_from_project(game_project, target_name, out_dir)
+        if force_editor:
+            return at_cmd_export_template_editor(game_project=game_project,
+                                          template_name=target_name,
+                                          out_dir=out_dir)
+        else:
+            create_template_from_project(game_project, target_name, out_dir)
 
 
 def cmdline(show_help_when_empty: bool, program_name: str):
@@ -426,6 +471,8 @@ def cmdline(show_help_when_empty: bool, program_name: str):
                        help='name of the template (e.g. "template.agt")')
     p_eet.add_argument('OUT_DIR',
                        help='where to export the template').complete = shtab.DIRECTORY
+    p_eet.add_argument('-f', '--force-editor', action='store_true', default=False,
+                     help='use editor for template export')
 
     args = parser.parse_args()
     if 'func' in args.__dict__:

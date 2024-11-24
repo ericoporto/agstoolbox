@@ -18,6 +18,10 @@ def get_file(filepath: str):
     return os.path.basename(Path(filepath).as_posix())
 
 
+def get_posix(filepath: str):
+    return Path(filepath).as_posix()
+
+
 def get_absolute_path(filepath: str) -> str:
     return os.path.abspath(os.path.expanduser(os.path.expandvars(filepath)))
 

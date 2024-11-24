@@ -166,3 +166,11 @@ def tag_to_version(tag: str) -> Version:
 
 def version_str_to_version(version_str: str) -> Version:
     return tag_to_version(version_str)
+
+
+def is_version_a_bigger_than_b(a: Version, b: Version) -> bool:
+    return a.as_int > b.as_int
+
+
+def is_version_a_between_bc(a: Version, b: Version, c: Version) -> bool:
+    return (a.as_int > b.as_int) and (a.as_int < c.as_int)

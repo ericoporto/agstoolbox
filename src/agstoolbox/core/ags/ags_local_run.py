@@ -18,3 +18,8 @@ def ags_editor_load(editor: LocalAgsEditor, project: GameProject, block: bool = 
 def ags_editor_build(editor: LocalAgsEditor, project: GameProject, block: bool = False) -> int:
     project_path = get_absolute_path(project.path)
     return run_exe_params(editor.path, block, ['/compile', project_path])
+
+
+def ags_editor_template_build(editor: LocalAgsEditor, project: GameProject, block: bool = False) -> int:
+    project_path = get_absolute_path(project.path)
+    return run_exe_params(editor.path, block, ['/template', project_path])
