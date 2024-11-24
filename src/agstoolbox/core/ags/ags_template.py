@@ -97,7 +97,7 @@ def create_template_from_project(game_project: GameProject, template_name: str, 
 # v4.0.0.9, v4.0.0.10 ...
 # and
 # v3.6.2.1, v3.6.2.2 ...
-# /template command is supported in the Editor
+# /maketemplate command is supported in the Editor
 def editor_supports_template_export(game_project: GameProject) -> bool:
     ags3_first_sup: Version = version_str_to_version('3.6.2.1')
     ags4_first_sup: Version = version_str_to_version('4.0.0.9')

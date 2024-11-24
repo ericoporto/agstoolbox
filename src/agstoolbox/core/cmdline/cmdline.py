@@ -317,7 +317,7 @@ def at_cmd_export_template_editor(game_project: GameProject, out_dir: str, templ
 
     if not editor_supports_template_export(game_project):
         print('ERROR: Project uses Editor "' + game_project.ags_editor_version.as_str +
-              '", which doesn\'t support /template command')
+              '", which doesn\'t support /maketemplate command')
         return -1
 
     res: int = base_meta_cmd_project(meta_args, False, ags_editor_template_build)
