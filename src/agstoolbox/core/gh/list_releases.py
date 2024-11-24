@@ -61,7 +61,10 @@ def parse_releases(response_json) -> list[Release]:
         found_asset = False
 
         # This can raise a TypeError in some weird condition I don't know what it is
-        for asset in rel['assets']:
+        ## it reads as TypeError: string indices must be integers
+        assets = rel['assets']
+
+        for asset in assets:
             # check for either predictable or patch release archives
             if is_asset_archive(rel['name'], asset['name']):
                 rls = Release()
