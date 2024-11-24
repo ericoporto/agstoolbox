@@ -333,7 +333,7 @@ def at_cmd_export(args):
     target_name: str = str()
     prj_path: str = args.PROJECT_PATH
     out_dir: str = args.OUT_DIR
-    force_editor: bool = not args.force_editor
+    force_editor: bool = args.force_editor
     if args.sub_export == 'script':
         target_name = args.MODULE_NAME
     else:
