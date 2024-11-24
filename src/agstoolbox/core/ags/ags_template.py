@@ -75,6 +75,11 @@ def create_template_from_game_dir(project_dir: str, template_filepath: str):
     mlib: MultiFileLib = get_multifile_lib(filelist, project_dir, template_filename, False)
     make_data_file_from_multifile_lib(mlib, template_dir)
 
+# Note, in ags
+# v4.0.0.9, v4.0.0.10 ...
+# and
+# v3.6.2.1, v3.6.2.2 ...
+# /template command is supported in the Editor
 
 def create_template_from_project(game_project: GameProject, template_name: str, out: str | None):
     if out is None:
