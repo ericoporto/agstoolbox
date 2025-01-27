@@ -35,28 +35,33 @@ class MetaCmdProjectArgs:
     which_only: bool
     block: bool
     prj_path: str
+    timeout: int
 
 
 def meta_cmd_project(args, is_open: bool,
                      ags_editor_proj_command: Callable[
-                         [LocalAgsEditor, GameProject, bool], int] = None) -> int:
+                         [LocalAgsEditor, GameProject, bool, int], int] = None) -> int:
     which_only: bool = False
     if is_open:
         which_only = args.which_editor and True
     block: bool = not args.non_blocking
     prj_path: str = args.PROJECT_PATH
+    timeout: int = args.timeout
+
     meta_args: MetaCmdProjectArgs = MetaCmdProjectArgs()
     meta_args.block = block
     meta_args.which_only = which_only
     meta_args.prj_path = prj_path
-    return base_meta_cmd_project(meta_args, is_open, ags_editor_proj_command)
+    meta_args.timeout = timeout
+    return base_meta_cmd_project(meta_args, ags_editor_proj_command)
 
-def base_meta_cmd_project(meta_args: MetaCmdProjectArgs, is_open: bool,
+def base_meta_cmd_project(meta_args: MetaCmdProjectArgs,
                      ags_editor_proj_command: Callable[
-                         [LocalAgsEditor, GameProject, bool], int] = None) -> int:
+                         [LocalAgsEditor, GameProject, bool, int], int] = None) -> int:
     which_only: bool = meta_args.which_only
     block: bool = meta_args.block
     prj_path: str = meta_args.prj_path
+    timeout: int = meta_args.timeout
 
     if not Path(prj_path).exists():
         print('ERROR: Invalid project path')
@@ -96,7 +101,7 @@ def base_meta_cmd_project(meta_args: MetaCmdProjectArgs, is_open: bool,
         print(editor_candidate.path)
         return 0
 
-    return ags_editor_proj_command(editor_candidate, game_project, block)
+    return ags_editor_proj_command(editor_candidate, game_project, block, timeout)
 
 
 def at_cmd_list_projects(args):
@@ -428,12 +433,14 @@ def cmdline(show_help_when_empty: bool, program_name: str):
                        help='give editor path only, don\'t open project')
 
     # build command
-    p_b = subparsers.add_parser('build', help='build an ags project')
+    p_b = subparsers.add_parser('build', help='builds an ags project')
     p_b.set_defaults(func=at_cmd_build)
     p_b.add_argument('PROJECT_PATH',
                      help='path to the project to be built').complete = shtab.FILE
     p_b.add_argument('-n', '--non-blocking', action='store_true', default=False,
                      help='do not wait for Editor to be closed to continue')
+    p_b.add_argument('-t', '--timeout', type=int, default=0,
+                     help='duration in seconds to wait before interrupting the build.')
 
     # settings command
     p_s = subparsers.add_parser('settings', help='modify or show settings')
