@@ -314,18 +314,20 @@ def at_cmd_settings(args):
         return
 
 
-def at_cmd_export_template_editor(game_project: GameProject, out_dir: str, template_name: str) -> int:
+def at_cmd_export_template_editor(
+        game_project: GameProject, out_dir: str, template_name: str, timeout: int = 0) -> int:
     meta_args: MetaCmdProjectArgs = MetaCmdProjectArgs()
     meta_args.block = True
     meta_args.which_only = False
     meta_args.prj_path = game_project.path
+    meta_args.timeout = timeout
 
     if not editor_supports_template_export(game_project):
         print('ERROR: Project uses Editor "' + game_project.ags_editor_version.as_str +
               '", which doesn\'t support /maketemplate command')
         return -1
 
-    res: int = base_meta_cmd_project(meta_args, False, ags_editor_template_build)
+    res: int = base_meta_cmd_project(meta_args, ags_editor_template_build)
     success: bool = fix_editor_built_template(game_project, out_dir, template_name)
     if not success:
         print('ERROR: Failed to rename template')
@@ -339,6 +341,7 @@ def at_cmd_export(args):
     prj_path: str = args.PROJECT_PATH
     out_dir: str = args.OUT_DIR
     force_editor: bool = args.force_editor
+    timeout: int = args.timeout
     if args.sub_export == 'script':
         target_name = args.MODULE_NAME
     else:
@@ -371,7 +374,8 @@ def at_cmd_export(args):
         if force_editor:
             return at_cmd_export_template_editor(game_project=game_project,
                                           template_name=target_name,
-                                          out_dir=out_dir)
+                                          out_dir=out_dir,
+                                          timeout=timeout)
         else:
             create_template_from_project(game_project, target_name, out_dir)
 
@@ -384,14 +388,16 @@ def cmdline(show_help_when_empty: bool, program_name: str):
 
     shtab.add_argument_to(parser, ["-s"])  # magic!
     parser.add_argument(
-        '-v', '--version', action='store_true', default=False, help='get software version.')
+        '-v', '--version', action='store_true', default=False,
+        help='get software version.')
     subparsers = parser.add_subparsers(help='command')
 
     # list command
     p_l = subparsers.add_parser('list', help='lists things')
     p_l.set_defaults(func=at_cmd_list)
     p_ll = p_l.add_subparsers(title='sub_list', dest='sub_list')
-    p_lle = p_ll.add_parser('editors', help='lists AGS Editors, by default only managed editors')
+    p_lle = p_ll.add_parser('editors',
+                            help='lists AGS Editors, by default only managed editors')
     p_lle.add_argument('-p', '--path', action='store', default=None, type=str,
                        help='look for AGS Editors in specific path, ignore settings'
                        ).complete = shtab.DIRECTORY
@@ -480,6 +486,8 @@ def cmdline(show_help_when_empty: bool, program_name: str):
                        help='where to export the template').complete = shtab.DIRECTORY
     p_eet.add_argument('-f', '--force-editor', action='store_true', default=False,
                      help='use editor for template export')
+    p_eet.add_argument('-t', '--timeout', type=int, default=0,
+                     help='duration in seconds to wait before interrupting editor export.')
 
     args = parser.parse_args()
     if 'func' in args.__dict__:
