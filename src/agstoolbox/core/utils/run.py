@@ -2,7 +2,6 @@ from __future__ import annotations  # for python 3.8
 
 import os
 import sys
-import time
 from subprocess import Popen, PIPE, TimeoutExpired
 
 from agstoolbox.core.utils.file import get_file, get_dir
