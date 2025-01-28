@@ -12,7 +12,7 @@ if os.path.isdir(os.path.join(".", "src")) and os.path.isfile(os.path.join(".", 
 
 from agstoolbox.core.utils.file import join_paths_as_posix
 from agstoolbox.core.ags.get_game_projects import is_game_file, \
-    text_file_starts_with_xml_Windows1252, list_game_projects_in_dir, \
+    text_file_starts_with_xml_windows1252, list_game_projects_in_dir, \
     get_unique_game_project_in_path
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.ags.get_script_module import module_from_game_project, \
@@ -26,10 +26,10 @@ file_path04 = join_paths_as_posix(cur_dir, 'resources/otherfakedir/MinGame/Game.
 
 
 def test_text_file_starts_with_xml_Windows1252():
-    assert text_file_starts_with_xml_Windows1252(file_path01) is False
-    assert text_file_starts_with_xml_Windows1252(file_path02) is False
-    assert text_file_starts_with_xml_Windows1252(file_path03) is True
-    assert text_file_starts_with_xml_Windows1252(file_path04) is True
+    assert text_file_starts_with_xml_windows1252(file_path01) is False
+    assert text_file_starts_with_xml_windows1252(file_path02) is False
+    assert text_file_starts_with_xml_windows1252(file_path03) is True
+    assert text_file_starts_with_xml_windows1252(file_path04) is True
 
 
 def test_is_game_file():

@@ -12,7 +12,7 @@ from agstoolbox.core.version.version_utils import version_str_to_version
 AGS_EDITOR_ROOT_TAG: Final[str] = 'AGSEditorDocument'
 
 
-def text_file_starts_with_xml_Windows1252(filepath: str) -> bool:
+def text_file_starts_with_xml_windows1252(filepath: str) -> bool:
     platform = ''
     try:
         with open(filepath, mode='r', encoding='cp1252') as file:
@@ -36,7 +36,7 @@ def is_game_file(filepath: str) -> bool:
     if os.path.getsize(filepath) > 268435456:
         return False
 
-    if not text_file_starts_with_xml_Windows1252(filepath):
+    if not text_file_starts_with_xml_windows1252(filepath):
         return False
 
     tree = ETree.parse(filepath)
