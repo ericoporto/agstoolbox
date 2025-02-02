@@ -434,7 +434,7 @@ def cmdline(show_help_when_empty: bool, program_name: str):
     p_oop.add_argument('PROJECT_PATH',
                        help='path to the project to be opened').complete = shtab.FILE
     p_oop.add_argument('-n', '--non-blocking', action='store_true', default=False,
-                       help='do not wait for Editor to be closed to continue')
+                       help='don\'t wait for Editor to close to continue')
     p_oop.add_argument('-w', '--which-editor', action='store_true', default=False,
                        help='give editor path only, don\'t open project')
 
@@ -444,9 +444,9 @@ def cmdline(show_help_when_empty: bool, program_name: str):
     p_b.add_argument('PROJECT_PATH',
                      help='path to the project to be built').complete = shtab.FILE
     p_b.add_argument('-n', '--non-blocking', action='store_true', default=False,
-                     help='do not wait for Editor to be closed to continue')
-    p_b.add_argument('-t', '--timeout', type=int, default=0,
-                     help='duration in seconds to wait before interrupting the build.')
+                     help='don\'t wait for Editor to close to continue')
+    p_b.add_argument('-t', '--timeout', metavar='SEC', type=int, default=0,
+                     help='seconds to wait before interrupting the build')
 
     # settings command
     p_s = subparsers.add_parser('settings', help='modify or show settings')
@@ -486,8 +486,8 @@ def cmdline(show_help_when_empty: bool, program_name: str):
                        help='where to export the template').complete = shtab.DIRECTORY
     p_eet.add_argument('-f', '--force-editor', action='store_true', default=False,
                      help='use editor for template export')
-    p_eet.add_argument('-t', '--timeout', type=int, default=0,
-                     help='duration in seconds to wait before interrupting editor export.')
+    p_eet.add_argument('-t', '--timeout', metavar='SEC', type=int, default=0,
+                     help='seconds to wait before interrupting editor export')
 
     args = parser.parse_args()
     if 'func' in args.__dict__:
