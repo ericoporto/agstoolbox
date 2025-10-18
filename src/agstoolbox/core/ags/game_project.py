@@ -12,7 +12,6 @@ class GameProject:
     name: str | None = None
     game_file: str | None = None
     ags_editor_version: Version = None
-    ags_editor_version_index = None
     path: str | None = None
     directory: str | None = None
     encoding: str | None = None

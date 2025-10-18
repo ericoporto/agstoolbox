@@ -78,7 +78,6 @@ def gameagf_file_to_game_project(filepath: str) -> GameProject:
     else:
         gp.game_file = ""
     gp.ags_editor_version = version_str_to_version(root.attrib['EditorVersion'])
-    gp.ags_editor_version_index = root.attrib['VersionIndex']
     return gp
 
 
