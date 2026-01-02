@@ -378,7 +378,11 @@ def at_cmd_export(args):
             print('ERROR: Module "' + mod_name + '" doesn\'t exist in Game Project')
             return -1
 
-        export_script_module_from_project(game_project, mod_name, out_dir)
+        try:
+            export_script_module_from_project(game_project, mod_name, out_dir)
+        except:
+            return -1
+        return 0
     else:
         if force_editor:
             return at_cmd_export_template_editor(game_project=game_project,
@@ -386,7 +390,11 @@ def at_cmd_export(args):
                                           out_dir=out_dir,
                                           timeout=timeout)
         else:
-            create_template_from_project(game_project, target_name, out_dir)
+            try:
+                create_template_from_project(game_project, target_name, out_dir)
+            except:
+                return -1
+            return 0
 
 
 def cmdline(show_help_when_empty: bool, program_name: str):
