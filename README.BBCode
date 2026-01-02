@@ -6,7 +6,9 @@
 
 🚨[b]NOTE:[/b] A clean windows 11 installation may require you install this [url="https://download.visualstudio.microsoft.com/download/pr/11100230/15ccb3f02745c7b206ad10373cbca89b/VC_redist.x64.exe"]VC_redist.x64.exe (VS2017 redistributable)[/url].
 
-Hi, I made something intended for those that deal with [b]multiple versions of AGS Editors and multiple AGS Game Projects[/b]. Place the agstoolbox.exe in a folder under your user, like "[font=Courier New]C:\Users\MY_USER\software[/font]", before you run it.
+Hi, I made something intended for those that deal with [b]multiple versions of AGS Editors and multiple AGS Game Projects[/b]. Place the [font=Courier New]agstoolbox.exe[/font] in a folder under your user, like "[font=Courier New]C:\Users\MY_USER\software[/font]", before you run it.
+
+If you wish, you can add this folder on PATH too and add [font=Courier New]atbx.exe[/font] there, which is the lean command line only executable.
 
 [img]https://i.imgur.com/UnwSeDU.png[/img]
 
@@ -136,6 +138,7 @@ It supports the options below:
 [list]
 [li][font=Courier New]-n, --non-blocking[/font], if you use this, the command line will return and the Editor will not block it while it's open.[/li]
 [li][font=Courier New]-w, --which-editor[/font], don't actually open the editor with the project, instead return the path of the Editor that was matched for the project.[/li]
+[li][font=Courier New]-e VER, --editor VER[/font], use this specific editor version instead of what is in the Game Project[/li]
 [/list]
 
 
@@ -154,6 +157,7 @@ It supports the options below:
 [list]
 [li][font=Courier New]-n, --non-blocking[/font], if you use this, the command line will return and the Editor will not block it while it's open. Don't use this on a CI environment.[/li]
 [li][font=Courier New]-t SEC, --timeout SEC[/font], the seconds to wait before interrupting the build. This only works when blocking. It's useful if a project may cause an exception that somehow leads to unwanted user interaction that can block the build.[/li]
+[li][font=Courier New]-e VER, --editor VER[/font], use this specific editor version instead of what is in the Game Project[/li]
 [/list]
 
 Example:
