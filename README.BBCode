@@ -50,7 +50,7 @@ optional arguments:
   -s {bash,zsh,tcsh}    print shell completion script
   -v, --version         get software version.
 
-Copyright 2023 Erico Vieira Porto, MIT.[/code]
+Copyright 2026 Erico Vieira Porto, MIT.[/code]
 
 As an example, a command line to force install the latest 3.6 AGS Editor, as a managed Editor is as follows
 
@@ -63,6 +63,163 @@ Installed release 3.6.0.47[/code]
 The command line interface is working, but it is still quite limited, if you have more needs for it, please ask me!
 
 Tab completion is also provided, the script for it can be generated with [font=Courier New]-s[/font] parameter, if you need help setting up just ask.
+
+[hr]
+
+[b]atbx command line commands[/b]
+
+[b]Command: list editors[/b]
+
+This is meant to list the available AGS Editors. It will use the agstoolbox settings behind the scenes, and by default will only list managed editors.
+It supports the options below:
+
+[list]
+[li][font=Courier New]-u, --unmanaged[/font], search for unmanaged editors, following the directories specified in settings.[/li]
+[li][font=Courier New]-d, --download[/font], it will list editors available for download (from AGS GitHub releases).[/li]
+[li][font=Courier New]-p PATH, --path PATH[/font], it will instead look for AGS Editors in a specific path, ignoring settings.[/li]
+[/list]
+
+Example:
+
+[code=bash]atbx list editors -d[/code]
+
+Will return a list of editors, with their versions and their links.
+
+[b]Command: list projects[/b]
+
+This command is for retrieving a list of AGS Game projects, it will by default search the directories configured in settings.
+It supports one option below:
+[list]
+[li][font=Courier New]-p PATH, --path PATH[/font], it will instead look for AGS Game Projects in the specified path, ignoring settings.[/li]
+[/list]
+
+Example:
+
+[code=bash]atbx list projects -p .[/code]
+
+Will instead list any available AGS Game Project in the current directory or any subdirectory, recursively.
+
+[b]Command: install[/b]
+
+This command is meant for installing tools, for now only AGS Editor is available, but you still have to specify it with its subcommand.
+
+[b]Command: install editor[/b]
+
+This command will download the AGS Editor zip archive and unpack in the managed editors directory.
+It requires an argument that has to be either a version (e.g.: 4.0.0.25) or you can pass the directory of an AGS Game Project, and it will pick the specific version that project was last saved with.
+It supports the options below:
+[list]
+[li][font=Courier New]-f, --force[/font], if the editor is already in the managed editors, it will be redownloaded if necessary, and it will unpack overwriting it in the managed editors directory.[/li]
+[li][font=Courier New]-q, --quiet[/font], it won't print the download progress, this may be useful in a CI environment.[/li]
+[/list]
+
+
+Example:
+
+[code=bash]atbx install editor 3.6.3.3[/code]
+
+This will install editor 3.6.3.3 and make it available as a managed editor.
+
+[b]Command: open editor[/b]
+
+This command is meant to open a specific editor version, which you need to pass as an argument. If it can't find an exact match it will warn and try to find one compatible to the specified version.
+
+Example:
+
+[code=bash]atbx open editor 3.6.3.3[/code]
+
+[b]Command: open project[/b]
+
+This command requires an AGS Game Project path as an argument. It will try to find an Editor compatible with the project and open it.
+By default, this command will block the terminal - you can [font=Courier New]Ctrl+C[/font] in the terminal to force close AGS Editor, or it will proceed normally when the Editor exits.
+It supports the options below:
+[list]
+[li][font=Courier New]-n, --non-blocking[/font], if you use this, the command line will return and the Editor will not block it while it's open.[/li]
+[li][font=Courier New]-w, --which-editor[/font], don't actually open the editor with the project, instead return the path of the Editor that was matched for the project.[/li]
+[/list]
+
+
+Example:
+
+[code=bash]atbx open project -n .[/code]
+
+Opens the AGS Game Project in the current directory with the matching editor, without blocking the terminal.
+
+
+[b]Command: build[/b]
+
+This command requires an AGS Game Project path as an argument.
+It will open the matched AGS Editor (the same from [font=Courier New]open project[/font] command), but it will use the [font=Courier New]/compile[/font] AGS Editor parameter to for it to build the project and exit.
+It supports the options below:
+[list]
+[li][font=Courier New]-n, --non-blocking[/font], if you use this, the command line will return and the Editor will not block it while it's open. Don't use this on a CI environment.[/li]
+[li][font=Courier New]-t SEC, --timeout SEC[/font], the seconds to wait before interrupting the build. This only works when blocking. It's useful if a project may cause an exception that somehow leads to unwanted user interaction that can block the build.[/li]
+[/list]
+
+Example:
+
+[code=bash]atbx build -t 300 .[/code]
+
+Builds the project in the current directory, but exits if it isn't finished in 5 minutes.
+
+
+[b]Command: settings show[/b]
+
+This will print all the settings in the terminal, so you can quickly read it.
+
+[b]Command: settings set[/b]
+
+[b]NOTE:[/b] I haven't had time to proper adjust this, if you need to change settings in your computer the easy way is to use the agstoolbox, the graphical version, it has a proper graphical menu you can configure everything in much easier way.
+
+This command can be used to set the value of the settings from the command line. For now only [font=Courier New]tools_install_dir[/font] can be passed, along with the dir to install it.
+
+Example:
+
+[code=bash]atbx settings set tools_install_dir /MY_TOOLS[/code]
+
+This will set the tools install dir as [font=Courier New]/MY_TOOLS[/font]. For now, prefer operating the settings with the graphical interface. If you have a need for configuring the settings from the command line open an issue so I can prioritize this.
+
+
+[b]Command: export script[/b]
+
+This is meant to export a script module ([font=Courier New].scm[/font] file).
+
+It requires three positional arguments, in order:
+[list]
+[li][font=Courier New]PROJECT_PATH[/font], path to the project with the module[/li]
+[li][font=Courier New]MODULE_NAME[/font], name of the script module[/li]
+[li][font=Courier New]OUT_DIR[/font], where to export the script module[/li]
+[/list]
+
+[b]Command: export template[/b]
+
+This is meant to export a game as a template. In AGS Editor versions where this is not supported as a command line parameter of the Editor itself, AGS ToolBox will use it's own AGS Template export implementation, but in Editor versions where this is supported, it will use the Editor own machinery to do this, if the Editor is installed.
+
+[hr]
+
+[b]tab completion on Windows Git-Bash[/b]
+
+Check if you have a [font=Courier New]~/.bashrc[/font] file, attempt to show it
+
+[code=bash]cat ~/.bashrc[/code]
+
+If you get an error message, you don't have one yet, lets generate one
+
+[code=bash]cat  /etc/bash.bashrc > ~/.bashrc[/code]
+
+We are going to create a directory to store additional bash completion in your Windows user home,
+and then use atbx to generate the bash completion script and then add a line to bashrc to load it
+once a new shell loads.
+
+[code=bash]mkdir ~/bash_completion.d/
+atbx -s bash > ~/bash_completion.d/atbx
+echo "source ~/bash_completion.d/atbx" >> ~/.bashrc[/code]
+
+Once you close and reload the terminal, using atbx and pressing tab should show the commands, like
+[font=Courier New]list[/font], [font=Courier New]install[/font], ...
+
+Whenever you update atbx, regenerate it's completion script using
+[code=bash]atbx -s bash > ~/bash_completion.d/atbx[/code]
 
 [hr]
 
