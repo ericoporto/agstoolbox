@@ -36,7 +36,7 @@ class MetaCmdProjectArgs:
     block: bool
     prj_path: str
     timeout: int
-    version: Version | None
+    editor_version: Version | None
 
 
 def meta_cmd_project(args, is_open: bool,
@@ -48,14 +48,15 @@ def meta_cmd_project(args, is_open: bool,
     block: bool = not getattr(args, "non_blocking", False)
     prj_path: str = args.PROJECT_PATH
     timeout: int = getattr(args, "timeout", 0)
-    version: str | None = getattr(args, "editor", None)
+    editor_version: str | None = getattr(args, "editor", None)
 
     meta_args: MetaCmdProjectArgs = MetaCmdProjectArgs()
     meta_args.block = block
     meta_args.which_only = which_only
     meta_args.prj_path = prj_path
     meta_args.timeout = timeout
-    meta_args.version = None if version is None else version_str_to_version(args.version)
+    meta_args.editor_version = None if (editor_version is None) or (len(str(editor_version)) < 1) \
+        else version_str_to_version(editor_version)
     return base_meta_cmd_project(meta_args, ags_editor_proj_command)
 
 def base_meta_cmd_project(meta_args: MetaCmdProjectArgs,
@@ -65,7 +66,7 @@ def base_meta_cmd_project(meta_args: MetaCmdProjectArgs,
     block: bool = meta_args.block
     prj_path: str = meta_args.prj_path
     timeout: int = meta_args.timeout
-    version: Version | None = meta_args.version
+    editor_version: Version | None = meta_args.editor_version
 
     if not Path(prj_path).exists():
         print('ERROR: Invalid project path')
@@ -78,8 +79,8 @@ def base_meta_cmd_project(meta_args: MetaCmdProjectArgs,
 
     project_version: Version = game_project.ags_editor_version
 
-    if version is None:
-        version = project_version
+    if editor_version is None:
+        editor_version = project_version
 
     managed_dir: str = Settings().get_tools_install_dir()
     editors = list_probable_ags_editors_in_dir(managed_dir)
@@ -87,7 +88,7 @@ def base_meta_cmd_project(meta_args: MetaCmdProjectArgs,
     editor_candidate: LocalAgsEditor | None = None
 
     for editor in editors:
-        if editor.version.as_int == version.as_int:
+        if editor.version.as_int == editor_version.as_int:
             editor_candidate = editor
             break
 
@@ -96,12 +97,12 @@ def base_meta_cmd_project(meta_args: MetaCmdProjectArgs,
         editors = list_ags_editors_in_dir_list(unmanaged_dirs)
 
         for editor in editors:
-            if editor.version.as_int == version.as_int:
+            if editor.version.as_int == editor_version.as_int:
                 editor_candidate = editor
                 break
 
     if editor_candidate is None:
-        print("ERROR: Failed to find exact match of AGS Editor, wanted " + version.as_str)
+        print("ERROR: Failed to find exact match of AGS Editor, wanted " + editor_version.as_str)
         return -1
 
     if which_only:
@@ -328,7 +329,7 @@ def at_cmd_export_template_editor(
     meta_args.which_only = False
     meta_args.prj_path = game_project.path
     meta_args.timeout = timeout
-    meta_args.version = None
+    meta_args.editor_version = None
 
     if not editor_supports_template_export(game_project):
         print('ERROR: Project uses Editor "' + game_project.ags_editor_version.as_str +
@@ -445,7 +446,7 @@ def cmdline(show_help_when_empty: bool, program_name: str):
                        help='don\'t wait for Editor to close to continue')
     p_oop.add_argument('-w', '--which-editor', action='store_true', default=False,
                        help='give editor path only, don\'t open project')
-    p_oop.add_argument('-e', '--editor', metavar='VER', type=str, default='',
+    p_oop.add_argument('-e', '--editor', metavar='VER', type=str, default=None,
                      help='version of editor to open')
 
     # build command
@@ -457,7 +458,7 @@ def cmdline(show_help_when_empty: bool, program_name: str):
                      help='don\'t wait for Editor to close to continue')
     p_b.add_argument('-t', '--timeout', metavar='SEC', type=int, default=0,
                      help='seconds to wait before interrupting the build')
-    p_b.add_argument('-e', '--editor', metavar='VER', type=str, default='',
+    p_b.add_argument('-e', '--editor', metavar='VER', type=str, default=None,
                      help='version of editor to open')
 
     # settings command
