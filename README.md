@@ -62,6 +62,8 @@ Extracting...
 Installed release 3.6.0.47
 ```
 
+---
+
 ### Commands
 
 #### Command: list
@@ -99,6 +101,8 @@ atbx list projects -p .
 
 Will instead list any available AGS Game Project in the current directory or any subdirectory, recursively.
 
+---
+
 #### Command: install
 
 This command is meant for installing tools, for now only AGS Editor is available, but you still have to specify it with its subcommand.
@@ -118,6 +122,8 @@ atbx install editor 3.6.3.3
 ```
 
 This will install editor 3.6.3.3 and make it available as a managed editor.
+
+---
 
 #### Command: open
 
@@ -149,6 +155,8 @@ atbx open project -n .
 
 Opens the AGS Game Project in the current directory with the matching editor, without blocking the terminal.
 
+---
+
 #### Command: build
 
 This command requires an AGS Game Project path as an argument.
@@ -164,6 +172,8 @@ atbx build -t 300 .
 ```
 
 Builds the project in the current directory, but exits if it isn't finished in 5 minutes.
+
+---
 
 #### Command: settings
 
@@ -187,6 +197,8 @@ atbx settings set tools_install_dir /MY_TOOLS
 
 This will set the tools install dir as `/MY_TOOLS`. For now, prefer operating the settings with the graphical interface. If you have a need for configuring the settings from the command line open an issue so I can prioritize this.
 
+---
+
 #### Command: export
 
 This command requires a subcommand, see below.
@@ -204,6 +216,8 @@ It requires three positional arguments, in order:
 ##### Command: export template
 
 This is meant to export a game as a template. In AGS Editor versions where this is not supported as a command line parameter of the Editor itself, AGS ToolBox will use it's own AGS Template export implementation, but in Editor versions where this is supported, it will use the Editor own machinery to do this, if the Editor is installed.
+
+---
 
 ### tab completion on Windows Git-Bash
 
