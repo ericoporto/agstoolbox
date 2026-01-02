@@ -66,6 +66,22 @@ Installed release 3.6.0.47
 
 ### Commands
 
+- [`list`](#command-list)
+  - [`list editors`](#command-list-editors)
+  - [`list projects`](#command-list-projects)
+- [`install`](#command-install)
+  - [`install editor`](#command-install-editor)
+- [`open`](#command-open)
+  - [`open editor`](#command-open-editor)
+  - [`open project`](#command-open-project)
+- [`build`](#command-build)
+- [`settings`](#command-settings)
+  - [`settings show`](#command-settings-show)
+  - [`settings set`](#command-settings-set)
+- [`export`](#command-export)
+  - [`export script`](#command-export-script)
+  - [`export template`](#command-export-template)
+
 #### Command: list
 
 This command has two required subcommands, you must call with either for it to work.
