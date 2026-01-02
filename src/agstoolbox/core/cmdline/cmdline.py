@@ -36,7 +36,7 @@ class MetaCmdProjectArgs:
     block: bool
     prj_path: str
     timeout: int
-    version: Version
+    version: Version | None
 
 
 def meta_cmd_project(args, is_open: bool,
@@ -48,10 +48,7 @@ def meta_cmd_project(args, is_open: bool,
     block: bool = not getattr(args, "non_blocking", False)
     prj_path: str = args.PROJECT_PATH
     timeout: int = getattr(args, "timeout", 0)
-    version: str | None = args.version
-
-    if version is None or version is False:
-        version = None
+    version: str | None = getattr(args, "editor", None)
 
     meta_args: MetaCmdProjectArgs = MetaCmdProjectArgs()
     meta_args.block = block
@@ -331,6 +328,7 @@ def at_cmd_export_template_editor(
     meta_args.which_only = False
     meta_args.prj_path = game_project.path
     meta_args.timeout = timeout
+    meta_args.version = None
 
     if not editor_supports_template_export(game_project):
         print('ERROR: Project uses Editor "' + game_project.ags_editor_version.as_str +
@@ -428,7 +426,7 @@ def cmdline(show_help_when_empty: bool, program_name: str):
     p_iie = p_ii.add_parser('editor', help='install managed AGS Editor')
     p_iie.add_argument('VERSION_OR_PROJECT_PATH',
                        help='version to install or project to grab editor version')
-    p_iie.add_argument('-f', '--force', action='store_true', default=None,
+    p_iie.add_argument('-f', '--force', action='store_true', default=False,
                        help='forces installation, overwrite if already exists')
     p_iie.add_argument('-q', '--quiet', action='store_true', default=False,
                        help='do not print download progress')
