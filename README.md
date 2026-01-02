@@ -30,25 +30,26 @@ NOTE: On Windows, due to OS and PyInstaller limitations, `agstoolbox.exe` doesn'
 
 ```sh
 $ atbx --help
-usage: atbx [-h] [-s {bash,zsh,tcsh}] [-v] {list,install,open,build,settings} ...
+usage: atbx [-h] [-s {bash,zsh,tcsh}] [-v] {list,install,open,build,settings,export} ...
 
 agstoolbox is an application to help manage AGS Editor versions.
 
 positional arguments:
-  {list,install,open,build,settings}
+  {list,install,open,build,settings,export}
                         command
     list                lists things
     install             install tools
     open                open an editor or project
-    build               build an ags project
+    build               builds an ags project
     settings            modify or show settings
+    export              export from ags project
 
 optional arguments:
   -h, --help            show this help message and exit
   -s {bash,zsh,tcsh}    print shell completion script
   -v, --version         get software version.
 
-Copyright 2023 Erico Vieira Porto, MIT.
+Copyright 2026 Erico Vieira Porto, MIT.
 ```
 
 As an example, a command line to force install the latest 3.6 AGS Editor, as a managed Editor is as follows
@@ -60,6 +61,149 @@ Will install managed AGS Editor release 3.6.0.47
 Extracting...
 Installed release 3.6.0.47
 ```
+
+### Commands
+
+#### Command: list
+
+This command has two required subcommands, you must call with either for it to work.
+
+##### Command: list editors
+
+This is meant to list the available AGS Editors. It will use the agstoolbox settings behind the scenes, and by default will only list managed editors.
+It supports the options below:
+
+- `-u, --unmanaged`, search for unmanaged editors, following the directories specified in settings.
+- `-d, --download`, it will list editors available for download (from AGS GitHub releases).
+- `-p PATH, --path PATH`, it will instead look for AGS Editors in a specific path, ignoring settings.
+
+Example:
+
+```
+atbx list editors -d
+```
+
+Will return a list of editors, with their versions and their links.
+
+##### Command: list projects
+
+This command is for retrieving a list of AGS Game projects, it will by default search the directories configured in settings.
+It supports one option below:
+- `-p PATH, --path PATH`, it will instead look for AGS Game Projects in the specified path, ignoring settings.
+
+Example:
+
+```
+atbx list projects -p .
+```
+
+Will instead list any available AGS Game Project in the current directory or any subdirectory, recursively.
+
+#### Command: install
+
+This command is meant for installing tools, for now only AGS Editor is available, but you still have to specify it with its subcommand.
+
+##### Command: install editor
+
+This command will download the AGS Editor zip archive and unpack in the managed editors directory.
+It requires an argument that has to be either a version (e.g.: 4.0.0.25) or you can pass the directory of an AGS Game Project, and it will pick the specific version that project was last saved with.
+It supports the options below:
+- `-f, --force`, if the editor is already in the managed editors, it will be redownloaded if necessary, and it will unpack overwriting it in the managed editors directory.
+- `-q, --quiet`, it won't print the download progress, this may be useful in a CI environment.
+
+Example:
+
+```
+atbx install editor 3.6.3.3
+```
+
+This will install editor 3.6.3.3 and make it available as a managed editor.
+
+#### Command: open
+
+This command requires a subcommand, see below.
+
+##### Command: open editor
+
+This command is meant to open a specific editor version, which you need to pass as an argument. If it can't find an exact match it will warn and try to find one compatible to the specified version.
+
+Example:
+
+```
+atbx open editor 3.6.3.3
+```
+
+##### Command: open project
+
+This command requires an AGS Game Project path as an argument. It will try to find an Editor compatible with the project and open it.
+By default, this command will block the terminal - you can `Ctrl+C` in the terminal to force close AGS Editor, or it will proceed normally when the Editor exits.
+It supports the options below:
+- `-n, --non-blocking`, if you use this, the command line will return and the Editor will not block it while it's open.
+- `-w, --which-editor`, don't actually open the editor with the project, instead return the path of the Editor that was matched for the project.
+
+Example:
+
+```
+atbx open project -n .
+```
+
+Opens the AGS Game Project in the current directory with the matching editor, without blocking the terminal.
+
+#### Command: build
+
+This command requires an AGS Game Project path as an argument.
+It will open the matched AGS Editor (the same from `open project` command), but it will use the `/compile` AGS Editor parameter to for it to build the project and exit.
+It supports the options below:
+- `-n, --non-blocking`, if you use this, the command line will return and the Editor will not block it while it's open. Don't use this on a CI environment.
+- `-t SEC, --timeout SEC`, the seconds to wait before interrupting the build. This only works when blocking. It's useful if a project may cause an exception that somehow leads to unwanted user interaction that can block the build.
+
+Example:
+
+```
+atbx build -t 300 .
+```
+
+Builds the project in the current directory, but exits if it isn't finished in 5 minutes.
+
+#### Command: settings
+
+This command requires a subcommand, see below.
+
+**NOTE:** I haven't had time to proper adjust this, if you need to change settings in your computer the easy way is to use the agstoolbox, the graphical version, it has a proper graphical menu you can configure everything in much easier way.
+
+##### Command: settings show
+
+This will print all the settings in the terminal, so you can quickly read it.
+
+##### Command: settings set
+
+This command can be used to set the value of the settings from the command line. For now only `tools_install_dir` can be passed, along with the dir to install it.
+
+Example:
+
+```
+atbx settings set tools_install_dir /MY_TOOLS
+```
+
+This will set the tools install dir as `/MY_TOOLS`. For now, prefer operating the settings with the graphical interface. If you have a need for configuring the settings from the command line open an issue so I can prioritize this.
+
+#### Command: export
+
+This command requires a subcommand, see below.
+
+##### Command: export script
+
+This is meant to export a script module (`.scm` file).
+
+It requires three positional arguments, in order:
+
+- `PROJECT_PATH`, path to the project with the module
+- `MODULE_NAME`, name of the script module
+- `OUT_DIR`, where to export the script module
+
+##### Command: export template
+
+This is meant to export a game as a template. In AGS Editor versions where this is not supported as a command line parameter of the Editor itself, AGS ToolBox will use it's own AGS Template export implementation, but in Editor versions where this is supported, it will use the Editor own machinery to do this, if the Editor is installed.
 
 ### tab completion on Windows Git-Bash
 
@@ -100,7 +244,7 @@ atbx -s bash > ~/bash_completion.d/atbx
 Install pyinstaller (`pip install pyinstaller`) and then use it on a `cmd.exe` prompt
 
     pyinstaller agstoolbox.spec
-	
+
 This should generate a `agstoolbox.exe` file under the `dist/` directory in the project root.
 
 ### Coding
@@ -124,7 +268,7 @@ You can do the same with stbx
 
 You can configure your IDE to run both of these scripts and alternate between them when debugging.
 
-    
+
 ## Warning on Windows Store Python
 
 If you are using Python from Windows Store, most writes to `AppData/Local` and similar [will be redirected](https://github.com/python/cpython/issues/95029) and you will not be able to properly use or debug AGS Toolbox, I recomend you use a **Win32** Python to avoid debugging frustrations.
