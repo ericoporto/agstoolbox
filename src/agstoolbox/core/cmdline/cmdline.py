@@ -36,6 +36,7 @@ class MetaCmdProjectArgs:
     block: bool
     prj_path: str
     timeout: int
+    version: Version
 
 
 def meta_cmd_project(args, is_open: bool,
@@ -44,15 +45,20 @@ def meta_cmd_project(args, is_open: bool,
     which_only: bool = False
     if is_open:
         which_only = args.which_editor and True
-    block: bool = not args.non_blocking
+    block: bool = not getattr(args, "non_blocking", False)
     prj_path: str = args.PROJECT_PATH
-    timeout: int = args.timeout
+    timeout: int = getattr(args, "timeout", 0)
+    version: str | None = args.version
+
+    if version is None or version is False:
+        version = None
 
     meta_args: MetaCmdProjectArgs = MetaCmdProjectArgs()
     meta_args.block = block
     meta_args.which_only = which_only
     meta_args.prj_path = prj_path
     meta_args.timeout = timeout
+    meta_args.version = None if version is None else version_str_to_version(args.version)
     return base_meta_cmd_project(meta_args, ags_editor_proj_command)
 
 def base_meta_cmd_project(meta_args: MetaCmdProjectArgs,
@@ -62,6 +68,7 @@ def base_meta_cmd_project(meta_args: MetaCmdProjectArgs,
     block: bool = meta_args.block
     prj_path: str = meta_args.prj_path
     timeout: int = meta_args.timeout
+    version: Version | None = meta_args.version
 
     if not Path(prj_path).exists():
         print('ERROR: Invalid project path')
@@ -74,13 +81,16 @@ def base_meta_cmd_project(meta_args: MetaCmdProjectArgs,
 
     project_version: Version = game_project.ags_editor_version
 
+    if version is None:
+        version = project_version
+
     managed_dir: str = Settings().get_tools_install_dir()
     editors = list_probable_ags_editors_in_dir(managed_dir)
 
     editor_candidate: LocalAgsEditor | None = None
 
     for editor in editors:
-        if editor.version.as_int == project_version.as_int:
+        if editor.version.as_int == version.as_int:
             editor_candidate = editor
             break
 
@@ -89,12 +99,12 @@ def base_meta_cmd_project(meta_args: MetaCmdProjectArgs,
         editors = list_ags_editors_in_dir_list(unmanaged_dirs)
 
         for editor in editors:
-            if editor.version.as_int == project_version.as_int:
+            if editor.version.as_int == version.as_int:
                 editor_candidate = editor
                 break
 
     if editor_candidate is None:
-        print("ERROR: Failed to find exact match of AGS Editor, wanted " + project_version.as_str)
+        print("ERROR: Failed to find exact match of AGS Editor, wanted " + version.as_str)
         return -1
 
     if which_only:
@@ -437,6 +447,8 @@ def cmdline(show_help_when_empty: bool, program_name: str):
                        help='don\'t wait for Editor to close to continue')
     p_oop.add_argument('-w', '--which-editor', action='store_true', default=False,
                        help='give editor path only, don\'t open project')
+    p_oop.add_argument('-e', '--editor', metavar='VER', type=str, default='',
+                     help='version of editor to open')
 
     # build command
     p_b = subparsers.add_parser('build', help='builds an ags project')
@@ -447,6 +459,8 @@ def cmdline(show_help_when_empty: bool, program_name: str):
                      help='don\'t wait for Editor to close to continue')
     p_b.add_argument('-t', '--timeout', metavar='SEC', type=int, default=0,
                      help='seconds to wait before interrupting the build')
+    p_b.add_argument('-e', '--editor', metavar='VER', type=str, default='',
+                     help='version of editor to open')
 
     # settings command
     p_s = subparsers.add_parser('settings', help='modify or show settings')
