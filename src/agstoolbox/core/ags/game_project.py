@@ -6,6 +6,10 @@ from agstoolbox.core.version.version import Version
 
 PROJECT_FILE_NAME: Final[str] = 'Game.agf'
 
+COMPILED_LINUX_DIR_NAME: Final[str] = 'Linux'
+COMPILED_WINDOWS_DIR_NAME: Final[str] = 'Windows'
+COMPILED_WEB_DIR_NAME: Final[str] = 'Web'
+
 
 class GameProject:
     """an AGS Game Project"""

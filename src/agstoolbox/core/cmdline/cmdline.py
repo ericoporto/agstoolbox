@@ -21,6 +21,7 @@ from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir, \
 from agstoolbox.core.ags.get_local_ags_editors import list_probable_ags_editors_in_dir, \
     list_ags_editors_in_dir_list
 from agstoolbox.core.ags.get_script_module import exists_module_in_game_project
+from agstoolbox.core.ags.package_compiled import package_compiled_game
 from agstoolbox.core.cmdline.cmdline_download import cmdline_download_release_to_cache
 from agstoolbox.core.gh.install_release import is_install_dir_busy, install_release_from_cache
 from agstoolbox.core.gh.list_releases import list_releases, get_latest_release_family, \
@@ -397,6 +398,22 @@ def at_cmd_export(args):
             return 0
 
 
+def at_cmd_pack(args):
+    prj_path: str = args.PROJECT_PATH
+
+    if not Path(prj_path).exists():
+        print('ERROR: Invalid project path')
+        return -1
+
+    game_project: GameProject | None = get_unique_game_project_in_path(prj_path)
+    if game_project is None:
+        print('ERROR: Invalid project path')
+        return -1
+
+    package_compiled_game(game_project)
+
+    return 0
+
 def cmdline(show_help_when_empty: bool, program_name: str):
     parser = argparse.ArgumentParser(
         prog=program_name,
@@ -509,6 +526,12 @@ def cmdline(show_help_when_empty: bool, program_name: str):
                      help='use editor for template export')
     p_eet.add_argument('-t', '--timeout', metavar='SEC', type=int, default=0,
                      help='seconds to wait before interrupting editor export')
+
+    # pack
+    p_p = subparsers.add_parser('pack', help='package build results')
+    p_p.set_defaults(func=at_cmd_pack)
+    p_p.add_argument('PROJECT_PATH',
+                       help='path to the project built to archive').complete = shtab.FILE
 
     args = parser.parse_args()
     if 'func' in args.__dict__:
