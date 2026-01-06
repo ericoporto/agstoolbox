@@ -8,7 +8,8 @@ from agstoolbox.core.utils.file import get_file, get_dir
 from agstoolbox.core.utils.pyinstaller_hacks import lock_dll_dir, unlock_dll_dir
 
 
-def run_exe_params(exe_path: str, block: bool = False, timeout: int = 0, params=None) -> int:
+def run_exe_params(exe_path: str, block: bool = False, timeout: int = 0, params=None,
+                   env: dict = None) -> int:
     """
     Runs an executable file as a subprocess with optional blocking and timeout behavior.
 
@@ -20,6 +21,7 @@ def run_exe_params(exe_path: str, block: bool = False, timeout: int = 0, params=
                        If set to 0 or less, a default timeout of 10000 seconds is used.
                        Only valid when blocking.
         params (list, optional): Additional command-line parameters to pass to the executable.
+        env (dict, optional): Additional environment variables to pass to the executable.
 
     Returns:
         int: The return code of the process if it completes within the timeout.
@@ -27,6 +29,10 @@ def run_exe_params(exe_path: str, block: bool = False, timeout: int = 0, params=
     """
     if params is None:
         params = []
+
+    penv = os.environ.copy()
+    if env is not None:
+        penv.update(env)
 
     exe_file = get_file(exe_path)
     working_dir = get_dir(exe_path)
@@ -43,7 +49,8 @@ def run_exe_params(exe_path: str, block: bool = False, timeout: int = 0, params=
     lock_dll_dir()
     print('Popen: cwd=' + working_dir + ', ' + ' '.join(p_params))
     proc = Popen(p_params, cwd=working_dir, stdout=PIPE, stderr=PIPE, bufsize=1,
-                 universal_newlines=True)
+                 universal_newlines=True,
+                 env=penv)
 
     timed_out: bool = False
     if block:
