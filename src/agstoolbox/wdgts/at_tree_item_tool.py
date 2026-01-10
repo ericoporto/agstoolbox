@@ -81,12 +81,12 @@ class TreeItemTool_Download_Widget(QWidget):
 
         smaller_font = QtGui.QFont(
             self.labelName.font().family(),
-            self.labelName.font().pointSize() * 0.90,
+            int(self.labelName.font().pointSize() * 0.90),
         )
 
         smallest_font = QtGui.QFont(
             self.labelName.font().family(),
-            self.labelName.font().pointSize() * 0.75,
+            int(self.labelName.font().pointSize() * 0.75),
         )
 
         self.labelTime = QLabel(s_ago(self.release.published_at_timestamp))

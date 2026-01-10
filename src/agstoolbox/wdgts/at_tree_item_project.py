@@ -50,12 +50,12 @@ class ProjectWidget(QWidget):
 
         smaller_font = QtGui.QFont(
             self.labelName.font().family(),
-            self.labelName.font().pointSize() * 0.90,
+            int(self.labelName.font().pointSize() * 0.90),
         )
 
         smallest_font = QtGui.QFont(
             self.labelName.font().family(),
-            self.labelName.font().pointSize() * 0.75,
+            int(self.labelName.font().pointSize() * 0.75),
         )
 
         self.labelVersion = QLabel(self.project.ags_editor_version.as_str)
