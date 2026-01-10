@@ -160,12 +160,12 @@ class TreeItemTool_Local_Widget(QWidget):
 
         smaller_font = QtGui.QFont(
             self.labelName.font().family(),
-            self.labelName.font().pointSize() * 0.90,
+            int(self.labelName.font().pointSize() * 0.90),
         )
 
         smallest_font = QtGui.QFont(
             self.labelName.font().family(),
-            self.labelName.font().pointSize() * 0.75,
+            int(self.labelName.font().pointSize() * 0.75),
         )
 
         self.labelVersion = QLabel(self.ags_editor.version.as_str)
