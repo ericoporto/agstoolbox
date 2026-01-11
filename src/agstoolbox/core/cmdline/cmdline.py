@@ -23,6 +23,7 @@ from agstoolbox.core.ags.get_local_ags_editors import list_probable_ags_editors_
 from agstoolbox.core.ags.get_script_module import exists_module_in_game_project
 from agstoolbox.core.ags.package_compiled import package_compiled_game
 from agstoolbox.core.cmdline.cmdline_download import cmdline_download_release_to_cache
+from agstoolbox.core.gh.agstoolbox_update import is_latest_agstoolbox_release
 from agstoolbox.core.gh.install_release import is_install_dir_busy, install_release_from_cache
 from agstoolbox.core.gh.list_releases import list_releases, get_latest_release_family, \
     get_release_version
@@ -539,6 +540,8 @@ def cmdline(show_help_when_empty: bool, program_name: str):
 
     if args.version:
         print(__title__ + "  v " + __version__)
+        if not is_latest_agstoolbox_release():
+            print('There is a new release of AGSToolbox.')
         exit()
 
     if any(vars(args).values()):

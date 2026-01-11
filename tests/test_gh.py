@@ -5,6 +5,8 @@ import os
 import sys
 from pathlib import Path
 
+from agstoolbox.core.gh.agstoolbox_releases import parse_agstoolbox_releases
+
 # TODO: fix to not need this (in Windows, MacOS and Linux)
 if os.path.isdir(os.path.join(".", "src")) and os.path.isfile(os.path.join(".", "setup.py")):
     sys.path.append(os.path.realpath("src"))
@@ -38,3 +40,21 @@ def test_parse_releases():
            "https://github.com/" \
            "adventuregamestudio/ags/releases/download/v.3.6.0.47/AGS-3.6.0.47.zip"
     assert r[0].archive_size == 40475597
+
+
+def test_parse_agstoolbox_releases():
+    f = open(os.path.join(cur_dir, 'resources/toolbox_gh_releases.json'))
+    response_json = json.load(f)
+    r = parse_agstoolbox_releases(response_json)
+    assert len(r) == 39
+    assert r[1].tag == "0.5.8"
+    assert r[2].tag == "0.5.7"
+    assert r[3].tag == "0.5.6"
+    assert r[1].version.as_str == "0.5.8.0"
+    assert r[2].version.as_str == "0.5.7.0"
+    assert r[3].version.as_str == "0.5.6.0"
+    assert r[1].version.as_int == 5008000
+    assert r[2].version.as_int == 5007000
+    assert r[3].version.as_int == 5006000
+    assert r[1].winexe_name == 'agstoolbox.exe'
+    assert r[1].winatbx_name == 'atbx.exe'

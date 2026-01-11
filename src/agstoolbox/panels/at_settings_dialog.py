@@ -2,11 +2,21 @@ from PyQt6 import QtCore, QtWidgets
 from PyQt6.QtWidgets import QDialog, QSizePolicy, QFormLayout, QHBoxLayout, QVBoxLayout, \
     QSpacerItem, QLabel, QDialogButtonBox
 
+from agstoolbox.core.gh.agstoolbox_update import is_latest_agstoolbox_release
 from agstoolbox.core.settings.settings import Settings, ConstSettings
 from agstoolbox.wdgts.at_dirlist_wdgt import DirListWidget
 from agstoolbox.wdgts.at_single_dir_wdgt import DirEditWidget
 from agstoolbox.wdgts_utils.get_self_path import get_app_path
 from agstoolbox import __version__
+
+
+def new_version_msg() -> str:
+    # this is bad because it requires a request to github to check for the version
+    # it has a timeout of two seconds and runs on agstoolbox startup, once
+    if is_latest_agstoolbox_release():
+        return 'Adjust settings here.'
+    else:
+        return 'New version available.'
 
 
 class SettingsDialog(QDialog):
@@ -146,7 +156,7 @@ class SettingsDialog(QDialog):
         self.setWindowTitle(_translate("SettingsDialog", "Settings"))
         self.label_settings_intro.setText(
             "AGS Toolbox " + __version__ + ". " +
-            _translate("SettingsDialog", "Adjust settings here."))
+            _translate("SettingsDialog", new_version_msg() ))
         self.run_at_startup_label.setText(
             _translate("SettingsDialog",
                        "Run on OS startup (experimental)"))
