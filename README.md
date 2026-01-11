@@ -43,6 +43,7 @@ positional arguments:
     build               builds an ags project
     settings            modify or show settings
     export              export from ags project
+    pack                package build results
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -81,6 +82,7 @@ Installed release 3.6.0.47
 - [`export`](#command-export)
   - [`export script`](#command-export-script)
   - [`export template`](#command-export-template)
+- [`pack`](#command-pack)
 
 #### Command: list
 
@@ -232,6 +234,29 @@ It requires three positional arguments, in order:
 ##### Command: export template
 
 This is meant to export a game as a template. In AGS Editor versions where this is not supported as a command line parameter of the Editor itself, AGS ToolBox will use it's own AGS Template export implementation, but in Editor versions where this is supported, it will use the Editor own machinery to do this, if the Editor is installed.
+
+---
+
+#### Command: pack
+
+This command will create a directory named `Dist` at the root of your game project path, and put any built binaries there packaged for distribution.
+Currently it only support Windows, Web and Linux builds.
+
+- For _Windows_ builds it zips the contents of `Compiled/Windows` directory in a file named `GAMENAME_windows.zip`, and puts it in `Dist` directory.
+- For _Web_ builds it does the same, it zips the contents of `Compiled/Web` directory in a file named `GAMENAME_web.zip`, and puts it in `Dist` directory.
+- For _Linux_ builds it will archive the contents of `Compiled/Linux` directory in a tar file named `GAMENAME_linux.tar.gz`, and adjust the execution bit of the necessary files to make it executable when unpacked on a Linux distro; this tar file is put in the `Dist` directory.
+
+It requires the positional argument below:
+
+- `PROJECT_PATH`, path to the project with the module
+
+Example:
+
+```
+atbx pack .
+```
+
+It will package any built games from the project in the current directory and put it in the `Dist` directory it creates.
 
 ---
 
