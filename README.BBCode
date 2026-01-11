@@ -46,6 +46,7 @@ positional arguments:
     build               build an ags project
     settings            modify or show settings
     export              export from ags project
+    pack                package build results
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -198,6 +199,31 @@ It requires three positional arguments, in order:
 [b]Command: export template[/b]
 
 This is meant to export a game as a template. In AGS Editor versions where this is not supported as a command line parameter of the Editor itself, AGS ToolBox will use it's own AGS Template export implementation, but in Editor versions where this is supported, it will use the Editor own machinery to do this, if the Editor is installed.
+
+
+[b]Command: pack[/b]
+
+This command will create a directory named [font=Courier New]Dist[/font] at the root of your game project path, and put any built binaries there packaged for distribution.
+Currently it only support Windows, Web and Linux builds.
+
+[list]
+[li]For _Windows_ builds it zips the contents of [font=Courier New]Compiled/Windows[/font] directory in a file named [font=Courier New]GAMENAME_windows.zip[/font], and puts it in [font=Courier New]Dist[/font] directory.[/li]
+[li]For _Web_ builds it does the same, it zips the contents of [font=Courier New]Compiled/Web[/font] directory in a file named [font=Courier New]GAMENAME_web.zip[/font], and puts it in [font=Courier New]Dist[/font] directory.[/li]
+[li]For _Linux_ builds it will archive the contents of [font=Courier New]Compiled/Linux[/font] directory in a tar file named [font=Courier New]GAMENAME_linux.tar.gz[/font], and adjust the execution bit of the necessary files to make it executable when unpacked on a Linux distro; this tar file is put in the [font=Courier New]Dist[/font] directory.[/li]
+[/list]
+
+It requires the positional argument below:
+
+[list]
+[li][font=Courier New]PROJECT_PATH[/font], path to the project with the module[/li]
+[/list]
+
+Example:
+
+[code=bash]atbx pack .[/code]
+
+It will package any built games from the project in the current directory and put it in the [font=Courier New]Dist[/font] directory it creates.
+
 
 [hr]
 
