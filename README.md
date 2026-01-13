@@ -35,7 +35,7 @@ usage: atbx [-h] [-s {bash,zsh,tcsh}] [-v] {list,install,open,build,settings,exp
 agstoolbox is an application to help manage AGS Editor versions.
 
 positional arguments:
-  {list,install,open,build,settings,export}
+  {list,install,open,build,settings,export,pack}
                         command
     list                lists things
     install             install tools
