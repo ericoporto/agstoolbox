@@ -22,7 +22,7 @@ You can install it from [pip](https://pypi.org/project/agstoolbox/)
 
     pip install agstoolbox
 
-**NOTE:** On MS Windows, instalation from pip may not work correctly, see [Warning on Windows Store Python](#warning-on-windows-store-python) for more information.
+**NOTE:** On MS Windows, installation from pip may not work correctly, see [Warning on Windows Store Python](#warning-on-windows-store-python) for more information.
 
 ## Command Line usage
 
@@ -30,7 +30,7 @@ NOTE: On Windows, due to OS and PyInstaller limitations, `agstoolbox.exe` doesn'
 
 ```sh
 $ atbx --help
-usage: atbx [-h] [-s {bash,zsh,tcsh}] [-v] {list,install,open,build,settings,export} ...
+usage: atbx [-h] [-s {bash,zsh,tcsh}] [-v] {list,install,open,build,settings,export,pack} ...
 
 agstoolbox is an application to help manage AGS Editor versions.
 
@@ -62,6 +62,8 @@ Will install managed AGS Editor release 3.6.0.47
 Extracting...
 Installed release 3.6.0.47
 ```
+
+Additionally, when using `--version` to check the version, atbx will attempt to alert if a newer version is available online.
 
 ---
 
@@ -162,6 +164,7 @@ atbx open editor 3.6.3.3
 This command requires an AGS Game Project path as an argument. It will try to find an Editor compatible with the project and open it.
 By default, this command will block the terminal - you can `Ctrl+C` in the terminal to force close AGS Editor, or it will proceed normally when the Editor exits.
 It supports the options below:
+- `-e VER, --editor VER`, force specific version of AGS Editor instead of project default
 - `-n, --non-blocking`, if you use this, the command line will return and the Editor will not block it while it's open.
 - `-w, --which-editor`, don't actually open the editor with the project, instead return the path of the Editor that was matched for the project.
 
@@ -178,8 +181,12 @@ Opens the AGS Game Project in the current directory with the matching editor, wi
 #### Command: build
 
 This command requires an AGS Game Project path as an argument.
+
+In case of an error, this command returns non-zero exit code, so it's safe to use it in CI pipelines.
+
 It will open the matched AGS Editor (the same from `open project` command), but it will use the `/compile` AGS Editor parameter to for it to build the project and exit.
 It supports the options below:
+- `-e VER, --editor VER`, force specific version of AGS Editor instead of project default
 - `-n, --non-blocking`, if you use this, the command line will return and the Editor will not block it while it's open. Don't use this on a CI environment.
 - `-t SEC, --timeout SEC`, the seconds to wait before interrupting the build. This only works when blocking. It's useful if a project may cause an exception that somehow leads to unwanted user interaction that can block the build.
 
@@ -234,6 +241,11 @@ It requires three positional arguments, in order:
 ##### Command: export template
 
 This is meant to export a game as a template. In AGS Editor versions where this is not supported as a command line parameter of the Editor itself, AGS ToolBox will use it's own AGS Template export implementation, but in Editor versions where this is supported, it will use the Editor own machinery to do this, if the Editor is installed.
+
+It supports the options below:
+- `-f, --force-editor`, force using the AGSEditor `/maketemplate` command if supported
+- `-t SEC, --timeout SEC`, the seconds to wait before interrupting editor export.
+
 
 ---
 
