@@ -5,7 +5,7 @@ from PyQt6.QtGui import QAction
 
 from agstoolbox.at_icons import main_icon_as_pixmap
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
-from agstoolbox.core.ags.ags_local_run import ags_editor_load
+from agstoolbox.core.ags.ags_local_run import ags_editor_load, ags_editor_build
 from agstoolbox.core.ags.game_project_compiled import is_project_compiled
 from agstoolbox.core.ags.package_compiled import package_compiled_game
 from agstoolbox.wdgts_utils.ags_local_extra import ags_project_folder_in_explorer
@@ -17,10 +17,14 @@ from agstoolbox.wdgts_utils.action_utils import DefaultMenuQAction
 class ActionEditorPair:
     action: QAction = None
     editor: LocalAgsEditor = None
+    action_type: str = None
 
-    def __init__(self, action: QAction = None, editor: LocalAgsEditor = None):
+    def __init__(self, action: QAction = None,
+                 editor: LocalAgsEditor = None,
+                 action_type: str = None):
         self.action = action
         self.editor = editor
+        self.action_type = action_type
 
 
 class ProjectImage(QLabel):
@@ -111,7 +115,7 @@ class ProjectWidget(QWidget):
     def get_unmanaged_editors(self) -> list[LocalAgsEditor]:
         return self.parent().parent().tools_tree.unmanaged_editors_list
 
-    def set_managed_editors_menu(self,
+    def set_open_managed_editors_menu(self,
                                  parent_menu: QtWidgets.QMenu = None) -> list[ActionEditorPair]:
         submenu = QtWidgets.QMenu("Open in Managed Editor", parent_menu)
         parent_menu.addMenu(submenu)
@@ -119,11 +123,14 @@ class ProjectWidget(QWidget):
         actions: list[ActionEditorPair] = list()
         for editor in editors:
             action = submenu.addAction(editor.name)
-            actions.append(ActionEditorPair(action=action, editor=editor))
+            actions.append(ActionEditorPair(action=action, editor=editor, action_type='open'))
+
+        if len(actions) == 0:
+            submenu.setEnabled(False)
 
         return actions
 
-    def set_unmanaged_editors_menu(self,
+    def set_open_unmanaged_editors_menu(self,
                                    parent_menu: QtWidgets.QMenu = None) -> list[ActionEditorPair]:
         submenu = QtWidgets.QMenu("Open in External Editor", parent_menu)
         parent_menu.addMenu(submenu)
@@ -131,7 +138,40 @@ class ProjectWidget(QWidget):
         actions: list[ActionEditorPair] = list()
         for editor in editors:
             action = submenu.addAction(editor.name)
-            actions.append(ActionEditorPair(action=action, editor=editor))
+            actions.append(ActionEditorPair(action=action, editor=editor, action_type='open'))
+
+        if len(actions) == 0:
+            submenu.setEnabled(False)
+
+        return actions
+
+    def set_build_managed_editors_menu(self,
+                                  parent_menu: QtWidgets.QMenu = None) -> list[ActionEditorPair]:
+        submenu = QtWidgets.QMenu("Build in Managed Editor", parent_menu)
+        parent_menu.addMenu(submenu)
+        editors = self.get_managed_editors()
+        actions: list[ActionEditorPair] = list()
+        for editor in editors:
+            action = submenu.addAction(editor.name)
+            actions.append(ActionEditorPair(action=action, editor=editor, action_type='build'))
+
+        if len(actions) == 0:
+            submenu.setEnabled(False)
+
+        return actions
+
+    def set_build_unmanaged_editors_menu(self,
+                                    parent_menu: QtWidgets.QMenu = None) -> list[ActionEditorPair]:
+        submenu = QtWidgets.QMenu("Build in External Editor", parent_menu)
+        parent_menu.addMenu(submenu)
+        editors = self.get_unmanaged_editors()
+        actions: list[ActionEditorPair] = list()
+        for editor in editors:
+            action = submenu.addAction(editor.name)
+            actions.append(ActionEditorPair(action=action, editor=editor, action_type='build'))
+
+        if len(actions) == 0:
+            submenu.setEnabled(False)
 
         return actions
 
@@ -143,8 +183,11 @@ class ProjectWidget(QWidget):
         pack_action.setEnabled(is_project_compiled(self.project))
         open_folder_action = menu.addAction("Open Folder in File Explorer")
         menu.addSeparator()
-        managed_actions = self.set_managed_editors_menu(menu)
-        unmanaged_actions = self.set_unmanaged_editors_menu(menu)
+        open_managed_actions = self.set_open_managed_editors_menu(menu)
+        open_unmanaged_actions = self.set_open_unmanaged_editors_menu(menu)
+        menu.addSeparator()
+        build_managed_actions = self.set_build_managed_editors_menu(menu)
+        build_unmanaged_actions = self.set_build_unmanaged_editors_menu(menu)
 
         action = menu.exec(self.mapToGlobal(event.pos()))
         if action == open_folder_action:
@@ -159,14 +202,24 @@ class ProjectWidget(QWidget):
         elif action == pack_action:
             self.pack_game()
         else:
-            for a_pair in managed_actions:
+            for a_pair in open_managed_actions:
                 if a_pair.action == action:
                     ags_editor_load(a_pair.editor, self.project)
                     return
 
-            for a_pair in unmanaged_actions:
+            for a_pair in open_unmanaged_actions:
                 if a_pair.action == action:
                     ags_editor_load(a_pair.editor, self.project)
+                    return
+
+            for a_pair in build_managed_actions:
+                if a_pair.action == action:
+                    ags_editor_build(a_pair.editor, self.project)
+                    return
+
+            for a_pair in build_unmanaged_actions:
+                if a_pair.action == action:
+                    ags_editor_build(a_pair.editor, self.project)
                     return
 
 
