@@ -6,6 +6,8 @@ from PyQt6.QtGui import QAction
 from agstoolbox.at_icons import main_icon_as_pixmap
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
 from agstoolbox.core.ags.ags_local_run import ags_editor_load
+from agstoolbox.core.ags.game_project_compiled import is_project_compiled
+from agstoolbox.core.ags.package_compiled import package_compiled_game
 from agstoolbox.wdgts_utils.ags_local_extra import ags_project_folder_in_explorer
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.utils.time import s_ago
@@ -97,6 +99,9 @@ class ProjectWidget(QWidget):
     def quick_build_project(self):
         self.parent().parent().tools_tree.build_project_tool(self.project)
 
+    def pack_game(self):
+        package_compiled_game(self.project)
+
     def mouseDoubleClickEvent(self, event):
         self.quick_open_project()
 
@@ -134,6 +139,8 @@ class ProjectWidget(QWidget):
         menu = QtWidgets.QMenu(self)
         quick_open_action = DefaultMenuQAction(menu, "Quick Open Project")
         quick_build_action = menu.addAction("Quick Build Project")
+        pack_action = menu.addAction("Pack Game")
+        pack_action.setEnabled(is_project_compiled(self.project))
         open_folder_action = menu.addAction("Open Folder in File Explorer")
         menu.addSeparator()
         managed_actions = self.set_managed_editors_menu(menu)
@@ -149,6 +156,8 @@ class ProjectWidget(QWidget):
         elif action == quick_build_action:
             self.quick_build_project()
             return
+        elif action == pack_action:
+            self.pack_game()
         else:
             for a_pair in managed_actions:
                 if a_pair.action == action:
