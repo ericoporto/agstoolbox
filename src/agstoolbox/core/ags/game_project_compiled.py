@@ -43,3 +43,8 @@ def from_project_get_compiled_dirs(project: GameProject) -> list[str]:
                 compiled_dirs.append(d)
 
     return compiled_dirs
+
+
+def is_project_compiled(project: GameProject) -> bool:
+    compiled_dirs = from_project_get_compiled_dirs(project)
+    return len(compiled_dirs) > 0
