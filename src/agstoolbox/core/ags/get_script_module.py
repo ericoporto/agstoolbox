@@ -65,3 +65,18 @@ def module_from_game_project(game_project: GameProject, module_name: str) -> Scr
         sm.script = f.read()
 
     return sm
+
+
+def get_list_of_script_modules(game_project: GameProject) -> list[str]:
+    list_of_script_modules: list[str] = []
+    tree = ETree.parse(game_project.path)
+    root = tree.getroot()
+    scripts_and_header_htags = root.findall('.//ScriptAndHeader')
+    script_htag: Element | None = None
+    for sah_htag in scripts_and_header_htags:
+        sah_script_htag = sah_htag.find('ScriptAndHeader_Script')
+        script_htag = sah_script_htag.find('Script')
+        script_name_htag = script_htag.find('Name')
+        list_of_script_modules.append(str(script_name_htag.text))
+
+    return list_of_script_modules
