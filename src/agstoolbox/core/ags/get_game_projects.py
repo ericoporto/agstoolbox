@@ -81,7 +81,7 @@ def gameagf_file_to_game_project(filepath: str) -> GameProject:
     return gp
 
 
-def get_encoding_codepage(enc: str) -> [str, str]:
+def get_encoding_codepage(enc: str) -> [str, int]:
     codepage = 65001
 
     if enc is None:
