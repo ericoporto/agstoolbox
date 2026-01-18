@@ -2,10 +2,27 @@ from __future__ import annotations  # for python 3.8
 
 import os
 import sys
-from subprocess import Popen, PIPE, TimeoutExpired
+from subprocess import Popen, PIPE, DEVNULL, TimeoutExpired
 
 from agstoolbox.core.utils.file import get_file, get_dir
 from agstoolbox.core.utils.pyinstaller_hacks import lock_dll_dir, unlock_dll_dir
+from agstoolbox.core.utils.win_hacks import has_windows_console
+
+
+def stdio_available() -> bool:
+    """
+    Returns True if stdout/stderr are backed by valid OS handles.
+    This is False for GUI apps started without a console on Windows.
+    """
+    try:
+        return (
+            sys.stdout is not None
+            and sys.stderr is not None
+            and sys.stdout.fileno() >= 0
+            and sys.stderr.fileno() >= 0
+        )
+    except Exception:
+        return False
 
 
 def run_exe_params(exe_path: str, block: bool = False, timeout: int = 0, params=None,
@@ -47,9 +64,21 @@ def run_exe_params(exe_path: str, block: bool = False, timeout: int = 0, params=
     cwd = os.getcwd()
     os.chdir(working_dir)
     lock_dll_dir()
+
+    stdout_target = DEVNULL
+    stderr_target = DEVNULL
+    universal_newlines = False
+
+    # this prevents an error in invalid handle error in .NET code from AGS Editor
+    # we only do redirection if it's available - fails in GUI on Windows when no console exists
+    if stdio_available() and has_windows_console():
+        stdout_target = PIPE
+        stderr_target = PIPE
+        universal_newlines = True
+
     print('Popen: cwd=' + working_dir + ', ' + ' '.join(p_params))
-    proc = Popen(p_params, cwd=working_dir, stdout=PIPE, stderr=PIPE, bufsize=1,
-                 universal_newlines=True,
+    proc = Popen(p_params, cwd=working_dir, stdout=stdout_target, stderr=stderr_target, bufsize=1,
+                 universal_newlines=universal_newlines,
                  env=penv)
 
     timed_out: bool = False
