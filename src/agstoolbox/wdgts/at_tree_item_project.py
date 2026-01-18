@@ -6,6 +6,7 @@ from PyQt6.QtGui import QAction
 from agstoolbox.at_icons import main_icon_as_pixmap
 from agstoolbox.core.ags.ags_editor import LocalAgsEditor
 from agstoolbox.core.ags.ags_local_run import ags_editor_load, ags_editor_build
+from agstoolbox.core.ags.ags_template import editor_supports_template_export
 from agstoolbox.core.ags.game_project_compiled import is_project_compiled
 from agstoolbox.core.ags.package_compiled import package_compiled_game
 from agstoolbox.wdgts_utils.ags_local_extra import ags_project_folder_in_explorer
@@ -106,6 +107,22 @@ class ProjectWidget(QWidget):
     def pack_game(self):
         package_compiled_game(self.project)
 
+    def quick_export_template_project(self):
+        if not editor_supports_template_export(self.project):
+            error_dialog = QtWidgets.QErrorMessage()
+            error_dialog.showMessage('ERROR: Project uses Editor "' +
+                                     self.project.ags_editor_version.as_str +
+                                     '", which doesn\'t support /maketemplate command')
+
+        ok: bool = self.parent().parent().tools_tree.template_build_project_tool(self.project)
+
+        if not ok:
+            error_dialog = QtWidgets.QErrorMessage()
+            error_dialog.showMessage(
+                'ERROR: Failed to find Editor to build project made with Editor Version "' +
+                self.project.ags_editor_version.as_str +
+                  '".')
+
     def mouseDoubleClickEvent(self, event):
         self.quick_open_project()
 
@@ -179,6 +196,7 @@ class ProjectWidget(QWidget):
         menu = QtWidgets.QMenu(self)
         quick_open_action = DefaultMenuQAction(menu, "Quick Open Project")
         quick_build_action = menu.addAction("Quick Build Project")
+        quick_export_template_action = menu.addAction("Quick Export as Template")
         pack_action = menu.addAction("Pack Game")
         pack_action.setEnabled(is_project_compiled(self.project))
         open_folder_action = menu.addAction("Open Folder in File Explorer")
@@ -201,6 +219,8 @@ class ProjectWidget(QWidget):
             return
         elif action == pack_action:
             self.pack_game()
+        elif action == quick_export_template_action:
+            self.quick_export_template_project()
         else:
             for a_pair in open_managed_actions:
                 if a_pair.action == action:
