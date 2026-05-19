@@ -22,9 +22,11 @@ jobs:
     - name: Install Qt dependency for running
       run: |
          sudo apt-get update && sudo apt-get install libxcb-xinerama0 libgl1-mesa-glx libegl1-mesa libegl1 -y
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
+      with:
+        persist-credentials: false
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
