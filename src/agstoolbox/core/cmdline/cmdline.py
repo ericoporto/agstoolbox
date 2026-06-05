@@ -327,6 +327,8 @@ def at_cmd_settings_reset(args):
         print('ERROR: Invalid settings reset command!')
         return
 
+    Settings().save()
+
 
 def at_cmd_settings(args):
     is_show_settings: bool = args.sub_settings == 'show'
