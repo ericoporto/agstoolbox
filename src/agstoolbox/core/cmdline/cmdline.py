@@ -28,7 +28,7 @@ from agstoolbox.core.gh.install_release import is_install_dir_busy, install_rele
 from agstoolbox.core.gh.list_releases import list_releases, get_latest_release_family, \
     get_release_version
 from agstoolbox.core.gh.release import Release
-from agstoolbox.core.settings.settings import Settings
+from agstoolbox.core.settings.settings import Settings, ConstSettings
 from agstoolbox.core.version.version import Version
 from agstoolbox.core.version.version_utils import version_str_to_version
 
@@ -308,16 +308,39 @@ def at_cmd_settings_set(args):
 
     Settings().save()
 
+def at_cmd_settings_reset(args):
+    reset_what: str | None = args.sub_setting_param
+
+    if reset_what is None or reset_what == 'all':
+        Settings().set_defaults()
+        print(Settings().dump())
+    elif reset_what == 'project_search_dirs':
+        Settings().set_project_search_dirs(ConstSettings.DEFAULT_PROJECTS_SEARCH_DIRS)
+        print("Project Search Dirs: ", ', '.join(Settings().get_project_search_dirs()))
+    elif reset_what == 'tools_install_dir':
+        Settings().set_tools_install_dir(ConstSettings.DEFAULT_TOOLS_INSTALL_DIR)
+        print("Tools Install Dir: ", Settings().get_tools_install_dir())
+    elif reset_what == 'manually_installed_editors_search_dirs':
+        Settings.set_manually_installed_editors_search_dirs(ConstSettings.DEFAULT_EXT_EDITORS_SEARCH_DIRS)
+        print("Manually Installed Editors Search Dirs:\n ", ',\n '.join(Settings().get_manually_installed_editors_search_dirs()))
+    else:
+        print('ERROR: Invalid settings reset command!')
+        return
+
 
 def at_cmd_settings(args):
     is_show_settings: bool = args.sub_settings == 'show'
     is_set_settings: bool = args.sub_settings == 'set'
+    is_reset_settings: bool = args.sub_settings == 'reset'
 
     if is_show_settings:
         at_cmd_settings_show(args)
         return
     elif is_set_settings:
         at_cmd_settings_set(args)
+        return
+    elif is_reset_settings:
+        at_cmd_settings_reset(args)
         return
     else:
         print('ERROR: Invalid settings command!')
@@ -503,6 +526,12 @@ def cmdline(show_help_when_empty: bool, program_name: str):
     p_ssep_t = p_ssep.add_parser('tools_install_dir', help='set tools install dir')
     p_ssep_t.add_argument('value',
                           help='path to the tools install dir').complete = shtab.DIRECTORY
+
+    p_ssr  = p_ss.add_parser('reset', help='reset to default values')
+    p_ssrp = p_ssr.add_subparsers(title='sub_setting_param',
+                                  dest='sub_setting_param', required=False)
+    p_ssrp.add_parser('project_search_dirs', help='reset only project search dirs')
+    p_ssrp.add_parser('tools_install_dir', help='reset only tools install dir')
 
     # export command
     p_e = subparsers.add_parser('export', help='export from ags project')

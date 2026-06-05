@@ -57,6 +57,17 @@ class BaseSettings:
     run_when_os_starts: bool = False
     app_path: str = ""
 
+    def set_defaults(self):
+        self.agstoolbox_package_install = ConstSettings.DEFAULT_TOOLS_INSTALL_DIR
+        self.editor_base_install_dir = Path(os.path.join(self.agstoolbox_package_install, 'Editor')).as_posix()
+        self.manually_installed_editors_search_dirs = ConstSettings().DEFAULT_EXT_EDITORS_SEARCH_DIRS
+
+        self.project_search_dirs = ConstSettings().DEFAULT_PROJECTS_SEARCH_DIRS
+        self.editor_install_dir = self.editor_base_install_dir
+        self.tools_install_dir = self.agstoolbox_package_install
+        self.run_when_os_starts: bool = False
+        self.app_path: str = ""
+
     def set_app_path(self, path: str):
         self.app_path = path
 
