@@ -69,9 +69,13 @@ def run_exe_params(exe_path: str, block: bool = False, timeout: int = 0, params=
     stderr_target = DEVNULL
     universal_newlines = False
 
+    # this helps read things on the debugger
+    is_stdio_available: bool = stdio_available()
+    have_windows_console: bool = has_windows_console()
+
     # this prevents an error in invalid handle error in .NET code from AGS Editor
     # we only do redirection if it's available - fails in GUI on Windows when no console exists
-    if stdio_available() and has_windows_console():
+    if is_stdio_available and have_windows_console:
         stdout_target = PIPE
         stderr_target = PIPE
         universal_newlines = True

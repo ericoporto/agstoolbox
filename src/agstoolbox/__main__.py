@@ -13,6 +13,7 @@ from os import environ as environ
 from agstoolbox.at_trayindicator import run_tray_indicator
 from agstoolbox.core.cmdline.cmdline import cmdline
 from agstoolbox import __title__
+from agstoolbox.core.utils.win_hacks import set_gui_run
 
 
 def main():
@@ -27,6 +28,7 @@ def main():
     environ["LIBOVERLAY_SCROLLBAR"] = "0"
 
     ap_args = cmdline(False, __title__)
+    set_gui_run()
     run_tray_indicator(ap_args)
 
 
