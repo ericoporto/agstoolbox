@@ -24,8 +24,12 @@ def parse_agstoolbox_releases(response_json) -> list[AgsToolboxRelease]:
         rls = None
         found_asset = False
 
-        # This can raise a TypeError in some weird condition I don't know what it is
+        # assets = rel['assets'] can raise a TypeError in some condition I don't know what it is
         ## it reads as TypeError: string indices must be integers
+        ## we will attempt to fix it by bailing out by type check
+        if not isinstance(rel, dict):
+            continue
+
         assets = rel['assets']
 
         for asset in assets:
