@@ -320,7 +320,7 @@ def at_cmd_settings_reset(args):
     elif reset_what == 'tools_install_dir':
         Settings().set_tools_install_dir(ConstSettings.DEFAULT_TOOLS_INSTALL_DIR)
         print("Tools Install Dir: ", Settings().get_tools_install_dir())
-    elif reset_what == 'manually_installed_editors_search_dirs':
+    elif reset_what == 'editor_search_dirs':
         Settings.set_manually_installed_editors_search_dirs(ConstSettings.DEFAULT_EXT_EDITORS_SEARCH_DIRS)
         print("Manually Installed Editors Search Dirs:\n ", ',\n '.join(Settings().get_manually_installed_editors_search_dirs()))
     else:
@@ -534,6 +534,7 @@ def cmdline(show_help_when_empty: bool, program_name: str):
                                   dest='sub_setting_param', required=False)
     p_ssrp.add_parser('project_search_dirs', help='reset only project search dirs')
     p_ssrp.add_parser('tools_install_dir', help='reset only tools install dir')
+    p_ssrp.add_parser('editor_search_dirs', help='reset only external installed dirs')
 
     # export command
     p_e = subparsers.add_parser('export', help='export from ags project')
