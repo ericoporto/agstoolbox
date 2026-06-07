@@ -8,7 +8,10 @@ a = Analysis(['atbx'],
              pathex=['src'],
              binaries=[],
              datas=[],
-             hiddenimports=['agstoolbox'],
+             hiddenimports=[
+             'agstoolbox',
+             'chardet'
+             ],
              hookspath=[],
              hooksconfig={},
              runtime_hooks=[],

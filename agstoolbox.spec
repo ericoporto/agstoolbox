@@ -12,7 +12,10 @@ a = Analysis(['agstoolbox'],
              pathex=['src'],
              binaries=[],
              datas=added_files,
-             hiddenimports=['agstoolbox'],
+             hiddenimports=[
+             'agstoolbox',
+             'chardet'
+             ],
              hookspath=[],
              hooksconfig={},
              runtime_hooks=[],
