@@ -17,17 +17,17 @@ from agstoolbox.wdgts.at_tree_item_tool import TreeItemTool_Header, ToolType, \
 
 
 class ToolsTree(QTreeWidget):
-    tool_update_downloads_task = None
-    tool_update_unmanaged_task = None
-    tool_update_managed_task = None
-    header_managed = None
-    header_download = None
-    header_unmanaged = None
-    managed_editors_list: list[LocalAgsEditor] = None
-    unmanaged_editors_list: list[LocalAgsEditor] = None
-
     def __init__(self, parent: QWidget = None):
         QTreeWidget.__init__(self, parent)
+
+        self.tool_update_downloads_task = None
+        self.tool_update_unmanaged_task = None
+        self.tool_update_managed_task = None
+        self.header_managed = None
+        self.header_download = None
+        self.header_unmanaged = None
+        self.managed_editors_list: list[LocalAgsEditor] = None
+        self.unmanaged_editors_list: list[LocalAgsEditor] = None
 
         self.setHeaderHidden(True)
         self.setSizeAdjustPolicy(QAbstractScrollArea.SizeAdjustPolicy.AdjustIgnored)

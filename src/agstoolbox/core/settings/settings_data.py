@@ -6,9 +6,10 @@ SETTINGS_FILENAME: Final[str] = "settings.json"
 
 
 class SettingsData:
-    run_when_os_starts: bool = None
-    project_search_dirs: list[str] = None
-    manually_installed_editors_search_dirs: list[str] = None
-    tools_install_dir: str = None
+    def __init__(self):
+        self.run_when_os_starts: bool = None
+        self.project_search_dirs: list[str] = None
+        self.manually_installed_editors_search_dirs: list[str] = None
+        self.tools_install_dir: str = None
 
 

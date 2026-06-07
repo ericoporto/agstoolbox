@@ -16,16 +16,12 @@ from agstoolbox.wdgts_utils.action_utils import DefaultMenuQAction
 
 
 class ActionEditorPair:
-    action: QAction = None
-    editor: LocalAgsEditor = None
-    action_type: str = None
-
     def __init__(self, action: QAction = None,
                  editor: LocalAgsEditor = None,
                  action_type: str = None):
-        self.action = action
-        self.editor = editor
-        self.action_type = action_type
+        self.action: QAction = action
+        self.editor: LocalAgsEditor  = editor
+        self.action_type: str  = action_type
 
 
 class ProjectImage(QLabel):
@@ -45,11 +41,9 @@ class ProjectImage(QLabel):
 
 
 class ProjectWidget(QWidget):
-    project = None
-
     def __init__(self, ags_game_project: GameProject, parent: QWidget = None):
         QWidget.__init__(self, parent)
-        self.project = ags_game_project
+        self.project: GameProject = ags_game_project
 
         self.icon_img = ProjectImage(ags_game_project.ico_path)
         self.labelName = QLabel(self.project.name)
@@ -244,8 +238,6 @@ class ProjectWidget(QWidget):
 
 
 class TreeItemProject(QTreeWidgetItem):
-    itm_wdgt = None
-
     def __init__(self, ags_game_project: GameProject):
         QTreeWidgetItem.__init__(self)
         self.itm_wdgt = ProjectWidget(ags_game_project)

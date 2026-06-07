@@ -9,7 +9,75 @@ from agstoolbox.core.utils.file import dir_is_valid
 
 
 class DirListWidget(QWidget):
-    default_dirs_value = None
+    def __init__(self, dirs: list[str], default_dirs: list[str], parent: QWidget = None):
+        QWidget.__init__(self, parent)
+
+        self.setObjectName("dir_list_widget")
+
+        self.default_dirs_value = default_dirs
+
+        self.list = QtWidgets.QListWidget(self)
+        self.list.setObjectName("list")
+        self.list.setFrameStyle(QFrame.Shape.NoFrame)
+        self.list.setSelectionMode(QtWidgets.QAbstractItemView.SelectionMode.SingleSelection)
+        self.setDirs(dirs)
+
+        self.push_button_new = QtWidgets.QPushButton(self)
+        self.push_button_new.setObjectName("push_button_new")
+        self.push_button_edit = QtWidgets.QPushButton(self)
+        self.push_button_edit.setObjectName("push_button_edit")
+        self.push_button_del = QtWidgets.QPushButton(self)
+        self.push_button_del.setObjectName("push_button_del")
+
+        self.push_button_move_up = QtWidgets.QPushButton(self)
+        self.push_button_move_up.setObjectName("push_button_move_up")
+        icon = self.style().standardIcon(QStyle.StandardPixmap.SP_ArrowUp)
+        self.push_button_move_up.setIcon(icon)
+
+        self.push_button_move_down = QtWidgets.QPushButton(self)
+        self.push_button_move_down.setObjectName("push_button_move_down")
+        icon = self.style().standardIcon(QStyle.StandardPixmap.SP_ArrowDown)
+        self.push_button_move_down.setIcon(icon)
+
+        self.push_button_defaults = QtWidgets.QPushButton(self)
+        self.push_button_defaults.setObjectName("push_button_defaults")
+
+        # Do Layout
+        spacer_item_fixed = QtWidgets.QSpacerItem(
+            20, 16, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Fixed)
+        spacer_item_expanding = QtWidgets.QSpacerItem(
+            20, 16, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.verticalLayout.addWidget(self.push_button_new)
+        self.verticalLayout.addWidget(self.push_button_edit)
+        self.verticalLayout.addWidget(self.push_button_del)
+        self.verticalLayout.addItem(spacer_item_fixed)
+
+        self.h_move_layout = QtWidgets.QHBoxLayout()
+        self.h_move_layout.setObjectName("h_move_layout")
+        self.h_move_layout.addWidget(self.push_button_move_up)
+        self.h_move_layout.addWidget(self.push_button_move_down)
+
+        self.verticalLayout.addLayout(self.h_move_layout)
+        self.verticalLayout.addWidget(self.push_button_defaults)
+        self.verticalLayout.addItem(spacer_item_expanding)
+
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.horizontalLayout.addWidget(self.list)
+        self.horizontalLayout.addLayout(self.verticalLayout)
+        self.setLayout(self.horizontalLayout)
+
+        self.retranslateUi()
+
+        # Connect events
+        self.push_button_new.clicked.connect(self.btn_new_clicked)
+        self.push_button_del.clicked.connect(self.btn_del_clicked)
+        self.push_button_edit.clicked.connect(self.btn_edit_clicked)
+        self.push_button_defaults.clicked.connect(self.btn_defaults_clicked)
+        self.push_button_move_up.clicked.connect(self.btn_move_up_clicked)
+        self.push_button_move_down.clicked.connect(self.btn_move_down_clicked)
 
     def is_selection_valid(self) -> bool:
         if self.list.count() == 0:
@@ -127,76 +195,6 @@ class DirListWidget(QWidget):
             target_row = row + 1
             self.list.insertItem(target_row, itm)
             self.list.setCurrentRow(target_row)
-
-    def __init__(self, dirs: list[str], default_dirs: list[str], parent: QWidget = None):
-        QWidget.__init__(self, parent)
-
-        self.setObjectName("dir_list_widget")
-
-        self.default_dirs_value = default_dirs
-
-        self.list = QtWidgets.QListWidget(self)
-        self.list.setObjectName("list")
-        self.list.setFrameStyle(QFrame.Shape.NoFrame)
-        self.list.setSelectionMode(QtWidgets.QAbstractItemView.SelectionMode.SingleSelection)
-        self.setDirs(dirs)
-
-        self.push_button_new = QtWidgets.QPushButton(self)
-        self.push_button_new.setObjectName("push_button_new")
-        self.push_button_edit = QtWidgets.QPushButton(self)
-        self.push_button_edit.setObjectName("push_button_edit")
-        self.push_button_del = QtWidgets.QPushButton(self)
-        self.push_button_del.setObjectName("push_button_del")
-
-        self.push_button_move_up = QtWidgets.QPushButton(self)
-        self.push_button_move_up.setObjectName("push_button_move_up")
-        icon = self.style().standardIcon(QStyle.StandardPixmap.SP_ArrowUp)
-        self.push_button_move_up.setIcon(icon)
-
-        self.push_button_move_down = QtWidgets.QPushButton(self)
-        self.push_button_move_down.setObjectName("push_button_move_down")
-        icon = self.style().standardIcon(QStyle.StandardPixmap.SP_ArrowDown)
-        self.push_button_move_down.setIcon(icon)
-
-        self.push_button_defaults = QtWidgets.QPushButton(self)
-        self.push_button_defaults.setObjectName("push_button_defaults")
-
-        # Do Layout
-        spacer_item_fixed = QtWidgets.QSpacerItem(
-            20, 16, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Fixed)
-        spacer_item_expanding = QtWidgets.QSpacerItem(
-            20, 16, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.verticalLayout.addWidget(self.push_button_new)
-        self.verticalLayout.addWidget(self.push_button_edit)
-        self.verticalLayout.addWidget(self.push_button_del)
-        self.verticalLayout.addItem(spacer_item_fixed)
-
-        self.h_move_layout = QtWidgets.QHBoxLayout()
-        self.h_move_layout.setObjectName("h_move_layout")
-        self.h_move_layout.addWidget(self.push_button_move_up)
-        self.h_move_layout.addWidget(self.push_button_move_down)
-
-        self.verticalLayout.addLayout(self.h_move_layout)
-        self.verticalLayout.addWidget(self.push_button_defaults)
-        self.verticalLayout.addItem(spacer_item_expanding)
-
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.horizontalLayout.addWidget(self.list)
-        self.horizontalLayout.addLayout(self.verticalLayout)
-        self.setLayout(self.horizontalLayout)
-
-        self.retranslateUi()
-
-        # Connect events
-        self.push_button_new.clicked.connect(self.btn_new_clicked)
-        self.push_button_del.clicked.connect(self.btn_del_clicked)
-        self.push_button_edit.clicked.connect(self.btn_edit_clicked)
-        self.push_button_defaults.clicked.connect(self.btn_defaults_clicked)
-        self.push_button_move_up.clicked.connect(self.btn_move_up_clicked)
-        self.push_button_move_down.clicked.connect(self.btn_move_down_clicked)
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate

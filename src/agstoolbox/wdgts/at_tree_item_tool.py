@@ -26,11 +26,10 @@ class ToolType(Enum):
 
 
 class TreeItemTool(QTreeWidgetItem):
-    tool_type: ToolType = None
 
     def __init__(self, parent: QTreeWidgetItem | None, tool_type: ToolType):
         QTreeWidgetItem.__init__(self, parent)
-        self.tool_type = tool_type
+        self.tool_type: ToolType = tool_type
 
 
 class EditorImage(QLabel):
@@ -67,13 +66,12 @@ class TreeItemTool_Header(TreeItemTool):
 
 # Tool Download Item
 class TreeItemTool_Download_Widget(QWidget):
-    release = None
-    # we need to store the thread or the garbage collector will remove it!
-    thread_download = None
 
     def __init__(self, release: Release, parent: QWidget = None):
         QWidget.__init__(self, parent)
         self.release = release
+        # we need to store the thread or the garbage collector will remove it!
+        self.thread_download = None
 
         self.icon_img = EditorImage()
         self.labelName = QLabel(self.release.name)

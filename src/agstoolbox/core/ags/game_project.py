@@ -12,13 +12,14 @@ COMPILED_WEB_DIR_NAME: Final[str] = 'Web'
 
 
 class GameProject:
-    """an AGS Game Project"""
-    name: str | None = None
-    game_file: str | None = None
-    ags_editor_version: Version = None
-    path: str | None = None
-    directory: str | None = None
-    encoding: str | None = None
-    codepage: int | None = None
-    last_modified = None
-    ico_path = None
+    def __init__(self):
+        """an AGS Game Project"""
+        self.name: str | None = None
+        self.game_file: str | None = None
+        self.ags_editor_version: Version = None
+        self.path: str | None = None
+        self.directory: str | None = None
+        self.encoding: str | None = None
+        self.codepage: int | None = None
+        self.last_modified = None
+        self. ico_path = None

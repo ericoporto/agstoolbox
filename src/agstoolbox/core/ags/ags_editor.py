@@ -8,12 +8,15 @@ EDITOR_FILE_NAME: Final[str] = 'AGSEditor.exe'
 
 
 class AgsEditor:
-    version: Version = None
-    name = None
+    def __init__(self):
+        self.version: Version = None
+        self.name = None
 
 
 class LocalAgsEditor(AgsEditor):
-    path = None
-    externally_installed: bool = False
-    validated = None
-    last_modified = None
+    def __init__(self):
+        super().__init__()
+        self.path = None
+        self.externally_installed: bool = False
+        self.validated = None
+        self.last_modified = None

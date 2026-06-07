@@ -7,12 +7,13 @@ MODULE_FILE_TRAILER = 0xb4f76a66
 
 
 class ScriptModule:
-    basename: str | None = None
-    name: str | None = None
-    version: str | None = None
-    author: str | None = None
-    description: str | None = None
-    unique_key: str | None = None
-    unique_key_int: int | None = None
-    script: str | None = None
-    header: str | None = None
+    def __init__(self):
+        self.basename: str | None = None
+        self.name: str | None = None
+        self.version: str | None = None
+        self.author: str | None = None
+        self.description: str | None = None
+        self.unique_key: str | None = None
+        self.unique_key_int: int | None = None
+        self.script: str | None = None
+        self.header: str | None = None

@@ -11,13 +11,14 @@ from agstoolbox.wdgts.at_tree_tools_wdgt import ToolsTree
 
 
 class MainWindow(QMainWindow):
-    tool_tab_id: int = None
-    proj_tab_id: int = None
-    proj_update_task = None
-    tool_update_task = None
 
     def __init__(self):
         QMainWindow.__init__(self)
+
+        self.tool_tab_id: int = None
+        self.proj_tab_id: int = None
+        self.proj_update_task = None
+        self.tool_update_task = None
 
         margin = 4
 

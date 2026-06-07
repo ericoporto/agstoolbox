@@ -4,24 +4,25 @@ from agstoolbox.core.version.version import Version
 
 
 class AgsToolboxRelease:
-    """a generic GitHub release object"""
-    version: Version = None
-    name = None
-    url: str = None
-    id: str = None
-    tag: str = None
+    def __init__(self):
+        """a generic GitHub release object"""
+        self.version: Version = None
+        self.name = None
+        self.url: str = None
+        self.id: str = None
+        self.tag: str = None
 
-    html_url: str = None
+        self.html_url: str = None
 
-    is_pre_release: bool = False
-    text_details: str = None
-    published_at: str = None
-    published_at_timestamp: float = None
-    winexe_name: str = None
-    winexe_url: str = None
-    winexe_size = None
-    winexe_id: str = None
-    winatbx_name: str = None
-    winatbx_url: str = None
-    winatbx_size = None
-    winatbx_id: str = None
+        self.is_pre_release: bool = False
+        self.text_details: str = None
+        self.published_at: str = None
+        self.published_at_timestamp: float = None
+        self.winexe_name: str = None
+        self.winexe_url: str = None
+        self.winexe_size = None
+        self.winexe_id: str = None
+        self.winatbx_name: str = None
+        self.winatbx_url: str = None
+        self.winatbx_size = None
+        self.winatbx_id: str = None

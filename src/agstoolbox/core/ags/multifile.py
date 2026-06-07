@@ -2,8 +2,9 @@ from __future__ import annotations  # for python 3.8
 
 
 class MultiFile:
-    name: str | None = None
-    filename: str | None = None
-    datafile: int | None = None
-    length: int | None = None
-    offset: int | None = None
+    def __init__(self):
+        self.name: str | None = None
+        self.filename: str | None = None
+        self.datafile: int | None = None
+        self.length: int | None = None
+        self.offset: int | None = None

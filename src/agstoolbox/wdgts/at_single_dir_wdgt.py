@@ -9,11 +9,10 @@ from agstoolbox.core.utils.file import dir_is_valid
 
 
 class DirEditWidget(QWidget):
-    default_dir_value = None
-
     def __init__(self, initial_dir: str, default_dir: str, parent: QWidget = None):
         QWidget.__init__(self, parent)
 
+        self.default_dir_value = default_dir
         self.dir_line_edit = QLineEdit(self)
         self.dir_line_edit.setEnabled(False)
         self.dir_line_edit.setObjectName("dir_line_edit")
@@ -32,7 +31,6 @@ class DirEditWidget(QWidget):
         self.setLayout(self.h_layout)
 
         self.dir_line_edit.setText(initial_dir)
-        self.default_dir_value = default_dir
 
         self.retranslateUi()
 
