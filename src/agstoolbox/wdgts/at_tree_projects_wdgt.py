@@ -27,7 +27,9 @@ class ProjectsTree(QTreeWidget):
         if self.proj_update_task is not None:
             return
 
-        self.proj_update_task = do_update_projects(self.projects_update, self.projects_update_ended)
+        self.proj_update_task = do_update_projects(
+            update_ended=self.projects_update,
+            thread_finished=self.projects_update_ended)
 
     def projects_update(self):
         self.clear()

@@ -29,10 +29,15 @@ class ProjUpdateThread(QThread):
         self.update_canceled.emit()
 
 
-def do_update_projects(update_ended, update_canceled):
+def do_update_projects(update_ended=None, update_canceled=None, thread_finished=None):
     thread = ProjUpdateThread()
-    thread.update_ended.connect(update_ended)
-    thread.update_canceled.connect(update_canceled)
+    if update_ended is not None:
+        thread.update_ended.connect(update_ended)
+    if update_canceled is not None:
+        thread.update_canceled.connect(update_canceled)
+    if thread_finished is not None:
+        thread.finished.connect(thread_finished)
+    thread.finished.connect(thread.deleteLater)
     thread.start()
     return thread
 
@@ -57,12 +62,15 @@ class ToolsUpdateThreadDownloads(QThread):
         self.update_canceled.emit()
 
 
-def do_update_tools_downloads(update_ended=None, update_canceled=None):
+def do_update_tools_downloads(update_ended=None, update_canceled=None, thread_finished=None):
     thread = ToolsUpdateThreadDownloads()
     if update_ended is not None:
         thread.update_ended.connect(update_ended)
     if update_canceled is not None:
         thread.update_canceled.connect(update_canceled)
+    if thread_finished is not None:
+        thread.finished.connect(thread_finished)
+    thread.finished.connect(thread.deleteLater)
     thread.start()
     return thread
 
@@ -89,25 +97,29 @@ class ToolsUpdateLocalThread(QThread):
         self.update_canceled.emit()
 
 
-def do_update_tools(directory_list: list[str], update_ended=None, update_canceled=None):
+def do_update_tools(directory_list: list[str], update_ended=None, update_canceled=None,
+                    thread_finished=None):
     thread = ToolsUpdateLocalThread(directory_list)
     if update_ended is not None:
         thread.update_ended.connect(update_ended)
     if update_canceled is not None:
         thread.update_canceled.connect(update_canceled)
+    if thread_finished is not None:
+        thread.finished.connect(thread_finished)
+    thread.finished.connect(thread.deleteLater)
     thread.start()
     return thread
 
 
-def do_update_tools_unmanaged(update_ended=None, update_canceled=None):
+def do_update_tools_unmanaged(update_ended=None, update_canceled=None, thread_finished=None):
     dir_list: list[str] = Settings().get_manually_installed_editors_search_dirs()
-    return do_update_tools(dir_list, update_ended, update_canceled)
+    return do_update_tools(dir_list, update_ended, update_canceled, thread_finished)
 
 
-def do_update_tools_managed(update_ended=None, update_canceled=None):
+def do_update_tools_managed(update_ended=None, update_canceled=None, thread_finished=None):
     dir_list: list[str] = list()
     dir_list.append(Settings().get_tools_install_dir())
-    return do_update_tools(dir_list, update_ended, update_canceled)
+    return do_update_tools(dir_list, update_ended, update_canceled, thread_finished)
 
 
 # actual download
@@ -133,11 +145,15 @@ class DownloadAManagedToolThread(QThread):
         self.update_canceled.emit()
 
 
-def do_download_managed(release: Release, update_ended=None, update_canceled=None):
+def do_download_managed(release: Release, update_ended=None, update_canceled=None,
+                        thread_finished=None):
     thread = DownloadAManagedToolThread(release)
     if update_ended is not None:
         thread.update_ended.connect(update_ended)
     if update_canceled is not None:
         thread.update_canceled.connect(update_canceled)
+    if thread_finished is not None:
+        thread.finished.connect(thread_finished)
+    thread.finished.connect(thread.deleteLater)
     thread.start()
     return thread

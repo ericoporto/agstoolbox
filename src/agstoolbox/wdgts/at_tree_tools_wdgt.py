@@ -73,7 +73,9 @@ class ToolsTree(QTreeWidget):
             return
 
         self.tool_update_downloads_task = do_update_tools_downloads(
-            self.tools_update_downloads, self.tools_update_downloads_ended)
+            update_ended=self.tools_update_downloads,
+            thread_finished=self.tools_update_downloads_ended
+        )
 
     def tools_update_downloads(self):
         self.header_download.clear()
@@ -84,8 +86,6 @@ class ToolsTree(QTreeWidget):
                 itm = TreeItemTool_Download(self.header_download, t)
                 self.header_download.addChild(itm)
                 itm.updateInTree()
-
-        self.tools_update_downloads_ended()
 
     def tools_update_downloads_ended(self):
         self.tool_update_downloads_task = None
@@ -99,7 +99,9 @@ class ToolsTree(QTreeWidget):
             return
 
         self.tool_update_unmanaged_task = do_update_tools_unmanaged(
-            self.tools_update_unmanaged, self.tools_update_unmanaged_ended)
+            update_ended=self.tools_update_unmanaged,
+            thread_finished=self.tools_update_unmanaged_ended
+        )
 
     def tools_update_unmanaged(self):
         self.header_unmanaged.clear()
@@ -114,8 +116,6 @@ class ToolsTree(QTreeWidget):
                 self.header_unmanaged.addChild(itm)
                 itm.updateInTree()
 
-        self.tools_update_unmanaged_ended()
-
     def tools_update_unmanaged_ended(self):
         self.tool_update_unmanaged_task = None
         self.header_unmanaged.sortChildren(0, QtCore.Qt.SortOrder.DescendingOrder)
@@ -129,7 +129,9 @@ class ToolsTree(QTreeWidget):
             return
 
         self.tool_update_managed_task = do_update_tools_managed(
-            self.tools_update_managed, self.tools_update_managed_ended)
+            update_ended=self.tools_update_managed,
+            thread_finished=self.tools_update_managed_ended
+        )
 
     def tools_update_managed(self):
         self.header_managed.clear()
@@ -143,8 +145,6 @@ class ToolsTree(QTreeWidget):
                 itm = TreeItemTool_Managed(self.header_managed, t)
                 self.header_managed.addChild(itm)
                 itm.updateInTree()
-
-        self.tools_update_managed_ended()
 
     def tools_update_managed_ended(self):
         self.tool_update_managed_task = None
