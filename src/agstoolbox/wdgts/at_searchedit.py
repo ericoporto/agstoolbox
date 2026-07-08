@@ -4,6 +4,8 @@ from PyQt6 import QtWidgets, QtGui, QtCore
 
 
 class ExpandableSearchBar(QtWidgets.QLineEdit):
+    # this has to be at class scope to work, PyQt does not bind it
+    searchChanged = QtCore.pyqtSignal(str)
 
     def __init__(self, parent: QtWidgets.QWidget = None,
                  top_widget: QtWidgets.QWidget = None):
@@ -15,7 +17,6 @@ class ExpandableSearchBar(QtWidgets.QLineEdit):
         self.focus_functions: Dict[str, Callable[[], None]] = DefaultDict[str, Callable[[], None]]()
         self.context: Dict[int, str] = DefaultDict[int, str]()
         self.previous_tab_id: int = None
-        self.searchChanged: QtCore.pyqtSignal = QtCore.pyqtSignal(str)
 
         self.readyToEdit = None
         self.original_font = self.font()
