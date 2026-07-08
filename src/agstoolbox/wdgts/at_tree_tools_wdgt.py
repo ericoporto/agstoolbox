@@ -104,10 +104,11 @@ class ToolsTree(QTreeWidget):
     def tools_update_unmanaged(self):
         self.header_unmanaged.clear()
         tools = self.tool_update_unmanaged_task.tools_list
-        tools.sort(key=lambda ed: ed.version.as_int, reverse=True)
-        self.unmanaged_editors_list = tools
 
         if tools is not None:
+            tools.sort(key=lambda ed: ed.version.as_int, reverse=True)
+            self.unmanaged_editors_list = tools
+
             for t in tools:
                 itm = TreeItemTool_ExternallyInstalled(self.header_unmanaged, t)
                 self.header_unmanaged.addChild(itm)
@@ -133,10 +134,11 @@ class ToolsTree(QTreeWidget):
     def tools_update_managed(self):
         self.header_managed.clear()
         tools = self.tool_update_managed_task.tools_list
-        tools.sort(key=lambda ed: ed.version.as_int, reverse=True)
-        self.managed_editors_list = tools
 
         if tools is not None:
+            tools.sort(key=lambda ed: ed.version.as_int, reverse=True)
+            self.managed_editors_list = tools
+
             for t in tools:
                 itm = TreeItemTool_Managed(self.header_managed, t)
                 self.header_managed.addChild(itm)
