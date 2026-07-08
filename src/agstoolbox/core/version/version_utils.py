@@ -57,6 +57,22 @@ def tag_to_family(tag: str) -> str:
     return family
 
 
+def tag_to_series(tag: str) -> str:
+    tks = tag_to_version_str(tag).split(".")
+    if len(tks) <= 1 or len(tks) > 5:
+        return tag
+
+    major = tks[0]
+    minor = tks[1]
+    improv = tks[2]
+
+    if not major.isnumeric() and not minor.isnumeric() and not improv.isnumeric():
+        return tag
+
+    series = major + "." + minor + "." + improv
+    return series
+
+
 def family_to_major(family: str) -> str:
     tks = family.split(".")
     if len(tks) <= 1 or len(tks) >= 3:
@@ -150,10 +166,32 @@ def family_str_to_int(family: str) -> int:
     return family_as_int
 
 
+def series_str_to_int(series: str) -> int:
+    ser = tag_to_series(series)
+
+    tks = ser.split(".")
+    tks_count = len(tks)
+    if tks_count != 3:
+        return -1
+
+    series_as_int = 0
+    for i in range(tks_count):
+        tk = tks[i]
+        tk_val = 0
+        try:
+            tk_val = int(tk)
+        except ValueError:
+            return -1
+
+        series_as_int += tk_val * (1000 ** (3 - i))
+    return series_as_int
+
+
 def tag_to_version(tag: str) -> Version:
     v = Version()
     v.as_str = tag_to_version_str(tag)
     v.family = tag_to_family(tag)
+    v.series = tag_to_series(tag)
     v.major = family_to_major(v.family)
     v.minor = family_to_minor(v.family)
     v.improv = tag_to_improv(v.as_str)
@@ -161,6 +199,7 @@ def tag_to_version(tag: str) -> Version:
     v.as_int = version_str_to_int(v.as_str)
     v.as_ags4_str = version_int_to_str(v.as_int)
     v.family_as_int = family_str_to_int(v.family)
+    v.series_as_int = series_str_to_int(v.series)
     return v
 
 

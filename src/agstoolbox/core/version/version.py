@@ -6,6 +6,8 @@ class Version:
         self.as_str: str = None
         self.as_ags4_str: str = None
         self.as_int: int = None
+        self.series: str = None
+        self.series_as_int: int = None
         self.family: str = None
         self.family_as_int: int = None
         self.major: str = None

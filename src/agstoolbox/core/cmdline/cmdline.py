@@ -26,7 +26,7 @@ from agstoolbox.core.cmdline.cmdline_download import cmdline_download_release_to
 from agstoolbox.core.gh.agstoolbox_update import is_latest_agstoolbox_release
 from agstoolbox.core.gh.install_release import is_install_dir_busy, install_release_from_cache
 from agstoolbox.core.gh.list_releases import list_releases, get_latest_release_family, \
-    get_release_version
+    get_release_version, get_latest_release_series
 from agstoolbox.core.gh.release import Release
 from agstoolbox.core.settings.settings import Settings, ConstSettings
 from agstoolbox.core.version.version import Version
@@ -192,9 +192,12 @@ def at_cmd_install(args):
 
     if editor_version is None or editor_version.as_int < 3000000000:
         # arg was really a version
+        version_parts_count: int = len(install_arg.split("."))
         editor_version = version_str_to_version(install_arg)
-        if editor_version.improv == "0" and editor_version.patch == "0":
+        if version_parts_count == 2:
             release_to_install = get_latest_release_family(releases, editor_version.family)
+        elif version_parts_count == 3:
+            release_to_install = get_latest_release_series(releases, editor_version.series)
 
     ri = release_to_install
     if ri is None or ri.archive_url is None or len(ri.archive_url) <= 1:

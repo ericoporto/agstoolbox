@@ -134,6 +134,15 @@ def get_latest_release_family(releases: list[Release], family: str) -> Release |
         return None
 
 
+def get_latest_release_series(releases: list[Release], series: str) -> Release | None:
+    filtered_releases = [r for r in releases if r.version.series == series]
+    filtered_releases.sort(key=attrgetter("version.as_int"), reverse=True)
+    if len(filtered_releases) >= 1:
+        return filtered_releases[0]
+    else:
+        return None
+
+
 def get_release_version(releases: list[Release], version: Version) -> Release | None:
     filtered_releases = [r for r in releases if r.version.as_int == version.as_int]
     if len(filtered_releases) == 1:
