@@ -19,7 +19,8 @@ from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.ags.get_game_projects import list_game_projects_in_dir, \
     list_game_projects_in_dir_list, get_unique_game_project_in_path
 from agstoolbox.core.ags.get_local_ags_editors import list_probable_ags_editors_in_dir, \
-    list_ags_editors_in_dir_list
+    list_ags_editors_in_dir_list, get_matching_editor_from_family, get_matching_editor_from_series, \
+    get_matching_editor_from_version
 from agstoolbox.core.ags.get_script_module import exists_module_in_game_project
 from agstoolbox.core.ags.package_compiled import package_compiled_game
 from agstoolbox.core.cmdline.cmdline_download import cmdline_download_release_to_cache
@@ -39,7 +40,17 @@ class MetaCmdProjectArgs:
     prj_path: str
     timeout: int
     editor_version: Version | None
+    editor_version_parts_count: int
 
+
+def get_latest_matching_editor(editors: list[LocalAgsEditor], editor_version: Version,
+                               version_parts_count: int) -> LocalAgsEditor | None:
+    if version_parts_count == 2:
+        return get_matching_editor_from_family(editors, editor_version.family)
+    elif version_parts_count == 3:
+        return get_matching_editor_from_series(editors, editor_version.series)
+    else:
+        return get_matching_editor_from_version(editors, editor_version.as_str)
 
 def meta_cmd_project(args, is_open: bool,
                      ags_editor_proj_command: Callable[
@@ -59,6 +70,8 @@ def meta_cmd_project(args, is_open: bool,
     meta_args.timeout = timeout
     meta_args.editor_version = None if (editor_version is None) or (len(str(editor_version)) < 1) \
         else version_str_to_version(editor_version)
+    meta_args.editor_version_parts_count = 4 if meta_args.editor_version is None \
+        else len(str(editor_version).split("."))
     return base_meta_cmd_project(meta_args, ags_editor_proj_command)
 
 def base_meta_cmd_project(meta_args: MetaCmdProjectArgs,
@@ -69,6 +82,7 @@ def base_meta_cmd_project(meta_args: MetaCmdProjectArgs,
     prj_path: str = meta_args.prj_path
     timeout: int = meta_args.timeout
     editor_version: Version | None = meta_args.editor_version
+    editor_version_parts_count: int = meta_args.editor_version_parts_count
 
     if not Path(prj_path).exists():
         print('ERROR: Invalid project path')
@@ -83,28 +97,23 @@ def base_meta_cmd_project(meta_args: MetaCmdProjectArgs,
 
     if editor_version is None:
         editor_version = project_version
+        editor_version_parts_count = 4
 
     managed_dir: str = Settings().get_tools_install_dir()
     editors = list_probable_ags_editors_in_dir(managed_dir)
 
-    editor_candidate: LocalAgsEditor | None = None
-
-    for editor in editors:
-        if editor.version.as_int == editor_version.as_int:
-            editor_candidate = editor
-            break
+    editor_candidate: LocalAgsEditor | None = get_latest_matching_editor(
+        editors, editor_version, editor_version_parts_count)
 
     if editor_candidate is None:
         unmanaged_dirs: list[str] = Settings().get_manually_installed_editors_search_dirs()
         editors = list_ags_editors_in_dir_list(unmanaged_dirs)
 
-        for editor in editors:
-            if editor.version.as_int == editor_version.as_int:
-                editor_candidate = editor
-                break
+        editor_candidate = get_latest_matching_editor(
+            editors, editor_version, editor_version_parts_count)
 
     if editor_candidate is None:
-        print("ERROR: Failed to find exact match of AGS Editor, wanted " + editor_version.as_str)
+        print("ERROR: Failed to find matching AGS Editor, wanted " + editor_version.as_str)
         return -1
 
     if which_only:
@@ -360,6 +369,7 @@ def at_cmd_export_template_editor(
     meta_args.prj_path = game_project.path
     meta_args.timeout = timeout
     meta_args.editor_version = None
+    meta_args.editor_version_parts_count = 4
 
     if not editor_supports_template_export(game_project):
         print('ERROR: Project uses Editor "' + game_project.ags_editor_version.as_str +

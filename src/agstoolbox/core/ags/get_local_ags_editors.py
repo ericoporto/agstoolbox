@@ -77,3 +77,29 @@ def list_ags_editors_in_dir_list(filepaths: list[str]) -> list[LocalAgsEditor]:
     editors.sort(key=attrgetter("last_modified"), reverse=True)
 
     return editors
+
+
+def get_matching_editor_from_family(editors: list[LocalAgsEditor], family: str) -> LocalAgsEditor | None:
+    filtered_editors = [editor for editor in editors if editor.version.family == family]
+    filtered_editors.sort(key=attrgetter("version.as_int"), reverse=True)
+    if len(filtered_editors) >= 1:
+        return filtered_editors[0]
+    else:
+        return None
+
+
+def get_matching_editor_from_series(editors: list[LocalAgsEditor], series: str) -> LocalAgsEditor | None:
+    filtered_editors = [editor for editor in editors if editor.version.series == series]
+    filtered_editors.sort(key=attrgetter("version.as_int"), reverse=True)
+    if len(filtered_editors) >= 1:
+        return filtered_editors[0]
+    else:
+        return None
+
+
+def get_matching_editor_from_version(editors: list[LocalAgsEditor], version_str: str) -> LocalAgsEditor | None:
+    filtered_releases = [r for r in editors if r.version.as_str == version_str]
+    if len(filtered_releases) == 1:
+        return filtered_releases[0]
+    else:
+        return None
