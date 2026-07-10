@@ -17,10 +17,16 @@ def export_script_module_from_project(game_project: GameProject, module_name: st
     sm: ScriptModule = module_from_game_project(game_project, module_name)
     export_script_module(sm, out, game_project.encoding, game_project.codepage)
 
+def export_script_module_from_project_to_file(
+    game_project: GameProject, module_name: str, file_name: str):
+    sm: ScriptModule = module_from_game_project(game_project, module_name)
+    export_script_module_to_file(game_project.codepage, game_project.encoding, file_name, sm)
 
 def export_script_module(sm: ScriptModule, out_dir: str, enc: str, codepage: int):
     module_filename = os.path.join(out_dir, sm.basename + ".scm")
+    export_script_module_to_file(codepage, enc, module_filename, sm)
 
+def export_script_module_to_file(codepage: int, enc: str, module_filename: str, sm: ScriptModule):
     with open(module_filename, 'wb') as f:
         f.write(MODULE_FILE_SIGNATURE)
         f.write(pack('i', 1))  # version
