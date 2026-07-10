@@ -9,6 +9,7 @@ from agstoolbox.core.ags.ags_local_run import ags_editor_load, ags_editor_build
 from agstoolbox.core.ags.ags_template import editor_supports_template_export
 from agstoolbox.core.ags.game_project_compiled import is_project_compiled
 from agstoolbox.core.ags.package_compiled import package_compiled_game
+from agstoolbox.panels.at_scripts_module_modal import ScriptsModuleDialog
 from agstoolbox.wdgts_utils.ags_local_extra import ags_project_folder_in_explorer
 from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.utils.time import s_ago
@@ -117,6 +118,11 @@ class ProjectWidget(QWidget):
                 self.project.ags_editor_version.as_str +
                   '".')
 
+    def open_export_script_module_modal(self):
+        dialog = ScriptsModuleDialog(self)
+        dialog.set_game_project(self.project)
+        dialog.exec()
+
     def mouseDoubleClickEvent(self, event):
         self.quick_open_project()
 
@@ -191,6 +197,7 @@ class ProjectWidget(QWidget):
         quick_open_action = DefaultMenuQAction(menu, "Quick Open Project")
         quick_build_action = menu.addAction("Quick Build Project")
         quick_export_template_action = menu.addAction("Quick Export as Template")
+        export_script_module_action = menu.addAction("Export Script Module...")
         pack_action = menu.addAction("Pack Game")
         pack_action.setEnabled(is_project_compiled(self.project))
         open_folder_action = menu.addAction("Open Folder in File Explorer")
@@ -213,8 +220,13 @@ class ProjectWidget(QWidget):
             return
         elif action == pack_action:
             self.pack_game()
+            return
         elif action == quick_export_template_action:
             self.quick_export_template_project()
+            return
+        elif action == export_script_module_action:
+            self.open_export_script_module_modal()
+            return
         else:
             for a_pair in open_managed_actions:
                 if a_pair.action == action:
