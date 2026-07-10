@@ -10,6 +10,11 @@ from agstoolbox.core.ags.game_project import GameProject
 from agstoolbox.core.ags.get_script_module import module_from_game_project
 
 
+def get_default_module_filename(game_project: GameProject, module_name: str) -> str:
+    if module_name.lower().endswith(".scm"):
+        module_name = module_name[:-4]
+    return os.path.join(game_project.directory, module_name + ".scm")
+
 def export_script_module_from_project(game_project: GameProject, module_name: str, out: str | None):
     if out is None:
         out = game_project.directory
