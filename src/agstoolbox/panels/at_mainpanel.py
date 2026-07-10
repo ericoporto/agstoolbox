@@ -1,3 +1,5 @@
+from __future__ import annotations  # for python 3.8
+
 from PyQt6 import QtWidgets, QtCore, QtGui
 from PyQt6.QtWidgets import QMainWindow
 from PyQt6.QtCore import QSize

@@ -1,3 +1,5 @@
+from __future__ import annotations  # for python 3.8
+
 from PyQt6 import QtCore, QtWidgets
 from PyQt6.QtWidgets import QDialog, QSizePolicy, QFormLayout, QHBoxLayout, QVBoxLayout, \
     QSpacerItem, QLabel, QDialogButtonBox
